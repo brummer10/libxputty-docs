@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['fg_0',['fg',['../structColors.html#a2c124bf98f124c79beafcebf5a500fb4',1,'Colors']]],
+  ['file_1',['file',['../structViewList__t.html#aa2d776f7168d99c9c466d9aee15e2f65',1,'ViewList_t::file'],['../structViewMultiList__t.html#aa2d776f7168d99c9c466d9aee15e2f65',1,'ViewMultiList_t::file']]],
+  ['file_5fcounter_2',['file_counter',['../structFilePicker.html#a0c6850b1242b167a4bb9cedb7356cddb',1,'FilePicker']]],
+  ['file_5fnames_3',['file_names',['../structFilePicker.html#ae4ce29a5ac55d969c2fbb46a327dd8c8',1,'FilePicker']]],
+  ['file_5fscaled_4',['file_scaled',['../structViewMultiList__t.html#a73f1a3c2abb2cf241318069582e80732',1,'ViewMultiList_t']]],
+  ['fill_5',['fill',['../structNSVGshape.html#afa37e8f81c5a4519b4b615f6985a554b',1,'NSVGshape']]],
+  ['fillcolor_6',['fillColor',['../structNSVGattrib.html#afba2b49c3ac7ff8b20f736941c0afab7',1,'NSVGattrib']]],
+  ['fillgradient_7',['fillGradient',['../structNSVGattrib.html#acb133d2d3f76a7d913e50f0e77a2f980',1,'NSVGattrib']]],
+  ['fillopacity_8',['fillOpacity',['../structNSVGattrib.html#a88a902bfbe1018059ee50a0a606039af',1,'NSVGattrib']]],
+  ['fillrule_9',['fillrule',['../structNSVGshape.html#a98c38dc17cae8ca7e8df89738999a376',1,'NSVGshape::fillRule'],['../structNSVGattrib.html#a98c38dc17cae8ca7e8df89738999a376',1,'NSVGattrib::fillRule']]],
+  ['filter_10',['filter',['../structFileButton.html#acd59a575aad953e589ee17c17d7691bc',1,'FileButton::filter'],['../structFilePicker.html#a1eee6b7f80c9cc3eb12b61f72ebcd98f',1,'FilePicker::filter']]],
+  ['flags_11',['flags',['../structNSVGshape.html#a78ac89a4a0f57ffa7c2ecf31749aa390',1,'NSVGshape::flags'],['../structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc',1,'Widget_t::flags']]],
+  ['folder_12',['folder',['../structViewList__t.html#aaf316bee62dd915301f6c3e0f4c5545e',1,'ViewList_t::folder'],['../structViewMultiList__t.html#aaf316bee62dd915301f6c3e0f4c5545e',1,'ViewMultiList_t::folder']]],
+  ['folder_5fscaled_13',['folder_scaled',['../structViewMultiList__t.html#a446b90ba82e6cfdc56f3a7cf4b66df94',1,'ViewMultiList_t']]],
+  ['folder_5fselect_14',['folder_select',['../structViewMultiList__t.html#afdae1eaf097b0d87becc35a8fe641f19',1,'ViewMultiList_t']]],
+  ['folder_5fselect_5fscaled_15',['folder_select_scaled',['../structViewMultiList__t.html#a4ff9502d3f39183b9da67b2ddbdabc4e',1,'ViewMultiList_t']]],
+  ['fontsize_16',['fontSize',['../structNSVGattrib.html#a72aac8be7f7ee34a27f0fcf8636a0853',1,'NSVGattrib']]],
+  ['fp_17',['fp',['../structFileDialog.html#a2b990326108a2d16052dc85f922ce907',1,'FileDialog']]],
+  ['frame_18',['frame',['../structColors.html#a2dab9f673211461f5759a3028f62759a',1,'Colors']]],
+  ['frames_19',['frames',['../structSlider__t.html#a61217d5bc9d5b446d9c08e7ca401b733',1,'Slider_t']]],
+  ['ft_20',['ft',['../structFileDialog.html#a1ac3236ce4dca1b8acd62956c98b4dfc',1,'FileDialog']]],
+  ['full_5flist_21',['full_list',['../structXdgGlobHash.html#a4942e4611196380fbe57af4ddaa56dc9',1,'XdgGlobHash']]],
+  ['func_22',['func',['../structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a',1,'Widget_t']]],
+  ['fx_23',['fx',['../structNSVGgradient.html#a3ebaeeb2af54ad4cb13f0fb25c78a639',1,'NSVGgradient::fx'],['../structNSVGradialData.html#a7ce29b9d9a9983a6305213af058f654d',1,'NSVGradialData::fx']]],
+  ['fy_24',['fy',['../structNSVGgradient.html#a49e77bf673d6b57520e348f4e34df5e3',1,'NSVGgradient::fy'],['../structNSVGradialData.html#abf5a38edb34d6be0823fab987bfa7c6e',1,'NSVGradialData::fy']]]
+];

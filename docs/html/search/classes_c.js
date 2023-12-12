@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['x11_5fui_0',['X11_UI',['../structX11__UI.html',1,'']]],
+  ['xcolor_5ft_1',['XColor_t',['../structXColor__t.html',1,'']]],
+  ['xdgalias_2',['XdgAlias',['../structXdgAlias.html',1,'']]],
+  ['xdgaliaslist_3',['XdgAliasList',['../structXdgAliasList.html',1,'']]],
+  ['xdgcallbacklist_4',['XdgCallbackList',['../structXdgCallbackList.html',1,'']]],
+  ['xdgdirtimelist_5',['XdgDirTimeList',['../structXdgDirTimeList.html',1,'']]],
+  ['xdgglobhash_6',['XdgGlobHash',['../structXdgGlobHash.html',1,'']]],
+  ['xdgglobhashnode_7',['XdgGlobHashNode',['../structXdgGlobHashNode.html',1,'']]],
+  ['xdggloblist_8',['XdgGlobList',['../structXdgGlobList.html',1,'']]],
+  ['xdgicon_9',['XdgIcon',['../structXdgIcon.html',1,'']]],
+  ['xdgiconlist_10',['XdgIconList',['../structXdgIconList.html',1,'']]],
+  ['xdgmimemagic_11',['XdgMimeMagic',['../structXdgMimeMagic.html',1,'']]],
+  ['xdgmimemagicmatch_12',['XdgMimeMagicMatch',['../structXdgMimeMagicMatch.html',1,'']]],
+  ['xdgmimemagicmatchlet_13',['XdgMimeMagicMatchlet',['../structXdgMimeMagicMatchlet.html',1,'']]],
+  ['xdgmimeparents_14',['XdgMimeParents',['../structXdgMimeParents.html',1,'']]],
+  ['xdgparentlist_15',['XdgParentList',['../structXdgParentList.html',1,'']]],
+  ['xevent_16',['XEvent',['../structXEvent.html',1,'']]],
+  ['xputty_17',['Xputty',['../structXputty.html',1,'']]],
+  ['xtuner_18',['XTuner',['../structXTuner.html',1,'']]]
+];

@@ -1,0 +1,10 @@
+var searchData=
+[
+  ['radio_5fbox_5fset_5factive_0',['radio_box_set_active',['../xmessage-dialog_8c.html#ae2414db18fe2e55ea84644a15d1cd8ef',1,'radio_box_set_active(Widget_t *w):&#160;xmessage-dialog.c'],['../xmessage-dialog_8h.html#ae2414db18fe2e55ea84644a15d1cd8ef',1,'radio_box_set_active(Widget_t *w):&#160;xmessage-dialog.c']]],
+  ['radio_5fitem_5fset_5factive_1',['radio_item_set_active',['../xmenu_8h.html#a3158157d7c7a8c20a22601515443b0c4',1,'radio_item_set_active(Widget_t *w):&#160;xmenu.c'],['../xmenu_8c.html#a3158157d7c7a8c20a22601515443b0c4',1,'radio_item_set_active(Widget_t *w):&#160;xmenu.c']]],
+  ['read_5fkeymap_2',['read_keymap',['../xkeyboard_8h.html#a6c58cc39c91687702d2bfbaaba2e79de',1,'read_keymap(const char *keymapfile, long keys[128][2]):&#160;xkeyboard.c'],['../xkeyboard_8c.html#a6c58cc39c91687702d2bfbaaba2e79de',1,'read_keymap(const char *keymapfile, long keys[128][2]):&#160;xkeyboard.c']]],
+  ['receive_5fpaste_5ffrom_5fclipboard_3',['receive_paste_from_clipboard',['../xwidget_8h.html#a189599f308380bacacd740ae4371f1fd',1,'receive_paste_from_clipboard(Widget_t *w, XEvent *event):&#160;xwidget-linux.c'],['../xwidget-linux_8c.html#a189599f308380bacacd740ae4371f1fd',1,'receive_paste_from_clipboard(Widget_t *w, XEvent *event):&#160;xwidget-linux.c']]],
+  ['request_5fpaste_5ffrom_5fclipboard_4',['request_paste_from_clipboard',['../xwidget_8h.html#ae79b9f5757ab54d90a09a19bc7063149',1,'request_paste_from_clipboard(Widget_t *w):&#160;xwidget-linux.c'],['../xwidget-linux_8c.html#ae79b9f5757ab54d90a09a19bc7063149',1,'request_paste_from_clipboard(Widget_t *w):&#160;xwidget-linux.c']]],
+  ['resize_5fchilds_5',['resize_childs',['../xwidget_8h.html#a41193e42eeae89b5a3a379d29cf3f06f',1,'resize_childs(Widget_t *wid):&#160;xwidget.c'],['../xwidget_8c.html#ad690f00e7dd4731cffe5bedd28c6b404',1,'resize_childs(Widget_t *w):&#160;xwidget.c']]],
+  ['run_5fembedded_6',['run_embedded',['../xputty_8h.html#ad265582bb835c54e689b2c354e8dd865',1,'run_embedded(Xputty *main):&#160;xputty.c'],['../xputty_8c.html#ad265582bb835c54e689b2c354e8dd865',1,'run_embedded(Xputty *main):&#160;xputty.c']]]
+];

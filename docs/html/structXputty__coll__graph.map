@@ -1,0 +1,26 @@
+<map id="Xputty" name="Xputty">
+<area shape="rect" id="Node000001" title="Xputty &#45; the main struct. &#160;&#160;It should be declared before any other call to a Xputty function...." alt="" coords="52,240,118,265"/>
+<area shape="rect" id="Node000003" href="$structWidget__t.html" title="Widget_t &#45; struct to hold the basic Widget_t info." alt="" coords="230,357,310,383"/>
+<area shape="poly" id="edge3_Node000003_Node000001" title=" " alt="" coords="104,275,148,331,189,351,231,361,229,366,187,356,145,335,100,278"/>
+<area shape="rect" id="Node000002" href="$structChildlist__t.html" title="Childlist_t &#45; struct to hold a Widget_t child list &#160;&#160;Xputty main holds a list of any Widget_t created..." alt="" coords="67,475,154,500"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,466,46,409,25,373,9,334,3,311,4,300,9,288,28,270,51,259,53,264,31,274,14,291,9,301,8,310,14,332,29,371,50,407,93,463"/>
+<area shape="poly" id="edge9_Node000003_Node000002" title=" " alt="" coords="134,464,153,449,177,426,203,404,245,381,247,385,206,409,181,430,156,453,137,468"/>
+<area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="216,371,163,369,105,364,55,353,36,345,23,335,16,324,14,312,23,288,35,273,51,263,54,268,39,277,27,291,19,312,21,322,27,332,39,341,57,348,106,359,163,364,217,366"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="217,379,154,390,129,398,114,408,106,424,104,441,109,474,104,475,99,441,101,422,110,405,127,393,153,385,216,374"/>
+<area shape="rect" id="Node000007" href="$structAdjustment__t.html" title="Adjustment_t &#45; struct to hold a controller adjustment." alt="" coords="249,475,358,500"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="300,391,310,406,315,424,315,443,310,475,305,474,310,443,310,425,305,408,296,394"/>
+<area shape="rect" id="Node000004" href="$structXColor__t.html" title="XColor_t &#45; the Widget_t Color struct &#160;&#160;XColor_t could be used for theming you Widget_t set." alt="" coords="380,152,457,177"/>
+<area shape="poly" id="edge12_Node000001_Node000004" title=" " alt="" coords="367,182,118,246,117,240,366,177"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="447,184,472,208,494,239,508,265,516,288,516,311,503,335,490,345,470,353,419,364,311,371,310,366,419,358,469,348,487,341,499,332,511,310,511,289,503,267,489,241,468,212,443,188"/>
+<area shape="rect" id="Node000005" href="$structColors.html" title="Color_t &#45; struct used to set cairo color for Widget_t." alt="" coords="387,5,450,31"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="421,45,421,152,416,152,416,45"/>
+<area shape="rect" id="Node000006" href="$structFunc__t.html" title="Func_t &#45; struct to hold all supported event callbacks." alt="" coords="208,240,272,265"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="249,278,270,357,265,358,244,279"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="278,466,269,452,263,415,265,383,271,383,268,414,274,450,282,463"/>
+<area shape="rect" id="Node000008" href="$structResize__t.html" title="Resize_t &#45; struct used to resize child widgets." alt="" coords="296,240,373,265"/>
+<area shape="poly" id="edge10_Node000003_Node000008" title=" " alt="" coords="328,280,302,335,284,359,279,355,297,332,323,277"/>
+<area shape="rect" id="Node000009" href="$structMetrics__t.html" title="Metrics_t &#45; struct to receive window size, position &amp; visibility &#160;&#160;Pass this struct to os_get_window_..." alt="" coords="397,240,480,265"/>
+<area shape="poly" id="edge11_Node000003_Node000009" title=" " alt="" coords="424,279,399,308,366,336,339,350,311,361,310,356,337,345,363,331,395,304,420,275"/>
+<area shape="rect" id="Node000010" href="$structSystrayColor__t.html" title="SystrayColor &#45; the Systray Color struct &#160;&#160;SystrayColor could be used for the backgroung color of the ..." alt="" coords="26,152,144,177"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="88,191,88,239,82,239,82,191"/>
+</map>

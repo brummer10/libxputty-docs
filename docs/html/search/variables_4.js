@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['data_0',['data',['../structWidget__t.html#a9eab91667db4d35c7231dcddf7b89a76',1,'Widget_t::data'],['../structXdgCallbackList.html#a735984d41155bc1032e09bece8f8d66d',1,'XdgCallbackList::data'],['../structXdgGlobList.html#a8f64897c7ccc5c13f276d1d07c4e7095',1,'XdgGlobList::data'],['../structbinary__stream.html#afb8a18b1a8a5a679a5c4bbb52769b49e',1,'binary_stream::data']]],
+  ['default_5ferror_5fhandler_1',['default_error_handler',['../xwidget-linux_8c.html#aaf20ee976b97c27e5247f9edd6fd9a6e',1,'xwidget-linux.c']]],
+  ['defsflag_2',['defsFlag',['../structNSVGparser.html#a68002ecddf23e81fcfad19bb15bb8aa7',1,'NSVGparser']]],
+  ['destroy_3',['destroy',['../structXdgCallbackList.html#a69af50a189e54a87620222db6121b702',1,'XdgCallbackList']]],
+  ['detune_4',['detune',['../structMidiKeyboard__mk.html#a7b0ecab484aa5ada4b4e1f6645d049eb',1,'MidiKeyboard_mk']]],
+  ['dialog_5fcallback_5',['dialog_callback',['../structFunc__t.html#af28ab01eaa5e3a12235a4d3f997a53ab',1,'Func_t']]],
+  ['dir_5fcounter_6',['dir_counter',['../structFilePicker.html#a525c37dd5be959717e3679be9b63d900',1,'FilePicker']]],
+  ['dir_5fnames_7',['dir_names',['../structFilePicker.html#aa5850a01c22ddfadc4bec6ea6f2b8a86',1,'FilePicker']]],
+  ['directory_5fname_8',['directory_name',['../structXdgDirTimeList.html#a5aef7490079536989b6e8a24433ffd18',1,'XdgDirTimeList']]],
+  ['dnd_5fnotify_5fcallback_9',['dnd_notify_callback',['../structFunc__t.html#aa1fb2f1636777062d1593a9e693d585c',1,'Func_t']]],
+  ['dnd_5fsource_5fwindow_10',['dnd_source_window',['../structXputty.html#a64241f1c6ba1d2eee2ce1736995f816a',1,'Xputty']]],
+  ['dnd_5ftype_11',['dnd_type',['../structXputty.html#add0bc8b26aaa5f752ea61172df92c8cf',1,'Xputty']]],
+  ['dnd_5ftype_5ftext_12',['dnd_type_text',['../structXputty.html#afa6a5417629c970c07327960568b8a3f',1,'Xputty']]],
+  ['dnd_5ftype_5furi_13',['dnd_type_uri',['../structXputty.html#a695509e018c5af29d26f7be009800157',1,'Xputty']]],
+  ['dnd_5ftype_5futf8_14',['dnd_type_utf8',['../structXputty.html#af20a00ee8bd737c721d4d951f389ebc5',1,'Xputty']]],
+  ['dnd_5fversion_15',['dnd_version',['../structXputty.html#aab31579d3e25361cc0a2293d0f65d480',1,'Xputty']]],
+  ['double_5fclick_16',['double_click',['../structWidget__t.html#abad8b9d2e44a56838c978a642f0a0069',1,'Widget_t']]],
+  ['double_5fclick_5fcallback_17',['double_click_callback',['../structFunc__t.html#a580123509145139212579243dbe61c67',1,'Func_t']]],
+  ['dpi_18',['dpi',['../structNSVGparser.html#aedb809b647fe33bb16894d01375c089c',1,'NSVGparser']]],
+  ['dpy_19',['dpy',['../structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6',1,'Xputty']]]
+];

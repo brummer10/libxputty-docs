@@ -1,0 +1,15 @@
+<map id="NSVGimage" name="NSVGimage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="84,372,184,397"/>
+<area shape="rect" id="Node000002" href="$structNSVGshape.html" title=" " alt="" coords="85,284,183,309"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,323,137,371,131,371,131,323"/>
+<area shape="poly" id="edge7_Node000002_Node000002" title=" " alt="" coords="198,288,210,296,202,305,184,307,183,302,199,300,205,297,195,292"/>
+<area shape="rect" id="Node000003" href="$structNSVGpaint.html" title=" " alt="" coords="31,181,123,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,218,112,259,128,282,123,285,108,261,86,220"/>
+<area shape="rect" id="Node000004" href="$structNSVGgradient.html" title=" " alt="" coords="20,93,133,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="79,133,79,181,74,181,74,133"/>
+<area shape="rect" id="Node000005" href="$structNSVGgradientStop.html" title=" " alt="" coords="5,5,148,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="79,45,79,93,74,93,74,45"/>
+<area shape="rect" id="Node000006" href="$structNSVGpath.html" title=" " alt="" coords="147,181,235,207"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="180,220,143,285,138,283,176,218"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="251,185,262,194,254,202,236,205,235,199,251,197,257,194,248,190"/>
+</map>

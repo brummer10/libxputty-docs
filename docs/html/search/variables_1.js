@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['a_0',['a',['../structSystrayColor__t.html#a1031d0e0a97a340abfe0a6ab9e831045',1,'SystrayColor_t']]],
+  ['active_1',['active',['../structXColor__t.html#a6b4f58992d488171326f3d2927110d65',1,'XColor_t']]],
+  ['active_5fitem_2',['active_item',['../structComboBox__t.html#a07752c2af37d679c97f2e0de680b5c02',1,'ComboBox_t::active_item'],['../structViewList__t.html#a07752c2af37d679c97f2e0de680b5c02',1,'ViewList_t::active_item'],['../structViewMultiList__t.html#a07752c2af37d679c97f2e0de680b5c02',1,'ViewMultiList_t::active_item']]],
+  ['active_5fkey_3',['active_key',['../structMidiKeyboard__mk.html#a50209ca68908f9502c41fb993de8850c',1,'MidiKeyboard_mk::active_key'],['../structMidiKeyboard.html#a50209ca68908f9502c41fb993de8850c',1,'MidiKeyboard::active_key']]],
+  ['adj_4',['adj',['../structWidget__t.html#a5545ccd4cf795c3ebd77dd186a4a1ceb',1,'Widget_t']]],
+  ['adj_5fcallback_5',['adj_callback',['../structFunc__t.html#a81b1b02d5ffa63513fb5455ce74b5de3',1,'Func_t']]],
+  ['adj_5fx_6',['adj_x',['../structWidget__t.html#a1fa4043c28bf11f213d6fb5857fa4f1f',1,'Widget_t']]],
+  ['adj_5fy_7',['adj_y',['../structWidget__t.html#a1575a284d3df31e2c155b488af09d74b',1,'Widget_t']]],
+  ['alias_8',['alias',['../structXdgAlias.html#a9027b352db4085a0122952932d065705',1,'XdgAlias']]],
+  ['aliases_9',['aliases',['../structXdgAliasList.html#a68e134a349a47c0fa8351825c686ce38',1,'XdgAliasList']]],
+  ['aligntype_10',['alignType',['../structNSVGparser.html#a1c037c87d9aa5714ac7e79647d2f3f3c',1,'NSVGparser']]],
+  ['alignx_11',['alignX',['../structNSVGparser.html#a953c89e13b40abcc7f680bef51296a3f',1,'NSVGparser']]],
+  ['aligny_12',['alignY',['../structNSVGparser.html#a1e9b78617aab1907849ba317fb117f9e',1,'NSVGparser']]],
+  ['app_13',['app',['../structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856',1,'Widget_t']]],
+  ['ascale_14',['ascale',['../structResize__t.html#a3b5fbbe7ce119860884972d6eccd8100',1,'Resize_t']]],
+  ['attack_15',['attack',['../structMidiKeyboard__mk.html#a7241422808ffa774468b342f39b6ae1f',1,'MidiKeyboard_mk']]],
+  ['attr_16',['attr',['../structNSVGparser.html#ab669d65c376f5fea65d73ed39984fd35',1,'NSVGparser']]],
+  ['attrhead_17',['attrHead',['../structNSVGparser.html#a74c89fb6cb04f133143a37f739a34900',1,'NSVGparser']]]
+];
