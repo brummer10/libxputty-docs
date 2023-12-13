@@ -165,4 +165,5 @@ var menudata={children:[
 {text:"u",url:"globals_eval.html#index_u"},
 {text:"v",url:"globals_eval.html#index_v"},
 {text:"w",url:"globals_eval.html#index_w"},
-{text:"x",url:"globals_eval.html#index_x"}]}]}]}]}
+{text:"x",url:"globals_eval.html#index_x"}]}]}]},
+{text:"Examples",url:"examples.html"}]}

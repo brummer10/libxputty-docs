@@ -98,8 +98,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a8b726c9dee66c8fb2e9cdfeed703b08b" id="r_a8b726c9dee66c8fb2e9cdfeed703b08b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a8b726c9dee66c8fb2e9cdfeed703b08b">convert_cp</a> (DWORD cp_from, DWORD cp_to, char *s_from)</td></tr>
 <tr class="separator:a8b726c9dee66c8fb2e9cdfeed703b08b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b1abaec302c347633a47eefc5b070a0" id="r_a2b1abaec302c347633a47eefc5b070a0"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a2b1abaec302c347633a47eefc5b070a0">utf8_from_locale</a> (char *localestr)</td></tr>
+<tr class="memdesc:a2b1abaec302c347633a47eefc5b070a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">utf8_from_locale - convert active codepage to utf8 must be freed by the caller  <br /></td></tr>
 <tr class="separator:a2b1abaec302c347633a47eefc5b070a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6ccbd0e8beba49807660ab817cfeba9" id="r_ae6ccbd0e8beba49807660ab817cfeba9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#ae6ccbd0e8beba49807660ab817cfeba9">locale_from_utf8</a> (char *utf8str)</td></tr>
+<tr class="memdesc:ae6ccbd0e8beba49807660ab817cfeba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">locale_from_utf8 - convert utf8 to active codepage must be freed by the caller  <br /></td></tr>
 <tr class="separator:ae6ccbd0e8beba49807660ab817cfeba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7a6d46cc99a61e5bf0e9643ece9bdba" id="r_ae7a6d46cc99a61e5bf0e9643ece9bdba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="xputty-mswin_8h.html#aac2cd2aa5cbc66f5bff9270130f515fd">Display</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#ae7a6d46cc99a61e5bf0e9643ece9bdba">os_open_display</a> (char *display_name)</td></tr>
 <tr class="memdesc:ae7a6d46cc99a61e5bf0e9643ece9bdba"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_open_display - Connect to the display to use  <br /></td></tr>
@@ -135,66 +137,97 @@ Functions</h2></td></tr>
 <tr class="memdesc:a1f4ec755489fb3ebf3863cb2066044ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_set_widget_surface_size - set the size of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> cairo surface  <br /></td></tr>
 <tr class="separator:a1f4ec755489fb3ebf3863cb2066044ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad718e380b469f012fef99d99744ee546" id="r_ad718e380b469f012fef99d99744ee546"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#ad718e380b469f012fef99d99744ee546">os_create_main_window_and_surface</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, <a class="el" href="structXputty.html">Xputty</a> *app, <a class="el" href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a> win, int x, int y, int width, int height)</td></tr>
+<tr class="memdesc:ad718e380b469f012fef99d99744ee546"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_create_main_window_and_surface - create a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> with a acairo surface this function is used mainly internal on <a class="el" href="xwidget_8h.html#a325d44c1faf94f7c4ba6b9a35f4b14e0" title="*create_window - create a Window   You need to create as least minimun one Window to get started....">create_window()</a>  <br /></td></tr>
 <tr class="separator:ad718e380b469f012fef99d99744ee546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab33c7a8cd260d89dae8f7bb800dfdf6b" id="r_ab33c7a8cd260d89dae8f7bb800dfdf6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#ab33c7a8cd260d89dae8f7bb800dfdf6b">os_create_widget_window_and_surface</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, <a class="el" href="structXputty.html">Xputty</a> *app, <a class="el" href="structWidget__t.html">Widget_t</a> *parent, int x, int y, int width, int height)</td></tr>
+<tr class="memdesc:ab33c7a8cd260d89dae8f7bb800dfdf6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_create_main_widget_and_surface - create a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> with a acairo surface this function is used mainly internal on <a class="el" href="xwidget_8h.html#a0f48f1193ae5aa9a11f0a4bf03abf41d" title="*create_widget - create a widget   A Widget_t could only be created as child of a other Widget_t   To...">create_widget()</a>  <br /></td></tr>
 <tr class="separator:ab33c7a8cd260d89dae8f7bb800dfdf6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7020a995c5643ed594b99ed312860eae" id="r_a7020a995c5643ed594b99ed312860eae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a7020a995c5643ed594b99ed312860eae">os_set_title</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, const char *title)</td></tr>
+<tr class="memdesc:a7020a995c5643ed594b99ed312860eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_set_title - Set the title of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:a7020a995c5643ed594b99ed312860eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01cba00821a355104265dbc6418e09bf" id="r_a01cba00821a355104265dbc6418e09bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a01cba00821a355104265dbc6418e09bf">os_widget_show</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a01cba00821a355104265dbc6418e09bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_widget_show - Show a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:a01cba00821a355104265dbc6418e09bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ee9d2b370508eb19881851f43df9dcb" id="r_a0ee9d2b370508eb19881851f43df9dcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a0ee9d2b370508eb19881851f43df9dcb">os_widget_hide</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a0ee9d2b370508eb19881851f43df9dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_widget_hide - Hide a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:a0ee9d2b370508eb19881851f43df9dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a710c39f12017edfc59a64c6e65775c" id="r_a7a710c39f12017edfc59a64c6e65775c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a7a710c39f12017edfc59a64c6e65775c">os_show_tooltip</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *wid, <a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a7a710c39f12017edfc59a64c6e65775c"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_show_tooltip - Show a tooltip of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:a7a710c39f12017edfc59a64c6e65775c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5c9d71ad678b5e5fa2edce8fa6b0a72" id="r_ae5c9d71ad678b5e5fa2edce8fa6b0a72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#ae5c9d71ad678b5e5fa2edce8fa6b0a72">os_expose_widget</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:ae5c9d71ad678b5e5fa2edce8fa6b0a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_expose_widget - Draw the the back buffer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> surface  <br /></td></tr>
 <tr class="separator:ae5c9d71ad678b5e5fa2edce8fa6b0a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a87ab9355bed9fdbe074ef266e89aa2" id="r_a8a87ab9355bed9fdbe074ef266e89aa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a8a87ab9355bed9fdbe074ef266e89aa2">os_widget_event_loop</a> (void *w_, void *event, <a class="el" href="structXputty.html">Xputty</a> *main, void *user_data)</td></tr>
+<tr class="memdesc:a8a87ab9355bed9fdbe074ef266e89aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_widget_event_loop - the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> event loop on windows all messges goes into WndProc, so stub here  <br /></td></tr>
 <tr class="separator:a8a87ab9355bed9fdbe074ef266e89aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6753e350068eda83a378bd3d215f0ff5" id="r_a6753e350068eda83a378bd3d215f0ff5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a6753e350068eda83a378bd3d215f0ff5">os_send_configure_event</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, int x, int y, int width, int height)</td></tr>
+<tr class="memdesc:a6753e350068eda83a378bd3d215f0ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_send_configure_event - Send a configure event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:a6753e350068eda83a378bd3d215f0ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22ab612d9d4a974280473cebf9f6cae1" id="r_a22ab612d9d4a974280473cebf9f6cae1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a22ab612d9d4a974280473cebf9f6cae1">os_send_button_press_event</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a22ab612d9d4a974280473cebf9f6cae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_send_button_press_event - Send a button press event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> see XButtonEvent  <br /></td></tr>
 <tr class="separator:a22ab612d9d4a974280473cebf9f6cae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35e5d3c95c970a33882569e3797391c1" id="r_a35e5d3c95c970a33882569e3797391c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a35e5d3c95c970a33882569e3797391c1">os_send_button_release_event</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a35e5d3c95c970a33882569e3797391c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_send_button_release_event - Send a button release event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> see XButtonEvent  <br /></td></tr>
 <tr class="separator:a35e5d3c95c970a33882569e3797391c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d4486a29f8fb0c8278b33f10b74f09a" id="r_a5d4486a29f8fb0c8278b33f10b74f09a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a5d4486a29f8fb0c8278b33f10b74f09a">os_send_systray_message</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a5d4486a29f8fb0c8278b33f10b74f09a"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_send_send_systray_message - Send a systray event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only working on Linux for now  <br /></td></tr>
 <tr class="separator:a5d4486a29f8fb0c8278b33f10b74f09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a2be9712bdfabdcf009e6466dd4693f" id="r_a2a2be9712bdfabdcf009e6466dd4693f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a2a2be9712bdfabdcf009e6466dd4693f">os_grab_pointer</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a2a2be9712bdfabdcf009e6466dd4693f"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_grab_pointer - grab the mouse pointer. Works only on linux  <br /></td></tr>
 <tr class="separator:a2a2be9712bdfabdcf009e6466dd4693f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76dc02c33a8f2444dec37002b4235e4b" id="r_a76dc02c33a8f2444dec37002b4235e4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a76dc02c33a8f2444dec37002b4235e4b">os_set_input_mask</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a76dc02c33a8f2444dec37002b4235e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_set_input_mask - set the Event mask to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only work on linux, stub on Windows  <br /></td></tr>
 <tr class="separator:a76dc02c33a8f2444dec37002b4235e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec7d38bff32d2995567634fa5012a520" id="r_aec7d38bff32d2995567634fa5012a520"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#aec7d38bff32d2995567634fa5012a520">os_set_window_attrb</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:aec7d38bff32d2995567634fa5012a520"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_set_window_attrb - set the attribute mask to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only work on linux, stub on Windows  <br /></td></tr>
 <tr class="separator:aec7d38bff32d2995567634fa5012a520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cb2e2080921c01746dab98682aac799" id="r_a9cb2e2080921c01746dab98682aac799"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a9cb2e2080921c01746dab98682aac799">os_set_transient_for_hint</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *parent, <a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a9cb2e2080921c01746dab98682aac799"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_set_ transient_for_hint - set a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> transient to a other <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only work on linux, stub on Windows  <br /></td></tr>
 <tr class="separator:a9cb2e2080921c01746dab98682aac799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac02c2a3f0c76b53e6f08994ef5d3ee25" id="r_ac02c2a3f0c76b53e6f08994ef5d3ee25"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#ac02c2a3f0c76b53e6f08994ef5d3ee25">os_get_screen_height</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:ac02c2a3f0c76b53e6f08994ef5d3ee25"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_get_screen_height - Get the height of the used Display  <br /></td></tr>
 <tr class="separator:ac02c2a3f0c76b53e6f08994ef5d3ee25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bec83ac3b6ebb9d10a8d47d31a2660c" id="r_a2bec83ac3b6ebb9d10a8d47d31a2660c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a2bec83ac3b6ebb9d10a8d47d31a2660c">os_get_screen_width</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a2bec83ac3b6ebb9d10a8d47d31a2660c"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_get_screen_width - Get the width of the used Display  <br /></td></tr>
 <tr class="separator:a2bec83ac3b6ebb9d10a8d47d31a2660c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3266e4cf51a42d5770d6f33939242ece" id="r_a3266e4cf51a42d5770d6f33939242ece"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a3266e4cf51a42d5770d6f33939242ece">os_get_home_dir</a> ()</td></tr>
+<tr class="memdesc:a3266e4cf51a42d5770d6f33939242ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_get_home_dir - get the users home directory  <br /></td></tr>
 <tr class="separator:a3266e4cf51a42d5770d6f33939242ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a908a2a5a8130d6b6447b6d8e587992a8" id="r_a908a2a5a8130d6b6447b6d8e587992a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a908a2a5a8130d6b6447b6d8e587992a8">os_is_directory</a> (const char *filename)</td></tr>
+<tr class="memdesc:a908a2a5a8130d6b6447b6d8e587992a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_is directory - check if a given path is a directory or a file  <br /></td></tr>
 <tr class="separator:a908a2a5a8130d6b6447b6d8e587992a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7120ef822716ce09536118d3f977f41" id="r_aa7120ef822716ce09536118d3f977f41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#aa7120ef822716ce09536118d3f977f41">os_transparent_draw</a> (void *w_, void *user_data)</td></tr>
+<tr class="memdesc:aa7120ef822716ce09536118d3f977f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_transparent_draw - Draw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> to the back buffer  <br /></td></tr>
 <tr class="separator:aa7120ef822716ce09536118d3f977f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adee344daface42492de09cdc6d5cf069" id="r_adee344daface42492de09cdc6d5cf069"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#adee344daface42492de09cdc6d5cf069">os_adjustment_callback</a> (void *w_, void *user_data)</td></tr>
+<tr class="memdesc:adee344daface42492de09cdc6d5cf069"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_adjustment_callback - called when a adjustment value have changed used internal for redraw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:adee344daface42492de09cdc6d5cf069"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaf19af7685fa7a9142325edaaec5432" id="r_aaaf19af7685fa7a9142325edaaec5432"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#aaaf19af7685fa7a9142325edaaec5432">os_get_keyboard_input</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, <a class="el" href="xputty-mswin_8h.html#a53aa4853af43aeb976faf9a4dbca99e7">XKeyEvent</a> *key, char *buf, size_t bufsize)</td></tr>
+<tr class="memdesc:aaaf19af7685fa7a9142325edaaec5432"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_ get_keyboard_input - Get the Keyboard input and convert it to utf8  <br /></td></tr>
 <tr class="separator:aaaf19af7685fa7a9142325edaaec5432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f66f9952574095375f5ee2b424f463d" id="r_a7f66f9952574095375f5ee2b424f463d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a7f66f9952574095375f5ee2b424f463d">os_free_pixmap</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, <a class="el" href="xputty-mswin_8h.html#a0b28ba259a9ba9422d5712ad5ef4fb3d">Pixmap</a> pixmap)</td></tr>
+<tr class="memdesc:a7f66f9952574095375f5ee2b424f463d"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_free_pixmap - Free the memory used by a Pixmap only Linux, stub otherwise  <br /></td></tr>
 <tr class="separator:a7f66f9952574095375f5ee2b424f463d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70f7b4152849abe59ad4398f307ee846" id="r_a70f7b4152849abe59ad4398f307ee846"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a70f7b4152849abe59ad4398f307ee846">os_quit</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a70f7b4152849abe59ad4398f307ee846"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_quit - quit the main loop and free all used memory  <br /></td></tr>
 <tr class="separator:a70f7b4152849abe59ad4398f307ee846"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cabab2601cc0a3e6f7b6840626300c1" id="r_a9cabab2601cc0a3e6f7b6840626300c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a9cabab2601cc0a3e6f7b6840626300c1">os_quit_widget</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a9cabab2601cc0a3e6f7b6840626300c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_quit_widget - remove a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> from the main loop and free it's used memory  <br /></td></tr>
 <tr class="separator:a9cabab2601cc0a3e6f7b6840626300c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a91c66336b9ba7b46bd8b6c57f29413" id="r_a7a91c66336b9ba7b46bd8b6c57f29413"><td class="memItemLeft" align="right" valign="top"><a class="el" href="xputty-mswin_8h.html#aaf30b525a88bc35425720d2b4abca810">Atom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a7a91c66336b9ba7b46bd8b6c57f29413">os_register_wm_delete_window</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *wid)</td></tr>
+<tr class="memdesc:a7a91c66336b9ba7b46bd8b6c57f29413"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_register_wm_delete_window - Get the needed Atom to send a widget delete message  <br /></td></tr>
 <tr class="separator:a7a91c66336b9ba7b46bd8b6c57f29413"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a705d1a1f726bddbb47c588cbd1773456" id="r_a705d1a1f726bddbb47c588cbd1773456"><td class="memItemLeft" align="right" valign="top"><a class="el" href="xputty-mswin_8h.html#aaf30b525a88bc35425720d2b4abca810">Atom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a705d1a1f726bddbb47c588cbd1773456">os_register_widget_destroy</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *wid)</td></tr>
+<tr class="memdesc:a705d1a1f726bddbb47c588cbd1773456"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_register_widget_destroy - Get the needed Atom to send a widget destroy message  <br /></td></tr>
 <tr class="separator:a705d1a1f726bddbb47c588cbd1773456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e3d9b3a046860c3a1b1814f920eb24d" id="r_a0e3d9b3a046860c3a1b1814f920eb24d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a0e3d9b3a046860c3a1b1814f920eb24d">os_main_run</a> (<a class="el" href="structXputty.html">Xputty</a> *main)</td></tr>
+<tr class="memdesc:a0e3d9b3a046860c3a1b1814f920eb24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_main_run - start the event loop  <br /></td></tr>
 <tr class="separator:a0e3d9b3a046860c3a1b1814f920eb24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a442a2ff54def86ccfc7b25c584753957" id="r_a442a2ff54def86ccfc7b25c584753957"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a442a2ff54def86ccfc7b25c584753957">os_run_embedded</a> (<a class="el" href="structXputty.html">Xputty</a> *main)</td></tr>
+<tr class="memdesc:a442a2ff54def86ccfc7b25c584753957"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_run_embedded - the event handling when run embedded on windows all messges goes into WndProc, so stub here  <br /></td></tr>
 <tr class="separator:a442a2ff54def86ccfc7b25c584753957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a195e102bd621bf2d13b9bded9e13f1d2" id="r_a195e102bd621bf2d13b9bded9e13f1d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a195e102bd621bf2d13b9bded9e13f1d2">os_init_dnd</a> (<a class="el" href="structXputty.html">Xputty</a> *main)</td></tr>
+<tr class="memdesc:a195e102bd621bf2d13b9bded9e13f1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_init_dnd - register a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> for handling drag and drop events only implemented on linux  <br /></td></tr>
 <tr class="separator:a195e102bd621bf2d13b9bded9e13f1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6331d2adab6eb85288a547479750ddf1" id="r_a6331d2adab6eb85288a547479750ddf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a6331d2adab6eb85288a547479750ddf1">build_xkey_event</a> (<a class="el" href="xputty-mswin_8h.html#a53aa4853af43aeb976faf9a4dbca99e7">XKeyEvent</a> *ev, UINT msg, WPARAM wParam, LPARAM lParam)</td></tr>
 <tr class="separator:a6331d2adab6eb85288a547479750ddf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -296,11 +329,11 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  534</span>                ev-&gt;<a class="code hl_variable" href="structXEvent.html#a74583b0cb53a7bc6e51157cccea51e60">keycode</a> = ev-&gt;<a class="code hl_variable" href="structXEvent.html#a9c09395b952c95befc2a3f9cffa9e799">vk</a>;</div>
 <div class="line"><span class="lineno">  535</span>    }</div>
 <div class="line"><span class="lineno">  536</span>}</div>
-<div class="ttc" id="astructXEvent_html_a0b0948fc6d552c9f574f6c38ec65c1b8"><div class="ttname"><a href="structXEvent.html#a0b0948fc6d552c9f574f6c38ec65c1b8">XEvent::vk_is_final_char</a></div><div class="ttdeci">bool vk_is_final_char</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00061">xputty-mswin.h:61</a></div></div>
-<div class="ttc" id="astructXEvent_html_a74583b0cb53a7bc6e51157cccea51e60"><div class="ttname"><a href="structXEvent.html#a74583b0cb53a7bc6e51157cccea51e60">XEvent::keycode</a></div><div class="ttdeci">int keycode</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00059">xputty-mswin.h:59</a></div></div>
-<div class="ttc" id="astructXEvent_html_a9c09395b952c95befc2a3f9cffa9e799"><div class="ttname"><a href="structXEvent.html#a9c09395b952c95befc2a3f9cffa9e799">XEvent::vk</a></div><div class="ttdeci">WORD vk</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00062">xputty-mswin.h:62</a></div></div>
+<div class="ttc" id="astructXEvent_html_a0b0948fc6d552c9f574f6c38ec65c1b8"><div class="ttname"><a href="structXEvent.html#a0b0948fc6d552c9f574f6c38ec65c1b8">XEvent::vk_is_final_char</a></div><div class="ttdeci">bool vk_is_final_char</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00065">xputty-mswin.h:65</a></div></div>
+<div class="ttc" id="astructXEvent_html_a74583b0cb53a7bc6e51157cccea51e60"><div class="ttname"><a href="structXEvent.html#a74583b0cb53a7bc6e51157cccea51e60">XEvent::keycode</a></div><div class="ttdeci">int keycode</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00063">xputty-mswin.h:63</a></div></div>
+<div class="ttc" id="astructXEvent_html_a9c09395b952c95befc2a3f9cffa9e799"><div class="ttname"><a href="structXEvent.html#a9c09395b952c95befc2a3f9cffa9e799">XEvent::vk</a></div><div class="ttdeci">WORD vk</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00066">xputty-mswin.h:66</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xputty-mswin_8h_source.html#l00059">XEvent::keycode</a>, <a class="el" href="xputty-mswin_8h_source.html#l00062">XEvent::vk</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00061">XEvent::vk_is_final_char</a>.</p>
+<p class="reference">References <a class="el" href="xputty-mswin_8h_source.html#l00063">XEvent::keycode</a>, <a class="el" href="xputty-mswin_8h_source.html#l00066">XEvent::vk</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00065">XEvent::vk_is_final_char</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>.</p>
 
@@ -433,6 +466,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>locale_from_utf8 - convert utf8 to active codepage must be freed by the caller </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*utf8str</td><td>- Pointer to char to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>*char - the converted char in locale format </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00109">109</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  109</span>                                      {</div>
 <div class="line"><span class="lineno">  110</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="xwidget-mswin_8c.html#a8b726c9dee66c8fb2e9cdfeed703b08b">convert_cp</a>(CP_UTF8, GetACP(), utf8str));</div>
@@ -507,11 +549,11 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  961</span>    EndPaint( hwnd, &amp;ps );</div>
 <div class="line"><span class="lineno">  962</span>    <span class="keywordflow">return</span> 0 ;</div>
 <div class="line"><span class="lineno">  963</span>}</div>
-<div class="ttc" id="astructWidget__t_html"><div class="ttname"><a href="structWidget__t.html">Widget_t</a></div><div class="ttdoc">Widget_t - struct to hold the basic Widget_t info.</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00453">xwidget.h:453</a></div></div>
-<div class="ttc" id="astructWidget__t_html_a76e6dbb8b33b4373ca91aab3cab86245"><div class="ttname"><a href="structWidget__t.html#a76e6dbb8b33b4373ca91aab3cab86245">Widget_t::surface</a></div><div class="ttdeci">cairo_surface_t * surface</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00479">xwidget.h:479</a></div></div>
+<div class="ttc" id="astructWidget__t_html"><div class="ttname"><a href="structWidget__t.html">Widget_t</a></div><div class="ttdoc">Widget_t - struct to hold the basic Widget_t info.</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00457">xwidget.h:457</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a76e6dbb8b33b4373ca91aab3cab86245"><div class="ttname"><a href="structWidget__t.html#a76e6dbb8b33b4373ca91aab3cab86245">Widget_t::surface</a></div><div class="ttdeci">cairo_surface_t * surface</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00483">xwidget.h:483</a></div></div>
 <div class="ttc" id="axwidget_8h_html_ab45a54d3dee60783a5afe9c236f54a04"><div class="ttname"><a href="xwidget_8h.html#ab45a54d3dee60783a5afe9c236f54a04">transparent_draw</a></div><div class="ttdeci">void transparent_draw(void *wid, void *user_data)</div><div class="ttdoc">transparent_draw - copy parent surface to child surface   you usaualy didn't need to call this,...</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00449">xwidget.c:449</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00479">Widget_t::surface</a>, and <a class="el" href="xwidget_8c_source.html#l00449">transparent_draw()</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>, and <a class="el" href="xwidget_8c_source.html#l00449">transparent_draw()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>.</p>
 
@@ -543,15 +585,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_adjustment_callback - called when a adjustment value have changed used internal for redraw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*user_data</td><td>- additional user data or NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00398">398</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  398</span>                                                       {</div>
 <div class="line"><span class="lineno">  399</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *)w_;</div>
 <div class="line"><span class="lineno">  400</span>   <span class="comment">// transparent_draw(w, user_data);</span></div>
 <div class="line"><span class="lineno">  401</span>    RedrawWindow(w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, NULL, NULL, RDW_NOERASE | RDW_INVALIDATE | RDW_UPDATENOW | RDW_ALLCHILDREN);</div>
 <div class="line"><span class="lineno">  402</span>}</div>
-<div class="ttc" id="astructWidget__t_html_a635c8e6580aacd495c43475cab053580"><div class="ttname"><a href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">Widget_t::widget</a></div><div class="ttdeci">Window widget</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00465">xwidget.h:465</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a635c8e6580aacd495c43475cab053580"><div class="ttname"><a href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">Widget_t::widget</a></div><div class="ttdeci">Window widget</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00469">xwidget.h:469</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8c_source.html#l00449">transparent_draw()</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8c_source.html#l00449">transparent_draw()</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00265">create_widget()</a>, and <a class="el" href="xwidget_8c_source.html#l00163">create_window()</a>.</p>
 
@@ -580,7 +631,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00118">118</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  118</span>                                    {</div>
@@ -646,6 +696,18 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_create_main_window_and_surface - create a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> with a acairo surface this function is used mainly internal on <a class="el" href="xwidget_8h.html#a325d44c1faf94f7c4ba6b9a35f4b14e0" title="*create_window - create a Window   You need to create as least minimun one Window to get started....">create_window()</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> to create </td></tr>
+    <tr><td class="paramname">*app</td><td>- the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> belongs to </td></tr>
+    <tr><td class="paramname">*win</td><td>- the Parent Window were the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> belongs to </td></tr>
+    <tr><td class="paramname">x,y</td><td>- the position related to the Parent Window </td></tr>
+    <tr><td class="paramname">*width,*height</td><td>- the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> size </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00195">195</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  196</span>                                                               {</div>
@@ -721,7 +783,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  266</span> </div>
 <div class="line"><span class="lineno">  267</span>    <a class="code hl_function" href="xwidget-mswin_8c.html#ab24816d13d510294eb290b6f2ad065f6">os_set_window_min_size</a>(w, width/2, height/2, width, height);</div>
 <div class="line"><span class="lineno">  268</span>}</div>
-<div class="ttc" id="astructXputty_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">Xputty::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00224">xputty.h:224</a></div></div>
+<div class="ttc" id="astructXputty_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">Xputty::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00230">xputty.h:230</a></div></div>
 <div class="ttc" id="axchildlist_8h_html_a4515e80317c76cbfa903c50ddfcfbf58"><div class="ttname"><a href="xchildlist_8h.html#a4515e80317c76cbfa903c50ddfcfbf58">childlist_add_child</a></div><div class="ttdeci">void childlist_add_child(Childlist_t *childlist, Widget_t *child)</div><div class="ttdoc">childlist_add_child - internal use to add a child to the Childlist_t   You usually didn't need to cal...</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8c_source.html#l00042">xchildlist.c:42</a></div></div>
 <div class="ttc" id="axwidget-mswin_8c_html_a72cc05e3935370a6baf8c76645b5a43b"><div class="ttname"><a href="xwidget-mswin_8c.html#a72cc05e3935370a6baf8c76645b5a43b">WndProc</a></div><div class="ttdeci">LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00538">xwidget-mswin.c:538</a></div></div>
 <div class="ttc" id="axwidget-mswin_8c_html_ab24816d13d510294eb290b6f2ad065f6"><div class="ttname"><a href="xwidget-mswin_8c.html#ab24816d13d510294eb290b6f2ad065f6">os_set_window_min_size</a></div><div class="ttdeci">void os_set_window_min_size(Widget_t *w, int min_width, int min_height, int base_width, int base_height)</div><div class="ttdoc">os_set_window_min_size - Set the min and base size of a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00166">xwidget-mswin.c:166</a></div></div>
@@ -729,7 +791,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="axwidget-mswin_8c_html_ae8f606bc671ae033c79d3899a648ed3a"><div class="ttname"><a href="xwidget-mswin_8c.html#ae8f606bc671ae033c79d3899a648ed3a">szWidgetUIClassName</a></div><div class="ttdeci">TCHAR szWidgetUIClassName[]</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00035">xwidget-mswin.c:35</a></div></div>
 <div class="ttc" id="axwidget-mswin_8c_html_af978084ff2e98b21cdc45ffde98d0f48"><div class="ttname"><a href="xwidget-mswin_8c.html#af978084ff2e98b21cdc45ffde98d0f48">SetMouseTracking</a></div><div class="ttdeci">BOOL SetMouseTracking(HWND hwnd, BOOL enable)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00981">xwidget-mswin.c:981</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xputty_8h_source.html#l00224">Xputty::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget-linux_8c_source.html#l00091">os_set_window_min_size()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00981">SetMouseTracking()</a>, <a class="el" href="xwidget_8h_source.html#l00479">Widget_t::surface</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00034">szMainUIClassName</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>, <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00499">Widget_t::xim</a>.</p>
+<p class="reference">References <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-linux_8c_source.html#l00091">os_set_window_min_size()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00981">SetMouseTracking()</a>, <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00034">szMainUIClassName</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>, <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00503">Widget_t::xim</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00163">create_window()</a>.</p>
 
@@ -791,6 +853,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_create_main_widget_and_surface - create a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> with a acairo surface this function is used mainly internal on <a class="el" href="xwidget_8h.html#a0f48f1193ae5aa9a11f0a4bf03abf41d" title="*create_widget - create a widget   A Widget_t could only be created as child of a other Widget_t   To...">create_widget()</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> to create </td></tr>
+    <tr><td class="paramname">*app</td><td>- the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> belongs to </td></tr>
+    <tr><td class="paramname">*parent</td><td>- the Parent <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> were the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> belongs to </td></tr>
+    <tr><td class="paramname">x,y</td><td>- the position related to the Parent <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </td></tr>
+    <tr><td class="paramname">*width,*height</td><td>- the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> size </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00270">270</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  271</span>                                                               {</div>
 <div class="line"><span class="lineno">  272</span>    <span class="comment">// Event callbacks already start during CreateWindow(),</span></div>
@@ -826,7 +900,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  302</span>    <a class="code hl_function" href="xwidget-mswin_8c.html#af978084ff2e98b21cdc45ffde98d0f48">SetMouseTracking</a>(w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, <span class="keyword">true</span>); <span class="comment">// for receiving WM_MOUSELEAVE</span></div>
 <div class="line"><span class="lineno">  303</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xputty_8h_source.html#l00224">Xputty::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00981">SetMouseTracking()</a>, <a class="el" href="xwidget_8h_source.html#l00479">Widget_t::surface</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>, <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00499">Widget_t::xim</a>.</p>
+<p class="reference">References <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00981">SetMouseTracking()</a>, <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>, <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00503">Widget_t::xim</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00265">create_widget()</a>.</p>
 
@@ -855,7 +929,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00122">122</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  122</span>                                    {</div>
@@ -869,7 +942,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  130</span>    }</div>
 <div class="line"><span class="lineno">  131</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00499">Widget_t::xim</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00503">Widget_t::xim</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00086">destroy_widget()</a>.</p>
 
@@ -891,12 +964,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_expose_widget - Draw the the back buffer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> surface </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00327">327</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  327</span>                                   {</div>
 <div class="line"><span class="lineno">  328</span>    RedrawWindow(w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, NULL, NULL, RDW_NOERASE | RDW_INVALIDATE | RDW_UPDATENOW);</div>
 <div class="line"><span class="lineno">  329</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00055">XEvent::window</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00059">XEvent::window</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xmultilistview__private_8c_source.html#l00139">_update_view()</a>, and <a class="el" href="xwidget_8c_source.html#l00445">expose_widget()</a>.</p>
 
@@ -928,12 +1009,21 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_free_pixmap - Free the memory used by a Pixmap only Linux, stub otherwise </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">pixmap</td><td>- the pixmap to be freed </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00416">416</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  416</span>                                                {</div>
 <div class="line"><span class="lineno">  417</span>    <span class="comment">// Pixmap stuff not implemented at all</span></div>
 <div class="line"><span class="lineno">  418</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, and <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, and <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>.</p>
 
 </div>
 </div>
@@ -951,6 +1041,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_get_home_dir - get the users home directory </p>
+<dl class="section return"><dt>Returns</dt><dd>*char - return the users home directory must be freed by the caller </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00376">376</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  376</span>                        {</div>
@@ -1004,6 +1097,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_ get_keyboard_input - Get the Keyboard input and convert it to utf8 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*key</td><td>- the XKeyEvent </td></tr>
+    <tr><td class="paramname">*buf</td><td>- the buffer to write the key in utf8 format </td></tr>
+    <tr><td class="paramname">bufsize</td><td>- the max buffer size to write to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool - retrun true when the char is written to the buffer false on error </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00404">404</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  404</span>                                                                                   {</div>
 <div class="line"><span class="lineno">  405</span>    <span class="keywordtype">char</span> ansibuf[2];</div>
@@ -1016,9 +1121,9 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  412</span>    free(utf8);</div>
 <div class="line"><span class="lineno">  413</span>    <span class="keywordflow">return</span> key-&gt;<a class="code hl_variable" href="structXEvent.html#a0b0948fc6d552c9f574f6c38ec65c1b8">vk_is_final_char</a>; <span class="comment">// for only feeding readily processed chars into input widgets</span></div>
 <div class="line"><span class="lineno">  414</span>}</div>
-<div class="ttc" id="axwidget-mswin_8c_html_a2b1abaec302c347633a47eefc5b070a0"><div class="ttname"><a href="xwidget-mswin_8c.html#a2b1abaec302c347633a47eefc5b070a0">utf8_from_locale</a></div><div class="ttdeci">char * utf8_from_locale(char *localestr)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00104">xwidget-mswin.c:104</a></div></div>
+<div class="ttc" id="axwidget-mswin_8c_html_a2b1abaec302c347633a47eefc5b070a0"><div class="ttname"><a href="xwidget-mswin_8c.html#a2b1abaec302c347633a47eefc5b070a0">utf8_from_locale</a></div><div class="ttdeci">char * utf8_from_locale(char *localestr)</div><div class="ttdoc">utf8_from_locale - convert active codepage to utf8 must be freed by the caller</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00104">xwidget-mswin.c:104</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget-mswin_8c_source.html#l00104">utf8_from_locale()</a>, <a class="el" href="xputty-mswin_8h_source.html#l00062">XEvent::vk</a>, <a class="el" href="xputty-mswin_8h_source.html#l00061">XEvent::vk_is_final_char</a>, and <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::xic</a>.</p>
+<p class="reference">References <a class="el" href="xwidget-mswin_8c_source.html#l00104">utf8_from_locale()</a>, <a class="el" href="xputty-mswin_8h_source.html#l00066">XEvent::vk</a>, <a class="el" href="xputty-mswin_8h_source.html#l00065">XEvent::vk_is_final_char</a>, and <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>.</p>
 
 </div>
 </div>
@@ -1066,9 +1171,9 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  134</span>    <span class="keywordflow">if</span> (flag &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea02baf100f71ba232ee58c436bfe78b02">IS_WIDGET</a>) <span class="keywordflow">return</span> HWND_DESKTOP; <span class="comment">// no decorated</span></div>
 <div class="line"><span class="lineno">  135</span>    <span class="keywordflow">else</span> <span class="keywordflow">return</span> (HWND)-1; <span class="comment">// decorated</span></div>
 <div class="line"><span class="lineno">  136</span>}</div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea02baf100f71ba232ee58c436bfe78b02"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea02baf100f71ba232ee58c436bfe78b02">IS_WIDGET</a></div><div class="ttdeci">@ IS_WIDGET</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00384">xwidget.h:384</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea02baf100f71ba232ee58c436bfe78b02"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea02baf100f71ba232ee58c436bfe78b02">IS_WIDGET</a></div><div class="ttdeci">@ IS_WIDGET</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00388">xwidget.h:388</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00384">IS_WIDGET</a>.</p>
+<p class="reference">References <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00388">IS_WIDGET</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xcombobox__private_8c_source.html#l00415">_configure_combobox_menu()</a>, <a class="el" href="xmenu__private_8c_source.html#l00478">_configure_menu()</a>, <a class="el" href="xvaluedisplay__private_8c_source.html#l00182">_popup_spinbox()</a>, <a class="el" href="xvaluedisplay_8c_source.html#l00026">add_popup_spinbox()</a>, <a class="el" href="xcombobox_8c_source.html#l00123">create_combobox_menu()</a>, <a class="el" href="xmenu_8c_source.html#l00256">create_menu()</a>, <a class="el" href="xtooltip_8c_source.html#l00047">create_tooltip()</a>, <a class="el" href="xmidi__keyboard_8c_source.html#l00800">mk_open_midi_keyboard()</a>, <a class="el" href="xdirectory-dialog_8c_source.html#l00420">open_directory_dialog()</a>, <a class="el" href="xfile-dialog_8c_source.html#l00599">open_file_dialog()</a>, <a class="el" href="xmessage-dialog_8c_source.html#l00386">open_message_dialog()</a>, <a class="el" href="xkeyboard_8c_source.html#l00915">open_midi_keyboard()</a>, and <a class="el" href="xsavefile-dialoge_8c_source.html#l00544">save_file_dialog()</a>.</p>
 
@@ -1090,12 +1195,21 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_get_screen_height - Get the height of the used Display </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int - the height of the Display </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00368">368</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  368</span>                                      {</div>
 <div class="line"><span class="lineno">  369</span>    <span class="keywordflow">return</span> GetSystemMetrics(SM_CYSCREEN);</div>
 <div class="line"><span class="lineno">  370</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, and <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, and <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xcombobox__private_8c_source.html#l00415">_configure_combobox_menu()</a>, and <a class="el" href="xmenu__private_8c_source.html#l00478">_configure_menu()</a>.</p>
 
@@ -1117,12 +1231,21 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_get_screen_width - Get the width of the used Display </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int - the width of the Display </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00372">372</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  372</span>                                     {</div>
 <div class="line"><span class="lineno">  373</span>    <span class="keywordflow">return</span> GetSystemMetrics(SM_CXSCREEN);</div>
 <div class="line"><span class="lineno">  374</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, and <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, and <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>.</p>
 
 </div>
 </div>
@@ -1166,7 +1289,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00182">182</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  182</span>                                                                            {</div>
@@ -1212,7 +1334,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00146">146</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  146</span>                                                             {</div>
@@ -1233,14 +1354,14 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  161</span>    }</div>
 <div class="line"><span class="lineno">  162</span>    metrics-&gt;<a class="code hl_variable" href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">visible</a> = IsWindowVisible(w_-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>);</div>
 <div class="line"><span class="lineno">  163</span>}</div>
-<div class="ttc" id="astructMetrics__t_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="structMetrics__t.html#a0a2f84ed7838f07779ae24c5a9086d33">Metrics_t::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00066">xwidget-platform.h:66</a></div></div>
-<div class="ttc" id="astructMetrics__t_html_a2474a5474cbff19523a51eb1de01cda4"><div class="ttname"><a href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">Metrics_t::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00060">xwidget-platform.h:60</a></div></div>
-<div class="ttc" id="astructMetrics__t_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="structMetrics__t.html#a6150e0515f7202e2fb518f7206ed97dc">Metrics_t::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00064">xwidget-platform.h:64</a></div></div>
-<div class="ttc" id="astructMetrics__t_html_aa54a57ae048476d840caf6d4d2c47aa3"><div class="ttname"><a href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">Metrics_t::visible</a></div><div class="ttdeci">bool visible</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00068">xwidget-platform.h:68</a></div></div>
-<div class="ttc" id="astructMetrics__t_html_ad12fc34ce789bce6c8a05d8a17138534"><div class="ttname"><a href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">Metrics_t::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00062">xwidget-platform.h:62</a></div></div>
-<div class="ttc" id="astructWidget__t_html_a5f450b216725a37cbc0acd54340144d9"><div class="ttname"><a href="structWidget__t.html#a5f450b216725a37cbc0acd54340144d9">Widget_t::parent</a></div><div class="ttdeci">void * parent</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00467">xwidget.h:467</a></div></div>
+<div class="ttc" id="astructMetrics__t_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="structMetrics__t.html#a0a2f84ed7838f07779ae24c5a9086d33">Metrics_t::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00067">xwidget-platform.h:67</a></div></div>
+<div class="ttc" id="astructMetrics__t_html_a2474a5474cbff19523a51eb1de01cda4"><div class="ttname"><a href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">Metrics_t::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00061">xwidget-platform.h:61</a></div></div>
+<div class="ttc" id="astructMetrics__t_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="structMetrics__t.html#a6150e0515f7202e2fb518f7206ed97dc">Metrics_t::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00065">xwidget-platform.h:65</a></div></div>
+<div class="ttc" id="astructMetrics__t_html_aa54a57ae048476d840caf6d4d2c47aa3"><div class="ttname"><a href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">Metrics_t::visible</a></div><div class="ttdeci">bool visible</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00069">xwidget-platform.h:69</a></div></div>
+<div class="ttc" id="astructMetrics__t_html_ad12fc34ce789bce6c8a05d8a17138534"><div class="ttname"><a href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">Metrics_t::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00063">xwidget-platform.h:63</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a5f450b216725a37cbc0acd54340144d9"><div class="ttname"><a href="structWidget__t.html#a5f450b216725a37cbc0acd54340144d9">Widget_t::parent</a></div><div class="ttdeci">void * parent</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00471">xwidget.h:471</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget-platform_8h_source.html#l00062">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00467">Widget_t::parent</a>, <a class="el" href="xwidget-platform_8h_source.html#l00068">Metrics_t::visible</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, <a class="el" href="xwidget-platform_8h_source.html#l00060">Metrics_t::width</a>, <a class="el" href="xwidget-platform_8h_source.html#l00064">Metrics_t::x</a>, and <a class="el" href="xwidget-platform_8h_source.html#l00066">Metrics_t::y</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00471">Widget_t::parent</a>, <a class="el" href="xwidget-platform_8h_source.html#l00069">Metrics_t::visible</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget-platform_8h_source.html#l00061">Metrics_t::width</a>, <a class="el" href="xwidget-platform_8h_source.html#l00065">Metrics_t::x</a>, and <a class="el" href="xwidget-platform_8h_source.html#l00067">Metrics_t::y</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xvaluedisplay__private_8c_source.html#l00157">_buttons_released()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00278">_combobox_entry_released()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00255">_combobox_key_pressed()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00240">_combobox_motion()</a>, <a class="el" href="xlistbox__private_8c_source.html#l00090">_configure_listbox()</a>, <a class="el" href="xlistview__private_8c_source.html#l00306">_configure_listview()</a>, <a class="el" href="xmenu__private_8c_source.html#l00478">_configure_menu()</a>, <a class="el" href="xmenu__private_8c_source.html#l00391">_draw_accel_check_item()</a>, <a class="el" href="xmenu__private_8c_source.html#l00341">_draw_accel_item()</a>, <a class="el" href="xbutton__private_8c_source.html#l00220">_draw_base_button()</a>, <a class="el" href="xbutton__private_8c_source.html#l00191">_draw_button()</a>, <a class="el" href="xvaluedisplay__private_8c_source.html#l00133">_draw_buttons()</a>, <a class="el" href="xbutton__private_8c_source.html#l00374">_draw_check_box()</a>, <a class="el" href="xbutton__private_8c_source.html#l00341">_draw_check_button()</a>, <a class="el" href="xmenu__private_8c_source.html#l00415">_draw_check_item()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00100">_draw_combobox()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00026">_draw_combobox_button()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00178">_draw_combobox_entrys()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00337">_draw_combobox_menu_slider()</a>, <a class="el" href="xframe__private_8c_source.html#l00039">_draw_frame()</a>, <a class="el" href="xmeter__private_8c_source.html#l00280">_draw_h_meter()</a>, <a class="el" href="xmeter__private_8c_source.html#l00069">_draw_hmeter_scale()</a>, <a class="el" href="xslider__private_8c_source.html#l00143">_draw_hslider()</a>, <a class="el" href="xdrawing__area__private_8c_source.html#l00039">_draw_image()</a>, <a class="el" href="xmenu__private_8c_source.html#l00266">_draw_item()</a>, <a class="el" href="xknob__private_8c_source.html#l00066">_draw_knob()</a>, <a class="el" href="xlabel__private_8c_source.html#l00025">_draw_label()</a>, <a class="el" href="xlistview__private_8c_source.html#l00034">_draw_list()</a>, <a class="el" href="xlistbox__private_8c_source.html#l00033">_draw_listbox_item()</a>, <a class="el" href="xlistbox__private_8c_source.html#l00100">_draw_listbox_viewslider()</a>, <a class="el" href="xlistview__private_8c_source.html#l00327">_draw_listviewslider()</a>, <a class="el" href="xmenu__private_8c_source.html#l00044">_draw_menu_label()</a>, <a class="el" href="xmenu__private_8c_source.html#l00132">_draw_menu_slider()</a>, <a class="el" href="xmultilistview__private_8c_source.html#l00051">_draw_multi_list()</a>, <a class="el" href="xmultilistview__private_8c_source.html#l00370">_draw_multi_listviewslider()</a>, <a class="el" href="xbutton__private_8c_source.html#l00274">_draw_on_off_button()</a>, <a class="el" href="xvaluedisplay__private_8c_source.html#l00093">_draw_spinbox()</a>, <a class="el" href="xmenu__private_8c_source.html#l00159">_draw_submenu()</a>, <a class="el" href="xbutton__private_8c_source.html#l00114">_draw_switch_image_button()</a>, <a class="el" href="xtabbox__private_8c_source.html#l00039">_draw_tabbox()</a>, <a class="el" href="xbutton__private_8c_source.html#l00316">_draw_ti_button()</a>, <a class="el" href="xtooltip__private_8c_source.html#l00032">_draw_tooltip()</a>, <a class="el" href="xtuner__private_8c_source.html#l00085">_draw_tuner()</a>, <a class="el" href="xmeter__private_8c_source.html#l00254">_draw_v_meter()</a>, <a class="el" href="xmenu__private_8c_source.html#l00299">_draw_value_item()</a>, <a class="el" href="xvaluedisplay__private_8c_source.html#l00025">_draw_valuedisplay()</a>, <a class="el" href="xmeter__private_8c_source.html#l00025">_draw_vmeter_scale()</a>, <a class="el" href="xslider__private_8c_source.html#l00072">_draw_vslider()</a>, <a class="el" href="xwaveview__private_8c_source.html#l00039">_draw_waveview()</a>, <a class="el" href="xmenu__private_8c_source.html#l00211">_enter_submenu()</a>, <a class="el" href="xwidget__private_8c_source.html#l00272">_has_pointer()</a>, <a class="el" href="xlistview__private_8c_source.html#l00272">_list_entry_double_clicked()</a>, <a class="el" href="xlistview__private_8c_source.html#l00244">_list_entry_released()</a>, <a class="el" href="xlistview__private_8c_source.html#l00219">_list_key_pressed()</a>, <a class="el" href="xlistview__private_8c_source.html#l00202">_list_motion()</a>, <a class="el" href="xmultilistview__private_8c_source.html#l00321">_multi_list_entry_double_clicked()</a>, <a class="el" href="xmultilistview__private_8c_source.html#l00290">_multi_list_entry_released()</a>, <a class="el" href="xmultilistview__private_8c_source.html#l00265">_multi_list_key_pressed()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00314">_reconfigure_combobox_viewport()</a>, <a class="el" href="xlistbox__private_8c_source.html#l00077">_reconfigure_listbox_viewport()</a>, <a class="el" href="xlistview__private_8c_source.html#l00293">_reconfigure_listview_viewport()</a>, <a class="el" href="xmultilistview__private_8c_source.html#l00345">_reconfigure_multi_listview_viewport()</a>, <a class="el" href="xlistbox__private_8c_source.html#l00123">_set_listbox_viewpoint()</a>, <a class="el" href="xmenu__private_8c_source.html#l00439">_set_viewpoint()</a>, <a class="el" href="xtabbox__private_8c_source.html#l00098">_tab_button_released()</a>, <a class="el" href="xlistview__private_8c_source.html#l00112">_update_list_view()</a>, <a class="el" href="xmultilistview__private_8c_source.html#l00139">_update_view()</a>, <a class="el" href="xmenu_8c_source.html#l00226">cmenu_add_submenu()</a>, <a class="el" href="xwidget_8c_source.html#l00128">configure_event()</a>, <a class="el" href="xmessage-dialog_8c_source.html#l00040">draw_hyperlink()</a>, <a class="el" href="xlistview_8c_source.html#l00109">listview_remove_list()</a>, <a class="el" href="xmenu_8c_source.html#l00283">menu_add_item()</a>, <a class="el" href="xmenu_8c_source.html#l00360">menu_add_numeric_items()</a>, <a class="el" href="xmenu_8c_source.html#l00194">menu_add_submenu()</a>, <a class="el" href="xmenu_8c_source.html#l00169">menu_add_value_entry()</a>, <a class="el" href="xmenu_8c_source.html#l00114">menubar_add_menu()</a>, <a class="el" href="xmidi__keyboard_8c_source.html#l00231">mk_draw_knob()</a>, <a class="el" href="xmultilistview_8c_source.html#l00125">multi_listview_remove_list()</a>, <a class="el" href="xcolor_8c_source.html#l00308">set_pattern()</a>, <a class="el" href="xtabbox_8c_source.html#l00026">tabbox_add_tab()</a>, <a class="el" href="xwidget_8c_source.html#l00449">transparent_draw()</a>, and <a class="el" href="xwidget_8c_source.html#l00479">widget_draw()</a>.</p>
 
@@ -1262,13 +1383,22 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_grab_pointer - grab the mouse pointer. Works only on linux </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget which will grab the mouse </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int - Return 0 on error </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00351">351</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  351</span>                                 {</div>
 <div class="line"><span class="lineno">  352</span>    <span class="comment">// STUB</span></div>
 <div class="line"><span class="lineno">  353</span>    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><span class="lineno">  354</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, and <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, and <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xvaluedisplay__private_8c_source.html#l00182">_popup_spinbox()</a>, <a class="el" href="xcombobox_8c_source.html#l00082">pop_combobox_menu_show()</a>, and <a class="el" href="xmenu_8c_source.html#l00027">pop_menu_show()</a>.</p>
 
@@ -1290,12 +1420,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_init_dnd - register a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> for handling drag and drop events only implemented on linux </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*main</td><td>- pointer to the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00475">475</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  475</span>                               {</div>
 <div class="line"><span class="lineno">  476</span>    <span class="comment">// DND not implemented for win32</span></div>
 <div class="line"><span class="lineno">  477</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xputty_8h_source.html#l00255">Xputty::dnd_source_window</a>, <a class="el" href="xputty_8h_source.html#l00270">Xputty::dnd_type</a>, <a class="el" href="xputty_8h_source.html#l00267">Xputty::dnd_type_text</a>, <a class="el" href="xputty_8h_source.html#l00268">Xputty::dnd_type_uri</a>, <a class="el" href="xputty_8h_source.html#l00269">Xputty::dnd_type_utf8</a>, <a class="el" href="xputty_8h_source.html#l00248">Xputty::dnd_version</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xputty_8h_source.html#l00272">Xputty::selection</a>, <a class="el" href="xputty_8h_source.html#l00273">Xputty::targets_atom</a>, <a class="el" href="xputty_8h_source.html#l00274">Xputty::text_atom</a>, <a class="el" href="xputty_8h_source.html#l00275">Xputty::UTF8</a>, <a class="el" href="xputty_8h_source.html#l00264">Xputty::XdndActionCopy</a>, <a class="el" href="xputty_8h_source.html#l00256">Xputty::XdndAware</a>, <a class="el" href="xputty_8h_source.html#l00263">Xputty::XdndDrop</a>, <a class="el" href="xputty_8h_source.html#l00260">Xputty::XdndEnter</a>, <a class="el" href="xputty_8h_source.html#l00265">Xputty::XdndFinished</a>, <a class="el" href="xputty_8h_source.html#l00262">Xputty::XdndLeave</a>, <a class="el" href="xputty_8h_source.html#l00261">Xputty::XdndPosition</a>, <a class="el" href="xputty_8h_source.html#l00258">Xputty::XdndSelection</a>, <a class="el" href="xputty_8h_source.html#l00259">Xputty::XdndStatus</a>, and <a class="el" href="xputty_8h_source.html#l00257">Xputty::XdndTypeList</a>.</p>
+<p class="reference">References <a class="el" href="xputty_8h_source.html#l00261">Xputty::dnd_source_window</a>, <a class="el" href="xputty_8h_source.html#l00276">Xputty::dnd_type</a>, <a class="el" href="xputty_8h_source.html#l00273">Xputty::dnd_type_text</a>, <a class="el" href="xputty_8h_source.html#l00274">Xputty::dnd_type_uri</a>, <a class="el" href="xputty_8h_source.html#l00275">Xputty::dnd_type_utf8</a>, <a class="el" href="xputty_8h_source.html#l00254">Xputty::dnd_version</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xputty_8h_source.html#l00278">Xputty::selection</a>, <a class="el" href="xputty_8h_source.html#l00279">Xputty::targets_atom</a>, <a class="el" href="xputty_8h_source.html#l00280">Xputty::text_atom</a>, <a class="el" href="xputty_8h_source.html#l00281">Xputty::UTF8</a>, <a class="el" href="xputty_8h_source.html#l00270">Xputty::XdndActionCopy</a>, <a class="el" href="xputty_8h_source.html#l00262">Xputty::XdndAware</a>, <a class="el" href="xputty_8h_source.html#l00269">Xputty::XdndDrop</a>, <a class="el" href="xputty_8h_source.html#l00266">Xputty::XdndEnter</a>, <a class="el" href="xputty_8h_source.html#l00271">Xputty::XdndFinished</a>, <a class="el" href="xputty_8h_source.html#l00268">Xputty::XdndLeave</a>, <a class="el" href="xputty_8h_source.html#l00267">Xputty::XdndPosition</a>, <a class="el" href="xputty_8h_source.html#l00264">Xputty::XdndSelection</a>, <a class="el" href="xputty_8h_source.html#l00265">Xputty::XdndStatus</a>, and <a class="el" href="xputty_8h_source.html#l00263">Xputty::XdndTypeList</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xputty_8c_source.html#l00024">main_init()</a>.</p>
 
@@ -1316,6 +1454,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_is directory - check if a given path is a directory or a file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*filename</td><td>- the Path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool - return true if path is directory, otrherwise false </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00384">384</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  384</span>                                           {</div>
@@ -1346,6 +1493,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_main_run - start the event loop </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*main</td><td>- pointer to the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00458">458</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  458</span>                               {</div>
 <div class="line"><span class="lineno">  459</span>    MSG msg;</div>
@@ -1359,9 +1514,9 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  467</span>        }</div>
 <div class="line"><span class="lineno">  468</span>    }</div>
 <div class="line"><span class="lineno">  469</span>}</div>
-<div class="ttc" id="astructXputty_html_a3e6f76368abfbc8709f4c1346dfa6a20"><div class="ttname"><a href="structXputty.html#a3e6f76368abfbc8709f4c1346dfa6a20">Xputty::run</a></div><div class="ttdeci">bool run</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00250">xputty.h:250</a></div></div>
+<div class="ttc" id="astructXputty_html_a3e6f76368abfbc8709f4c1346dfa6a20"><div class="ttname"><a href="structXputty.html#a3e6f76368abfbc8709f4c1346dfa6a20">Xputty::run</a></div><div class="ttdeci">bool run</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00256">xputty.h:256</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00096">Func_t::button_press_callback</a>, <a class="el" href="xwidget_8h_source.html#l00097">Func_t::button_release_callback</a>, <a class="el" href="xputty_8h_source.html#l00224">Xputty::childlist</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00079">childlist_find_widget()</a>, <a class="el" href="xchildlist_8c_source.html#l00089">childlist_has_child()</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xwidget_8c_source.html#l00086">destroy_widget()</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, <a class="el" href="xwidget_8h_source.html#l00475">Widget_t::event_callback</a>, <a class="el" href="xwidget_8h_source.html#l00457">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00477">Widget_t::func</a>, <a class="el" href="xwidget_8h_source.html#l00408">HIDE_ON_DELETE</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::hold_grab</a>, <a class="el" href="xwidget_8h_source.html#l00388">IS_POPUP</a>, <a class="el" href="xwidget_8h_source.html#l00100">Func_t::key_press_callback</a>, <a class="el" href="xwidget_8h_source.html#l00101">Func_t::key_release_callback</a>, <a class="el" href="xputty_8h_source.html#l00234">Xputty::key_snooper</a>, <a class="el" href="xputty_8h_source.html#l00250">Xputty::run</a>, <a class="el" href="xputty_8h_source.html#l00236">Xputty::submenu</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, <a class="el" href="xwidget_8c_source.html#l00368">widget_hide()</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00055">XEvent::window</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00100">Func_t::button_press_callback</a>, <a class="el" href="xwidget_8h_source.html#l00101">Func_t::button_release_callback</a>, <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xwidget_8h_source.html#l00499">Widget_t::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00079">childlist_find_widget()</a>, <a class="el" href="xchildlist_8c_source.html#l00089">childlist_has_child()</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xwidget_8c_source.html#l00086">destroy_widget()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, <a class="el" href="xwidget_8h_source.html#l00479">Widget_t::event_callback</a>, <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00481">Widget_t::func</a>, <a class="el" href="xwidget_8h_source.html#l00412">HIDE_ON_DELETE</a>, <a class="el" href="xputty_8h_source.html#l00238">Xputty::hold_grab</a>, <a class="el" href="xwidget_8h_source.html#l00392">IS_POPUP</a>, <a class="el" href="xwidget_8h_source.html#l00104">Func_t::key_press_callback</a>, <a class="el" href="xwidget_8h_source.html#l00105">Func_t::key_release_callback</a>, <a class="el" href="xputty_8h_source.html#l00240">Xputty::key_snooper</a>, <a class="el" href="xputty_8h_source.html#l00256">Xputty::run</a>, <a class="el" href="xputty_8h_source.html#l00242">Xputty::submenu</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget_8c_source.html#l00368">widget_hide()</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00059">XEvent::window</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xputty_8c_source.html#l00049">main_run()</a>.</p>
 
@@ -1414,7 +1569,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00172">172</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  172</span>                                                             {</div>
@@ -1422,7 +1576,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  174</span>      x, y, 0, 0, SWP_NOSIZE|SWP_NOZORDER); <span class="comment">//X, Y, width, height, uFlags</span></div>
 <div class="line"><span class="lineno">  175</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xcombobox__private_8c_source.html#l00415">_configure_combobox_menu()</a>, <a class="el" href="xmenu__private_8c_source.html#l00478">_configure_menu()</a>, <a class="el" href="xvaluedisplay__private_8c_source.html#l00182">_popup_spinbox()</a>, <a class="el" href="xwidget__private_8c_source.html#l00331">_resize_childs()</a>, <a class="el" href="xlistbox__private_8c_source.html#l00123">_set_listbox_viewpoint()</a>, <a class="el" href="xmenu__private_8c_source.html#l00439">_set_viewpoint()</a>, and <a class="el" href="xmenu_8c_source.html#l00303">menu_remove_item()</a>.</p>
 
@@ -1458,7 +1612,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  114</span>    <span class="comment">// nothing to do on MSWin</span></div>
 <div class="line"><span class="lineno">  115</span>    <span class="keywordflow">return</span> (<a class="code hl_typedef" href="xputty-mswin_8h.html#aac2cd2aa5cbc66f5bff9270130f515fd">Display</a> *)1;</div>
 <div class="line"><span class="lineno">  116</span>}</div>
-<div class="ttc" id="axputty-mswin_8h_html_aac2cd2aa5cbc66f5bff9270130f515fd"><div class="ttname"><a href="xputty-mswin_8h.html#aac2cd2aa5cbc66f5bff9270130f515fd">Display</a></div><div class="ttdeci">XID Display</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00047">xputty-mswin.h:47</a></div></div>
+<div class="ttc" id="axputty-mswin_8h_html_aac2cd2aa5cbc66f5bff9270130f515fd"><div class="ttname"><a href="xputty-mswin_8h.html#aac2cd2aa5cbc66f5bff9270130f515fd">Display</a></div><div class="ttdeci">XID Display</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00051">xputty-mswin.h:51</a></div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="xputty_8c_source.html#l00024">main_init()</a>.</p>
 
@@ -1480,6 +1634,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_quit - quit the main loop and free all used memory </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget request the quit call </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00420">420</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  420</span>                          {</div>
 <div class="line"><span class="lineno">  421</span>    <span class="keywordflow">if</span> (w) {</div>
@@ -1499,12 +1661,12 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  435</span>        <a class="code hl_function" href="xwidget-mswin_8c.html#a509493f4e8802f7d99ee648feaeb37fe">debug_lasterror</a>(<span class="stringliteral">&quot;UnregisterWidgetClass&quot;</span> ,<a class="code hl_variable" href="xwidget-mswin_8c.html#ae8f606bc671ae033c79d3899a648ed3a">szWidgetUIClassName</a>);</div>
 <div class="line"><span class="lineno">  436</span> </div>
 <div class="line"><span class="lineno">  437</span>}</div>
-<div class="ttc" id="astructWidget__t_html_af3ebd10c8f320d7652a1d44e01e52856"><div class="ttname"><a href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">Widget_t::app</a></div><div class="ttdeci">Xputty * app</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00461">xwidget.h:461</a></div></div>
+<div class="ttc" id="astructWidget__t_html_af3ebd10c8f320d7652a1d44e01e52856"><div class="ttname"><a href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">Widget_t::app</a></div><div class="ttdeci">Xputty * app</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00465">xwidget.h:465</a></div></div>
 <div class="ttc" id="axwidget-mswin_8c_html_a509493f4e8802f7d99ee648feaeb37fe"><div class="ttname"><a href="xwidget-mswin_8c.html#a509493f4e8802f7d99ee648feaeb37fe">debug_lasterror</a></div><div class="ttdeci">void debug_lasterror(const char *prefix, const char *prefix2)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00049">xwidget-mswin.c:49</a></div></div>
-<div class="ttc" id="axwidget-mswin_8c_html_a7a91c66336b9ba7b46bd8b6c57f29413"><div class="ttname"><a href="xwidget-mswin_8c.html#a7a91c66336b9ba7b46bd8b6c57f29413">os_register_wm_delete_window</a></div><div class="ttdeci">Atom os_register_wm_delete_window(Widget_t *wid)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00446">xwidget-mswin.c:446</a></div></div>
+<div class="ttc" id="axwidget-mswin_8c_html_a7a91c66336b9ba7b46bd8b6c57f29413"><div class="ttname"><a href="xwidget-mswin_8c.html#a7a91c66336b9ba7b46bd8b6c57f29413">os_register_wm_delete_window</a></div><div class="ttdeci">Atom os_register_wm_delete_window(Widget_t *wid)</div><div class="ttdoc">os_register_wm_delete_window - Get the needed Atom to send a widget delete message</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00446">xwidget-mswin.c:446</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a34167b5900d42457a1d8298a7d2e373a"><div class="ttname"><a href="xwidget_8h.html#a34167b5900d42457a1d8298a7d2e373a">get_toplevel_widget</a></div><div class="ttdeci">Widget_t * get_toplevel_widget(Xputty *main)</div><div class="ttdoc">*get_toplevel_widget - get pointer to the top level Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00441">xwidget.c:441</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00049">debug_lasterror()</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget_8c_source.html#l00441">get_toplevel_widget()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00834">os_register_wm_delete_window()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00034">szMainUIClassName</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00049">debug_lasterror()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget_8c_source.html#l00441">get_toplevel_widget()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00834">os_register_wm_delete_window()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00034">szMainUIClassName</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00526">quit()</a>, and <a class="el" href="xwidget_8c_source.html#l00530">quit_widget()</a>.</p>
 
@@ -1526,6 +1688,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_quit_widget - remove a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> from the main loop and free it's used memory </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget request the quit call </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00439">439</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  439</span>                                 {</div>
 <div class="line"><span class="lineno">  440</span>    <span class="comment">// who invokes this?</span></div>
@@ -1533,9 +1703,9 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  442</span>    DWORD msg = <a class="code hl_function" href="xwidget-mswin_8c.html#a705d1a1f726bddbb47c588cbd1773456">os_register_widget_destroy</a>(w);</div>
 <div class="line"><span class="lineno">  443</span>    SendMessage(w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, msg, wParam, 0); <span class="comment">// WIDGET_DESTROY</span></div>
 <div class="line"><span class="lineno">  444</span>}</div>
-<div class="ttc" id="axwidget-mswin_8c_html_a705d1a1f726bddbb47c588cbd1773456"><div class="ttname"><a href="xwidget-mswin_8c.html#a705d1a1f726bddbb47c588cbd1773456">os_register_widget_destroy</a></div><div class="ttdeci">Atom os_register_widget_destroy(Widget_t *wid)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00452">xwidget-mswin.c:452</a></div></div>
+<div class="ttc" id="axwidget-mswin_8c_html_a705d1a1f726bddbb47c588cbd1773456"><div class="ttname"><a href="xwidget-mswin_8c.html#a705d1a1f726bddbb47c588cbd1773456">os_register_widget_destroy</a></div><div class="ttdeci">Atom os_register_widget_destroy(Widget_t *wid)</div><div class="ttdoc">os_register_widget_destroy - Get the needed Atom to send a widget destroy message</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00452">xwidget-mswin.c:452</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget-linux_8c_source.html#l00841">os_register_widget_destroy()</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-linux_8c_source.html#l00841">os_register_widget_destroy()</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 </div>
 </div>
@@ -1555,15 +1725,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_register_widget_destroy - Get the needed Atom to send a widget destroy message </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*wid</td><td>- Pointer to the widget request the quit call </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ATOM - ATOM on linux, DWORD on windows </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00452">452</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  452</span>                                                {</div>
 <div class="line"><span class="lineno">  453</span>    <a class="code hl_typedef" href="xputty-mswin_8h.html#aaf30b525a88bc35425720d2b4abca810">Atom</a> msg = WM_USER + 02 ;</div>
 <div class="line"><span class="lineno">  454</span>    <span class="comment">//Atom msg = RegisterWindowMessage(&quot;XPUTTY_WIDGET_DESTROY&quot;);</span></div>
 <div class="line"><span class="lineno">  455</span>    <span class="keywordflow">return</span> msg;</div>
 <div class="line"><span class="lineno">  456</span>}</div>
-<div class="ttc" id="axputty-mswin_8h_html_aaf30b525a88bc35425720d2b4abca810"><div class="ttname"><a href="xputty-mswin_8h.html#aaf30b525a88bc35425720d2b4abca810">Atom</a></div><div class="ttdeci">unsigned long int Atom</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00046">xputty-mswin.h:46</a></div></div>
+<div class="ttc" id="axputty-mswin_8h_html_aaf30b525a88bc35425720d2b4abca810"><div class="ttname"><a href="xputty-mswin_8h.html#aaf30b525a88bc35425720d2b4abca810">Atom</a></div><div class="ttdeci">unsigned long int Atom</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00050">xputty-mswin.h:50</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, and <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, and <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00439">os_quit_widget()</a>.</p>
 
@@ -1585,6 +1764,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_register_wm_delete_window - Get the needed Atom to send a widget delete message </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*wid</td><td>- Pointer to the widget request the quit call </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ATOM - ATOM on linux, DWORD on windows </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00446">446</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  446</span>                                                  {</div>
 <div class="line"><span class="lineno">  447</span>    <a class="code hl_typedef" href="xputty-mswin_8h.html#aaf30b525a88bc35425720d2b4abca810">Atom</a> msg = WM_USER + 01;</div>
@@ -1592,7 +1780,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  449</span>    <span class="keywordflow">return</span> msg;</div>
 <div class="line"><span class="lineno">  450</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00420">os_quit()</a>.</p>
 
@@ -1645,7 +1833,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00177">177</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  177</span>                                                               {</div>
@@ -1653,7 +1840,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  179</span>      0, 0, x, y, SWP_NOMOVE|SWP_NOZORDER); <span class="comment">//X, Y, width, height, uFlags</span></div>
 <div class="line"><span class="lineno">  180</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xcombobox__private_8c_source.html#l00415">_configure_combobox_menu()</a>, <a class="el" href="xlistbox__private_8c_source.html#l00090">_configure_listbox()</a>, <a class="el" href="xlistview__private_8c_source.html#l00306">_configure_listview()</a>, <a class="el" href="xmenu__private_8c_source.html#l00478">_configure_menu()</a>, <a class="el" href="xtooltip__private_8c_source.html#l00025">_get_width()</a>, and <a class="el" href="xwidget__private_8c_source.html#l00331">_resize_childs()</a>.</p>
 
@@ -1675,12 +1862,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_run_embedded - the event handling when run embedded on windows all messges goes into WndProc, so stub here </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*main</td><td>- pointer to the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00471">471</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  471</span>                                   {</div>
 <div class="line"><span class="lineno">  472</span>    <span class="comment">// messageloop already polled by plugin host</span></div>
 <div class="line"><span class="lineno">  473</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00096">Func_t::button_press_callback</a>, <a class="el" href="xwidget_8h_source.html#l00097">Func_t::button_release_callback</a>, <a class="el" href="xputty_8h_source.html#l00224">Xputty::childlist</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00079">childlist_find_widget()</a>, <a class="el" href="xchildlist_8c_source.html#l00089">childlist_has_child()</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xwidget_8c_source.html#l00086">destroy_widget()</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, <a class="el" href="xwidget_8h_source.html#l00475">Widget_t::event_callback</a>, <a class="el" href="xwidget_8h_source.html#l00457">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00477">Widget_t::func</a>, <a class="el" href="xwidget_8h_source.html#l00408">HIDE_ON_DELETE</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::hold_grab</a>, <a class="el" href="xwidget_8h_source.html#l00388">IS_POPUP</a>, <a class="el" href="xwidget_8h_source.html#l00100">Func_t::key_press_callback</a>, <a class="el" href="xwidget_8h_source.html#l00101">Func_t::key_release_callback</a>, <a class="el" href="xputty_8h_source.html#l00234">Xputty::key_snooper</a>, <a class="el" href="xputty_8h_source.html#l00236">Xputty::submenu</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, <a class="el" href="xwidget_8c_source.html#l00368">widget_hide()</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00055">XEvent::window</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00100">Func_t::button_press_callback</a>, <a class="el" href="xwidget_8h_source.html#l00101">Func_t::button_release_callback</a>, <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xwidget_8h_source.html#l00499">Widget_t::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00079">childlist_find_widget()</a>, <a class="el" href="xchildlist_8c_source.html#l00089">childlist_has_child()</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xwidget_8c_source.html#l00086">destroy_widget()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, <a class="el" href="xwidget_8h_source.html#l00479">Widget_t::event_callback</a>, <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00481">Widget_t::func</a>, <a class="el" href="xwidget_8h_source.html#l00412">HIDE_ON_DELETE</a>, <a class="el" href="xputty_8h_source.html#l00238">Xputty::hold_grab</a>, <a class="el" href="xwidget_8h_source.html#l00392">IS_POPUP</a>, <a class="el" href="xwidget_8h_source.html#l00104">Func_t::key_press_callback</a>, <a class="el" href="xwidget_8h_source.html#l00105">Func_t::key_release_callback</a>, <a class="el" href="xputty_8h_source.html#l00240">Xputty::key_snooper</a>, <a class="el" href="xputty_8h_source.html#l00242">Xputty::submenu</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget_8c_source.html#l00368">widget_hide()</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00059">XEvent::window</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xputty_8c_source.html#l00053">run_embedded()</a>.</p>
 
@@ -1702,12 +1897,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_send_button_press_event - Send a button press event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> see XButtonEvent </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00339">339</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  339</span>                                             {</div>
 <div class="line"><span class="lineno">  340</span>    <span class="comment">// STUB</span></div>
 <div class="line"><span class="lineno">  341</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00514">send_button_press_event()</a>.</p>
 
@@ -1729,12 +1932,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_send_button_release_event - Send a button release event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> see XButtonEvent </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00343">343</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  343</span>                                               {</div>
 <div class="line"><span class="lineno">  344</span>    <span class="comment">// STUB</span></div>
 <div class="line"><span class="lineno">  345</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00518">send_button_release_event()</a>.</p>
 
@@ -1784,12 +1995,22 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_send_configure_event - Send a configure event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">x,y</td><td>- the position to set </td></tr>
+    <tr><td class="paramname">width,height</td><td>- the size to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00335">335</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  335</span>                                                                              {</div>
 <div class="line"><span class="lineno">  336</span>    <span class="comment">// STUB</span></div>
 <div class="line"><span class="lineno">  337</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00510">send_configure_event()</a>.</p>
 
@@ -1811,12 +2032,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_send_send_systray_message - Send a systray event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only working on Linux for now </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00347">347</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  347</span>                                          {</div>
 <div class="line"><span class="lineno">  348</span>    <span class="comment">// STUB</span></div>
 <div class="line"><span class="lineno">  349</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xwidget-linux_8c_source.html#l00034">default_error_handler</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget-linux_8c_source.html#l00036">intern_error_handler()</a>, <a class="el" href="xcolor_8c_source.html#l00300">set_systray_color()</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget-linux_8c_source.html#l00034">default_error_handler</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-linux_8c_source.html#l00036">intern_error_handler()</a>, <a class="el" href="xcolor_8c_source.html#l00300">set_systray_color()</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00522">send_systray_message()</a>.</p>
 
@@ -1838,12 +2067,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_set_input_mask - set the Event mask to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only work on linux, stub on Windows </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget which will grab the mouse </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00356">356</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  356</span>                                    {</div>
 <div class="line"><span class="lineno">  357</span>    <span class="comment">// STUB</span></div>
 <div class="line"><span class="lineno">  358</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xkeyboard_8c_source.html#l00906">add_midi_keyboard()</a>, <a class="el" href="xcombobox_8c_source.html#l00096">create_combobox_viewport()</a>, <a class="el" href="xlistview_8c_source.html#l00046">create_listview_viewport()</a>, <a class="el" href="xmultilistview_8c_source.html#l00046">create_multi_listview_viewport()</a>, <a class="el" href="xmidi__keyboard_8c_source.html#l00800">mk_open_midi_keyboard()</a>, and <a class="el" href="xkeyboard_8c_source.html#l00915">open_midi_keyboard()</a>.</p>
 
@@ -1875,13 +2112,22 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_set_title - Set the title of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">title</td><td>- the title to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00305">305</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  305</span>                                                  {</div>
 <div class="line"><span class="lineno">  306</span>    <span class="keywordflow">if</span> (title)</div>
 <div class="line"><span class="lineno">  307</span>        SetWindowText(w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, title);</div>
 <div class="line"><span class="lineno">  308</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00359">widget_set_title()</a>.</p>
 
@@ -1913,12 +2159,21 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_set_ transient_for_hint - set a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> transient to a other <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only work on linux, stub on Windows </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*parent</td><td>- Pointer to the parent widget </td></tr>
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00364">364</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  364</span>                                                              {</div>
 <div class="line"><span class="lineno">  365</span>    <span class="comment">// STUB</span></div>
 <div class="line"><span class="lineno">  366</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xvaluedisplay_8c_source.html#l00026">add_popup_spinbox()</a>, <a class="el" href="xcombobox_8c_source.html#l00123">create_combobox_menu()</a>, <a class="el" href="xmenu_8c_source.html#l00256">create_menu()</a>, and <a class="el" href="xtooltip_8c_source.html#l00047">create_tooltip()</a>.</p>
 
@@ -1964,7 +2219,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00187">187</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  187</span>                                                                    {</div>
@@ -1974,9 +2228,9 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  191</span>    w-&gt;<a class="code hl_variable" href="structWidget__t.html#a76e6dbb8b33b4373ca91aab3cab86245">surface</a> = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, width, height);</div>
 <div class="line"><span class="lineno">  192</span>    w-&gt;<a class="code hl_variable" href="structWidget__t.html#ac2efa4a51d11834112524e53b3dc0f62">cr</a> = cairo_create(w-&gt;<a class="code hl_variable" href="structWidget__t.html#a76e6dbb8b33b4373ca91aab3cab86245">surface</a>);</div>
 <div class="line"><span class="lineno">  193</span>}</div>
-<div class="ttc" id="astructWidget__t_html_ac2efa4a51d11834112524e53b3dc0f62"><div class="ttname"><a href="structWidget__t.html#ac2efa4a51d11834112524e53b3dc0f62">Widget_t::cr</a></div><div class="ttdeci">cairo_t * cr</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00481">xwidget.h:481</a></div></div>
+<div class="ttc" id="astructWidget__t_html_ac2efa4a51d11834112524e53b3dc0f62"><div class="ttname"><a href="structWidget__t.html#ac2efa4a51d11834112524e53b3dc0f62">Widget_t::cr</a></div><div class="ttdeci">cairo_t * cr</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00485">xwidget.h:485</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00481">Widget_t::cr</a>, and <a class="el" href="xwidget_8h_source.html#l00479">Widget_t::surface</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00485">Widget_t::cr</a>, and <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget__private_8c_source.html#l00317">_resize_surface()</a>.</p>
 
@@ -1998,12 +2252,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_set_window_attrb - set the attribute mask to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only work on linux, stub on Windows </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget which will grab the mouse </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00360">360</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  360</span>                                      {</div>
 <div class="line"><span class="lineno">  361</span>    <span class="comment">// STUB</span></div>
 <div class="line"><span class="lineno">  362</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xvaluedisplay_8c_source.html#l00026">add_popup_spinbox()</a>, <a class="el" href="xcombobox_8c_source.html#l00123">create_combobox_menu()</a>, <a class="el" href="xmenu_8c_source.html#l00256">create_menu()</a>, and <a class="el" href="xtooltip_8c_source.html#l00047">create_tooltip()</a>.</p>
 
@@ -2062,16 +2324,15 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00166">166</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  167</span>                                                             {</div>
 <div class="line"><span class="lineno">  168</span>    w-&gt;<a class="code hl_variable" href="structWidget__t.html#a866b183e7f2df21a1676af4e211dd30d">metrics_min</a>.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a> = min_width;</div>
 <div class="line"><span class="lineno">  169</span>    w-&gt;<a class="code hl_variable" href="structWidget__t.html#a866b183e7f2df21a1676af4e211dd30d">metrics_min</a>.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a> = min_height;</div>
 <div class="line"><span class="lineno">  170</span>}</div>
-<div class="ttc" id="astructWidget__t_html_a866b183e7f2df21a1676af4e211dd30d"><div class="ttname"><a href="structWidget__t.html#a866b183e7f2df21a1676af4e211dd30d">Widget_t::metrics_min</a></div><div class="ttdeci">Metrics_t metrics_min</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00526">xwidget.h:526</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a866b183e7f2df21a1676af4e211dd30d"><div class="ttname"><a href="structWidget__t.html#a866b183e7f2df21a1676af4e211dd30d">Widget_t::metrics_min</a></div><div class="ttdeci">Metrics_t metrics_min</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00530">xwidget.h:530</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget-platform_8h_source.html#l00062">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00526">Widget_t::metrics_min</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, and <a class="el" href="xwidget-platform_8h_source.html#l00060">Metrics_t::width</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00530">Widget_t::metrics_min</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, and <a class="el" href="xwidget-platform_8h_source.html#l00061">Metrics_t::width</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00195">os_create_main_window_and_surface()</a>.</p>
 
@@ -2103,6 +2364,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_show_tooltip - Show a tooltip of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*wid</td><td>- Pointer to the widget the tooltip belongs to </td></tr>
+    <tr><td class="paramname">*w</td><td>- the tooltip <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00318">318</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  318</span>                                                 {</div>
 <div class="line"><span class="lineno">  319</span>    POINT pt;</div>
@@ -2113,7 +2383,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  324</span>    }</div>
 <div class="line"><span class="lineno">  325</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00384">IS_WIDGET</a>, <a class="el" href="xwidget-linux_8c_source.html#l00069">os_get_root_window()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00073">os_translate_coords()</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00388">IS_WIDGET</a>, <a class="el" href="xwidget-linux_8c_source.html#l00069">os_get_root_window()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00073">os_translate_coords()</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00419">show_tooltip()</a>.</p>
 
@@ -2186,7 +2456,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00138">138</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  139</span>                                                                        {</div>
@@ -2196,7 +2465,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  143</span>    *to_y = Point.y;</div>
 <div class="line"><span class="lineno">  144</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, and <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, and <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xcombobox__private_8c_source.html#l00415">_configure_combobox_menu()</a>, <a class="el" href="xmenu__private_8c_source.html#l00478">_configure_menu()</a>, <a class="el" href="xvaluedisplay__private_8c_source.html#l00182">_popup_spinbox()</a>, <a class="el" href="xvaluedisplay_8c_source.html#l00026">add_popup_spinbox()</a>, <a class="el" href="xcombobox_8c_source.html#l00123">create_combobox_menu()</a>, <a class="el" href="xmenu_8c_source.html#l00256">create_menu()</a>, and <a class="el" href="xtooltip_8c_source.html#l00047">create_tooltip()</a>.</p>
 
@@ -2228,6 +2497,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_transparent_draw - Draw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> to the back buffer </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*user_data</td><td>- additional user data or NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00392">392</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  392</span>                                                    {</div>
 <div class="line"><span class="lineno">  393</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *)w_;</div>
@@ -2235,7 +2513,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  395</span>    RedrawWindow(w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, NULL, NULL, RDW_NOERASE | RDW_INVALIDATE | RDW_UPDATENOW | RDW_ALLCHILDREN);</div>
 <div class="line"><span class="lineno">  396</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8c_source.html#l00449">transparent_draw()</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8c_source.html#l00449">transparent_draw()</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xmenu__private_8c_source.html#l00079">_check_menu_state()</a>, <a class="el" href="xmenu__private_8c_source.html#l00211">_enter_submenu()</a>, <a class="el" href="xmenu__private_8c_source.html#l00228">_leave_submenu()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00400">_set_entry()</a>, <a class="el" href="xbutton_8c_source.html#l00026">add_button()</a>, <a class="el" href="xbutton_8c_source.html#l00142">add_check_box()</a>, <a class="el" href="xbutton_8c_source.html#l00122">add_check_button()</a>, <a class="el" href="xcombobox_8c_source.html#l00152">add_combobox()</a>, <a class="el" href="xslider_8c_source.html#l00051">add_hslider()</a>, <a class="el" href="xbutton_8c_source.html#l00042">add_image_button()</a>, <a class="el" href="xknob_8c_source.html#l00042">add_image_knob()</a>, <a class="el" href="xbutton_8c_source.html#l00089">add_image_toggle_button()</a>, <a class="el" href="xknob_8c_source.html#l00026">add_knob()</a>, <a class="el" href="xmenu_8c_source.html#l00086">add_menu()</a>, <a class="el" href="xbutton_8c_source.html#l00058">add_on_off_button()</a>, <a class="el" href="xbutton_8c_source.html#l00106">add_switch_image_button()</a>, <a class="el" href="xbutton_8c_source.html#l00073">add_toggle_button()</a>, <a class="el" href="xvaluedisplay_8c_source.html#l00050">add_valuedisplay()</a>, <a class="el" href="xslider_8c_source.html#l00030">add_vslider()</a>, <a class="el" href="xwidget_8c_source.html#l00265">create_widget()</a>, <a class="el" href="xlistbox_8c_source.html#l00060">listbox_add_entry()</a>, <a class="el" href="xmenu_8c_source.html#l00283">menu_add_item()</a>, <a class="el" href="xmenu_8c_source.html#l00360">menu_add_numeric_items()</a>, and <a class="el" href="xmenu_8c_source.html#l00169">menu_add_value_entry()</a>.</p>
 
@@ -2279,12 +2557,23 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_widget_event_loop - the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> event loop on windows all messges goes into WndProc, so stub here </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*event</td><td>- the event to handle </td></tr>
+    <tr><td class="paramname">*main</td><td>- pointer to the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct </td></tr>
+    <tr><td class="paramname">*user_data</td><td>- additional user data could be NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00331">331</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  331</span>                                                                                {</div>
 <div class="line"><span class="lineno">  332</span>    <span class="comment">// nothing to do</span></div>
 <div class="line"><span class="lineno">  333</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget__private_8c_source.html#l00085">_button_press()</a>, <a class="el" href="xwidget__private_8c_source.html#l00068">_check_enum()</a>, <a class="el" href="xwidget__private_8c_source.html#l00127">_check_grab()</a>, <a class="el" href="xwidget__private_8c_source.html#l00216">_check_keymap()</a>, <a class="el" href="xwidget__private_8c_source.html#l00170">_check_submenu()</a>, <a class="el" href="xwidget__private_8c_source.html#l00272">_has_pointer()</a>, <a class="el" href="xwidget__private_8c_source.html#l00262">_hide_all_tooltips()</a>, <a class="el" href="xadjustment_8c_source.html#l00241">adj_set_motion_state()</a>, <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty-mswin_8h_source.html#l00058">XEvent::button</a>, <a class="el" href="xwidget_8h_source.html#l00097">Func_t::button_release_callback</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00089">childlist_has_child()</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xwidget_8h_source.html#l00082">Func_t::configure_callback</a>, <a class="el" href="xwidget_8c_source.html#l00086">destroy_widget()</a>, <a class="el" href="xputty_8h_source.html#l00255">Xputty::dnd_source_window</a>, <a class="el" href="xputty_8h_source.html#l00270">Xputty::dnd_type</a>, <a class="el" href="xputty_8h_source.html#l00248">Xputty::dnd_version</a>, <a class="el" href="xwidget_8h_source.html#l00502">Widget_t::double_click</a>, <a class="el" href="xwidget_8h_source.html#l00098">Func_t::double_click_callback</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00083">Func_t::enter_callback</a>, <a class="el" href="xwidget_8h_source.html#l00406">FAST_REDRAW</a>, <a class="el" href="xwidget_8h_source.html#l00457">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00477">Widget_t::func</a>, <a class="el" href="xwidget-linux_8c_source.html#l00481">handle_dnd_enter()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00455">handle_drag_data()</a>, <a class="el" href="xwidget_8h_source.html#l00396">HAS_FOCUS</a>, <a class="el" href="xwidget_8h_source.html#l00398">HAS_POINTER</a>, <a class="el" href="xwidget_8h_source.html#l00400">HAS_TOOLTIP</a>, <a class="el" href="xwidget_8c_source.html#l00430">hide_tooltip()</a>, <a class="el" href="xwidget_8h_source.html#l00388">IS_POPUP</a>, <a class="el" href="xwidget_8h_source.html#l00100">Func_t::key_press_callback</a>, <a class="el" href="xwidget_8h_source.html#l00101">Func_t::key_release_callback</a>, <a class="el" href="xputty-mswin_8h_source.html#l00059">XEvent::keycode</a>, <a class="el" href="xwidget_8h_source.html#l00084">Func_t::leave_callback</a>, <a class="el" href="xwidget_8h_source.html#l00099">Func_t::motion_callback</a>, <a class="el" href="xwidget_8h_source.html#l00404">NO_AUTOREPEAT</a>, <a class="el" href="xwidget_8c_source.html#l00530">quit_widget()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00566">receive_paste_from_clipboard()</a>, <a class="el" href="xputty_8h_source.html#l00272">Xputty::selection</a>, <a class="el" href="xwidget-linux_8c_source.html#l00540">send_dnd_finished_event()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00524">send_dnd_status_event()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00595">send_to_clipboard()</a>, <a class="el" href="xwidget_8c_source.html#l00419">show_tooltip()</a>, <a class="el" href="xputty-mswin_8h_source.html#l00060">XEvent::state</a>, <a class="el" href="xwidget_8h_source.html#l00507">Widget_t::state</a>, <a class="el" href="xwidget_8c_source.html#l00449">transparent_draw()</a>, <a class="el" href="xwidget_8h_source.html#l00094">Func_t::visibiliy_change_callback</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, <a class="el" href="xputty-mswin_8h_source.html#l00056">XEvent::x</a>, <a class="el" href="xputty_8h_source.html#l00263">Xputty::XdndDrop</a>, <a class="el" href="xputty_8h_source.html#l00260">Xputty::XdndEnter</a>, <a class="el" href="xputty_8h_source.html#l00262">Xputty::XdndLeave</a>, <a class="el" href="xputty_8h_source.html#l00261">Xputty::XdndPosition</a>, <a class="el" href="xputty_8h_source.html#l00258">Xputty::XdndSelection</a>, <a class="el" href="xwidget_8h_source.html#l00529">Widget_t::xpaste_callback</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00057">XEvent::y</a>.</p>
+<p class="reference">References <a class="el" href="xwidget__private_8c_source.html#l00085">_button_press()</a>, <a class="el" href="xwidget__private_8c_source.html#l00068">_check_enum()</a>, <a class="el" href="xwidget__private_8c_source.html#l00127">_check_grab()</a>, <a class="el" href="xwidget__private_8c_source.html#l00216">_check_keymap()</a>, <a class="el" href="xwidget__private_8c_source.html#l00170">_check_submenu()</a>, <a class="el" href="xwidget__private_8c_source.html#l00272">_has_pointer()</a>, <a class="el" href="xwidget__private_8c_source.html#l00262">_hide_all_tooltips()</a>, <a class="el" href="xadjustment_8c_source.html#l00241">adj_set_motion_state()</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty-mswin_8h_source.html#l00062">XEvent::button</a>, <a class="el" href="xwidget_8h_source.html#l00101">Func_t::button_release_callback</a>, <a class="el" href="xwidget_8h_source.html#l00499">Widget_t::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00089">childlist_has_child()</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xwidget_8h_source.html#l00086">Func_t::configure_callback</a>, <a class="el" href="xwidget_8c_source.html#l00086">destroy_widget()</a>, <a class="el" href="xputty_8h_source.html#l00261">Xputty::dnd_source_window</a>, <a class="el" href="xputty_8h_source.html#l00276">Xputty::dnd_type</a>, <a class="el" href="xputty_8h_source.html#l00254">Xputty::dnd_version</a>, <a class="el" href="xwidget_8h_source.html#l00506">Widget_t::double_click</a>, <a class="el" href="xwidget_8h_source.html#l00102">Func_t::double_click_callback</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00087">Func_t::enter_callback</a>, <a class="el" href="xwidget_8h_source.html#l00410">FAST_REDRAW</a>, <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00481">Widget_t::func</a>, <a class="el" href="xwidget-linux_8c_source.html#l00481">handle_dnd_enter()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00455">handle_drag_data()</a>, <a class="el" href="xwidget_8h_source.html#l00400">HAS_FOCUS</a>, <a class="el" href="xwidget_8h_source.html#l00402">HAS_POINTER</a>, <a class="el" href="xwidget_8h_source.html#l00404">HAS_TOOLTIP</a>, <a class="el" href="xwidget_8c_source.html#l00430">hide_tooltip()</a>, <a class="el" href="xwidget_8h_source.html#l00392">IS_POPUP</a>, <a class="el" href="xwidget_8h_source.html#l00104">Func_t::key_press_callback</a>, <a class="el" href="xwidget_8h_source.html#l00105">Func_t::key_release_callback</a>, <a class="el" href="xputty-mswin_8h_source.html#l00063">XEvent::keycode</a>, <a class="el" href="xwidget_8h_source.html#l00088">Func_t::leave_callback</a>, <a class="el" href="xwidget_8h_source.html#l00103">Func_t::motion_callback</a>, <a class="el" href="xwidget_8h_source.html#l00408">NO_AUTOREPEAT</a>, <a class="el" href="xwidget_8c_source.html#l00530">quit_widget()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00566">receive_paste_from_clipboard()</a>, <a class="el" href="xputty_8h_source.html#l00278">Xputty::selection</a>, <a class="el" href="xwidget-linux_8c_source.html#l00540">send_dnd_finished_event()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00524">send_dnd_status_event()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00595">send_to_clipboard()</a>, <a class="el" href="xwidget_8c_source.html#l00419">show_tooltip()</a>, <a class="el" href="xputty-mswin_8h_source.html#l00064">XEvent::state</a>, <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::state</a>, <a class="el" href="xwidget_8c_source.html#l00449">transparent_draw()</a>, <a class="el" href="xwidget_8h_source.html#l00098">Func_t::visibiliy_change_callback</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xputty-mswin_8h_source.html#l00060">XEvent::x</a>, <a class="el" href="xputty_8h_source.html#l00269">Xputty::XdndDrop</a>, <a class="el" href="xputty_8h_source.html#l00266">Xputty::XdndEnter</a>, <a class="el" href="xputty_8h_source.html#l00268">Xputty::XdndLeave</a>, <a class="el" href="xputty_8h_source.html#l00267">Xputty::XdndPosition</a>, <a class="el" href="xputty_8h_source.html#l00264">Xputty::XdndSelection</a>, <a class="el" href="xwidget_8h_source.html#l00533">Widget_t::xpaste_callback</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00061">XEvent::y</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00265">create_widget()</a>, and <a class="el" href="xwidget_8c_source.html#l00506">widget_event_loop()</a>.</p>
 
@@ -2306,12 +2595,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_widget_hide - Hide a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget to hide </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00314">314</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  314</span>                                 {</div>
 <div class="line"><span class="lineno">  315</span>    ShowWindow(w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, SW_HIDE);</div>
 <div class="line"><span class="lineno">  316</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00368">widget_hide()</a>, and <a class="el" href="xwidget_8c_source.html#l00377">widget_hide_all()</a>.</p>
 
@@ -2333,12 +2630,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_widget_show - Show a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget to show </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00310">310</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  310</span>                                 {</div>
 <div class="line"><span class="lineno">  311</span>    ShowWindow(w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, SW_SHOW);</div>
 <div class="line"><span class="lineno">  312</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00400">pop_widget_show_all()</a>, <a class="el" href="xwidget_8c_source.html#l00410">submenu_widget_show_all()</a>, <a class="el" href="xwidget_8c_source.html#l00363">widget_show()</a>, and <a class="el" href="xwidget_8c_source.html#l00386">widget_show_all()</a>.</p>
 
@@ -2451,6 +2756,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>utf8_from_locale - convert active codepage to utf8 must be freed by the caller </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*localestr</td><td>- Pointer to char to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>*char - the converted char in utf8 format </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00104">104</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  104</span>                                        {</div>
@@ -2897,40 +3211,40 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  931</span>}</div>
 <div class="ttc" id="astructChildlist__t_html_a36add203dd42426588622bc5c293ea29"><div class="ttname"><a href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">Childlist_t::childs</a></div><div class="ttdeci">Widget_t ** childs</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8h_source.html#l00051">xchildlist.h:51</a></div></div>
 <div class="ttc" id="astructChildlist__t_html_ae49b747ab3b2a8aedad718521b6c77f1"><div class="ttname"><a href="structChildlist__t.html#ae49b747ab3b2a8aedad718521b6c77f1">Childlist_t::elem</a></div><div class="ttdeci">int elem</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8h_source.html#l00057">xchildlist.h:57</a></div></div>
-<div class="ttc" id="astructFunc__t_html_a0ac2c35c450e54946f10449f0681d9d2"><div class="ttname"><a href="structFunc__t.html#a0ac2c35c450e54946f10449f0681d9d2">Func_t::button_release_callback</a></div><div class="ttdeci">evfunc button_release_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00097">xwidget.h:97</a></div></div>
-<div class="ttc" id="astructFunc__t_html_a0b375a67a8ae98e0236f71e360fd5ae5"><div class="ttname"><a href="structFunc__t.html#a0b375a67a8ae98e0236f71e360fd5ae5">Func_t::configure_callback</a></div><div class="ttdeci">xevfunc configure_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00082">xwidget.h:82</a></div></div>
-<div class="ttc" id="astructFunc__t_html_a580123509145139212579243dbe61c67"><div class="ttname"><a href="structFunc__t.html#a580123509145139212579243dbe61c67">Func_t::double_click_callback</a></div><div class="ttdeci">evfunc double_click_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00098">xwidget.h:98</a></div></div>
-<div class="ttc" id="astructWidget__t_html_a26a039758210767f02de85ffe72a31d2"><div class="ttname"><a href="structWidget__t.html#a26a039758210767f02de85ffe72a31d2">Widget_t::mouse_inside</a></div><div class="ttdeci">bool mouse_inside</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00524">xwidget.h:524</a></div></div>
-<div class="ttc" id="astructWidget__t_html_a769c689813b19fb03572dc4937b40993"><div class="ttname"><a href="structWidget__t.html#a769c689813b19fb03572dc4937b40993">Widget_t::pos_y</a></div><div class="ttdeci">int pos_y</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00511">xwidget.h:511</a></div></div>
-<div class="ttc" id="astructWidget__t_html_a87bbe79251b7e169825a807de0941fb9"><div class="ttname"><a href="structWidget__t.html#a87bbe79251b7e169825a807de0941fb9">Widget_t::crb</a></div><div class="ttdeci">cairo_t * crb</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00485">xwidget.h:485</a></div></div>
-<div class="ttc" id="astructWidget__t_html_a89f234133d3efe315836311cbf21c64b"><div class="ttname"><a href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">Widget_t::state</a></div><div class="ttdeci">int state</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00507">xwidget.h:507</a></div></div>
-<div class="ttc" id="astructWidget__t_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">Widget_t::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00495">xwidget.h:495</a></div></div>
-<div class="ttc" id="astructWidget__t_html_a989d3e09b707fb1f4bc2355ba5855a0c"><div class="ttname"><a href="structWidget__t.html#a989d3e09b707fb1f4bc2355ba5855a0c">Widget_t::pos_x</a></div><div class="ttdeci">int pos_x</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00509">xwidget.h:509</a></div></div>
-<div class="ttc" id="astructWidget__t_html_aac423f82eb2f10bd8969b56540391ddc"><div class="ttname"><a href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">Widget_t::flags</a></div><div class="ttdeci">long long flags</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00457">xwidget.h:457</a></div></div>
-<div class="ttc" id="astructWidget__t_html_adf3b6f667fa98e1db418cfd081a4075a"><div class="ttname"><a href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">Widget_t::func</a></div><div class="ttdeci">Func_t func</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00477">xwidget.h:477</a></div></div>
-<div class="ttc" id="astructXEvent_html"><div class="ttname"><a href="structXEvent.html">XEvent</a></div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00054">xputty-mswin.h:54</a></div></div>
-<div class="ttc" id="astructXEvent_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="structXEvent.html#a0a2f84ed7838f07779ae24c5a9086d33">XEvent::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00057">xputty-mswin.h:57</a></div></div>
-<div class="ttc" id="astructXEvent_html_a3f1d7c7ce1dbabebcc4bcaee4404f201"><div class="ttname"><a href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">XEvent::button</a></div><div class="ttdeci">int button</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00058">xputty-mswin.h:58</a></div></div>
-<div class="ttc" id="astructXEvent_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="structXEvent.html#a6150e0515f7202e2fb518f7206ed97dc">XEvent::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00056">xputty-mswin.h:56</a></div></div>
-<div class="ttc" id="astructXEvent_html_ac5b0b3c19d476a314bb68af9bc4a0ee0"><div class="ttname"><a href="structXEvent.html#ac5b0b3c19d476a314bb68af9bc4a0ee0">XEvent::window</a></div><div class="ttdeci">Window window</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00055">xputty-mswin.h:55</a></div></div>
-<div class="ttc" id="astructXputty_html"><div class="ttname"><a href="structXputty.html">Xputty</a></div><div class="ttdoc">Xputty - the main struct.   It should be declared before any other call to a Xputty function....</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00222">xputty.h:222</a></div></div>
-<div class="ttc" id="astructXputty_html_a87903d89e86a1d1cbe842aea83f59764"><div class="ttname"><a href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">Xputty::hold_grab</a></div><div class="ttdeci">Widget_t * hold_grab</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00232">xputty.h:232</a></div></div>
-<div class="ttc" id="astructXputty_html_a989b401933a94b5a418c41c73b8ddda6"><div class="ttname"><a href="structXputty.html#a989b401933a94b5a418c41c73b8ddda6">Xputty::submenu</a></div><div class="ttdeci">Widget_t * submenu</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00236">xputty.h:236</a></div></div>
+<div class="ttc" id="astructFunc__t_html_a0ac2c35c450e54946f10449f0681d9d2"><div class="ttname"><a href="structFunc__t.html#a0ac2c35c450e54946f10449f0681d9d2">Func_t::button_release_callback</a></div><div class="ttdeci">evfunc button_release_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00101">xwidget.h:101</a></div></div>
+<div class="ttc" id="astructFunc__t_html_a0b375a67a8ae98e0236f71e360fd5ae5"><div class="ttname"><a href="structFunc__t.html#a0b375a67a8ae98e0236f71e360fd5ae5">Func_t::configure_callback</a></div><div class="ttdeci">xevfunc configure_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00086">xwidget.h:86</a></div></div>
+<div class="ttc" id="astructFunc__t_html_a580123509145139212579243dbe61c67"><div class="ttname"><a href="structFunc__t.html#a580123509145139212579243dbe61c67">Func_t::double_click_callback</a></div><div class="ttdeci">evfunc double_click_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00102">xwidget.h:102</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a26a039758210767f02de85ffe72a31d2"><div class="ttname"><a href="structWidget__t.html#a26a039758210767f02de85ffe72a31d2">Widget_t::mouse_inside</a></div><div class="ttdeci">bool mouse_inside</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00528">xwidget.h:528</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a769c689813b19fb03572dc4937b40993"><div class="ttname"><a href="structWidget__t.html#a769c689813b19fb03572dc4937b40993">Widget_t::pos_y</a></div><div class="ttdeci">int pos_y</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00515">xwidget.h:515</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a87bbe79251b7e169825a807de0941fb9"><div class="ttname"><a href="structWidget__t.html#a87bbe79251b7e169825a807de0941fb9">Widget_t::crb</a></div><div class="ttdeci">cairo_t * crb</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00489">xwidget.h:489</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a89f234133d3efe315836311cbf21c64b"><div class="ttname"><a href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">Widget_t::state</a></div><div class="ttdeci">int state</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00511">xwidget.h:511</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">Widget_t::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00499">xwidget.h:499</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a989d3e09b707fb1f4bc2355ba5855a0c"><div class="ttname"><a href="structWidget__t.html#a989d3e09b707fb1f4bc2355ba5855a0c">Widget_t::pos_x</a></div><div class="ttdeci">int pos_x</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00513">xwidget.h:513</a></div></div>
+<div class="ttc" id="astructWidget__t_html_aac423f82eb2f10bd8969b56540391ddc"><div class="ttname"><a href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">Widget_t::flags</a></div><div class="ttdeci">long long flags</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00461">xwidget.h:461</a></div></div>
+<div class="ttc" id="astructWidget__t_html_adf3b6f667fa98e1db418cfd081a4075a"><div class="ttname"><a href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">Widget_t::func</a></div><div class="ttdeci">Func_t func</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00481">xwidget.h:481</a></div></div>
+<div class="ttc" id="astructXEvent_html"><div class="ttname"><a href="structXEvent.html">XEvent</a></div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00058">xputty-mswin.h:58</a></div></div>
+<div class="ttc" id="astructXEvent_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="structXEvent.html#a0a2f84ed7838f07779ae24c5a9086d33">XEvent::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00061">xputty-mswin.h:61</a></div></div>
+<div class="ttc" id="astructXEvent_html_a3f1d7c7ce1dbabebcc4bcaee4404f201"><div class="ttname"><a href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">XEvent::button</a></div><div class="ttdeci">int button</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00062">xputty-mswin.h:62</a></div></div>
+<div class="ttc" id="astructXEvent_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="structXEvent.html#a6150e0515f7202e2fb518f7206ed97dc">XEvent::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00060">xputty-mswin.h:60</a></div></div>
+<div class="ttc" id="astructXEvent_html_ac5b0b3c19d476a314bb68af9bc4a0ee0"><div class="ttname"><a href="structXEvent.html#ac5b0b3c19d476a314bb68af9bc4a0ee0">XEvent::window</a></div><div class="ttdeci">Window window</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00059">xputty-mswin.h:59</a></div></div>
+<div class="ttc" id="astructXputty_html"><div class="ttname"><a href="structXputty.html">Xputty</a></div><div class="ttdoc">Xputty - the main struct.   It should be declared before any other call to a Xputty function....</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00228">xputty.h:228</a></div></div>
+<div class="ttc" id="astructXputty_html_a87903d89e86a1d1cbe842aea83f59764"><div class="ttname"><a href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">Xputty::hold_grab</a></div><div class="ttdeci">Widget_t * hold_grab</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00238">xputty.h:238</a></div></div>
+<div class="ttc" id="astructXputty_html_a989b401933a94b5a418c41c73b8ddda6"><div class="ttname"><a href="structXputty.html#a989b401933a94b5a418c41c73b8ddda6">Xputty::submenu</a></div><div class="ttdeci">Widget_t * submenu</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00242">xputty.h:242</a></div></div>
 <div class="ttc" id="axadjustment_8h_html_a1e198857155b2969afb87fe923d58cb6"><div class="ttname"><a href="xadjustment_8h.html#a1e198857155b2969afb87fe923d58cb6">adj_set_motion_state</a></div><div class="ttdeci">void adj_set_motion_state(void *w, float x, float y)</div><div class="ttdoc">adj_set_motion_state - internal use to set value and state of the Adjustment_t on mouse pointer movme...</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8c_source.html#l00241">xadjustment.c:241</a></div></div>
 <div class="ttc" id="axchildlist_8h_html_a7c893543e51daded2aa5b6a9b252932b"><div class="ttname"><a href="xchildlist_8h.html#a7c893543e51daded2aa5b6a9b252932b">childlist_find_widget</a></div><div class="ttdeci">int childlist_find_widget(Childlist_t *childlist, Window child_window)</div><div class="ttdoc">childlist_find_widget - find a child Widget_t in a the childlist by given the Window id</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8c_source.html#l00079">xchildlist.c:79</a></div></div>
 <div class="ttc" id="axchildlist_8h_html_af130af096a2f8b3a807e7e2dcf0ee6c0"><div class="ttname"><a href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a></div><div class="ttdeci">int childlist_has_child(Childlist_t *childlist)</div><div class="ttdoc">childlist_has_child - check if a Widget_t Childlist_t contain a child</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8c_source.html#l00089">xchildlist.c:89</a></div></div>
-<div class="ttc" id="axputty-mswin_8h_html_adb48baf8a5c3aa4e6bdb2ca8112f5492"><div class="ttname"><a href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a></div><div class="ttdeci">HWND Window</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00048">xputty-mswin.h:48</a></div></div>
+<div class="ttc" id="axputty-mswin_8h_html_adb48baf8a5c3aa4e6bdb2ca8112f5492"><div class="ttname"><a href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a></div><div class="ttdeci">HWND Window</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00052">xputty-mswin.h:52</a></div></div>
 <div class="ttc" id="axwidget-mswin_8c_html_a3effd22ad104d2613a72abb5ea08cfac"><div class="ttname"><a href="xwidget-mswin_8c.html#a3effd22ad104d2613a72abb5ea08cfac">SetClientSize</a></div><div class="ttdeci">void SetClientSize(HWND hwnd, int clientWidth, int clientHeight)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00968">xwidget-mswin.c:968</a></div></div>
 <div class="ttc" id="axwidget-mswin_8c_html_a6331d2adab6eb85288a547479750ddf1"><div class="ttname"><a href="xwidget-mswin_8c.html#a6331d2adab6eb85288a547479750ddf1">build_xkey_event</a></div><div class="ttdeci">void build_xkey_event(XKeyEvent *ev, UINT msg, WPARAM wParam, LPARAM lParam)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00487">xwidget-mswin.c:487</a></div></div>
 <div class="ttc" id="axwidget-mswin_8c_html_afb4f5c71add0d964d67d9f2e7e782122"><div class="ttname"><a href="xwidget-mswin_8c.html#afb4f5c71add0d964d67d9f2e7e782122">onPaint</a></div><div class="ttdeci">LRESULT onPaint(HWND hwnd, WPARAM wParam, LPARAM lParam)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00933">xwidget-mswin.c:933</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a1e367c7f3e7dcd71fbbb6125fc1b227a"><div class="ttname"><a href="xwidget_8h.html#a1e367c7f3e7dcd71fbbb6125fc1b227a">quit_widget</a></div><div class="ttdeci">void quit_widget(Widget_t *w)</div><div class="ttdoc">quit_widget - remove a widget from the processing loop</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00530">xwidget.c:530</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a50bb0638d0bd2d98923cb05c3bf09f35"><div class="ttname"><a href="xwidget_8h.html#a50bb0638d0bd2d98923cb05c3bf09f35">show_tooltip</a></div><div class="ttdeci">void show_tooltip(Widget_t *wid)</div><div class="ttdoc">show_tooltip - check if a Widget_t have a tooltip, and show it, if a tooltip is available.</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00419">xwidget.c:419</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea1daf7a5f7ceb41e263746ccc21cc7f5e"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea1daf7a5f7ceb41e263746ccc21cc7f5e">HIDE_ON_DELETE</a></div><div class="ttdeci">@ HIDE_ON_DELETE</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00408">xwidget.h:408</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea24dd904cfcaac15acb4fd0c48126f869"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea24dd904cfcaac15acb4fd0c48126f869">HAS_POINTER</a></div><div class="ttdeci">@ HAS_POINTER</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00398">xwidget.h:398</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea2cb9164e0e57a3f7e87fca68109f1751"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea2cb9164e0e57a3f7e87fca68109f1751">NO_AUTOREPEAT</a></div><div class="ttdeci">@ NO_AUTOREPEAT</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00404">xwidget.h:404</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f">HAS_TOOLTIP</a></div><div class="ttdeci">@ HAS_TOOLTIP</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00400">xwidget.h:400</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea77ed320daf286953bd956a0d470d3fe0"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea77ed320daf286953bd956a0d470d3fe0">HAS_FOCUS</a></div><div class="ttdeci">@ HAS_FOCUS</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00396">xwidget.h:396</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ead5eca61d30ac5aa2160dbad35b19c4c3"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ead5eca61d30ac5aa2160dbad35b19c4c3">IS_POPUP</a></div><div class="ttdeci">@ IS_POPUP</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00388">xwidget.h:388</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea1daf7a5f7ceb41e263746ccc21cc7f5e"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea1daf7a5f7ceb41e263746ccc21cc7f5e">HIDE_ON_DELETE</a></div><div class="ttdeci">@ HIDE_ON_DELETE</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00412">xwidget.h:412</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea24dd904cfcaac15acb4fd0c48126f869"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea24dd904cfcaac15acb4fd0c48126f869">HAS_POINTER</a></div><div class="ttdeci">@ HAS_POINTER</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00402">xwidget.h:402</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea2cb9164e0e57a3f7e87fca68109f1751"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea2cb9164e0e57a3f7e87fca68109f1751">NO_AUTOREPEAT</a></div><div class="ttdeci">@ NO_AUTOREPEAT</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00408">xwidget.h:408</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f">HAS_TOOLTIP</a></div><div class="ttdeci">@ HAS_TOOLTIP</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00404">xwidget.h:404</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea77ed320daf286953bd956a0d470d3fe0"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea77ed320daf286953bd956a0d470d3fe0">HAS_FOCUS</a></div><div class="ttdeci">@ HAS_FOCUS</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00400">xwidget.h:400</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ead5eca61d30ac5aa2160dbad35b19c4c3"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ead5eca61d30ac5aa2160dbad35b19c4c3">IS_POPUP</a></div><div class="ttdeci">@ IS_POPUP</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00392">xwidget.h:392</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a65a14ddb7decf9932a8dcead7170217a"><div class="ttname"><a href="xwidget_8h.html#a65a14ddb7decf9932a8dcead7170217a">hide_tooltip</a></div><div class="ttdeci">void hide_tooltip(Widget_t *wid)</div><div class="ttdoc">hide_tooltip - check if a Widget_t have a tooltip, and hide it, if a tooltip is mapped.</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00430">xwidget.c:430</a></div></div>
 <div class="ttc" id="axwidget_8h_html_ab00e7f2485e08237c865e96ba56e63e6"><div class="ttname"><a href="xwidget_8h.html#ab00e7f2485e08237c865e96ba56e63e6">widget_hide</a></div><div class="ttdeci">void widget_hide(Widget_t *w)</div><div class="ttdoc">widget_hide - unmap/hide a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00368">xwidget.c:368</a></div></div>
 <div class="ttc" id="axwidget_8h_html_abdabca284aa8866f1f242b6857312e3b"><div class="ttname"><a href="xwidget_8h.html#abdabca284aa8866f1f242b6857312e3b">destroy_widget</a></div><div class="ttdeci">void destroy_widget(Widget_t *w, Xputty *main)</div><div class="ttdoc">destroy_widget - destroy a widget   When a Widget_t receive a destroy_widget() call,...</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00086">xwidget.c:86</a></div></div>
@@ -2942,7 +3256,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="axwidget__private_8h_html_ae2aeefa7b35ff7e10a148e8438a12dc9"><div class="ttname"><a href="xwidget__private_8h.html#ae2aeefa7b35ff7e10a148e8438a12dc9">_check_keymap</a></div><div class="ttdeci">void _check_keymap(void *w_, XKeyEvent xkey)</div><div class="ttdoc">_check_keymap - check if key is in map, send requests if so</div><div class="ttdef"><b>Definition</b> <a href="xwidget__private_8c_source.html#l00216">xwidget_private.c:216</a></div></div>
 <div class="ttc" id="axwidget__private_8h_html_ae8d8e0d87f6186d3d19f1372c357edbe"><div class="ttname"><a href="xwidget__private_8h.html#ae8d8e0d87f6186d3d19f1372c357edbe">_has_pointer</a></div><div class="ttdeci">void _has_pointer(Widget_t *w, XButtonEvent *button)</div><div class="ttdoc">_has_pointer - check if the widget has the pointer</div><div class="ttdef"><b>Definition</b> <a href="xwidget__private_8c_source.html#l00272">xwidget_private.c:272</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget__private_8c_source.html#l00085">_button_press()</a>, <a class="el" href="xwidget__private_8c_source.html#l00068">_check_enum()</a>, <a class="el" href="xwidget__private_8c_source.html#l00127">_check_grab()</a>, <a class="el" href="xwidget__private_8c_source.html#l00216">_check_keymap()</a>, <a class="el" href="xwidget__private_8c_source.html#l00170">_check_submenu()</a>, <a class="el" href="xwidget__private_8c_source.html#l00272">_has_pointer()</a>, <a class="el" href="xwidget__private_8c_source.html#l00262">_hide_all_tooltips()</a>, <a class="el" href="xadjustment_8c_source.html#l00241">adj_set_motion_state()</a>, <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00487">build_xkey_event()</a>, <a class="el" href="xputty-mswin_8h_source.html#l00058">XEvent::button</a>, <a class="el" href="xwidget_8h_source.html#l00097">Func_t::button_release_callback</a>, <a class="el" href="xputty_8h_source.html#l00224">Xputty::childlist</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00079">childlist_find_widget()</a>, <a class="el" href="xchildlist_8c_source.html#l00089">childlist_has_child()</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xwidget_8h_source.html#l00082">Func_t::configure_callback</a>, <a class="el" href="xwidget_8h_source.html#l00485">Widget_t::crb</a>, <a class="el" href="xwidget_8c_source.html#l00086">destroy_widget()</a>, <a class="el" href="xwidget_8h_source.html#l00098">Func_t::double_click_callback</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, <a class="el" href="xwidget_8h_source.html#l00457">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00477">Widget_t::func</a>, <a class="el" href="xwidget_8h_source.html#l00396">HAS_FOCUS</a>, <a class="el" href="xwidget_8h_source.html#l00398">HAS_POINTER</a>, <a class="el" href="xwidget_8h_source.html#l00400">HAS_TOOLTIP</a>, <a class="el" href="xwidget-platform_8h_source.html#l00062">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00408">HIDE_ON_DELETE</a>, <a class="el" href="xwidget_8c_source.html#l00430">hide_tooltip()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::hold_grab</a>, <a class="el" href="xwidget_8h_source.html#l00388">IS_POPUP</a>, <a class="el" href="xputty-mswin_8h_source.html#l00059">XEvent::keycode</a>, <a class="el" href="xwidget_8h_source.html#l00526">Widget_t::metrics_min</a>, <a class="el" href="xwidget_8h_source.html#l00524">Widget_t::mouse_inside</a>, <a class="el" href="xwidget_8h_source.html#l00404">NO_AUTOREPEAT</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00933">onPaint()</a>, <a class="el" href="xwidget_8h_source.html#l00509">Widget_t::pos_x</a>, <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::pos_y</a>, <a class="el" href="xwidget_8c_source.html#l00530">quit_widget()</a>, <a class="el" href="xputty_8h_source.html#l00250">Xputty::run</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00968">SetClientSize()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00981">SetMouseTracking()</a>, <a class="el" href="xwidget_8c_source.html#l00419">show_tooltip()</a>, <a class="el" href="xwidget_8h_source.html#l00507">Widget_t::state</a>, <a class="el" href="xputty_8h_source.html#l00236">Xputty::submenu</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, <a class="el" href="xwidget_8c_source.html#l00368">widget_hide()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00060">Metrics_t::width</a>, <a class="el" href="xputty-mswin_8h_source.html#l00055">XEvent::window</a>, <a class="el" href="xputty-mswin_8h_source.html#l00056">XEvent::x</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00057">XEvent::y</a>.</p>
+<p class="reference">References <a class="el" href="xwidget__private_8c_source.html#l00085">_button_press()</a>, <a class="el" href="xwidget__private_8c_source.html#l00068">_check_enum()</a>, <a class="el" href="xwidget__private_8c_source.html#l00127">_check_grab()</a>, <a class="el" href="xwidget__private_8c_source.html#l00216">_check_keymap()</a>, <a class="el" href="xwidget__private_8c_source.html#l00170">_check_submenu()</a>, <a class="el" href="xwidget__private_8c_source.html#l00272">_has_pointer()</a>, <a class="el" href="xwidget__private_8c_source.html#l00262">_hide_all_tooltips()</a>, <a class="el" href="xadjustment_8c_source.html#l00241">adj_set_motion_state()</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00487">build_xkey_event()</a>, <a class="el" href="xputty-mswin_8h_source.html#l00062">XEvent::button</a>, <a class="el" href="xwidget_8h_source.html#l00101">Func_t::button_release_callback</a>, <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xwidget_8h_source.html#l00499">Widget_t::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00079">childlist_find_widget()</a>, <a class="el" href="xchildlist_8c_source.html#l00089">childlist_has_child()</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xwidget_8h_source.html#l00086">Func_t::configure_callback</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xwidget_8c_source.html#l00086">destroy_widget()</a>, <a class="el" href="xwidget_8h_source.html#l00102">Func_t::double_click_callback</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00481">Widget_t::func</a>, <a class="el" href="xwidget_8h_source.html#l00400">HAS_FOCUS</a>, <a class="el" href="xwidget_8h_source.html#l00402">HAS_POINTER</a>, <a class="el" href="xwidget_8h_source.html#l00404">HAS_TOOLTIP</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00412">HIDE_ON_DELETE</a>, <a class="el" href="xwidget_8c_source.html#l00430">hide_tooltip()</a>, <a class="el" href="xputty_8h_source.html#l00238">Xputty::hold_grab</a>, <a class="el" href="xwidget_8h_source.html#l00392">IS_POPUP</a>, <a class="el" href="xputty-mswin_8h_source.html#l00063">XEvent::keycode</a>, <a class="el" href="xwidget_8h_source.html#l00530">Widget_t::metrics_min</a>, <a class="el" href="xwidget_8h_source.html#l00528">Widget_t::mouse_inside</a>, <a class="el" href="xwidget_8h_source.html#l00408">NO_AUTOREPEAT</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00933">onPaint()</a>, <a class="el" href="xwidget_8h_source.html#l00513">Widget_t::pos_x</a>, <a class="el" href="xwidget_8h_source.html#l00515">Widget_t::pos_y</a>, <a class="el" href="xwidget_8c_source.html#l00530">quit_widget()</a>, <a class="el" href="xputty_8h_source.html#l00256">Xputty::run</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00968">SetClientSize()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00981">SetMouseTracking()</a>, <a class="el" href="xwidget_8c_source.html#l00419">show_tooltip()</a>, <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::state</a>, <a class="el" href="xputty_8h_source.html#l00242">Xputty::submenu</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget_8c_source.html#l00368">widget_hide()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00061">Metrics_t::width</a>, <a class="el" href="xputty-mswin_8h_source.html#l00059">XEvent::window</a>, <a class="el" href="xputty-mswin_8h_source.html#l00060">XEvent::x</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00061">XEvent::y</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00195">os_create_main_window_and_surface()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00270">os_create_widget_window_and_surface()</a>.</p>
 

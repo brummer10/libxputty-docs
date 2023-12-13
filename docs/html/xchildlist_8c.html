@@ -146,7 +146,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xchildlist_8c_source.html#l00042">42</a> of file <a class="el" href="xchildlist_8c_source.html">xchildlist.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   42</span>                                                                  {</div>
@@ -164,13 +163,13 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructChildlist__t_html_a36add203dd42426588622bc5c293ea29"><div class="ttname"><a href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">Childlist_t::childs</a></div><div class="ttdeci">Widget_t ** childs</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8h_source.html#l00051">xchildlist.h:51</a></div></div>
 <div class="ttc" id="astructChildlist__t_html_acf9933ba9a016c4f3e65bfb6e6800af1"><div class="ttname"><a href="structChildlist__t.html#acf9933ba9a016c4f3e65bfb6e6800af1">Childlist_t::cap</a></div><div class="ttdeci">int cap</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8h_source.html#l00055">xchildlist.h:55</a></div></div>
 <div class="ttc" id="astructChildlist__t_html_ae49b747ab3b2a8aedad718521b6c77f1"><div class="ttname"><a href="structChildlist__t.html#ae49b747ab3b2a8aedad718521b6c77f1">Childlist_t::elem</a></div><div class="ttdeci">int elem</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8h_source.html#l00057">xchildlist.h:57</a></div></div>
-<div class="ttc" id="astructWidget__t_html_aac423f82eb2f10bd8969b56540391ddc"><div class="ttname"><a href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">Widget_t::flags</a></div><div class="ttdeci">long long flags</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00457">xwidget.h:457</a></div></div>
+<div class="ttc" id="astructWidget__t_html_aac423f82eb2f10bd8969b56540391ddc"><div class="ttname"><a href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">Widget_t::flags</a></div><div class="ttdeci">long long flags</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00461">xwidget.h:461</a></div></div>
 <div class="ttc" id="axchildlist_8c_html_ad47bf3695fdf0c67bc059e4ce25c4639"><div class="ttname"><a href="xchildlist_8c.html#ad47bf3695fdf0c67bc059e4ce25c4639">childlist_init</a></div><div class="ttdeci">void childlist_init(Childlist_t *childlist)</div><div class="ttdoc">childlist_init - internal use to allocate the array to min size   You usually didn't need to call thi...</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8c_source.html#l00025">xchildlist.c:25</a></div></div>
 <div class="ttc" id="axchildlist__private_8h_html_a4417a26df5d336bfff97d4210e0291fe"><div class="ttname"><a href="xchildlist__private_8h.html#a4417a26df5d336bfff97d4210e0291fe">_childlist_add_elem</a></div><div class="ttdeci">void _childlist_add_elem(Childlist_t *childlist)</div><div class="ttdoc">_childlist_add_elem - internal use to reallocate the childlist array to new size   You didn't need to...</div><div class="ttdef"><b>Definition</b> <a href="xchildlist__private_8c_source.html#l00023">xchildlist_private.c:23</a></div></div>
-<div class="ttc" id="axwidget-platform_8h_html_a7a91c66336b9ba7b46bd8b6c57f29413"><div class="ttname"><a href="xwidget-platform_8h.html#a7a91c66336b9ba7b46bd8b6c57f29413">os_register_wm_delete_window</a></div><div class="ttdeci">Atom os_register_wm_delete_window(Widget_t *wid)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00834">xwidget-linux.c:834</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea96d3ce9569e73843f74aa018bd8895a3"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea96d3ce9569e73843f74aa018bd8895a3">IS_WINDOW</a></div><div class="ttdeci">@ IS_WINDOW</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00386">xwidget.h:386</a></div></div>
+<div class="ttc" id="axwidget-platform_8h_html_a7a91c66336b9ba7b46bd8b6c57f29413"><div class="ttname"><a href="xwidget-platform_8h.html#a7a91c66336b9ba7b46bd8b6c57f29413">os_register_wm_delete_window</a></div><div class="ttdeci">Atom os_register_wm_delete_window(Widget_t *wid)</div><div class="ttdoc">os_register_wm_delete_window - Get the needed Atom to send a widget delete message</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00834">xwidget-linux.c:834</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea96d3ce9569e73843f74aa018bd8895a3"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea96d3ce9569e73843f74aa018bd8895a3">IS_WINDOW</a></div><div class="ttdeci">@ IS_WINDOW</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00390">xwidget.h:390</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xchildlist__private_8c_source.html#l00023">_childlist_add_elem()</a>, <a class="el" href="xchildlist_8h_source.html#l00055">Childlist_t::cap</a>, <a class="el" href="xchildlist_8c_source.html#l00025">childlist_init()</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, <a class="el" href="xwidget_8h_source.html#l00457">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00386">IS_WINDOW</a>, and <a class="el" href="xwidget-linux_8c_source.html#l00834">os_register_wm_delete_window()</a>.</p>
+<p class="reference">References <a class="el" href="xchildlist__private_8c_source.html#l00023">_childlist_add_elem()</a>, <a class="el" href="xchildlist_8h_source.html#l00055">Childlist_t::cap</a>, <a class="el" href="xchildlist_8c_source.html#l00025">childlist_init()</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00390">IS_WINDOW</a>, and <a class="el" href="xwidget-linux_8c_source.html#l00834">os_register_wm_delete_window()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xvaluedisplay_8c_source.html#l00026">add_popup_spinbox()</a>, <a class="el" href="xcombobox_8c_source.html#l00123">create_combobox_menu()</a>, <a class="el" href="xmenu_8c_source.html#l00256">create_menu()</a>, <a class="el" href="xtooltip_8c_source.html#l00047">create_tooltip()</a>, <a class="el" href="xwidget_8c_source.html#l00265">create_widget()</a>, <a class="el" href="xwidget_8c_source.html#l00163">create_window()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00195">os_create_main_window_and_surface()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00270">os_create_widget_window_and_surface()</a>.</p>
 
@@ -200,7 +199,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xchildlist_8c_source.html#l00038">38</a> of file <a class="el" href="xchildlist_8c_source.html">xchildlist.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   38</span>                                               {</div>
@@ -312,9 +310,9 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   85</span>    }</div>
 <div class="line"><span class="lineno">   86</span>    <span class="keywordflow">return</span> -1;</div>
 <div class="line"><span class="lineno">   87</span>}</div>
-<div class="ttc" id="astructWidget__t_html_a635c8e6580aacd495c43475cab053580"><div class="ttname"><a href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">Widget_t::widget</a></div><div class="ttdeci">Window widget</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00465">xwidget.h:465</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a635c8e6580aacd495c43475cab053580"><div class="ttname"><a href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">Widget_t::widget</a></div><div class="ttdeci">Window widget</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00469">xwidget.h:469</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-linux_8c_source.html#l00845">os_main_run()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00950">os_run_embedded()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>.</p>
 
@@ -380,7 +378,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xchildlist_8c_source.html#l00025">25</a> of file <a class="el" href="xchildlist_8c_source.html">xchildlist.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   25</span>                                            {</div>
@@ -396,7 +393,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   35</span>    }</div>
 <div class="line"><span class="lineno">   36</span>}</div>
 <div class="ttc" id="astructChildlist__t_html_a854352f53b148adc24983a58a1866d66"><div class="ttname"><a href="structChildlist__t.html#a854352f53b148adc24983a58a1866d66">Childlist_t::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8h_source.html#l00053">xchildlist.h:53</a></div></div>
-<div class="ttc" id="astructWidget__t_html"><div class="ttname"><a href="structWidget__t.html">Widget_t</a></div><div class="ttdoc">Widget_t - struct to hold the basic Widget_t info.</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00453">xwidget.h:453</a></div></div>
+<div class="ttc" id="astructWidget__t_html"><div class="ttname"><a href="structWidget__t.html">Widget_t</a></div><div class="ttdoc">Widget_t - struct to hold the basic Widget_t info.</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00457">xwidget.h:457</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xchildlist_8h_source.html#l00055">Childlist_t::cap</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, and <a class="el" href="xchildlist_8h_source.html#l00053">Childlist_t::size</a>.</p>
 
@@ -439,7 +436,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xchildlist_8c_source.html#l00055">55</a> of file <a class="el" href="xchildlist_8c_source.html">xchildlist.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   55</span>                                                                     {</div>

@@ -88,8 +88,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a8c693868b3b871d66b9700eb032b0376" id="r_a8c693868b3b871d66b9700eb032b0376"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a8c693868b3b871d66b9700eb032b0376">intern_error_handler</a> (<a class="el" href="xputty-mswin_8h.html#aac2cd2aa5cbc66f5bff9270130f515fd">Display</a> *dpy, XErrorEvent *e)</td></tr>
 <tr class="separator:a8c693868b3b871d66b9700eb032b0376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b1abaec302c347633a47eefc5b070a0" id="r_a2b1abaec302c347633a47eefc5b070a0"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a2b1abaec302c347633a47eefc5b070a0">utf8_from_locale</a> (char *localestr)</td></tr>
+<tr class="memdesc:a2b1abaec302c347633a47eefc5b070a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">utf8_from_locale - convert active codepage to utf8 must be freed by the caller  <br /></td></tr>
 <tr class="separator:a2b1abaec302c347633a47eefc5b070a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6ccbd0e8beba49807660ab817cfeba9" id="r_ae6ccbd0e8beba49807660ab817cfeba9"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#ae6ccbd0e8beba49807660ab817cfeba9">locale_from_utf8</a> (char *utf8str)</td></tr>
+<tr class="memdesc:ae6ccbd0e8beba49807660ab817cfeba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">locale_from_utf8 - convert utf8 to active codepage must be freed by the caller  <br /></td></tr>
 <tr class="separator:ae6ccbd0e8beba49807660ab817cfeba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7a6d46cc99a61e5bf0e9643ece9bdba" id="r_ae7a6d46cc99a61e5bf0e9643ece9bdba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="xputty-mswin_8h.html#aac2cd2aa5cbc66f5bff9270130f515fd">Display</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#ae7a6d46cc99a61e5bf0e9643ece9bdba">os_open_display</a> (char *display_name)</td></tr>
 <tr class="memdesc:ae7a6d46cc99a61e5bf0e9643ece9bdba"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_open_display - Connect to the display to use  <br /></td></tr>
@@ -125,20 +127,28 @@ Functions</h2></td></tr>
 <tr class="memdesc:a1f4ec755489fb3ebf3863cb2066044ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_set_widget_surface_size - set the size of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> cairo surface  <br /></td></tr>
 <tr class="separator:a1f4ec755489fb3ebf3863cb2066044ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad718e380b469f012fef99d99744ee546" id="r_ad718e380b469f012fef99d99744ee546"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#ad718e380b469f012fef99d99744ee546">os_create_main_window_and_surface</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, <a class="el" href="structXputty.html">Xputty</a> *app, <a class="el" href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a> win, int x, int y, int width, int height)</td></tr>
+<tr class="memdesc:ad718e380b469f012fef99d99744ee546"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_create_main_window_and_surface - create a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> with a acairo surface this function is used mainly internal on <a class="el" href="xwidget_8h.html#a325d44c1faf94f7c4ba6b9a35f4b14e0" title="*create_window - create a Window   You need to create as least minimun one Window to get started....">create_window()</a>  <br /></td></tr>
 <tr class="separator:ad718e380b469f012fef99d99744ee546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab33c7a8cd260d89dae8f7bb800dfdf6b" id="r_ab33c7a8cd260d89dae8f7bb800dfdf6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#ab33c7a8cd260d89dae8f7bb800dfdf6b">os_create_widget_window_and_surface</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, <a class="el" href="structXputty.html">Xputty</a> *app, <a class="el" href="structWidget__t.html">Widget_t</a> *parent, int x, int y, int width, int height)</td></tr>
+<tr class="memdesc:ab33c7a8cd260d89dae8f7bb800dfdf6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_create_main_widget_and_surface - create a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> with a acairo surface this function is used mainly internal on <a class="el" href="xwidget_8h.html#a0f48f1193ae5aa9a11f0a4bf03abf41d" title="*create_widget - create a widget   A Widget_t could only be created as child of a other Widget_t   To...">create_widget()</a>  <br /></td></tr>
 <tr class="separator:ab33c7a8cd260d89dae8f7bb800dfdf6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7020a995c5643ed594b99ed312860eae" id="r_a7020a995c5643ed594b99ed312860eae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a7020a995c5643ed594b99ed312860eae">os_set_title</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, const char *title)</td></tr>
+<tr class="memdesc:a7020a995c5643ed594b99ed312860eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_set_title - Set the title of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:a7020a995c5643ed594b99ed312860eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01cba00821a355104265dbc6418e09bf" id="r_a01cba00821a355104265dbc6418e09bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a01cba00821a355104265dbc6418e09bf">os_widget_show</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a01cba00821a355104265dbc6418e09bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_widget_show - Show a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:a01cba00821a355104265dbc6418e09bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ee9d2b370508eb19881851f43df9dcb" id="r_a0ee9d2b370508eb19881851f43df9dcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a0ee9d2b370508eb19881851f43df9dcb">os_widget_hide</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a0ee9d2b370508eb19881851f43df9dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_widget_hide - Hide a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:a0ee9d2b370508eb19881851f43df9dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a710c39f12017edfc59a64c6e65775c" id="r_a7a710c39f12017edfc59a64c6e65775c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a7a710c39f12017edfc59a64c6e65775c">os_show_tooltip</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *wid, <a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a7a710c39f12017edfc59a64c6e65775c"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_show_tooltip - Show a tooltip of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:a7a710c39f12017edfc59a64c6e65775c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5c9d71ad678b5e5fa2edce8fa6b0a72" id="r_ae5c9d71ad678b5e5fa2edce8fa6b0a72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#ae5c9d71ad678b5e5fa2edce8fa6b0a72">os_expose_widget</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:ae5c9d71ad678b5e5fa2edce8fa6b0a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_expose_widget - Draw the the back buffer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> surface  <br /></td></tr>
 <tr class="separator:ae5c9d71ad678b5e5fa2edce8fa6b0a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a87ab9355bed9fdbe074ef266e89aa2" id="r_a8a87ab9355bed9fdbe074ef266e89aa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a8a87ab9355bed9fdbe074ef266e89aa2">os_widget_event_loop</a> (void *w_, void *event, <a class="el" href="structXputty.html">Xputty</a> *main, void *user_data)</td></tr>
+<tr class="memdesc:a8a87ab9355bed9fdbe074ef266e89aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_widget_event_loop - the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> event loop on windows all messges goes into WndProc, so stub here  <br /></td></tr>
 <tr class="separator:a8a87ab9355bed9fdbe074ef266e89aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec71730de45b962fced8ee41a87c986c" id="r_aec71730de45b962fced8ee41a87c986c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#aec71730de45b962fced8ee41a87c986c">widget_set_dnd_aware</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
 <tr class="memdesc:aec71730de45b962fced8ee41a87c986c"><td class="mdescLeft">&#160;</td><td class="mdescRight">widget_set_dnd_aware - allow drag and drop for on <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
@@ -179,50 +189,73 @@ Functions</h2></td></tr>
 <tr class="memdesc:a69077c6110445bd51275ed5054b56c55"><td class="mdescLeft">&#160;</td><td class="mdescRight">send_to_clipboard - send textbuffer to clipboard on request  <br /></td></tr>
 <tr class="separator:a69077c6110445bd51275ed5054b56c55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6753e350068eda83a378bd3d215f0ff5" id="r_a6753e350068eda83a378bd3d215f0ff5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a6753e350068eda83a378bd3d215f0ff5">os_send_configure_event</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, int x, int y, int width, int height)</td></tr>
+<tr class="memdesc:a6753e350068eda83a378bd3d215f0ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_send_configure_event - Send a configure event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:a6753e350068eda83a378bd3d215f0ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22ab612d9d4a974280473cebf9f6cae1" id="r_a22ab612d9d4a974280473cebf9f6cae1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a22ab612d9d4a974280473cebf9f6cae1">os_send_button_press_event</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a22ab612d9d4a974280473cebf9f6cae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_send_button_press_event - Send a button press event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> see XButtonEvent  <br /></td></tr>
 <tr class="separator:a22ab612d9d4a974280473cebf9f6cae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35e5d3c95c970a33882569e3797391c1" id="r_a35e5d3c95c970a33882569e3797391c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a35e5d3c95c970a33882569e3797391c1">os_send_button_release_event</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a35e5d3c95c970a33882569e3797391c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_send_button_release_event - Send a button release event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> see XButtonEvent  <br /></td></tr>
 <tr class="separator:a35e5d3c95c970a33882569e3797391c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d4486a29f8fb0c8278b33f10b74f09a" id="r_a5d4486a29f8fb0c8278b33f10b74f09a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a5d4486a29f8fb0c8278b33f10b74f09a">os_send_systray_message</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a5d4486a29f8fb0c8278b33f10b74f09a"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_send_send_systray_message - Send a systray event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only working on Linux for now  <br /></td></tr>
 <tr class="separator:a5d4486a29f8fb0c8278b33f10b74f09a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7120ef822716ce09536118d3f977f41" id="r_aa7120ef822716ce09536118d3f977f41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#aa7120ef822716ce09536118d3f977f41">os_transparent_draw</a> (void *w_, void *user_data)</td></tr>
+<tr class="memdesc:aa7120ef822716ce09536118d3f977f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_transparent_draw - Draw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> to the back buffer  <br /></td></tr>
 <tr class="separator:aa7120ef822716ce09536118d3f977f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adee344daface42492de09cdc6d5cf069" id="r_adee344daface42492de09cdc6d5cf069"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#adee344daface42492de09cdc6d5cf069">os_adjustment_callback</a> (void *w_, void *user_data)</td></tr>
+<tr class="memdesc:adee344daface42492de09cdc6d5cf069"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_adjustment_callback - called when a adjustment value have changed used internal for redraw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:adee344daface42492de09cdc6d5cf069"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a2be9712bdfabdcf009e6466dd4693f" id="r_a2a2be9712bdfabdcf009e6466dd4693f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a2a2be9712bdfabdcf009e6466dd4693f">os_grab_pointer</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a2a2be9712bdfabdcf009e6466dd4693f"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_grab_pointer - grab the mouse pointer. Works only on linux  <br /></td></tr>
 <tr class="separator:a2a2be9712bdfabdcf009e6466dd4693f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76dc02c33a8f2444dec37002b4235e4b" id="r_a76dc02c33a8f2444dec37002b4235e4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a76dc02c33a8f2444dec37002b4235e4b">os_set_input_mask</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a76dc02c33a8f2444dec37002b4235e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_set_input_mask - set the Event mask to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only work on linux, stub on Windows  <br /></td></tr>
 <tr class="separator:a76dc02c33a8f2444dec37002b4235e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec7d38bff32d2995567634fa5012a520" id="r_aec7d38bff32d2995567634fa5012a520"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#aec7d38bff32d2995567634fa5012a520">os_set_window_attrb</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:aec7d38bff32d2995567634fa5012a520"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_set_window_attrb - set the attribute mask to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only work on linux, stub on Windows  <br /></td></tr>
 <tr class="separator:aec7d38bff32d2995567634fa5012a520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cb2e2080921c01746dab98682aac799" id="r_a9cb2e2080921c01746dab98682aac799"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a9cb2e2080921c01746dab98682aac799">os_set_transient_for_hint</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *parent, <a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a9cb2e2080921c01746dab98682aac799"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_set_ transient_for_hint - set a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> transient to a other <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only work on linux, stub on Windows  <br /></td></tr>
 <tr class="separator:a9cb2e2080921c01746dab98682aac799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac02c2a3f0c76b53e6f08994ef5d3ee25" id="r_ac02c2a3f0c76b53e6f08994ef5d3ee25"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#ac02c2a3f0c76b53e6f08994ef5d3ee25">os_get_screen_height</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:ac02c2a3f0c76b53e6f08994ef5d3ee25"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_get_screen_height - Get the height of the used Display  <br /></td></tr>
 <tr class="separator:ac02c2a3f0c76b53e6f08994ef5d3ee25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bec83ac3b6ebb9d10a8d47d31a2660c" id="r_a2bec83ac3b6ebb9d10a8d47d31a2660c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a2bec83ac3b6ebb9d10a8d47d31a2660c">os_get_screen_width</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a2bec83ac3b6ebb9d10a8d47d31a2660c"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_get_screen_width - Get the width of the used Display  <br /></td></tr>
 <tr class="separator:a2bec83ac3b6ebb9d10a8d47d31a2660c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a908a2a5a8130d6b6447b6d8e587992a8" id="r_a908a2a5a8130d6b6447b6d8e587992a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a908a2a5a8130d6b6447b6d8e587992a8">os_is_directory</a> (const char *filename)</td></tr>
+<tr class="memdesc:a908a2a5a8130d6b6447b6d8e587992a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_is directory - check if a given path is a directory or a file  <br /></td></tr>
 <tr class="separator:a908a2a5a8130d6b6447b6d8e587992a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3266e4cf51a42d5770d6f33939242ece" id="r_a3266e4cf51a42d5770d6f33939242ece"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a3266e4cf51a42d5770d6f33939242ece">os_get_home_dir</a> ()</td></tr>
+<tr class="memdesc:a3266e4cf51a42d5770d6f33939242ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_get_home_dir - get the users home directory  <br /></td></tr>
 <tr class="separator:a3266e4cf51a42d5770d6f33939242ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaf19af7685fa7a9142325edaaec5432" id="r_aaaf19af7685fa7a9142325edaaec5432"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#aaaf19af7685fa7a9142325edaaec5432">os_get_keyboard_input</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, <a class="el" href="xputty-mswin_8h.html#a53aa4853af43aeb976faf9a4dbca99e7">XKeyEvent</a> *key, char *buf, size_t bufsize)</td></tr>
+<tr class="memdesc:aaaf19af7685fa7a9142325edaaec5432"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_ get_keyboard_input - Get the Keyboard input and convert it to utf8  <br /></td></tr>
 <tr class="separator:aaaf19af7685fa7a9142325edaaec5432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f66f9952574095375f5ee2b424f463d" id="r_a7f66f9952574095375f5ee2b424f463d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a7f66f9952574095375f5ee2b424f463d">os_free_pixmap</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, <a class="el" href="xputty-mswin_8h.html#a0b28ba259a9ba9422d5712ad5ef4fb3d">Pixmap</a> pixmap)</td></tr>
+<tr class="memdesc:a7f66f9952574095375f5ee2b424f463d"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_free_pixmap - Free the memory used by a Pixmap only Linux, stub otherwise  <br /></td></tr>
 <tr class="separator:a7f66f9952574095375f5ee2b424f463d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70f7b4152849abe59ad4398f307ee846" id="r_a70f7b4152849abe59ad4398f307ee846"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a70f7b4152849abe59ad4398f307ee846">os_quit</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a70f7b4152849abe59ad4398f307ee846"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_quit - quit the main loop and free all used memory  <br /></td></tr>
 <tr class="separator:a70f7b4152849abe59ad4398f307ee846"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cabab2601cc0a3e6f7b6840626300c1" id="r_a9cabab2601cc0a3e6f7b6840626300c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a9cabab2601cc0a3e6f7b6840626300c1">os_quit_widget</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w)</td></tr>
+<tr class="memdesc:a9cabab2601cc0a3e6f7b6840626300c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_quit_widget - remove a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> from the main loop and free it's used memory  <br /></td></tr>
 <tr class="separator:a9cabab2601cc0a3e6f7b6840626300c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a91c66336b9ba7b46bd8b6c57f29413" id="r_a7a91c66336b9ba7b46bd8b6c57f29413"><td class="memItemLeft" align="right" valign="top"><a class="el" href="xputty-mswin_8h.html#aaf30b525a88bc35425720d2b4abca810">Atom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a7a91c66336b9ba7b46bd8b6c57f29413">os_register_wm_delete_window</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *wid)</td></tr>
+<tr class="memdesc:a7a91c66336b9ba7b46bd8b6c57f29413"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_register_wm_delete_window - Get the needed Atom to send a widget delete message  <br /></td></tr>
 <tr class="separator:a7a91c66336b9ba7b46bd8b6c57f29413"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a705d1a1f726bddbb47c588cbd1773456" id="r_a705d1a1f726bddbb47c588cbd1773456"><td class="memItemLeft" align="right" valign="top"><a class="el" href="xputty-mswin_8h.html#aaf30b525a88bc35425720d2b4abca810">Atom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a705d1a1f726bddbb47c588cbd1773456">os_register_widget_destroy</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *wid)</td></tr>
+<tr class="memdesc:a705d1a1f726bddbb47c588cbd1773456"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_register_widget_destroy - Get the needed Atom to send a widget destroy message  <br /></td></tr>
 <tr class="separator:a705d1a1f726bddbb47c588cbd1773456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e3d9b3a046860c3a1b1814f920eb24d" id="r_a0e3d9b3a046860c3a1b1814f920eb24d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a0e3d9b3a046860c3a1b1814f920eb24d">os_main_run</a> (<a class="el" href="structXputty.html">Xputty</a> *main)</td></tr>
+<tr class="memdesc:a0e3d9b3a046860c3a1b1814f920eb24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_main_run - start the event loop  <br /></td></tr>
 <tr class="separator:a0e3d9b3a046860c3a1b1814f920eb24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a442a2ff54def86ccfc7b25c584753957" id="r_a442a2ff54def86ccfc7b25c584753957"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a442a2ff54def86ccfc7b25c584753957">os_run_embedded</a> (<a class="el" href="structXputty.html">Xputty</a> *main)</td></tr>
+<tr class="memdesc:a442a2ff54def86ccfc7b25c584753957"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_run_embedded - the event handling when run embedded on windows all messges goes into WndProc, so stub here  <br /></td></tr>
 <tr class="separator:a442a2ff54def86ccfc7b25c584753957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a195e102bd621bf2d13b9bded9e13f1d2" id="r_a195e102bd621bf2d13b9bded9e13f1d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-linux_8c.html#a195e102bd621bf2d13b9bded9e13f1d2">os_init_dnd</a> (<a class="el" href="structXputty.html">Xputty</a> *main)</td></tr>
+<tr class="memdesc:a195e102bd621bf2d13b9bded9e13f1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_init_dnd - register a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> for handling drag and drop events only implemented on linux  <br /></td></tr>
 <tr class="separator:a195e102bd621bf2d13b9bded9e13f1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -272,7 +305,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00586">586</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  586</span>                                                          {</div>
@@ -283,14 +315,14 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  591</span>    w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#ada281c9162fcaaab3b311d419e083953">ctext</a> = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*)strndup(text, size);</div>
 <div class="line"><span class="lineno">  592</span>    w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#ad5b9cf9b44831a7b817f91dd50936b7b">csize</a> = size;</div>
 <div class="line"><span class="lineno">  593</span>}</div>
-<div class="ttc" id="astructWidget__t_html_a635c8e6580aacd495c43475cab053580"><div class="ttname"><a href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">Widget_t::widget</a></div><div class="ttdeci">Window widget</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00465">xwidget.h:465</a></div></div>
-<div class="ttc" id="astructWidget__t_html_af3ebd10c8f320d7652a1d44e01e52856"><div class="ttname"><a href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">Widget_t::app</a></div><div class="ttdeci">Xputty * app</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00461">xwidget.h:461</a></div></div>
-<div class="ttc" id="astructXputty_html_a7d43b3edf58f8d85a89852ab95b740f6"><div class="ttname"><a href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">Xputty::dpy</a></div><div class="ttdeci">Display * dpy</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00226">xputty.h:226</a></div></div>
-<div class="ttc" id="astructXputty_html_abd899f45b374dd9abbd9533f7ab6262d"><div class="ttname"><a href="structXputty.html#abd899f45b374dd9abbd9533f7ab6262d">Xputty::selection</a></div><div class="ttdeci">Atom selection</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00272">xputty.h:272</a></div></div>
-<div class="ttc" id="astructXputty_html_ad5b9cf9b44831a7b817f91dd50936b7b"><div class="ttname"><a href="structXputty.html#ad5b9cf9b44831a7b817f91dd50936b7b">Xputty::csize</a></div><div class="ttdeci">int csize</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00246">xputty.h:246</a></div></div>
-<div class="ttc" id="astructXputty_html_ada281c9162fcaaab3b311d419e083953"><div class="ttname"><a href="structXputty.html#ada281c9162fcaaab3b311d419e083953">Xputty::ctext</a></div><div class="ttdeci">unsigned char * ctext</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00238">xputty.h:238</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a635c8e6580aacd495c43475cab053580"><div class="ttname"><a href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">Widget_t::widget</a></div><div class="ttdeci">Window widget</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00469">xwidget.h:469</a></div></div>
+<div class="ttc" id="astructWidget__t_html_af3ebd10c8f320d7652a1d44e01e52856"><div class="ttname"><a href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">Widget_t::app</a></div><div class="ttdeci">Xputty * app</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00465">xwidget.h:465</a></div></div>
+<div class="ttc" id="astructXputty_html_a7d43b3edf58f8d85a89852ab95b740f6"><div class="ttname"><a href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">Xputty::dpy</a></div><div class="ttdeci">Display * dpy</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00232">xputty.h:232</a></div></div>
+<div class="ttc" id="astructXputty_html_abd899f45b374dd9abbd9533f7ab6262d"><div class="ttname"><a href="structXputty.html#abd899f45b374dd9abbd9533f7ab6262d">Xputty::selection</a></div><div class="ttdeci">Atom selection</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00278">xputty.h:278</a></div></div>
+<div class="ttc" id="astructXputty_html_ad5b9cf9b44831a7b817f91dd50936b7b"><div class="ttname"><a href="structXputty.html#ad5b9cf9b44831a7b817f91dd50936b7b">Xputty::csize</a></div><div class="ttdeci">int csize</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00252">xputty.h:252</a></div></div>
+<div class="ttc" id="astructXputty_html_ada281c9162fcaaab3b311d419e083953"><div class="ttname"><a href="structXputty.html#ada281c9162fcaaab3b311d419e083953">Xputty::ctext</a></div><div class="ttdeci">unsigned char * ctext</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00244">xputty.h:244</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00246">Xputty::csize</a>, <a class="el" href="xputty_8h_source.html#l00238">Xputty::ctext</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xputty_8h_source.html#l00272">Xputty::selection</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00252">Xputty::csize</a>, <a class="el" href="xputty_8h_source.html#l00244">Xputty::ctext</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xputty_8h_source.html#l00278">Xputty::selection</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 </div>
 </div>
@@ -328,7 +360,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00481">481</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  481</span>                                                   {</div>
@@ -373,16 +404,16 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  520</span>        }</div>
 <div class="line"><span class="lineno">  521</span>    }</div>
 <div class="line"><span class="lineno">  522</span>}</div>
-<div class="ttc" id="astructXputty_html_a64241f1c6ba1d2eee2ce1736995f816a"><div class="ttname"><a href="structXputty.html#a64241f1c6ba1d2eee2ce1736995f816a">Xputty::dnd_source_window</a></div><div class="ttdeci">Window dnd_source_window</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00255">xputty.h:255</a></div></div>
-<div class="ttc" id="astructXputty_html_a695509e018c5af29d26f7be009800157"><div class="ttname"><a href="structXputty.html#a695509e018c5af29d26f7be009800157">Xputty::dnd_type_uri</a></div><div class="ttdeci">Atom dnd_type_uri</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00268">xputty.h:268</a></div></div>
-<div class="ttc" id="astructXputty_html_aab31579d3e25361cc0a2293d0f65d480"><div class="ttname"><a href="structXputty.html#aab31579d3e25361cc0a2293d0f65d480">Xputty::dnd_version</a></div><div class="ttdeci">int dnd_version</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00248">xputty.h:248</a></div></div>
-<div class="ttc" id="astructXputty_html_add0bc8b26aaa5f752ea61172df92c8cf"><div class="ttname"><a href="structXputty.html#add0bc8b26aaa5f752ea61172df92c8cf">Xputty::dnd_type</a></div><div class="ttdeci">Atom dnd_type</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00270">xputty.h:270</a></div></div>
-<div class="ttc" id="astructXputty_html_ae19764e98d923428dc6e67ae99de89ff"><div class="ttname"><a href="structXputty.html#ae19764e98d923428dc6e67ae99de89ff">Xputty::XdndTypeList</a></div><div class="ttdeci">Atom XdndTypeList</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00257">xputty.h:257</a></div></div>
-<div class="ttc" id="astructXputty_html_af20a00ee8bd737c721d4d951f389ebc5"><div class="ttname"><a href="structXputty.html#af20a00ee8bd737c721d4d951f389ebc5">Xputty::dnd_type_utf8</a></div><div class="ttdeci">Atom dnd_type_utf8</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00269">xputty.h:269</a></div></div>
-<div class="ttc" id="astructXputty_html_afa6a5417629c970c07327960568b8a3f"><div class="ttname"><a href="structXputty.html#afa6a5417629c970c07327960568b8a3f">Xputty::dnd_type_text</a></div><div class="ttdeci">Atom dnd_type_text</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00267">xputty.h:267</a></div></div>
-<div class="ttc" id="axputty-mswin_8h_html_aaf30b525a88bc35425720d2b4abca810"><div class="ttname"><a href="xputty-mswin_8h.html#aaf30b525a88bc35425720d2b4abca810">Atom</a></div><div class="ttdeci">unsigned long int Atom</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00046">xputty-mswin.h:46</a></div></div>
+<div class="ttc" id="astructXputty_html_a64241f1c6ba1d2eee2ce1736995f816a"><div class="ttname"><a href="structXputty.html#a64241f1c6ba1d2eee2ce1736995f816a">Xputty::dnd_source_window</a></div><div class="ttdeci">Window dnd_source_window</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00261">xputty.h:261</a></div></div>
+<div class="ttc" id="astructXputty_html_a695509e018c5af29d26f7be009800157"><div class="ttname"><a href="structXputty.html#a695509e018c5af29d26f7be009800157">Xputty::dnd_type_uri</a></div><div class="ttdeci">Atom dnd_type_uri</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00274">xputty.h:274</a></div></div>
+<div class="ttc" id="astructXputty_html_aab31579d3e25361cc0a2293d0f65d480"><div class="ttname"><a href="structXputty.html#aab31579d3e25361cc0a2293d0f65d480">Xputty::dnd_version</a></div><div class="ttdeci">int dnd_version</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00254">xputty.h:254</a></div></div>
+<div class="ttc" id="astructXputty_html_add0bc8b26aaa5f752ea61172df92c8cf"><div class="ttname"><a href="structXputty.html#add0bc8b26aaa5f752ea61172df92c8cf">Xputty::dnd_type</a></div><div class="ttdeci">Atom dnd_type</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00276">xputty.h:276</a></div></div>
+<div class="ttc" id="astructXputty_html_ae19764e98d923428dc6e67ae99de89ff"><div class="ttname"><a href="structXputty.html#ae19764e98d923428dc6e67ae99de89ff">Xputty::XdndTypeList</a></div><div class="ttdeci">Atom XdndTypeList</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00263">xputty.h:263</a></div></div>
+<div class="ttc" id="astructXputty_html_af20a00ee8bd737c721d4d951f389ebc5"><div class="ttname"><a href="structXputty.html#af20a00ee8bd737c721d4d951f389ebc5">Xputty::dnd_type_utf8</a></div><div class="ttdeci">Atom dnd_type_utf8</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00275">xputty.h:275</a></div></div>
+<div class="ttc" id="astructXputty_html_afa6a5417629c970c07327960568b8a3f"><div class="ttname"><a href="structXputty.html#afa6a5417629c970c07327960568b8a3f">Xputty::dnd_type_text</a></div><div class="ttdeci">Atom dnd_type_text</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00273">xputty.h:273</a></div></div>
+<div class="ttc" id="axputty-mswin_8h_html_aaf30b525a88bc35425720d2b4abca810"><div class="ttname"><a href="xputty-mswin_8h.html#aaf30b525a88bc35425720d2b4abca810">Atom</a></div><div class="ttdeci">unsigned long int Atom</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00050">xputty-mswin.h:50</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xputty_8h_source.html#l00255">Xputty::dnd_source_window</a>, <a class="el" href="xputty_8h_source.html#l00270">Xputty::dnd_type</a>, <a class="el" href="xputty_8h_source.html#l00267">Xputty::dnd_type_text</a>, <a class="el" href="xputty_8h_source.html#l00268">Xputty::dnd_type_uri</a>, <a class="el" href="xputty_8h_source.html#l00269">Xputty::dnd_type_utf8</a>, <a class="el" href="xputty_8h_source.html#l00248">Xputty::dnd_version</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xputty_8h_source.html#l00257">Xputty::XdndTypeList</a>.</p>
+<p class="reference">References <a class="el" href="xputty_8h_source.html#l00261">Xputty::dnd_source_window</a>, <a class="el" href="xputty_8h_source.html#l00276">Xputty::dnd_type</a>, <a class="el" href="xputty_8h_source.html#l00273">Xputty::dnd_type_text</a>, <a class="el" href="xputty_8h_source.html#l00274">Xputty::dnd_type_uri</a>, <a class="el" href="xputty_8h_source.html#l00275">Xputty::dnd_type_utf8</a>, <a class="el" href="xputty_8h_source.html#l00254">Xputty::dnd_version</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xputty_8h_source.html#l00263">Xputty::XdndTypeList</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-linux_8c_source.html#l00230">os_widget_event_loop()</a>.</p>
 
@@ -422,7 +453,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00455">455</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  455</span>                                                  {</div>
@@ -450,14 +480,14 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  477</span>    w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a64241f1c6ba1d2eee2ce1736995f816a">dnd_source_window</a> = 0;</div>
 <div class="line"><span class="lineno">  478</span>    free(data);</div>
 <div class="line"><span class="lineno">  479</span>}</div>
-<div class="ttc" id="astructFunc__t_html_aa1fb2f1636777062d1593a9e693d585c"><div class="ttname"><a href="structFunc__t.html#aa1fb2f1636777062d1593a9e693d585c">Func_t::dnd_notify_callback</a></div><div class="ttdeci">xevfunc dnd_notify_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00093">xwidget.h:93</a></div></div>
-<div class="ttc" id="astructWidget__t_html_adf3b6f667fa98e1db418cfd081a4075a"><div class="ttname"><a href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">Widget_t::func</a></div><div class="ttdeci">Func_t func</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00477">xwidget.h:477</a></div></div>
-<div class="ttc" id="astructXputty_html_a1bae317825ce7d07356902921b337846"><div class="ttname"><a href="structXputty.html#a1bae317825ce7d07356902921b337846">Xputty::XdndSelection</a></div><div class="ttdeci">Atom XdndSelection</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00258">xputty.h:258</a></div></div>
+<div class="ttc" id="astructFunc__t_html_aa1fb2f1636777062d1593a9e693d585c"><div class="ttname"><a href="structFunc__t.html#aa1fb2f1636777062d1593a9e693d585c">Func_t::dnd_notify_callback</a></div><div class="ttdeci">xevfunc dnd_notify_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00097">xwidget.h:97</a></div></div>
+<div class="ttc" id="astructWidget__t_html_adf3b6f667fa98e1db418cfd081a4075a"><div class="ttname"><a href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">Widget_t::func</a></div><div class="ttdeci">Func_t func</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00481">xwidget.h:481</a></div></div>
+<div class="ttc" id="astructXputty_html_a1bae317825ce7d07356902921b337846"><div class="ttname"><a href="structXputty.html#a1bae317825ce7d07356902921b337846">Xputty::XdndSelection</a></div><div class="ttdeci">Atom XdndSelection</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00264">xputty.h:264</a></div></div>
 <div class="ttc" id="axwidget-linux_8c_html_a0a7954dccb898a7a688e886f76250fa2"><div class="ttname"><a href="xwidget-linux_8c.html#a0a7954dccb898a7a688e886f76250fa2">strdecode</a></div><div class="ttdeci">void strdecode(char *target, const char *needle, const char *replacement)</div><div class="ttdoc">strdecode - replace string in char*</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00432">xwidget-linux.c:432</a></div></div>
 <div class="ttc" id="axwidget-linux_8c_html_a6d5af29ee786ae55feebb42f5cdde5d8"><div class="ttname"><a href="xwidget-linux_8c.html#a6d5af29ee786ae55feebb42f5cdde5d8">send_dnd_finished_event</a></div><div class="ttdeci">void send_dnd_finished_event(Widget_t *w, XEvent *event)</div><div class="ttdoc">send_dnd_finished_event - notify the drag sender that the event is handled</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00540">xwidget-linux.c:540</a></div></div>
 <div class="ttc" id="axwidget-linux_8c_html_afbeef599bdad7752c8a95ae9c3f012a4"><div class="ttname"><a href="xwidget-linux_8c.html#afbeef599bdad7752c8a95ae9c3f012a4">strremove</a></div><div class="ttdeci">void strremove(char *str, const char *sub)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00419">xwidget-linux.c:419</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xwidget_8h_source.html#l00093">Func_t::dnd_notify_callback</a>, <a class="el" href="xputty_8h_source.html#l00255">Xputty::dnd_source_window</a>, <a class="el" href="xputty_8h_source.html#l00270">Xputty::dnd_type</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00477">Widget_t::func</a>, <a class="el" href="xwidget-linux_8c_source.html#l00540">send_dnd_finished_event()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00432">strdecode()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00419">strremove()</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, and <a class="el" href="xputty_8h_source.html#l00258">Xputty::XdndSelection</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget_8h_source.html#l00097">Func_t::dnd_notify_callback</a>, <a class="el" href="xputty_8h_source.html#l00261">Xputty::dnd_source_window</a>, <a class="el" href="xputty_8h_source.html#l00276">Xputty::dnd_type</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00481">Widget_t::func</a>, <a class="el" href="xwidget-linux_8c_source.html#l00540">send_dnd_finished_event()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00432">strdecode()</a>, <a class="el" href="xwidget-linux_8c_source.html#l00419">strremove()</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, and <a class="el" href="xputty_8h_source.html#l00264">Xputty::XdndSelection</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-linux_8c_source.html#l00230">os_widget_event_loop()</a>.</p>
 
@@ -486,14 +516,13 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00557">557</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  557</span>                            {</div>
 <div class="line"><span class="lineno">  558</span>    <span class="keywordflow">return</span> XGetSelectionOwner(w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>,w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#abd899f45b374dd9abbd9533f7ab6262d">selection</a>);</div>
 <div class="line"><span class="lineno">  559</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, and <a class="el" href="xputty_8h_source.html#l00272">Xputty::selection</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, and <a class="el" href="xputty_8h_source.html#l00278">Xputty::selection</a>.</p>
 
 </div>
 </div>
@@ -548,6 +577,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>locale_from_utf8 - convert utf8 to active codepage must be freed by the caller </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*utf8str</td><td>- Pointer to char to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>*char - the converted char in locale format </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00048">48</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   48</span>                                      {</div>
 <div class="line"><span class="lineno">   49</span>    <span class="keywordtype">char</span> *s_to = NULL;</div>
@@ -584,12 +622,21 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_adjustment_callback - called when a adjustment value have changed used internal for redraw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*user_data</td><td>- additional user data or NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00737">737</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  737</span>                                                       {</div>
 <div class="line"><span class="lineno">  738</span>   <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *)w_;</div>
 <div class="line"><span class="lineno">  739</span>   <a class="code hl_function" href="xwidget_8h.html#ab45a54d3dee60783a5afe9c236f54a04">transparent_draw</a>(w, user_data);</div>
 <div class="line"><span class="lineno">  740</span>}</div>
-<div class="ttc" id="astructWidget__t_html"><div class="ttname"><a href="structWidget__t.html">Widget_t</a></div><div class="ttdoc">Widget_t - struct to hold the basic Widget_t info.</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00453">xwidget.h:453</a></div></div>
+<div class="ttc" id="astructWidget__t_html"><div class="ttname"><a href="structWidget__t.html">Widget_t</a></div><div class="ttdoc">Widget_t - struct to hold the basic Widget_t info.</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00457">xwidget.h:457</a></div></div>
 <div class="ttc" id="axwidget_8h_html_ab45a54d3dee60783a5afe9c236f54a04"><div class="ttname"><a href="xwidget_8h.html#ab45a54d3dee60783a5afe9c236f54a04">transparent_draw</a></div><div class="ttdeci">void transparent_draw(void *wid, void *user_data)</div><div class="ttdoc">transparent_draw - copy parent surface to child surface   you usaualy didn't need to call this,...</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00449">xwidget.c:449</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -617,7 +664,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00058">58</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   58</span>                                    {</div>
@@ -682,6 +728,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_create_main_window_and_surface - create a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> with a acairo surface this function is used mainly internal on <a class="el" href="xwidget_8h.html#a325d44c1faf94f7c4ba6b9a35f4b14e0" title="*create_window - create a Window   You need to create as least minimun one Window to get started....">create_window()</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> to create </td></tr>
+    <tr><td class="paramname">*app</td><td>- the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> belongs to </td></tr>
+    <tr><td class="paramname">*win</td><td>- the Parent Window were the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> belongs to </td></tr>
+    <tr><td class="paramname">x,y</td><td>- the position related to the Parent Window </td></tr>
+    <tr><td class="paramname">*width,*height</td><td>- the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> size </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00122">122</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  123</span>                                                               {</div>
 <div class="line"><span class="lineno">  124</span>    XSetWindowAttributes attributes;</div>
@@ -718,9 +776,9 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  155</span>    w-&gt;<a class="code hl_variable" href="structWidget__t.html#a76e6dbb8b33b4373ca91aab3cab86245">surface</a> =  cairo_xlib_surface_create (app-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>,  </div>
 <div class="line"><span class="lineno">  156</span>                  DefaultVisual(app-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, DefaultScreen(app-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>)), width, height);</div>
 <div class="line"><span class="lineno">  157</span>}</div>
-<div class="ttc" id="astructWidget__t_html_a17a475f662597cd092d692b9ed6f5961"><div class="ttname"><a href="structWidget__t.html#a17a475f662597cd092d692b9ed6f5961">Widget_t::xim</a></div><div class="ttdeci">XIM xim</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00499">xwidget.h:499</a></div></div>
-<div class="ttc" id="astructWidget__t_html_a76e6dbb8b33b4373ca91aab3cab86245"><div class="ttname"><a href="structWidget__t.html#a76e6dbb8b33b4373ca91aab3cab86245">Widget_t::surface</a></div><div class="ttdeci">cairo_surface_t * surface</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00479">xwidget.h:479</a></div></div>
-<div class="ttc" id="astructWidget__t_html_ad7ef64cd3232c2d3cf94afdf923eb84e"><div class="ttname"><a href="structWidget__t.html#ad7ef64cd3232c2d3cf94afdf923eb84e">Widget_t::xic</a></div><div class="ttdeci">XIC xic</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00497">xwidget.h:497</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a17a475f662597cd092d692b9ed6f5961"><div class="ttname"><a href="structWidget__t.html#a17a475f662597cd092d692b9ed6f5961">Widget_t::xim</a></div><div class="ttdeci">XIM xim</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00503">xwidget.h:503</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a76e6dbb8b33b4373ca91aab3cab86245"><div class="ttname"><a href="structWidget__t.html#a76e6dbb8b33b4373ca91aab3cab86245">Widget_t::surface</a></div><div class="ttdeci">cairo_surface_t * surface</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00483">xwidget.h:483</a></div></div>
+<div class="ttc" id="astructWidget__t_html_ad7ef64cd3232c2d3cf94afdf923eb84e"><div class="ttname"><a href="structWidget__t.html#ad7ef64cd3232c2d3cf94afdf923eb84e">Widget_t::xic</a></div><div class="ttdeci">XIC xic</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00501">xwidget.h:501</a></div></div>
 <div class="ttc" id="axwidget-linux_8c_html_ab24816d13d510294eb290b6f2ad065f6"><div class="ttname"><a href="xwidget-linux_8c.html#ab24816d13d510294eb290b6f2ad065f6">os_set_window_min_size</a></div><div class="ttdeci">void os_set_window_min_size(Widget_t *w, int min_width, int min_height, int base_width, int base_height)</div><div class="ttdoc">os_set_window_min_size - Set the min and base size of a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00091">xwidget-linux.c:91</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -780,6 +838,18 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_create_main_widget_and_surface - create a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> with a acairo surface this function is used mainly internal on <a class="el" href="xwidget_8h.html#a0f48f1193ae5aa9a11f0a4bf03abf41d" title="*create_widget - create a widget   A Widget_t could only be created as child of a other Widget_t   To...">create_widget()</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> to create </td></tr>
+    <tr><td class="paramname">*app</td><td>- the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> belongs to </td></tr>
+    <tr><td class="paramname">*parent</td><td>- the Parent <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> were the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> belongs to </td></tr>
+    <tr><td class="paramname">x,y</td><td>- the position related to the Parent <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </td></tr>
+    <tr><td class="paramname">*width,*height</td><td>- the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> size </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00159">159</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  160</span>                                                               {</div>
@@ -841,7 +911,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00062">62</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   62</span>                                    {</div>
@@ -869,6 +938,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_expose_widget - Draw the the back buffer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> surface </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00222">222</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  222</span>                                   {</div>
 <div class="line"><span class="lineno">  223</span>    <a class="code hl_struct" href="structXEvent.html">XEvent</a> exp;</div>
@@ -877,8 +954,8 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  226</span>    exp.xexpose.<a class="code hl_variable" href="structXEvent.html#ac5b0b3c19d476a314bb68af9bc4a0ee0">window</a> = w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>;</div>
 <div class="line"><span class="lineno">  227</span>    XSendEvent(w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, False, ExposureMask, (<a class="code hl_struct" href="structXEvent.html">XEvent</a> *)&amp;exp);</div>
 <div class="line"><span class="lineno">  228</span>}</div>
-<div class="ttc" id="astructXEvent_html"><div class="ttname"><a href="structXEvent.html">XEvent</a></div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00054">xputty-mswin.h:54</a></div></div>
-<div class="ttc" id="astructXEvent_html_ac5b0b3c19d476a314bb68af9bc4a0ee0"><div class="ttname"><a href="structXEvent.html#ac5b0b3c19d476a314bb68af9bc4a0ee0">XEvent::window</a></div><div class="ttdeci">Window window</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00055">xputty-mswin.h:55</a></div></div>
+<div class="ttc" id="astructXEvent_html"><div class="ttname"><a href="structXEvent.html">XEvent</a></div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00058">xputty-mswin.h:58</a></div></div>
+<div class="ttc" id="astructXEvent_html_ac5b0b3c19d476a314bb68af9bc4a0ee0"><div class="ttname"><a href="structXEvent.html#ac5b0b3c19d476a314bb68af9bc4a0ee0">XEvent::window</a></div><div class="ttdeci">Window window</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00059">xputty-mswin.h:59</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -908,6 +985,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_free_pixmap - Free the memory used by a Pixmap only Linux, stub otherwise </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">pixmap</td><td>- the pixmap to be freed </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00805">805</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  805</span>                                                {</div>
 <div class="line"><span class="lineno">  806</span>    XFreePixmap(w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, pixmap);</div>
@@ -929,6 +1015,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_get_home_dir - get the users home directory </p>
+<dl class="section return"><dt>Returns</dt><dd>*char - return the users home directory must be freed by the caller </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00791">791</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  791</span>                        {</div>
@@ -978,6 +1067,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_ get_keyboard_input - Get the Keyboard input and convert it to utf8 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*key</td><td>- the XKeyEvent </td></tr>
+    <tr><td class="paramname">*buf</td><td>- the buffer to write the key in utf8 format </td></tr>
+    <tr><td class="paramname">bufsize</td><td>- the max buffer size to write to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool - retrun true when the char is written to the buffer false on error </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00798">798</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  798</span>                                                                                   {</div>
 <div class="line"><span class="lineno">  799</span>    Status status;</div>
@@ -985,7 +1086,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  801</span>    Xutf8LookupString(w-&gt;<a class="code hl_variable" href="structWidget__t.html#ad7ef64cd3232c2d3cf94afdf923eb84e">xic</a>, key, buf, bufsize - 1, &amp;keysym, &amp;status);</div>
 <div class="line"><span class="lineno">  802</span>    <span class="keywordflow">return</span> (status == XLookupChars || status == XLookupBoth);</div>
 <div class="line"><span class="lineno">  803</span>}</div>
-<div class="ttc" id="axputty-mswin_8h_html_a7bb8bc75e45bc0c7809556ac15c334e6"><div class="ttname"><a href="xputty-mswin_8h.html#a7bb8bc75e45bc0c7809556ac15c334e6">KeySym</a></div><div class="ttdeci">XID KeySym</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00050">xputty-mswin.h:50</a></div></div>
+<div class="ttc" id="axputty-mswin_8h_html_a7bb8bc75e45bc0c7809556ac15c334e6"><div class="ttname"><a href="xputty-mswin_8h.html#a7bb8bc75e45bc0c7809556ac15c334e6">KeySym</a></div><div class="ttdeci">XID KeySym</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00054">xputty-mswin.h:54</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1053,6 +1154,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_get_screen_height - Get the height of the used Display </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int - the height of the Display </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00776">776</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  776</span>                                     {</div>
 <div class="line"><span class="lineno">  777</span>    <span class="keywordtype">int</span> snum = DefaultScreen(w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>);</div>
@@ -1076,6 +1186,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_get_screen_width - Get the width of the used Display </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int - the width of the Display </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00781">781</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  781</span>                                    {</div>
@@ -1125,7 +1244,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00113">113</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  113</span>                                                                            {</div>
@@ -1169,7 +1287,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00080">80</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   80</span>                                                             {</div>
@@ -1182,12 +1299,12 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">   87</span>    metrics-&gt;<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a> = attrs.height;</div>
 <div class="line"><span class="lineno">   88</span>    metrics-&gt;<a class="code hl_variable" href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">visible</a> = (attrs.map_state == IsViewable);</div>
 <div class="line"><span class="lineno">   89</span>}</div>
-<div class="ttc" id="astructMetrics__t_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="structMetrics__t.html#a0a2f84ed7838f07779ae24c5a9086d33">Metrics_t::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00066">xwidget-platform.h:66</a></div></div>
-<div class="ttc" id="astructMetrics__t_html_a2474a5474cbff19523a51eb1de01cda4"><div class="ttname"><a href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">Metrics_t::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00060">xwidget-platform.h:60</a></div></div>
-<div class="ttc" id="astructMetrics__t_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="structMetrics__t.html#a6150e0515f7202e2fb518f7206ed97dc">Metrics_t::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00064">xwidget-platform.h:64</a></div></div>
-<div class="ttc" id="astructMetrics__t_html_aa54a57ae048476d840caf6d4d2c47aa3"><div class="ttname"><a href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">Metrics_t::visible</a></div><div class="ttdeci">bool visible</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00068">xwidget-platform.h:68</a></div></div>
-<div class="ttc" id="astructMetrics__t_html_ad12fc34ce789bce6c8a05d8a17138534"><div class="ttname"><a href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">Metrics_t::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00062">xwidget-platform.h:62</a></div></div>
-<div class="ttc" id="axputty-mswin_8h_html_adb48baf8a5c3aa4e6bdb2ca8112f5492"><div class="ttname"><a href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a></div><div class="ttdeci">HWND Window</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00048">xputty-mswin.h:48</a></div></div>
+<div class="ttc" id="astructMetrics__t_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="structMetrics__t.html#a0a2f84ed7838f07779ae24c5a9086d33">Metrics_t::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00067">xwidget-platform.h:67</a></div></div>
+<div class="ttc" id="astructMetrics__t_html_a2474a5474cbff19523a51eb1de01cda4"><div class="ttname"><a href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">Metrics_t::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00061">xwidget-platform.h:61</a></div></div>
+<div class="ttc" id="astructMetrics__t_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="structMetrics__t.html#a6150e0515f7202e2fb518f7206ed97dc">Metrics_t::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00065">xwidget-platform.h:65</a></div></div>
+<div class="ttc" id="astructMetrics__t_html_aa54a57ae048476d840caf6d4d2c47aa3"><div class="ttname"><a href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">Metrics_t::visible</a></div><div class="ttdeci">bool visible</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00069">xwidget-platform.h:69</a></div></div>
+<div class="ttc" id="astructMetrics__t_html_ad12fc34ce789bce6c8a05d8a17138534"><div class="ttname"><a href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">Metrics_t::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00063">xwidget-platform.h:63</a></div></div>
+<div class="ttc" id="axputty-mswin_8h_html_adb48baf8a5c3aa4e6bdb2ca8112f5492"><div class="ttname"><a href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a></div><div class="ttdeci">HWND Window</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00052">xputty-mswin.h:52</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1206,6 +1323,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_grab_pointer - grab the mouse pointer. Works only on linux </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget which will grab the mouse </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int - Return 0 on error </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00742">742</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  742</span>                                 {</div>
@@ -1233,6 +1359,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_init_dnd - register a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> for handling drag and drop events only implemented on linux </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*main</td><td>- pointer to the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l01048">1048</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno"> 1048</span>                               {</div>
 <div class="line"><span class="lineno"> 1049</span>    main-&gt;<a class="code hl_variable" href="structXputty.html#a64241f1c6ba1d2eee2ce1736995f816a">dnd_source_window</a> = 0;</div>
@@ -1258,17 +1392,17 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno"> 1069</span>    main-&gt;<a class="code hl_variable" href="structXputty.html#a1a613ac19a6aae5b841baee5ec079fd4">UTF8</a> = XInternAtom(main-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, <span class="stringliteral">&quot;UTF8_STRING&quot;</span>, 1);</div>
 <div class="line"><span class="lineno"> 1070</span>    <span class="keywordflow">if</span> (main-&gt;<a class="code hl_variable" href="structXputty.html#a1a613ac19a6aae5b841baee5ec079fd4">UTF8</a> == None) main-&gt;<a class="code hl_variable" href="structXputty.html#a1a613ac19a6aae5b841baee5ec079fd4">UTF8</a> = XA_STRING;    </div>
 <div class="line"><span class="lineno"> 1071</span>}</div>
-<div class="ttc" id="astructXputty_html_a0a722c00d18dd36d38b1b7186010cd72"><div class="ttname"><a href="structXputty.html#a0a722c00d18dd36d38b1b7186010cd72">Xputty::text_atom</a></div><div class="ttdeci">Atom text_atom</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00274">xputty.h:274</a></div></div>
-<div class="ttc" id="astructXputty_html_a10b65e5daeafa1d97fa421ecf8126da8"><div class="ttname"><a href="structXputty.html#a10b65e5daeafa1d97fa421ecf8126da8">Xputty::XdndActionCopy</a></div><div class="ttdeci">Atom XdndActionCopy</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00264">xputty.h:264</a></div></div>
-<div class="ttc" id="astructXputty_html_a1368bcafaac737c3e9a83f20d4e1c3b4"><div class="ttname"><a href="structXputty.html#a1368bcafaac737c3e9a83f20d4e1c3b4">Xputty::XdndPosition</a></div><div class="ttdeci">Atom XdndPosition</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00261">xputty.h:261</a></div></div>
-<div class="ttc" id="astructXputty_html_a1a613ac19a6aae5b841baee5ec079fd4"><div class="ttname"><a href="structXputty.html#a1a613ac19a6aae5b841baee5ec079fd4">Xputty::UTF8</a></div><div class="ttdeci">Atom UTF8</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00275">xputty.h:275</a></div></div>
-<div class="ttc" id="astructXputty_html_a25dfff5baf39ded0f29b29ca8576a286"><div class="ttname"><a href="structXputty.html#a25dfff5baf39ded0f29b29ca8576a286">Xputty::XdndEnter</a></div><div class="ttdeci">Atom XdndEnter</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00260">xputty.h:260</a></div></div>
-<div class="ttc" id="astructXputty_html_a4c15084e25c26455fc0e60ed2d8f7edb"><div class="ttname"><a href="structXputty.html#a4c15084e25c26455fc0e60ed2d8f7edb">Xputty::targets_atom</a></div><div class="ttdeci">Atom targets_atom</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00273">xputty.h:273</a></div></div>
-<div class="ttc" id="astructXputty_html_a6cc5ef525a67743ef4faa355384199b6"><div class="ttname"><a href="structXputty.html#a6cc5ef525a67743ef4faa355384199b6">Xputty::XdndFinished</a></div><div class="ttdeci">Atom XdndFinished</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00265">xputty.h:265</a></div></div>
-<div class="ttc" id="astructXputty_html_a90c21c6cace1df913ad7c84b4b4454c4"><div class="ttname"><a href="structXputty.html#a90c21c6cace1df913ad7c84b4b4454c4">Xputty::XdndAware</a></div><div class="ttdeci">Atom XdndAware</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00256">xputty.h:256</a></div></div>
-<div class="ttc" id="astructXputty_html_aaa91b8e0e39f3ec8d1e41b480600062f"><div class="ttname"><a href="structXputty.html#aaa91b8e0e39f3ec8d1e41b480600062f">Xputty::XdndStatus</a></div><div class="ttdeci">Atom XdndStatus</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00259">xputty.h:259</a></div></div>
-<div class="ttc" id="astructXputty_html_ad47c0bc9e4cb44629f68e3e35d32a42c"><div class="ttname"><a href="structXputty.html#ad47c0bc9e4cb44629f68e3e35d32a42c">Xputty::XdndDrop</a></div><div class="ttdeci">Atom XdndDrop</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00263">xputty.h:263</a></div></div>
-<div class="ttc" id="astructXputty_html_afe7f43ddab2933a29bc9bedbf20b4823"><div class="ttname"><a href="structXputty.html#afe7f43ddab2933a29bc9bedbf20b4823">Xputty::XdndLeave</a></div><div class="ttdeci">Atom XdndLeave</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00262">xputty.h:262</a></div></div>
+<div class="ttc" id="astructXputty_html_a0a722c00d18dd36d38b1b7186010cd72"><div class="ttname"><a href="structXputty.html#a0a722c00d18dd36d38b1b7186010cd72">Xputty::text_atom</a></div><div class="ttdeci">Atom text_atom</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00280">xputty.h:280</a></div></div>
+<div class="ttc" id="astructXputty_html_a10b65e5daeafa1d97fa421ecf8126da8"><div class="ttname"><a href="structXputty.html#a10b65e5daeafa1d97fa421ecf8126da8">Xputty::XdndActionCopy</a></div><div class="ttdeci">Atom XdndActionCopy</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00270">xputty.h:270</a></div></div>
+<div class="ttc" id="astructXputty_html_a1368bcafaac737c3e9a83f20d4e1c3b4"><div class="ttname"><a href="structXputty.html#a1368bcafaac737c3e9a83f20d4e1c3b4">Xputty::XdndPosition</a></div><div class="ttdeci">Atom XdndPosition</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00267">xputty.h:267</a></div></div>
+<div class="ttc" id="astructXputty_html_a1a613ac19a6aae5b841baee5ec079fd4"><div class="ttname"><a href="structXputty.html#a1a613ac19a6aae5b841baee5ec079fd4">Xputty::UTF8</a></div><div class="ttdeci">Atom UTF8</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00281">xputty.h:281</a></div></div>
+<div class="ttc" id="astructXputty_html_a25dfff5baf39ded0f29b29ca8576a286"><div class="ttname"><a href="structXputty.html#a25dfff5baf39ded0f29b29ca8576a286">Xputty::XdndEnter</a></div><div class="ttdeci">Atom XdndEnter</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00266">xputty.h:266</a></div></div>
+<div class="ttc" id="astructXputty_html_a4c15084e25c26455fc0e60ed2d8f7edb"><div class="ttname"><a href="structXputty.html#a4c15084e25c26455fc0e60ed2d8f7edb">Xputty::targets_atom</a></div><div class="ttdeci">Atom targets_atom</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00279">xputty.h:279</a></div></div>
+<div class="ttc" id="astructXputty_html_a6cc5ef525a67743ef4faa355384199b6"><div class="ttname"><a href="structXputty.html#a6cc5ef525a67743ef4faa355384199b6">Xputty::XdndFinished</a></div><div class="ttdeci">Atom XdndFinished</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00271">xputty.h:271</a></div></div>
+<div class="ttc" id="astructXputty_html_a90c21c6cace1df913ad7c84b4b4454c4"><div class="ttname"><a href="structXputty.html#a90c21c6cace1df913ad7c84b4b4454c4">Xputty::XdndAware</a></div><div class="ttdeci">Atom XdndAware</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00262">xputty.h:262</a></div></div>
+<div class="ttc" id="astructXputty_html_aaa91b8e0e39f3ec8d1e41b480600062f"><div class="ttname"><a href="structXputty.html#aaa91b8e0e39f3ec8d1e41b480600062f">Xputty::XdndStatus</a></div><div class="ttdeci">Atom XdndStatus</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00265">xputty.h:265</a></div></div>
+<div class="ttc" id="astructXputty_html_ad47c0bc9e4cb44629f68e3e35d32a42c"><div class="ttname"><a href="structXputty.html#ad47c0bc9e4cb44629f68e3e35d32a42c">Xputty::XdndDrop</a></div><div class="ttdeci">Atom XdndDrop</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00269">xputty.h:269</a></div></div>
+<div class="ttc" id="astructXputty_html_afe7f43ddab2933a29bc9bedbf20b4823"><div class="ttname"><a href="structXputty.html#afe7f43ddab2933a29bc9bedbf20b4823">Xputty::XdndLeave</a></div><div class="ttdeci">Atom XdndLeave</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00268">xputty.h:268</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1287,6 +1421,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_is directory - check if a given path is a directory or a file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*filename</td><td>- the Path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool - return true if path is directory, otrherwise false </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00786">786</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  786</span>                                           {</div>
@@ -1311,6 +1454,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_main_run - start the event loop </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*main</td><td>- pointer to the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00845">845</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  845</span>                               {</div>
@@ -1419,22 +1570,22 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  948</span>}</div>
 <div class="ttc" id="astructChildlist__t_html_a36add203dd42426588622bc5c293ea29"><div class="ttname"><a href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">Childlist_t::childs</a></div><div class="ttdeci">Widget_t ** childs</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8h_source.html#l00051">xchildlist.h:51</a></div></div>
 <div class="ttc" id="astructChildlist__t_html_ae49b747ab3b2a8aedad718521b6c77f1"><div class="ttname"><a href="structChildlist__t.html#ae49b747ab3b2a8aedad718521b6c77f1">Childlist_t::elem</a></div><div class="ttdeci">int elem</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8h_source.html#l00057">xchildlist.h:57</a></div></div>
-<div class="ttc" id="astructFunc__t_html_a0ac2c35c450e54946f10449f0681d9d2"><div class="ttname"><a href="structFunc__t.html#a0ac2c35c450e54946f10449f0681d9d2">Func_t::button_release_callback</a></div><div class="ttdeci">evfunc button_release_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00097">xwidget.h:97</a></div></div>
-<div class="ttc" id="astructFunc__t_html_a21f0e161d881ffa360e02651a4be9537"><div class="ttname"><a href="structFunc__t.html#a21f0e161d881ffa360e02651a4be9537">Func_t::key_release_callback</a></div><div class="ttdeci">evfunc key_release_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00101">xwidget.h:101</a></div></div>
-<div class="ttc" id="astructFunc__t_html_a41d952300c273aa2ffb2ad0af21bec88"><div class="ttname"><a href="structFunc__t.html#a41d952300c273aa2ffb2ad0af21bec88">Func_t::key_press_callback</a></div><div class="ttdeci">evfunc key_press_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00100">xwidget.h:100</a></div></div>
-<div class="ttc" id="astructFunc__t_html_ae4aaea9ce1a50be5790d9bd9843c48a6"><div class="ttname"><a href="structFunc__t.html#ae4aaea9ce1a50be5790d9bd9843c48a6">Func_t::button_press_callback</a></div><div class="ttdeci">evfunc button_press_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00096">xwidget.h:96</a></div></div>
-<div class="ttc" id="astructWidget__t_html_a183e1e8596b3e83578e179e68c2aaa07"><div class="ttname"><a href="structWidget__t.html#a183e1e8596b3e83578e179e68c2aaa07">Widget_t::event_callback</a></div><div class="ttdeci">vfunc event_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00475">xwidget.h:475</a></div></div>
-<div class="ttc" id="astructWidget__t_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">Widget_t::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00495">xwidget.h:495</a></div></div>
-<div class="ttc" id="astructWidget__t_html_aac423f82eb2f10bd8969b56540391ddc"><div class="ttname"><a href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">Widget_t::flags</a></div><div class="ttdeci">long long flags</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00457">xwidget.h:457</a></div></div>
-<div class="ttc" id="astructXputty_html_a3e6f76368abfbc8709f4c1346dfa6a20"><div class="ttname"><a href="structXputty.html#a3e6f76368abfbc8709f4c1346dfa6a20">Xputty::run</a></div><div class="ttdeci">bool run</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00250">xputty.h:250</a></div></div>
-<div class="ttc" id="astructXputty_html_a87903d89e86a1d1cbe842aea83f59764"><div class="ttname"><a href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">Xputty::hold_grab</a></div><div class="ttdeci">Widget_t * hold_grab</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00232">xputty.h:232</a></div></div>
-<div class="ttc" id="astructXputty_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">Xputty::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00224">xputty.h:224</a></div></div>
-<div class="ttc" id="astructXputty_html_a989b401933a94b5a418c41c73b8ddda6"><div class="ttname"><a href="structXputty.html#a989b401933a94b5a418c41c73b8ddda6">Xputty::submenu</a></div><div class="ttdeci">Widget_t * submenu</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00236">xputty.h:236</a></div></div>
-<div class="ttc" id="astructXputty_html_ac800c11aff43799cb063096717f73732"><div class="ttname"><a href="structXputty.html#ac800c11aff43799cb063096717f73732">Xputty::key_snooper</a></div><div class="ttdeci">Widget_t * key_snooper</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00234">xputty.h:234</a></div></div>
+<div class="ttc" id="astructFunc__t_html_a0ac2c35c450e54946f10449f0681d9d2"><div class="ttname"><a href="structFunc__t.html#a0ac2c35c450e54946f10449f0681d9d2">Func_t::button_release_callback</a></div><div class="ttdeci">evfunc button_release_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00101">xwidget.h:101</a></div></div>
+<div class="ttc" id="astructFunc__t_html_a21f0e161d881ffa360e02651a4be9537"><div class="ttname"><a href="structFunc__t.html#a21f0e161d881ffa360e02651a4be9537">Func_t::key_release_callback</a></div><div class="ttdeci">evfunc key_release_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00105">xwidget.h:105</a></div></div>
+<div class="ttc" id="astructFunc__t_html_a41d952300c273aa2ffb2ad0af21bec88"><div class="ttname"><a href="structFunc__t.html#a41d952300c273aa2ffb2ad0af21bec88">Func_t::key_press_callback</a></div><div class="ttdeci">evfunc key_press_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00104">xwidget.h:104</a></div></div>
+<div class="ttc" id="astructFunc__t_html_ae4aaea9ce1a50be5790d9bd9843c48a6"><div class="ttname"><a href="structFunc__t.html#ae4aaea9ce1a50be5790d9bd9843c48a6">Func_t::button_press_callback</a></div><div class="ttdeci">evfunc button_press_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00100">xwidget.h:100</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a183e1e8596b3e83578e179e68c2aaa07"><div class="ttname"><a href="structWidget__t.html#a183e1e8596b3e83578e179e68c2aaa07">Widget_t::event_callback</a></div><div class="ttdeci">vfunc event_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00479">xwidget.h:479</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">Widget_t::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00499">xwidget.h:499</a></div></div>
+<div class="ttc" id="astructWidget__t_html_aac423f82eb2f10bd8969b56540391ddc"><div class="ttname"><a href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">Widget_t::flags</a></div><div class="ttdeci">long long flags</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00461">xwidget.h:461</a></div></div>
+<div class="ttc" id="astructXputty_html_a3e6f76368abfbc8709f4c1346dfa6a20"><div class="ttname"><a href="structXputty.html#a3e6f76368abfbc8709f4c1346dfa6a20">Xputty::run</a></div><div class="ttdeci">bool run</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00256">xputty.h:256</a></div></div>
+<div class="ttc" id="astructXputty_html_a87903d89e86a1d1cbe842aea83f59764"><div class="ttname"><a href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">Xputty::hold_grab</a></div><div class="ttdeci">Widget_t * hold_grab</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00238">xputty.h:238</a></div></div>
+<div class="ttc" id="astructXputty_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">Xputty::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00230">xputty.h:230</a></div></div>
+<div class="ttc" id="astructXputty_html_a989b401933a94b5a418c41c73b8ddda6"><div class="ttname"><a href="structXputty.html#a989b401933a94b5a418c41c73b8ddda6">Xputty::submenu</a></div><div class="ttdeci">Widget_t * submenu</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00242">xputty.h:242</a></div></div>
+<div class="ttc" id="astructXputty_html_ac800c11aff43799cb063096717f73732"><div class="ttname"><a href="structXputty.html#ac800c11aff43799cb063096717f73732">Xputty::key_snooper</a></div><div class="ttdeci">Widget_t * key_snooper</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00240">xputty.h:240</a></div></div>
 <div class="ttc" id="axchildlist_8h_html_a7c893543e51daded2aa5b6a9b252932b"><div class="ttname"><a href="xchildlist_8h.html#a7c893543e51daded2aa5b6a9b252932b">childlist_find_widget</a></div><div class="ttdeci">int childlist_find_widget(Childlist_t *childlist, Window child_window)</div><div class="ttdoc">childlist_find_widget - find a child Widget_t in a the childlist by given the Window id</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8c_source.html#l00079">xchildlist.c:79</a></div></div>
 <div class="ttc" id="axchildlist_8h_html_af130af096a2f8b3a807e7e2dcf0ee6c0"><div class="ttname"><a href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a></div><div class="ttdeci">int childlist_has_child(Childlist_t *childlist)</div><div class="ttdoc">childlist_has_child - check if a Widget_t Childlist_t contain a child</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8c_source.html#l00089">xchildlist.c:89</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea1daf7a5f7ceb41e263746ccc21cc7f5e"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea1daf7a5f7ceb41e263746ccc21cc7f5e">HIDE_ON_DELETE</a></div><div class="ttdeci">@ HIDE_ON_DELETE</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00408">xwidget.h:408</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ead5eca61d30ac5aa2160dbad35b19c4c3"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ead5eca61d30ac5aa2160dbad35b19c4c3">IS_POPUP</a></div><div class="ttdeci">@ IS_POPUP</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00388">xwidget.h:388</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea1daf7a5f7ceb41e263746ccc21cc7f5e"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea1daf7a5f7ceb41e263746ccc21cc7f5e">HIDE_ON_DELETE</a></div><div class="ttdeci">@ HIDE_ON_DELETE</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00412">xwidget.h:412</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ead5eca61d30ac5aa2160dbad35b19c4c3"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ead5eca61d30ac5aa2160dbad35b19c4c3">IS_POPUP</a></div><div class="ttdeci">@ IS_POPUP</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00392">xwidget.h:392</a></div></div>
 <div class="ttc" id="axwidget_8h_html_ab00e7f2485e08237c865e96ba56e63e6"><div class="ttname"><a href="xwidget_8h.html#ab00e7f2485e08237c865e96ba56e63e6">widget_hide</a></div><div class="ttdeci">void widget_hide(Widget_t *w)</div><div class="ttdoc">widget_hide - unmap/hide a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00368">xwidget.c:368</a></div></div>
 <div class="ttc" id="axwidget_8h_html_abdabca284aa8866f1f242b6857312e3b"><div class="ttname"><a href="xwidget_8h.html#abdabca284aa8866f1f242b6857312e3b">destroy_widget</a></div><div class="ttdeci">void destroy_widget(Widget_t *w, Xputty *main)</div><div class="ttdoc">destroy_widget - destroy a widget   When a Widget_t receive a destroy_widget() call,...</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00086">xwidget.c:86</a></div></div>
 </div><!-- fragment -->
@@ -1487,7 +1638,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00105">105</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  105</span>                                                             {</div>
@@ -1544,6 +1694,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_quit - quit the main loop and free all used memory </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget request the quit call </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00809">809</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  809</span>                          {</div>
 <div class="line"><span class="lineno">  810</span>    <span class="comment">//Atom WM_DELETE_WINDOW = XInternAtom(w-&gt;app-&gt;dpy, &quot;WM_DELETE_WINDOW&quot;, True);</span></div>
@@ -1557,7 +1715,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  818</span>    xevent.data.l[0] = WM_DELETE_WINDOW;</div>
 <div class="line"><span class="lineno">  819</span>    XSendEvent(w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, 0, 0, (<a class="code hl_struct" href="structXEvent.html">XEvent</a> *)&amp;xevent);</div>
 <div class="line"><span class="lineno">  820</span>}</div>
-<div class="ttc" id="axwidget-linux_8c_html_a7a91c66336b9ba7b46bd8b6c57f29413"><div class="ttname"><a href="xwidget-linux_8c.html#a7a91c66336b9ba7b46bd8b6c57f29413">os_register_wm_delete_window</a></div><div class="ttdeci">Atom os_register_wm_delete_window(Widget_t *wid)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00834">xwidget-linux.c:834</a></div></div>
+<div class="ttc" id="axwidget-linux_8c_html_a7a91c66336b9ba7b46bd8b6c57f29413"><div class="ttname"><a href="xwidget-linux_8c.html#a7a91c66336b9ba7b46bd8b6c57f29413">os_register_wm_delete_window</a></div><div class="ttdeci">Atom os_register_wm_delete_window(Widget_t *wid)</div><div class="ttdoc">os_register_wm_delete_window - Get the needed Atom to send a widget delete message</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00834">xwidget-linux.c:834</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a34167b5900d42457a1d8298a7d2e373a"><div class="ttname"><a href="xwidget_8h.html#a34167b5900d42457a1d8298a7d2e373a">get_toplevel_widget</a></div><div class="ttdeci">Widget_t * get_toplevel_widget(Xputty *main)</div><div class="ttdoc">*get_toplevel_widget - get pointer to the top level Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00441">xwidget.c:441</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1578,6 +1736,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_quit_widget - remove a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> from the main loop and free it's used memory </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget request the quit call </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00822">822</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  822</span>                                 {</div>
 <div class="line"><span class="lineno">  823</span>    <a class="code hl_typedef" href="xputty-mswin_8h.html#aaf30b525a88bc35425720d2b4abca810">Atom</a> QUIT_WIDGET = <a class="code hl_function" href="xwidget-linux_8c.html#a705d1a1f726bddbb47c588cbd1773456">os_register_widget_destroy</a>(w);</div>
@@ -1590,7 +1756,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  830</span>    xevent.data.l[0] = 1;</div>
 <div class="line"><span class="lineno">  831</span>    XSendEvent(w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, 0, 0, (<a class="code hl_struct" href="structXEvent.html">XEvent</a> *)&amp;xevent);</div>
 <div class="line"><span class="lineno">  832</span>}</div>
-<div class="ttc" id="axwidget-linux_8c_html_a705d1a1f726bddbb47c588cbd1773456"><div class="ttname"><a href="xwidget-linux_8c.html#a705d1a1f726bddbb47c588cbd1773456">os_register_widget_destroy</a></div><div class="ttdeci">Atom os_register_widget_destroy(Widget_t *wid)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00841">xwidget-linux.c:841</a></div></div>
+<div class="ttc" id="axwidget-linux_8c_html_a705d1a1f726bddbb47c588cbd1773456"><div class="ttname"><a href="xwidget-linux_8c.html#a705d1a1f726bddbb47c588cbd1773456">os_register_widget_destroy</a></div><div class="ttdeci">Atom os_register_widget_destroy(Widget_t *wid)</div><div class="ttdoc">os_register_widget_destroy - Get the needed Atom to send a widget destroy message</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00841">xwidget-linux.c:841</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1609,6 +1775,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_register_widget_destroy - Get the needed Atom to send a widget destroy message </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*wid</td><td>- Pointer to the widget request the quit call </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ATOM - ATOM on linux, DWORD on windows </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00841">841</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  841</span>                                                {</div>
@@ -1634,6 +1809,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_register_wm_delete_window - Get the needed Atom to send a widget delete message </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*wid</td><td>- Pointer to the widget request the quit call </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ATOM - ATOM on linux, DWORD on windows </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00834">834</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  834</span>                                                  {</div>
@@ -1694,7 +1878,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00109">109</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  109</span>                                                               {</div>
@@ -1718,6 +1901,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_run_embedded - the event handling when run embedded on windows all messges goes into WndProc, so stub here </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*main</td><td>- pointer to the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00950">950</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  950</span>                                   {</div>
@@ -1836,6 +2027,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_send_button_press_event - Send a button press event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> see XButtonEvent </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00641">641</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  641</span>                                             {</div>
 <div class="line"><span class="lineno">  642</span>    <a class="code hl_struct" href="structXEvent.html">XEvent</a> event;</div>
@@ -1873,6 +2072,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_send_button_release_event - Send a button release event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> see XButtonEvent </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00660">660</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  660</span>                                               {</div>
@@ -1940,6 +2147,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_send_configure_event - Send a configure event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">x,y</td><td>- the position to set </td></tr>
+    <tr><td class="paramname">width,height</td><td>- the size to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00623">623</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  623</span>                                                                              {</div>
 <div class="line"><span class="lineno">  624</span>    XConfigureEvent notify;</div>
@@ -1976,6 +2193,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_send_send_systray_message - Send a systray event to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only working on Linux for now </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00679">679</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  679</span>                                          {</div>
@@ -2052,6 +2277,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_set_input_mask - set the Event mask to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only work on linux, stub on Windows </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget which will grab the mouse </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00749">749</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  749</span>                                    {</div>
 <div class="line"><span class="lineno">  750</span>    XSelectInput(w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>,StructureNotifyMask|ExposureMask|KeyPressMask </div>
@@ -2086,6 +2319,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_set_title - Set the title of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">title</td><td>- the title to set </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00194">194</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  194</span>                                                  {</div>
@@ -2124,6 +2366,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_set_ transient_for_hint - set a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> transient to a other <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only work on linux, stub on Windows </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*parent</td><td>- Pointer to the parent widget </td></tr>
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00771">771</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  771</span>                                                              {</div>
@@ -2173,7 +2424,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00118">118</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  118</span>                                                                    {</div>
@@ -2197,6 +2447,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_set_window_attrb - set the attribute mask to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> only work on linux, stub on Windows </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget which will grab the mouse </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00755">755</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  755</span>                                      {</div>
@@ -2270,7 +2528,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00091">91</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   92</span>                                                             {</div>
@@ -2316,6 +2573,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_show_tooltip - Show a tooltip of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*wid</td><td>- Pointer to the widget the tooltip belongs to </td></tr>
+    <tr><td class="paramname">*w</td><td>- the tooltip <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00211">211</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  211</span>                                                 {</div>
 <div class="line"><span class="lineno">  212</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mask;</div>
@@ -2329,7 +2595,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  220</span>}</div>
 <div class="ttc" id="axwidget-linux_8c_html_a3a31b91929f82cde67f030ea4bed8f77"><div class="ttname"><a href="xwidget-linux_8c.html#a3a31b91929f82cde67f030ea4bed8f77">os_get_root_window</a></div><div class="ttdeci">Window os_get_root_window(Xputty *main, int flag)</div><div class="ttdoc">os_get_root_window - get a pointer to the root window (desktop)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00069">xwidget-linux.c:69</a></div></div>
 <div class="ttc" id="axwidget-linux_8c_html_a5b78925201cb0a287c2050ddd7382383"><div class="ttname"><a href="xwidget-linux_8c.html#a5b78925201cb0a287c2050ddd7382383">os_translate_coords</a></div><div class="ttdeci">void os_translate_coords(Widget_t *w, Window from_window, Window to_window, int from_x, int from_y, int *to_x, int *to_y)</div><div class="ttdoc">os_translate_coords - get x,y related to destination Window</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00073">xwidget-linux.c:73</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea02baf100f71ba232ee58c436bfe78b02"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea02baf100f71ba232ee58c436bfe78b02">IS_WIDGET</a></div><div class="ttdeci">@ IS_WIDGET</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00384">xwidget.h:384</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea02baf100f71ba232ee58c436bfe78b02"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea02baf100f71ba232ee58c436bfe78b02">IS_WIDGET</a></div><div class="ttdeci">@ IS_WIDGET</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00388">xwidget.h:388</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2400,7 +2666,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00073">73</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   74</span>                                                                        {</div>
@@ -2438,6 +2703,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_transparent_draw - Draw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> to the back buffer </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*user_data</td><td>- additional user data or NULL </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00732">732</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  732</span>                                                    {</div>
@@ -2484,6 +2758,17 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_widget_event_loop - the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> event loop on windows all messges goes into WndProc, so stub here </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*event</td><td>- the event to handle </td></tr>
+    <tr><td class="paramname">*main</td><td>- pointer to the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct </td></tr>
+    <tr><td class="paramname">*user_data</td><td>- additional user data could be NULL </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00230">230</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  230</span>                                                                                {</div>
@@ -2664,20 +2949,20 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  405</span>        <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  406</span>    }</div>
 <div class="line"><span class="lineno">  407</span>}</div>
-<div class="ttc" id="astructFunc__t_html_a0b375a67a8ae98e0236f71e360fd5ae5"><div class="ttname"><a href="structFunc__t.html#a0b375a67a8ae98e0236f71e360fd5ae5">Func_t::configure_callback</a></div><div class="ttdeci">xevfunc configure_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00082">xwidget.h:82</a></div></div>
-<div class="ttc" id="astructFunc__t_html_a5674bcc75df5b2b7ba47742133d88f2e"><div class="ttname"><a href="structFunc__t.html#a5674bcc75df5b2b7ba47742133d88f2e">Func_t::visibiliy_change_callback</a></div><div class="ttdeci">xevfunc visibiliy_change_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00094">xwidget.h:94</a></div></div>
-<div class="ttc" id="astructFunc__t_html_a580123509145139212579243dbe61c67"><div class="ttname"><a href="structFunc__t.html#a580123509145139212579243dbe61c67">Func_t::double_click_callback</a></div><div class="ttdeci">evfunc double_click_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00098">xwidget.h:98</a></div></div>
-<div class="ttc" id="astructFunc__t_html_a61d0ba462f570ea374a68aa46507b047"><div class="ttname"><a href="structFunc__t.html#a61d0ba462f570ea374a68aa46507b047">Func_t::leave_callback</a></div><div class="ttdeci">xevfunc leave_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00084">xwidget.h:84</a></div></div>
-<div class="ttc" id="astructFunc__t_html_ac99bd77790f7476554a8bd4ae18337ae"><div class="ttname"><a href="structFunc__t.html#ac99bd77790f7476554a8bd4ae18337ae">Func_t::motion_callback</a></div><div class="ttdeci">evfunc motion_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00099">xwidget.h:99</a></div></div>
-<div class="ttc" id="astructFunc__t_html_ae3dc3711beefe8c140c961f901a7fb99"><div class="ttname"><a href="structFunc__t.html#ae3dc3711beefe8c140c961f901a7fb99">Func_t::enter_callback</a></div><div class="ttdeci">xevfunc enter_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00083">xwidget.h:83</a></div></div>
-<div class="ttc" id="astructWidget__t_html_a89f234133d3efe315836311cbf21c64b"><div class="ttname"><a href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">Widget_t::state</a></div><div class="ttdeci">int state</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00507">xwidget.h:507</a></div></div>
-<div class="ttc" id="astructWidget__t_html_aa603e51c03da690296428cfd3a993eb7"><div class="ttname"><a href="structWidget__t.html#aa603e51c03da690296428cfd3a993eb7">Widget_t::xpaste_callback</a></div><div class="ttdeci">xevfunc xpaste_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00529">xwidget.h:529</a></div></div>
-<div class="ttc" id="astructWidget__t_html_abad8b9d2e44a56838c978a642f0a0069"><div class="ttname"><a href="structWidget__t.html#abad8b9d2e44a56838c978a642f0a0069">Widget_t::double_click</a></div><div class="ttdeci">Time double_click</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00502">xwidget.h:502</a></div></div>
-<div class="ttc" id="astructXEvent_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="structXEvent.html#a0a2f84ed7838f07779ae24c5a9086d33">XEvent::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00057">xputty-mswin.h:57</a></div></div>
-<div class="ttc" id="astructXEvent_html_a3cc20059a5b78ca1c8660e2c8134079c"><div class="ttname"><a href="structXEvent.html#a3cc20059a5b78ca1c8660e2c8134079c">XEvent::state</a></div><div class="ttdeci">unsigned int state</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00060">xputty-mswin.h:60</a></div></div>
-<div class="ttc" id="astructXEvent_html_a3f1d7c7ce1dbabebcc4bcaee4404f201"><div class="ttname"><a href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">XEvent::button</a></div><div class="ttdeci">int button</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00058">xputty-mswin.h:58</a></div></div>
-<div class="ttc" id="astructXEvent_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="structXEvent.html#a6150e0515f7202e2fb518f7206ed97dc">XEvent::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00056">xputty-mswin.h:56</a></div></div>
-<div class="ttc" id="astructXEvent_html_a74583b0cb53a7bc6e51157cccea51e60"><div class="ttname"><a href="structXEvent.html#a74583b0cb53a7bc6e51157cccea51e60">XEvent::keycode</a></div><div class="ttdeci">int keycode</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00059">xputty-mswin.h:59</a></div></div>
+<div class="ttc" id="astructFunc__t_html_a0b375a67a8ae98e0236f71e360fd5ae5"><div class="ttname"><a href="structFunc__t.html#a0b375a67a8ae98e0236f71e360fd5ae5">Func_t::configure_callback</a></div><div class="ttdeci">xevfunc configure_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00086">xwidget.h:86</a></div></div>
+<div class="ttc" id="astructFunc__t_html_a5674bcc75df5b2b7ba47742133d88f2e"><div class="ttname"><a href="structFunc__t.html#a5674bcc75df5b2b7ba47742133d88f2e">Func_t::visibiliy_change_callback</a></div><div class="ttdeci">xevfunc visibiliy_change_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00098">xwidget.h:98</a></div></div>
+<div class="ttc" id="astructFunc__t_html_a580123509145139212579243dbe61c67"><div class="ttname"><a href="structFunc__t.html#a580123509145139212579243dbe61c67">Func_t::double_click_callback</a></div><div class="ttdeci">evfunc double_click_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00102">xwidget.h:102</a></div></div>
+<div class="ttc" id="astructFunc__t_html_a61d0ba462f570ea374a68aa46507b047"><div class="ttname"><a href="structFunc__t.html#a61d0ba462f570ea374a68aa46507b047">Func_t::leave_callback</a></div><div class="ttdeci">xevfunc leave_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00088">xwidget.h:88</a></div></div>
+<div class="ttc" id="astructFunc__t_html_ac99bd77790f7476554a8bd4ae18337ae"><div class="ttname"><a href="structFunc__t.html#ac99bd77790f7476554a8bd4ae18337ae">Func_t::motion_callback</a></div><div class="ttdeci">evfunc motion_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00103">xwidget.h:103</a></div></div>
+<div class="ttc" id="astructFunc__t_html_ae3dc3711beefe8c140c961f901a7fb99"><div class="ttname"><a href="structFunc__t.html#ae3dc3711beefe8c140c961f901a7fb99">Func_t::enter_callback</a></div><div class="ttdeci">xevfunc enter_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00087">xwidget.h:87</a></div></div>
+<div class="ttc" id="astructWidget__t_html_a89f234133d3efe315836311cbf21c64b"><div class="ttname"><a href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">Widget_t::state</a></div><div class="ttdeci">int state</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00511">xwidget.h:511</a></div></div>
+<div class="ttc" id="astructWidget__t_html_aa603e51c03da690296428cfd3a993eb7"><div class="ttname"><a href="structWidget__t.html#aa603e51c03da690296428cfd3a993eb7">Widget_t::xpaste_callback</a></div><div class="ttdeci">xevfunc xpaste_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00533">xwidget.h:533</a></div></div>
+<div class="ttc" id="astructWidget__t_html_abad8b9d2e44a56838c978a642f0a0069"><div class="ttname"><a href="structWidget__t.html#abad8b9d2e44a56838c978a642f0a0069">Widget_t::double_click</a></div><div class="ttdeci">Time double_click</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00506">xwidget.h:506</a></div></div>
+<div class="ttc" id="astructXEvent_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="structXEvent.html#a0a2f84ed7838f07779ae24c5a9086d33">XEvent::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00061">xputty-mswin.h:61</a></div></div>
+<div class="ttc" id="astructXEvent_html_a3cc20059a5b78ca1c8660e2c8134079c"><div class="ttname"><a href="structXEvent.html#a3cc20059a5b78ca1c8660e2c8134079c">XEvent::state</a></div><div class="ttdeci">unsigned int state</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00064">xputty-mswin.h:64</a></div></div>
+<div class="ttc" id="astructXEvent_html_a3f1d7c7ce1dbabebcc4bcaee4404f201"><div class="ttname"><a href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">XEvent::button</a></div><div class="ttdeci">int button</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00062">xputty-mswin.h:62</a></div></div>
+<div class="ttc" id="astructXEvent_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="structXEvent.html#a6150e0515f7202e2fb518f7206ed97dc">XEvent::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00060">xputty-mswin.h:60</a></div></div>
+<div class="ttc" id="astructXEvent_html_a74583b0cb53a7bc6e51157cccea51e60"><div class="ttname"><a href="structXEvent.html#a74583b0cb53a7bc6e51157cccea51e60">XEvent::keycode</a></div><div class="ttdeci">int keycode</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00063">xputty-mswin.h:63</a></div></div>
 <div class="ttc" id="axadjustment_8h_html_a1e198857155b2969afb87fe923d58cb6"><div class="ttname"><a href="xadjustment_8h.html#a1e198857155b2969afb87fe923d58cb6">adj_set_motion_state</a></div><div class="ttdeci">void adj_set_motion_state(void *w, float x, float y)</div><div class="ttdoc">adj_set_motion_state - internal use to set value and state of the Adjustment_t on mouse pointer movme...</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8c_source.html#l00241">xadjustment.c:241</a></div></div>
 <div class="ttc" id="axwidget-linux_8c_html_a189599f308380bacacd740ae4371f1fd"><div class="ttname"><a href="xwidget-linux_8c.html#a189599f308380bacacd740ae4371f1fd">receive_paste_from_clipboard</a></div><div class="ttdeci">void receive_paste_from_clipboard(Widget_t *w, XEvent *event)</div><div class="ttdoc">receive_paste_from_clipboard - receive textbuffer from clipboard</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00566">xwidget-linux.c:566</a></div></div>
 <div class="ttc" id="axwidget-linux_8c_html_a69077c6110445bd51275ed5054b56c55"><div class="ttname"><a href="xwidget-linux_8c.html#a69077c6110445bd51275ed5054b56c55">send_to_clipboard</a></div><div class="ttdeci">void send_to_clipboard(Widget_t *w, XEvent *event)</div><div class="ttdoc">send_to_clipboard - send textbuffer to clipboard on request</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00595">xwidget-linux.c:595</a></div></div>
@@ -2686,11 +2971,11 @@ Variables</h2></td></tr>
 <div class="ttc" id="axwidget-linux_8c_html_acc47f44753efe19e2f09973aba0adbb2"><div class="ttname"><a href="xwidget-linux_8c.html#acc47f44753efe19e2f09973aba0adbb2">handle_drag_data</a></div><div class="ttdeci">void handle_drag_data(Widget_t *w, XEvent *event)</div><div class="ttdoc">handle_drag_data - handle recived drag data</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00455">xwidget-linux.c:455</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a1e367c7f3e7dcd71fbbb6125fc1b227a"><div class="ttname"><a href="xwidget_8h.html#a1e367c7f3e7dcd71fbbb6125fc1b227a">quit_widget</a></div><div class="ttdeci">void quit_widget(Widget_t *w)</div><div class="ttdoc">quit_widget - remove a widget from the processing loop</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00530">xwidget.c:530</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a50bb0638d0bd2d98923cb05c3bf09f35"><div class="ttname"><a href="xwidget_8h.html#a50bb0638d0bd2d98923cb05c3bf09f35">show_tooltip</a></div><div class="ttdeci">void show_tooltip(Widget_t *wid)</div><div class="ttdoc">show_tooltip - check if a Widget_t have a tooltip, and show it, if a tooltip is available.</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00419">xwidget.c:419</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea203c65b60a0fb6eb7e4d5b3501871bc2"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea203c65b60a0fb6eb7e4d5b3501871bc2">FAST_REDRAW</a></div><div class="ttdeci">@ FAST_REDRAW</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00406">xwidget.h:406</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea24dd904cfcaac15acb4fd0c48126f869"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea24dd904cfcaac15acb4fd0c48126f869">HAS_POINTER</a></div><div class="ttdeci">@ HAS_POINTER</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00398">xwidget.h:398</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea2cb9164e0e57a3f7e87fca68109f1751"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea2cb9164e0e57a3f7e87fca68109f1751">NO_AUTOREPEAT</a></div><div class="ttdeci">@ NO_AUTOREPEAT</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00404">xwidget.h:404</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f">HAS_TOOLTIP</a></div><div class="ttdeci">@ HAS_TOOLTIP</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00400">xwidget.h:400</a></div></div>
-<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea77ed320daf286953bd956a0d470d3fe0"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea77ed320daf286953bd956a0d470d3fe0">HAS_FOCUS</a></div><div class="ttdeci">@ HAS_FOCUS</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00396">xwidget.h:396</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea203c65b60a0fb6eb7e4d5b3501871bc2"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea203c65b60a0fb6eb7e4d5b3501871bc2">FAST_REDRAW</a></div><div class="ttdeci">@ FAST_REDRAW</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00410">xwidget.h:410</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea24dd904cfcaac15acb4fd0c48126f869"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea24dd904cfcaac15acb4fd0c48126f869">HAS_POINTER</a></div><div class="ttdeci">@ HAS_POINTER</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00402">xwidget.h:402</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea2cb9164e0e57a3f7e87fca68109f1751"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea2cb9164e0e57a3f7e87fca68109f1751">NO_AUTOREPEAT</a></div><div class="ttdeci">@ NO_AUTOREPEAT</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00408">xwidget.h:408</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f">HAS_TOOLTIP</a></div><div class="ttdeci">@ HAS_TOOLTIP</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00404">xwidget.h:404</a></div></div>
+<div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea77ed320daf286953bd956a0d470d3fe0"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea77ed320daf286953bd956a0d470d3fe0">HAS_FOCUS</a></div><div class="ttdeci">@ HAS_FOCUS</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00400">xwidget.h:400</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a65a14ddb7decf9932a8dcead7170217a"><div class="ttname"><a href="xwidget_8h.html#a65a14ddb7decf9932a8dcead7170217a">hide_tooltip</a></div><div class="ttdeci">void hide_tooltip(Widget_t *wid)</div><div class="ttdoc">hide_tooltip - check if a Widget_t have a tooltip, and hide it, if a tooltip is mapped.</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00430">xwidget.c:430</a></div></div>
 <div class="ttc" id="axwidget__private_8h_html_a3303d77cae03bc9141355e43fc6fe97f"><div class="ttname"><a href="xwidget__private_8h.html#a3303d77cae03bc9141355e43fc6fe97f">_hide_all_tooltips</a></div><div class="ttdeci">void _hide_all_tooltips(Widget_t *wid)</div><div class="ttdoc">_hide_all_tooltips - hide all active tooltips</div><div class="ttdef"><b>Definition</b> <a href="xwidget__private_8c_source.html#l00262">xwidget_private.c:262</a></div></div>
 <div class="ttc" id="axwidget__private_8h_html_a3fa824e7c223fab91f65dbdcd3e07f18"><div class="ttname"><a href="xwidget__private_8h.html#a3fa824e7c223fab91f65dbdcd3e07f18">_check_enum</a></div><div class="ttdeci">void _check_enum(Widget_t *wid, XButtonEvent *xbutton)</div><div class="ttdoc">_check_enum - internal check if Adjustment_t is of type CL_ENUM and handle events acordingly</div><div class="ttdef"><b>Definition</b> <a href="xwidget__private_8c_source.html#l00068">xwidget_private.c:68</a></div></div>
@@ -2718,6 +3003,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>os_widget_hide - Hide a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget to hide </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00207">207</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  207</span>                                 {</div>
 <div class="line"><span class="lineno">  208</span>    XUnmapWindow(w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>);</div>
@@ -2740,6 +3033,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>os_widget_show - Show a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*w</td><td>- Pointer to the widget to show </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00203">203</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  203</span>                                 {</div>
@@ -2782,7 +3083,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00566">566</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  566</span>                                                              {</div>
@@ -2805,7 +3105,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  583</span>    }</div>
 <div class="line"><span class="lineno">  584</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00238">Xputty::ctext</a>, <a class="el" href="xputty_8h_source.html#l00275">Xputty::UTF8</a>, and <a class="el" href="xwidget_8h_source.html#l00529">Widget_t::xpaste_callback</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00244">Xputty::ctext</a>, <a class="el" href="xputty_8h_source.html#l00281">Xputty::UTF8</a>, and <a class="el" href="xwidget_8h_source.html#l00533">Widget_t::xpaste_callback</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-linux_8c_source.html#l00230">os_widget_event_loop()</a>.</p>
 
@@ -2834,7 +3134,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00561">561</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  561</span>                                               {</div>
@@ -2842,7 +3141,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  563</span>    XConvertSelection(w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#abd899f45b374dd9abbd9533f7ab6262d">selection</a>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a1a613ac19a6aae5b841baee5ec079fd4">UTF8</a>, XSEL_DATA, w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, CurrentTime);</div>
 <div class="line"><span class="lineno">  564</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xputty_8h_source.html#l00272">Xputty::selection</a>, <a class="el" href="xputty_8h_source.html#l00275">Xputty::UTF8</a>, and <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xputty_8h_source.html#l00278">Xputty::selection</a>, <a class="el" href="xputty_8h_source.html#l00281">Xputty::UTF8</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
 </div>
 </div>
@@ -2880,7 +3179,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00540">540</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  540</span>                                                         {</div>
@@ -2900,7 +3198,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  554</span>    XSendEvent (w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a64241f1c6ba1d2eee2ce1736995f816a">dnd_source_window</a>, False, NoEventMask, &amp;xev);</div>
 <div class="line"><span class="lineno">  555</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00255">Xputty::dnd_source_window</a>, <a class="el" href="xputty_8h_source.html#l00248">Xputty::dnd_version</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xputty-mswin_8h_source.html#l00055">XEvent::window</a>, <a class="el" href="xputty_8h_source.html#l00264">Xputty::XdndActionCopy</a>, and <a class="el" href="xputty_8h_source.html#l00265">Xputty::XdndFinished</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00261">Xputty::dnd_source_window</a>, <a class="el" href="xputty_8h_source.html#l00254">Xputty::dnd_version</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xputty-mswin_8h_source.html#l00059">XEvent::window</a>, <a class="el" href="xputty_8h_source.html#l00270">Xputty::XdndActionCopy</a>, and <a class="el" href="xputty_8h_source.html#l00271">Xputty::XdndFinished</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-linux_8c_source.html#l00455">handle_drag_data()</a>, and <a class="el" href="xwidget-linux_8c_source.html#l00230">os_widget_event_loop()</a>.</p>
 
@@ -2940,7 +3238,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00524">524</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  524</span>                                                       {</div>
@@ -2959,7 +3256,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  537</span>    XSendEvent (w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a64241f1c6ba1d2eee2ce1736995f816a">dnd_source_window</a>, False, NoEventMask, &amp;xev);</div>
 <div class="line"><span class="lineno">  538</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00255">Xputty::dnd_source_window</a>, <a class="el" href="xputty_8h_source.html#l00270">Xputty::dnd_type</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xputty-mswin_8h_source.html#l00055">XEvent::window</a>, <a class="el" href="xputty_8h_source.html#l00264">Xputty::XdndActionCopy</a>, and <a class="el" href="xputty_8h_source.html#l00259">Xputty::XdndStatus</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00261">Xputty::dnd_source_window</a>, <a class="el" href="xputty_8h_source.html#l00276">Xputty::dnd_type</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xputty-mswin_8h_source.html#l00059">XEvent::window</a>, <a class="el" href="xputty_8h_source.html#l00270">Xputty::XdndActionCopy</a>, and <a class="el" href="xputty_8h_source.html#l00265">Xputty::XdndStatus</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-linux_8c_source.html#l00230">os_widget_event_loop()</a>.</p>
 
@@ -2999,7 +3296,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00595">595</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  595</span>                                                   {</div>
@@ -3030,7 +3326,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  620</span>    debug_print(<span class="stringliteral">&quot;send to clipboard %s\n&quot;</span>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#ada281c9162fcaaab3b311d419e083953">ctext</a>);</div>
 <div class="line"><span class="lineno">  621</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00246">Xputty::csize</a>, <a class="el" href="xputty_8h_source.html#l00238">Xputty::ctext</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xputty_8h_source.html#l00273">Xputty::targets_atom</a>, <a class="el" href="xputty_8h_source.html#l00274">Xputty::text_atom</a>, and <a class="el" href="xputty_8h_source.html#l00275">Xputty::UTF8</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00252">Xputty::csize</a>, <a class="el" href="xputty_8h_source.html#l00244">Xputty::ctext</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xputty_8h_source.html#l00279">Xputty::targets_atom</a>, <a class="el" href="xputty_8h_source.html#l00280">Xputty::text_atom</a>, and <a class="el" href="xputty_8h_source.html#l00281">Xputty::UTF8</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-linux_8c_source.html#l00230">os_widget_event_loop()</a>.</p>
 
@@ -3077,7 +3373,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00432">432</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  432</span>                                                                          {</div>
@@ -3166,6 +3461,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>utf8_from_locale - convert active codepage to utf8 must be freed by the caller </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*localestr</td><td>- Pointer to char to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>*char - the converted char in utf8 format </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00041">41</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   41</span>                                        {</div>
 <div class="line"><span class="lineno">   42</span>    <span class="keywordtype">char</span> *s_to = NULL;</div>
@@ -3198,7 +3502,6 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00409">409</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  409</span>                                       {</div>
@@ -3207,7 +3510,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  412</span>                    32, PropModeReplace, (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*)&amp;dnd_version, 1);</div>
 <div class="line"><span class="lineno">  413</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, and <a class="el" href="xputty_8h_source.html#l00256">Xputty::XdndAware</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, and <a class="el" href="xputty_8h_source.html#l00262">Xputty::XdndAware</a>.</p>
 
 </div>
 </div>
@@ -3234,14 +3537,13 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xwidget-linux_8c_source.html#l00415">415</a> of file <a class="el" href="xwidget-linux_8c_source.html">xwidget-linux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  415</span>                                         {</div>
 <div class="line"><span class="lineno">  416</span>    XDeleteProperty(w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, w-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a90c21c6cace1df913ad7c84b4b4454c4">XdndAware</a>);</div>
 <div class="line"><span class="lineno">  417</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00226">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::widget</a>, and <a class="el" href="xputty_8h_source.html#l00256">Xputty::XdndAware</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, and <a class="el" href="xputty_8h_source.html#l00262">Xputty::XdndAware</a>.</p>
 
 </div>
 </div>
