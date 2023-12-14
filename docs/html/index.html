@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libxputty: Main Page</title>
+<title>libxputty: libxputty</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,10 +69,87 @@ $(function() {
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">libxputty Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">libxputty </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_Instructions"></a> A damn tiny abstraction Layer to create cross compatible window/widgets with cairo surfaces for MSWindows (HWND) and Linux (X11).</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+build on Linux</h1>
+<p>Building libxputty on Linux depends on</p><ul>
+<li>libcairo2-dev</li>
+<li>libx11-dev</li>
+</ul>
+<p>To build the static library (recommended) just run</p>
+<p><code>make</code></p>
+<p>from the top directory. to build it as shared library run</p>
+<p><code>make shared</code></p>
+<p>That will build libxputty as static and as shared library. and</p>
+<p><code>sudo make install</code></p>
+<p>will install them both.</p>
+<p>Most common use case is to add libxputty as submodule to your project and invoke make from your top directory.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+build for MSWindows cross compile on Linux</h1>
+<p>To build libxputty cross compiled on Linux for MSWindows the easiest way is to use</p>
+<p><a href="https://github.com/DISTRHO/PawPaw">PawPaw</a></p>
+<p>to set up the needed dependencies to build for MSWindows.</p>
+<p>install wine and the mingw g++ and gcc compiler packages (w64-x86-64, w64-i686) clone the repository</p>
+<p><code>git clone <a href="https://github.com/DISTRHO/PawPaw">https://github.com/DISTRHO/PawPaw</a></code></p>
+<p>and build the windows build environment.</p>
+<p><code>cd PawPaw</code></p>
+<p><code>./bootstrap-plugins.sh win64</code></p>
+<p>to use the build environment you must run</p>
+<p><code>source local.env win64</code></p>
+<p>from the PawPaw root directory. Then you could cd into libxputty and run</p>
+<p><code>make</code></p>
+<p>to build the static lib for windows.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+build on MSWindows</h1>
+<p>setup msys2 shell and install</p><ul>
+<li>base-devel</li>
+<li>git</li>
+<li>make</li>
+<li>mingw-w64-x86_64-gcc</li>
+<li>mingw-w64-x86_64-lv2</li>
+<li>mingw-w64-x86_64-cairo</li>
+<li>mingw-w64-x86_64-pkgconf</li>
+<li>pkgconf</li>
+</ul>
+<p>then run</p>
+<p><code>make</code></p>
+<p>from the msys2 shell.</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Features</h2>
+<ul>
+<li>easy creation of widgets and windows</li>
+<li>easy handling of multiple windows including multiple widgets</li>
+<li>easy memory management by the xputty main struct</li>
+<li>easy to use main struct to handle the lifetime of all widgets and windows<ul>
+<li><a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> main;</li>
+<li>main_init(&amp;main);</li>
+<li>create_windows();</li>
+<li>main_run(&amp;main);</li>
+<li>main_quit(&amp;main);</li>
+</ul>
+</li>
+<li>easy embedding Windows into other native windows</li>
+<li>all events been handled by function pointers, thus allow<ul>
+<li>easy connection to event handlers by simply overwriting the defaults with you own handlers</li>
+<li>implement you own events by add a function pointer and connect to it</li>
+<li>block free connection between dialog boxes and the main window</li>
+</ul>
+</li>
+<li>easy to use x/y adjustments to create your own controller widgets like sliders, knobs, buttons or trackballs</li>
+<li>double buffered cairo surfaces to enable transparent drawing on child widgets</li>
+<li>handle child widgets via childlist</li>
+<li>multiple implemented resizing options</li>
+<li>a couple of defined Widgets and Dialogs ready to use</li>
+<li>full documented API <a href="https://brummer10.github.io/libxputty-docs/docs/html/files.html">Documentation</a></li>
+<li>static linking to create position independent applications</li>
+</ul>
+<pre class="fragment">     0BSD 
+</pre><p> BSD Zero Clause License </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

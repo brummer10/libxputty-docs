@@ -14,11 +14,14 @@ var searchData=
   ['binary_5fstream_11',['binary_stream',['../structbinary__stream.html',1,'']]],
   ['block_5fevent_12',['block_event',['../structX11__UI.html#ac2253f87401ace168d2d2dd55285c413',1,'X11_UI']]],
   ['bounds_13',['bounds',['../structNSVGshape.html#a375743a2d0c9e9a8960d6d43a8fe7a6f',1,'NSVGshape::bounds'],['../structNSVGpath.html#a375743a2d0c9e9a8960d6d43a8fe7a6f',1,'NSVGpath::bounds']]],
-  ['buffer_14',['buffer',['../structWidget__t.html#a840bd314b4563de7ba940424a7f8b69f',1,'Widget_t::buffer'],['../struct__XdgMimeCache.html#aff2566f4c366b48d73479bef43ee4d2e',1,'_XdgMimeCache::buffer']]],
-  ['build_5fxkey_5fevent_15',['build_xkey_event',['../xwidget-mswin_8c.html#a6331d2adab6eb85288a547479750ddf1',1,'xwidget-mswin.c']]],
-  ['button_16',['button',['../structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201',1,'XEvent']]],
-  ['button_5fpress_17',['BUTTON_PRESS',['../xwidget_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faaef062423a6ea66123856696e5af3cbff',1,'xwidget.h']]],
-  ['button_5fpress_5fcallback_18',['button_press_callback',['../structFunc__t.html#ae4aaea9ce1a50be5790d9bd9843c48a6',1,'Func_t']]],
-  ['button_5frelease_19',['BUTTON_RELEASE',['../xwidget_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faaea2b5dae08e5a11bd2c23252c11497da',1,'xwidget.h']]],
-  ['button_5frelease_5fcallback_20',['button_release_callback',['../structFunc__t.html#a0ac2c35c450e54946f10449f0681d9d2',1,'Func_t']]]
+  ['buffer_14',['buffer',['../struct__XdgMimeCache.html#aff2566f4c366b48d73479bef43ee4d2e',1,'_XdgMimeCache::buffer'],['../structWidget__t.html#a840bd314b4563de7ba940424a7f8b69f',1,'Widget_t::buffer']]],
+  ['build_20for_20mswindows_20cross_20compile_20on_20linux_15',['build for MSWindows cross compile on Linux',['../index.html#autotoc_md2',1,'']]],
+  ['build_20on_20linux_16',['build on Linux',['../index.html#autotoc_md1',1,'']]],
+  ['build_20on_20mswindows_17',['build on MSWindows',['../index.html#autotoc_md3',1,'']]],
+  ['build_5fxkey_5fevent_18',['build_xkey_event',['../xwidget-mswin_8c.html#a6331d2adab6eb85288a547479750ddf1',1,'xwidget-mswin.c']]],
+  ['button_19',['button',['../structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201',1,'XEvent']]],
+  ['button_5fpress_20',['BUTTON_PRESS',['../xwidget_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faaef062423a6ea66123856696e5af3cbff',1,'xwidget.h']]],
+  ['button_5fpress_5fcallback_21',['button_press_callback',['../structFunc__t.html#ae4aaea9ce1a50be5790d9bd9843c48a6',1,'Func_t']]],
+  ['button_5frelease_22',['BUTTON_RELEASE',['../xwidget_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faaea2b5dae08e5a11bd2c23252c11497da',1,'xwidget.h']]],
+  ['button_5frelease_5fcallback_23',['button_release_callback',['../structFunc__t.html#a0ac2c35c450e54946f10449f0681d9d2',1,'Func_t']]]
 ];
