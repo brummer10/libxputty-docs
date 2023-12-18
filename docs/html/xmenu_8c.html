@@ -126,7 +126,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a7a294186d8d5899cb67ca3f347d11941"><td class="mdescLeft">&#160;</td><td class="mdescRight">menu_add_submenu - add a submenu to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:a7a294186d8d5899cb67ca3f347d11941"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e5a23fa9b1eb5468bbbe343540e076f" id="r_a7e5a23fa9b1eb5468bbbe343540e076f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structWidget__t.html">Widget_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xmenu_8c.html#a7e5a23fa9b1eb5468bbbe343540e076f">cmenu_add_submenu</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, const char *label)</td></tr>
-<tr class="memdesc:a7e5a23fa9b1eb5468bbbe343540e076f"><td class="mdescLeft">&#160;</td><td class="mdescRight">cmenu_add_submenu - add a submenu to a create_menu  <br /></td></tr>
+<tr class="memdesc:a7e5a23fa9b1eb5468bbbe343540e076f"><td class="mdescLeft">&#160;</td><td class="mdescRight">cmenu_add_submenu - add a submenu to a cmenu  <br /></td></tr>
 <tr class="separator:a7e5a23fa9b1eb5468bbbe343540e076f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac56a836a8abaa7a86a87fc0caec7b96" id="r_aac56a836a8abaa7a86a87fc0caec7b96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structWidget__t.html">Widget_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xmenu_8c.html#aac56a836a8abaa7a86a87fc0caec7b96">create_menu</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *parent, int height)</td></tr>
 <tr class="memdesc:aac56a836a8abaa7a86a87fc0caec7b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">create_menu - create a menu to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
@@ -372,10 +372,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>cmenu_add_submenu - add a submenu to a create_menu </p>
+<p>cmenu_add_submenu - add a submenu to a cmenu </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*parent</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> the menu should pop over </td></tr>
+    <tr><td class="paramname">*wid</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> the submenu belongs to </td></tr>
     <tr><td class="paramname">*label</td><td>- the label of the menu </td></tr>
   </table>
   </dd>
@@ -387,7 +387,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  227</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *menu = w;</div>
 <div class="line"><span class="lineno">  228</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a>* view_port =  menu-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
 <div class="line"><span class="lineno">  229</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  230</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(menu, &amp;metrics);</div>
+<div class="line"><span class="lineno">  230</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(menu, &amp;metrics);</div>
 <div class="line"><span class="lineno">  231</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>;</div>
 <div class="line"><span class="lineno">  232</span>    <span class="keywordtype">int</span> height = menu-&gt;<a class="code hl_variable" href="structWidget__t.html#a0dbd581a0e232725c89f349091d5c4b0">scale</a>.<a class="code hl_variable" href="structResize__t.html#a2bfcb3621fd2e654107610955babfc92">init_height</a>;</div>
 <div class="line"><span class="lineno">  233</span>    <span class="keywordtype">int</span> si = <a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>);</div>
@@ -418,13 +418,13 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructMetrics__t_html_a2474a5474cbff19523a51eb1de01cda4"><div class="ttname"><a href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">Metrics_t::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00061">xwidget-platform.h:61</a></div></div>
 <div class="ttc" id="astructResize__t_html_a2bfcb3621fd2e654107610955babfc92"><div class="ttname"><a href="structResize__t.html#a2bfcb3621fd2e654107610955babfc92">Resize_t::init_height</a></div><div class="ttdeci">int init_height</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00355">xwidget.h:355</a></div></div>
 <div class="ttc" id="astructWidget__t_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">Widget_t::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00499">xwidget.h:499</a></div></div>
-<div class="ttc" id="axadjustment_8h_html_ab7188a4bb4294e2a08aea2430975b406"><div class="ttname"><a href="xadjustment_8h.html#ab7188a4bb4294e2a08aea2430975b406">set_adjustment</a></div><div class="ttdeci">void set_adjustment(Adjustment_t *adj, float std_value, float value, float min_value, float max_value, float step, CL_type type)</div><div class="ttdoc">*set_adjustment - set a new range to a existing Adjustment_t it will be created if it not exsits yet</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8c_source.html#l00080">xadjustment.c:80</a></div></div>
+<div class="ttc" id="axadjustment_8h_html_ab7188a4bb4294e2a08aea2430975b406"><div class="ttname"><a href="xadjustment_8h.html#ab7188a4bb4294e2a08aea2430975b406">set_adjustment</a></div><div class="ttdeci">void set_adjustment(Adjustment_t *adj, float std_value, float value, float min_value, float max_value, float step, CL_type type)</div><div class="ttdoc">*set_adjustment - set a new range to a existing Adjustment_t or create if it not exists yet</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8c_source.html#l00080">xadjustment.c:80</a></div></div>
 <div class="ttc" id="axadjustment_8h_html_aefe5e135b1a0eab4675337a0967a7743a68c34061b429f8842bffca897bdc630c"><div class="ttname"><a href="xadjustment_8h.html#aefe5e135b1a0eab4675337a0967a7743a68c34061b429f8842bffca897bdc630c">CL_VIEWPORT</a></div><div class="ttdeci">@ CL_VIEWPORT</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8h_source.html#l00057">xadjustment.h:57</a></div></div>
 <div class="ttc" id="axchildlist_8h_html_af130af096a2f8b3a807e7e2dcf0ee6c0"><div class="ttname"><a href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a></div><div class="ttdeci">int childlist_has_child(Childlist_t *childlist)</div><div class="ttdoc">childlist_has_child - check if a Widget_t Childlist_t contain a child</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8c_source.html#l00089">xchildlist.c:89</a></div></div>
 <div class="ttc" id="axmenu__private_8h_html_a01a439984defc8d9bff697ece712b650"><div class="ttname"><a href="xmenu__private_8h.html#a01a439984defc8d9bff697ece712b650">_draw_submenu</a></div><div class="ttdeci">void _draw_submenu(void *w_, void *user_data)</div><div class="ttdoc">_draw_submenu - draw submenu on expose call</div><div class="ttdef"><b>Definition</b> <a href="xmenu__private_8c_source.html#l00159">xmenu_private.c:159</a></div></div>
 <div class="ttc" id="axmenu__private_8h_html_ad04bf722cb6f5b116f6a311608cf6079"><div class="ttname"><a href="xmenu__private_8h.html#ad04bf722cb6f5b116f6a311608cf6079">_enter_submenu</a></div><div class="ttdeci">void _enter_submenu(void *w_, void *user_data)</div><div class="ttdoc">_enter_submenu - enter submenu</div><div class="ttdef"><b>Definition</b> <a href="xmenu__private_8c_source.html#l00211">xmenu_private.c:211</a></div></div>
 <div class="ttc" id="axmenu__private_8h_html_aff00f3ef9e84f79427dd4e47e8792a77"><div class="ttname"><a href="xmenu__private_8h.html#aff00f3ef9e84f79427dd4e47e8792a77">_leave_submenu</a></div><div class="ttdeci">void _leave_submenu(void *w_, void *user_data)</div><div class="ttdoc">_leave_submenu - leave submenu</div><div class="ttdef"><b>Definition</b> <a href="xmenu__private_8c_source.html#l00228">xmenu_private.c:228</a></div></div>
-<div class="ttc" id="axwidget-platform_8h_html_ae8bb8113586b8d99f94c7c190a26a3d1"><div class="ttname"><a href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a></div><div class="ttdeci">void os_get_window_metrics(Widget_t *w_, Metrics_t *metrics)</div><div class="ttdoc">os_get_window_metrics - Get the Merics_t struct related to a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00080">xwidget-linux.c:80</a></div></div>
+<div class="ttc" id="axwidget-platform_8h_html_a005be56c9cf1b8f45766ab517ff540c7"><div class="ttname"><a href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a></div><div class="ttdeci">void os_get_window_metrics(Widget_t *w, Metrics_t *metrics)</div><div class="ttdoc">os_get_window_metrics - Get the Merics_t struct related to a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00080">xwidget-linux.c:80</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a5b77df25933eae1169c9efbc78391adea6bfb073b2b83d6e1810401f3074c8d46"><div class="ttname"><a href="xwidget_8h.html#a5b77df25933eae1169c9efbc78391adea6bfb073b2b83d6e1810401f3074c8d46">MENUITEM</a></div><div class="ttdeci">@ MENUITEM</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00326">xwidget.h:326</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea203c65b60a0fb6eb7e4d5b3501871bc2"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea203c65b60a0fb6eb7e4d5b3501871bc2">FAST_REDRAW</a></div><div class="ttdeci">@ FAST_REDRAW</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00410">xwidget.h:410</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ead9a436dc62a883e1129eddb4525b2aa8"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ead9a436dc62a883e1129eddb4525b2aa8">IS_SUBMENU</a></div><div class="ttdeci">@ IS_SUBMENU</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00418">xwidget.h:418</a></div></div>
@@ -501,7 +501,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructFunc__t_html_a9c2d5c78eab88ca5ba06c805b268519c"><div class="ttname"><a href="structFunc__t.html#a9c2d5c78eab88ca5ba06c805b268519c">Func_t::value_changed_callback</a></div><div class="ttdeci">xevfunc value_changed_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00090">xwidget.h:90</a></div></div>
 <div class="ttc" id="astructWidget__t_html_a37bf78cabfe3606f5dc7378af947f687"><div class="ttname"><a href="structWidget__t.html#a37bf78cabfe3606f5dc7378af947f687">Widget_t::color_scheme</a></div><div class="ttdeci">XColor_t * color_scheme</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00467">xwidget.h:467</a></div></div>
 <div class="ttc" id="astructWidget__t_html_a635c8e6580aacd495c43475cab053580"><div class="ttname"><a href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">Widget_t::widget</a></div><div class="ttdeci">Window widget</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00469">xwidget.h:469</a></div></div>
-<div class="ttc" id="astructXColor__t_html"><div class="ttname"><a href="structXColor__t.html">XColor_t</a></div><div class="ttdoc">XColor_t - the Widget_t Color struct   XColor_t could be used for theming you Widget_t set.</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00088">xcolor.h:88</a></div></div>
+<div class="ttc" id="astructXColor__t_html"><div class="ttname"><a href="structXColor__t.html">XColor_t</a></div><div class="ttdoc">XColor_t - the Widget_t Color struct XColor_t could be used for theming you Widget_t set.</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00105">xcolor.h:105</a></div></div>
 <div class="ttc" id="axadjustment_8h_html_aefe5e135b1a0eab4675337a0967a7743aedd33bce9f2d0186232b7b3626db207f"><div class="ttname"><a href="xadjustment_8h.html#aefe5e135b1a0eab4675337a0967a7743aedd33bce9f2d0186232b7b3626db207f">CL_VIEWPORTSLIDER</a></div><div class="ttdeci">@ CL_VIEWPORTSLIDER</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8h_source.html#l00065">xadjustment.h:65</a></div></div>
 <div class="ttc" id="axchildlist_8h_html_a4515e80317c76cbfa903c50ddfcfbf58"><div class="ttname"><a href="xchildlist_8h.html#a4515e80317c76cbfa903c50ddfcfbf58">childlist_add_child</a></div><div class="ttdeci">void childlist_add_child(Childlist_t *childlist, Widget_t *child)</div><div class="ttdoc">childlist_add_child - internal use to add a child to the Childlist_t   You usually didn't need to cal...</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8c_source.html#l00042">xchildlist.c:42</a></div></div>
 <div class="ttc" id="axmenu_8c_html_a62f7b427aa851ed1b382e5ed4c647436"><div class="ttname"><a href="xmenu_8c.html#a62f7b427aa851ed1b382e5ed4c647436">create_viewport</a></div><div class="ttdeci">Widget_t * create_viewport(Widget_t *parent, int width, int height)</div><div class="ttdoc">create_viewport - create a viewport on a menu to a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xmenu_8c_source.html#l00050">xmenu.c:50</a></div></div>
@@ -886,7 +886,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  283</span>                                                           {</div>
 <div class="line"><span class="lineno">  284</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a>* view_port =  menu-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
 <div class="line"><span class="lineno">  285</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  286</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(menu, &amp;metrics);</div>
+<div class="line"><span class="lineno">  286</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(menu, &amp;metrics);</div>
 <div class="line"><span class="lineno">  287</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>;</div>
 <div class="line"><span class="lineno">  288</span>    <span class="keywordtype">int</span> height = menu-&gt;<a class="code hl_variable" href="structWidget__t.html#a0dbd581a0e232725c89f349091d5c4b0">scale</a>.<a class="code hl_variable" href="structResize__t.html#a2bfcb3621fd2e654107610955babfc92">init_height</a>;</div>
 <div class="line"><span class="lineno">  289</span>    <span class="keywordtype">int</span> si = <a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>);</div>
@@ -951,13 +951,12 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xmenu_8c_source.html#l00360">360</a> of file <a class="el" href="xmenu_8c_source.html">xmenu.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  360</span>                                                                  {</div>
 <div class="line"><span class="lineno">  361</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a>* view_port =  menu-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
 <div class="line"><span class="lineno">  362</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  363</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(menu, &amp;metrics);</div>
+<div class="line"><span class="lineno">  363</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(menu, &amp;metrics);</div>
 <div class="line"><span class="lineno">  364</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>;</div>
 <div class="line"><span class="lineno">  365</span>    <span class="keywordtype">int</span> height = menu-&gt;<a class="code hl_variable" href="structWidget__t.html#a0dbd581a0e232725c89f349091d5c4b0">scale</a>.<a class="code hl_variable" href="structResize__t.html#a2bfcb3621fd2e654107610955babfc92">init_height</a>;</div>
 <div class="line"><span class="lineno">  366</span>    <span class="keywordtype">int</span> si = <a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>);</div>
@@ -1122,7 +1121,7 @@ Functions</h2></td></tr>
 <p>menu_add_submenu - add a submenu to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*parent</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> the menu should pop over </td></tr>
+    <tr><td class="paramname">*wid</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> the submenu belongs to </td></tr>
     <tr><td class="paramname">*label</td><td>- the label of the menu </td></tr>
   </table>
   </dd>
@@ -1136,7 +1135,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  197</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *menu = w-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
 <div class="line"><span class="lineno">  198</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a>* view_port =  menu-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
 <div class="line"><span class="lineno">  199</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  200</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(menu, &amp;metrics);</div>
+<div class="line"><span class="lineno">  200</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(menu, &amp;metrics);</div>
 <div class="line"><span class="lineno">  201</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>;</div>
 <div class="line"><span class="lineno">  202</span>    <span class="keywordtype">int</span> height = menu-&gt;<a class="code hl_variable" href="structWidget__t.html#a0dbd581a0e232725c89f349091d5c4b0">scale</a>.<a class="code hl_variable" href="structResize__t.html#a2bfcb3621fd2e654107610955babfc92">init_height</a>;</div>
 <div class="line"><span class="lineno">  203</span>    <span class="keywordtype">int</span> si = <a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>);</div>
@@ -1207,7 +1206,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  170</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *menu = wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
 <div class="line"><span class="lineno">  171</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a>* view_port =  menu-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
 <div class="line"><span class="lineno">  172</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  173</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(menu, &amp;metrics);</div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(menu, &amp;metrics);</div>
 <div class="line"><span class="lineno">  174</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>;</div>
 <div class="line"><span class="lineno">  175</span>    <span class="keywordtype">int</span> height = 40;</div>
 <div class="line"><span class="lineno">  176</span>    <span class="keywordtype">int</span> si = <a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>);</div>
@@ -1317,12 +1316,10 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*menu</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> menu </td></tr>
+    <tr><td class="paramname">*item</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> item to be removed </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Widget_t* - pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> menu_item to be removed </dd>
-<dd>
-void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xmenu_8c_source.html#l00303">303</a> of file <a class="el" href="xmenu_8c_source.html">xmenu.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  303</span>                                                      {</div>
@@ -1369,7 +1366,7 @@ void </dd></dl>
 <p>menubar_add_menu - add a menu to a menubar </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*wid</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> menu </td></tr>
+    <tr><td class="paramname">*parent</td><td>- pointer to the parent <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> (menubar) </td></tr>
     <tr><td class="paramname">*label</td><td>- Label to show on the menu </td></tr>
   </table>
   </dd>
@@ -1382,13 +1379,13 @@ void </dd></dl>
 <div class="line"><span class="lineno">  116</span>    cairo_text_extents(parent-&gt;<a class="code hl_variable" href="structWidget__t.html#a87bbe79251b7e169825a807de0941fb9">crb</a>,label , &amp;extents);</div>
 <div class="line"><span class="lineno">  117</span>    <span class="keywordtype">int</span> width = (int)extents.width+20;</div>
 <div class="line"><span class="lineno">  118</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  119</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(parent, &amp;metrics);</div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(parent, &amp;metrics);</div>
 <div class="line"><span class="lineno">  120</span>    <span class="keywordtype">int</span> height = metrics.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>;</div>
 <div class="line"><span class="lineno">  121</span>    <span class="keywordtype">int</span> x = 0;</div>
 <div class="line"><span class="lineno">  122</span>    <span class="keywordtype">int</span> i = parent-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#ae49b747ab3b2a8aedad718521b6c77f1">elem</a>-1;</div>
 <div class="line"><span class="lineno">  123</span>    <span class="keywordflow">for</span>(;i&gt;-1;i--) {</div>
 <div class="line"><span class="lineno">  124</span>        <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = parent-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i];</div>
-<div class="line"><span class="lineno">  125</span>        <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(w, &amp;metrics);</div>
+<div class="line"><span class="lineno">  125</span>        <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(w, &amp;metrics);</div>
 <div class="line"><span class="lineno">  126</span>        x += metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>;</div>
 <div class="line"><span class="lineno">  127</span>    }</div>
 <div class="line"><span class="lineno">  128</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *wid = <a class="code hl_function" href="xmenu_8c.html#a4d510bb336cf41843f2ab3631098ec06">add_menu</a>(parent, label, x, 0, width, height);</div>
@@ -1446,10 +1443,11 @@ void </dd></dl>
   <table class="params">
     <tr><td class="paramname">*parent</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> the menu should pop over </td></tr>
     <tr><td class="paramname">*menu</td><td>- the menu to show </td></tr>
+    <tr><td class="paramname">elem</td><td>- how many entries to show (max value) </td></tr>
+    <tr><td class="paramname">above</td><td>- show menu above or below the parent <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xmenu_8c_source.html#l00027">27</a> of file <a class="el" href="xmenu_8c_source.html">xmenu.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   27</span>                                                                           {</div>
@@ -1520,10 +1518,11 @@ void </dd></dl>
   <table class="params">
     <tr><td class="paramname">*parent</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> the menu should pop over </td></tr>
     <tr><td class="paramname">*menu</td><td>- the menu to show </td></tr>
+    <tr><td class="paramname">elem</td><td>- how many entries to show (max value) </td></tr>
+    <tr><td class="paramname">above</td><td>- show menu above or below the parent <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xmenu_8c_source.html#l00041">41</a> of file <a class="el" href="xmenu_8c_source.html">xmenu.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   41</span>                                                                              {</div>
@@ -1566,7 +1565,6 @@ void </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xmenu_8c_source.html#l00326">326</a> of file <a class="el" href="xmenu_8c_source.html">xmenu.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  326</span>                                        {</div>
@@ -1675,10 +1673,10 @@ void </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*w</td><td>- the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> hold the menu </td></tr>
+    <tr><td class="paramname">active</td><td>- the menu entry to activate </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xmenu_8c_source.html#l00078">78</a> of file <a class="el" href="xmenu_8c_source.html">xmenu.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   78</span>                                                         {</div>

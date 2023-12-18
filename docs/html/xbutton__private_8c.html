@@ -152,7 +152,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>button</em>, </td>
+          <td class="paramname"><em>button_</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -172,12 +172,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
-    <tr><td class="paramname">*button</td><td>- void pointer to XEvent.xbutton struct </td></tr>
+    <tr><td class="paramname">*button_</td><td>- void pointer to XEvent.xbutton struct </td></tr>
     <tr><td class="paramname">*user_data</td><td>- void pointer to attached user_data </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00420">420</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  420</span>                                                              {</div>
@@ -230,12 +229,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
-    <tr><td class="paramname">*button</td><td>- void pointer to XEvent.xbutton struct </td></tr>
+    <tr><td class="paramname">*button_</td><td>- void pointer to XEvent.xbutton struct </td></tr>
     <tr><td class="paramname">*user_data</td><td>- void pointer to attached user_data </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00425">425</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  425</span>                                                                {</div>
@@ -287,14 +285,13 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00220">220</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  220</span>                                                  {</div>
 <div class="line"><span class="lineno">  221</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a>*)w_;</div>
 <div class="line"><span class="lineno">  222</span>    <span class="keywordflow">if</span> (!w) <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  223</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  224</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(w, &amp;metrics);</div>
+<div class="line"><span class="lineno">  224</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(w, &amp;metrics);</div>
 <div class="line"><span class="lineno">  225</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>-2;</div>
 <div class="line"><span class="lineno">  226</span>    <span class="keywordtype">int</span> height = metrics.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>-2;</div>
 <div class="line"><span class="lineno">  227</span>    <span class="keywordflow">if</span> (!metrics.<a class="code hl_variable" href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">visible</a>) <span class="keywordflow">return</span>;</div>
@@ -362,7 +359,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="axbutton__private_8c_html_af8777941fd2b6aad0242fecd27e77870"><div class="ttname"><a href="xbutton__private_8c.html#af8777941fd2b6aad0242fecd27e77870">_draw_image_button_with_label</a></div><div class="ttdeci">void _draw_image_button_with_label(Widget_t *w, int width_t, int height_t)</div><div class="ttdef"><b>Definition</b> <a href="xbutton__private_8c_source.html#l00075">xbutton_private.c:75</a></div></div>
 <div class="ttc" id="axcolor_8h_html_a02fe4f3a29af917cc1de5f8b5c4b4171"><div class="ttname"><a href="xcolor_8h.html#a02fe4f3a29af917cc1de5f8b5c4b4171">get_color_state</a></div><div class="ttdeci">Color_state get_color_state(Widget_t *wid)</div><div class="ttdoc">get_color_state - get the Color_state to use in relation to the Widget_t state</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8c_source.html#l00222">xcolor.c:222</a></div></div>
 <div class="ttc" id="axcolor_8h_html_a082dd5329f6c1e402747b9ecfa1dceae"><div class="ttname"><a href="xcolor_8h.html#a082dd5329f6c1e402747b9ecfa1dceae">use_text_color_scheme</a></div><div class="ttdeci">void use_text_color_scheme(Widget_t *w, Color_state st)</div><div class="ttdoc">use_text_color_scheme - use text Colors to paint on Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8c_source.html#l00266">xcolor.c:266</a></div></div>
-<div class="ttc" id="axwidget-platform_8h_html_ae8bb8113586b8d99f94c7c190a26a3d1"><div class="ttname"><a href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a></div><div class="ttdeci">void os_get_window_metrics(Widget_t *w_, Metrics_t *metrics)</div><div class="ttdoc">os_get_window_metrics - Get the Merics_t struct related to a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00080">xwidget-linux.c:80</a></div></div>
+<div class="ttc" id="axwidget-platform_8h_html_a005be56c9cf1b8f45766ab517ff540c7"><div class="ttname"><a href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a></div><div class="ttdeci">void os_get_window_metrics(Widget_t *w, Metrics_t *metrics)</div><div class="ttdoc">os_get_window_metrics - Get the Merics_t struct related to a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00080">xwidget-linux.c:80</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xbutton__private_8c_source.html#l00129">_draw_button_base()</a>, <a class="el" href="xbutton__private_8c_source.html#l00057">_draw_image_button()</a>, <a class="el" href="xbutton__private_8c_source.html#l00075">_draw_image_button_with_label()</a>, <a class="el" href="xbutton__private_8c_source.html#l00172">_remove_low_dash()</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::adj_y</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget_8h_source.html#l00369">Resize_t::ascale</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00222">get_color_state()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00491">Widget_t::image</a>, <a class="el" href="xwidget_8h_source.html#l00459">Widget_t::input_label</a>, <a class="el" href="xwidget_8h_source.html#l00463">Widget_t::label</a>, <a class="el" href="xputty_8h_source.html#l00248">Xputty::normal_font</a>, <a class="el" href="xwidget-linux_8c_source.html#l00080">os_get_window_metrics()</a>, <a class="el" href="xwidget_8h_source.html#l00525">Widget_t::scale</a>, <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::state</a>, <a class="el" href="xcolor_8c_source.html#l00266">use_text_color_scheme()</a>, <a class="el" href="xadjustment_8h_source.html#l00088">Adjustment_t::value</a>, <a class="el" href="xwidget-platform_8h_source.html#l00069">Metrics_t::visible</a>, and <a class="el" href="xwidget-platform_8h_source.html#l00061">Metrics_t::width</a>.</p>
 
@@ -404,14 +401,13 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00191">191</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  191</span>                                             {</div>
 <div class="line"><span class="lineno">  192</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a>*)w_;</div>
 <div class="line"><span class="lineno">  193</span>    <span class="keywordflow">if</span> (!w) <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  194</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  195</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(w, &amp;metrics);</div>
+<div class="line"><span class="lineno">  195</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(w, &amp;metrics);</div>
 <div class="line"><span class="lineno">  196</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>-2;</div>
 <div class="line"><span class="lineno">  197</span>    <span class="keywordtype">int</span> height = metrics.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>-2;</div>
 <div class="line"><span class="lineno">  198</span>    <span class="keywordflow">if</span> (!metrics.<a class="code hl_variable" href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">visible</a>) <span class="keywordflow">return</span>;</div>
@@ -521,12 +517,12 @@ Functions</h2></td></tr>
 <div class="ttc" id="axbutton__private_8c_html_a7b78e740b4f0797a42a53278bfb3c7d4"><div class="ttname"><a href="xbutton__private_8c.html#a7b78e740b4f0797a42a53278bfb3c7d4">_pattern_in</a></div><div class="ttdeci">void _pattern_in(Widget_t *w, Color_state st, int height)</div><div class="ttdoc">_pattern_in - a little pattern to make press state more visible</div><div class="ttdef"><b>Definition</b> <a href="xbutton__private_8c_source.html#l00046">xbutton_private.c:46</a></div></div>
 <div class="ttc" id="axbutton__private_8c_html_ad4e31fc35cac78b036b693d09edfad35"><div class="ttname"><a href="xbutton__private_8c.html#ad4e31fc35cac78b036b693d09edfad35">_rounded_rectangle</a></div><div class="ttdeci">void _rounded_rectangle(cairo_t *cr, float x, float y, float width, float height)</div><div class="ttdoc">_rounded_rectangle - internal draw a rounded button</div><div class="ttdef"><b>Definition</b> <a href="xbutton__private_8c_source.html#l00025">xbutton_private.c:25</a></div></div>
 <div class="ttc" id="axcolor_8h_html_a01c2d1d2752637b690378db10920ccb2"><div class="ttname"><a href="xcolor_8h.html#a01c2d1d2752637b690378db10920ccb2">use_frame_color_scheme</a></div><div class="ttdeci">void use_frame_color_scheme(Widget_t *w, Color_state st)</div><div class="ttdoc">use_frame_color_scheme - use frame Colors to paint on Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8c_source.html#l00280">xcolor.c:280</a></div></div>
-<div class="ttc" id="axcolor_8h_html_af6e1bc675d5df2f7fb9e91a8c5820771a13cf30d063febc8581978b53d739f0a6"><div class="ttname"><a href="xcolor_8h.html#af6e1bc675d5df2f7fb9e91a8c5820771a13cf30d063febc8581978b53d739f0a6">NORMAL_</a></div><div class="ttdeci">@ NORMAL_</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00039">xcolor.h:39</a></div></div>
-<div class="ttc" id="axcolor_8h_html_af6e1bc675d5df2f7fb9e91a8c5820771a1fecdd77feb70e10d66cc3cff8900cc8"><div class="ttname"><a href="xcolor_8h.html#af6e1bc675d5df2f7fb9e91a8c5820771a1fecdd77feb70e10d66cc3cff8900cc8">SELECTED_</a></div><div class="ttdeci">@ SELECTED_</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00041">xcolor.h:41</a></div></div>
-<div class="ttc" id="axcolor_8h_html_af6e1bc675d5df2f7fb9e91a8c5820771a4e75636632c9a333b0107d31a5078eed"><div class="ttname"><a href="xcolor_8h.html#af6e1bc675d5df2f7fb9e91a8c5820771a4e75636632c9a333b0107d31a5078eed">PRELIGHT_</a></div><div class="ttdeci">@ PRELIGHT_</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00040">xcolor.h:40</a></div></div>
-<div class="ttc" id="axcolor_8h_html_af6e1bc675d5df2f7fb9e91a8c5820771a767d5451ce027a7881f351e2961a96a2"><div class="ttname"><a href="xcolor_8h.html#af6e1bc675d5df2f7fb9e91a8c5820771a767d5451ce027a7881f351e2961a96a2">ACTIVE_</a></div><div class="ttdeci">@ ACTIVE_</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00042">xcolor.h:42</a></div></div>
+<div class="ttc" id="axcolor_8h_html_af6e1bc675d5df2f7fb9e91a8c5820771a13cf30d063febc8581978b53d739f0a6"><div class="ttname"><a href="xcolor_8h.html#af6e1bc675d5df2f7fb9e91a8c5820771a13cf30d063febc8581978b53d739f0a6">NORMAL_</a></div><div class="ttdeci">@ NORMAL_</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00044">xcolor.h:44</a></div></div>
+<div class="ttc" id="axcolor_8h_html_af6e1bc675d5df2f7fb9e91a8c5820771a1fecdd77feb70e10d66cc3cff8900cc8"><div class="ttname"><a href="xcolor_8h.html#af6e1bc675d5df2f7fb9e91a8c5820771a1fecdd77feb70e10d66cc3cff8900cc8">SELECTED_</a></div><div class="ttdeci">@ SELECTED_</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00046">xcolor.h:46</a></div></div>
+<div class="ttc" id="axcolor_8h_html_af6e1bc675d5df2f7fb9e91a8c5820771a4e75636632c9a333b0107d31a5078eed"><div class="ttname"><a href="xcolor_8h.html#af6e1bc675d5df2f7fb9e91a8c5820771a4e75636632c9a333b0107d31a5078eed">PRELIGHT_</a></div><div class="ttdeci">@ PRELIGHT_</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00045">xcolor.h:45</a></div></div>
+<div class="ttc" id="axcolor_8h_html_af6e1bc675d5df2f7fb9e91a8c5820771a767d5451ce027a7881f351e2961a96a2"><div class="ttname"><a href="xcolor_8h.html#af6e1bc675d5df2f7fb9e91a8c5820771a767d5451ce027a7881f351e2961a96a2">ACTIVE_</a></div><div class="ttdeci">@ ACTIVE_</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00047">xcolor.h:47</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xbutton__private_8c_source.html#l00046">_pattern_in()</a>, <a class="el" href="xbutton__private_8c_source.html#l00035">_pattern_out()</a>, <a class="el" href="xbutton__private_8c_source.html#l00025">_rounded_rectangle()</a>, <a class="el" href="xcolor_8h_source.html#l00042">ACTIVE_</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::adj_y</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8h_source.html#l00039">NORMAL_</a>, <a class="el" href="xcolor_8h_source.html#l00040">PRELIGHT_</a>, <a class="el" href="xcolor_8h_source.html#l00041">SELECTED_</a>, <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::state</a>, <a class="el" href="xcolor_8c_source.html#l00280">use_frame_color_scheme()</a>, and <a class="el" href="xadjustment_8h_source.html#l00088">Adjustment_t::value</a>.</p>
+<p class="reference">References <a class="el" href="xbutton__private_8c_source.html#l00046">_pattern_in()</a>, <a class="el" href="xbutton__private_8c_source.html#l00035">_pattern_out()</a>, <a class="el" href="xbutton__private_8c_source.html#l00025">_rounded_rectangle()</a>, <a class="el" href="xcolor_8h_source.html#l00047">ACTIVE_</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::adj_y</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8h_source.html#l00044">NORMAL_</a>, <a class="el" href="xcolor_8h_source.html#l00045">PRELIGHT_</a>, <a class="el" href="xcolor_8h_source.html#l00046">SELECTED_</a>, <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::state</a>, <a class="el" href="xcolor_8c_source.html#l00280">use_frame_color_scheme()</a>, and <a class="el" href="xadjustment_8h_source.html#l00088">Adjustment_t::value</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xbutton__private_8c_source.html#l00220">_draw_base_button()</a>, <a class="el" href="xbutton__private_8c_source.html#l00374">_draw_check_box()</a>, <a class="el" href="xbutton__private_8c_source.html#l00341">_draw_check_button()</a>, <a class="el" href="xbutton__private_8c_source.html#l00274">_draw_on_off_button()</a>, and <a class="el" href="xbutton__private_8c_source.html#l00316">_draw_ti_button()</a>.</p>
 
@@ -566,14 +562,13 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00374">374</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  374</span>                                                {</div>
 <div class="line"><span class="lineno">  375</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a>*)w_;</div>
 <div class="line"><span class="lineno">  376</span>    <span class="keywordflow">if</span> (!w) <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  377</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  378</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(w, &amp;metrics);</div>
+<div class="line"><span class="lineno">  378</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(w, &amp;metrics);</div>
 <div class="line"><span class="lineno">  379</span>    <span class="keywordtype">int</span> height = metrics.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>-2;</div>
 <div class="line"><span class="lineno">  380</span>    <span class="keywordflow">if</span> (!metrics.<a class="code hl_variable" href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">visible</a>) <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  381</span>    <span class="keywordflow">if</span> (w-&gt;<a class="code hl_variable" href="structWidget__t.html#a4d3180badf477a42a7f55128b348f141">image</a>) {</div>
@@ -652,14 +647,13 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00341">341</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  341</span>                                                   {</div>
 <div class="line"><span class="lineno">  342</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a>*)w_;</div>
 <div class="line"><span class="lineno">  343</span>    <span class="keywordflow">if</span> (!w) <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  344</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  345</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(w, &amp;metrics);</div>
+<div class="line"><span class="lineno">  345</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(w, &amp;metrics);</div>
 <div class="line"><span class="lineno">  346</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>-2;</div>
 <div class="line"><span class="lineno">  347</span>    <span class="keywordtype">int</span> height = metrics.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>-2;</div>
 <div class="line"><span class="lineno">  348</span>    <span class="keywordflow">if</span> (!metrics.<a class="code hl_variable" href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">visible</a>) <span class="keywordflow">return</span>;</div>
@@ -831,7 +825,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  111</span>    cairo_new_path (w-&gt;<a class="code hl_variable" href="structWidget__t.html#a87bbe79251b7e169825a807de0941fb9">crb</a>);</div>
 <div class="line"><span class="lineno">  112</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xcolor_8h_source.html#l00042">ACTIVE_</a>, <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::adj</a>, <a class="el" href="xadjustment_8c_source.html#l00148">adj_get_state()</a>, <a class="el" href="xadjustment_8c_source.html#l00154">adj_get_value()</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::adj_y</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget_8h_source.html#l00369">Resize_t::ascale</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00222">get_color_state()</a>, <a class="el" href="xwidget_8h_source.html#l00491">Widget_t::image</a>, <a class="el" href="xwidget_8h_source.html#l00459">Widget_t::input_label</a>, <a class="el" href="xwidget_8h_source.html#l00463">Widget_t::label</a>, <a class="el" href="xcolor_8h_source.html#l00039">NORMAL_</a>, <a class="el" href="xputty_8h_source.html#l00248">Xputty::normal_font</a>, <a class="el" href="xwidget-linux_8c_source.html#l00113">os_get_surface_size()</a>, <a class="el" href="xcolor_8h_source.html#l00040">PRELIGHT_</a>, <a class="el" href="xwidget_8h_source.html#l00525">Widget_t::scale</a>, <a class="el" href="xcolor_8h_source.html#l00041">SELECTED_</a>, <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::state</a>, <a class="el" href="xcolor_8c_source.html#l00245">use_fg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00266">use_text_color_scheme()</a>, and <a class="el" href="xadjustment_8h_source.html#l00088">Adjustment_t::value</a>.</p>
+<p class="reference">References <a class="el" href="xcolor_8h_source.html#l00047">ACTIVE_</a>, <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::adj</a>, <a class="el" href="xadjustment_8c_source.html#l00148">adj_get_state()</a>, <a class="el" href="xadjustment_8c_source.html#l00154">adj_get_value()</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::adj_y</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget_8h_source.html#l00369">Resize_t::ascale</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00222">get_color_state()</a>, <a class="el" href="xwidget_8h_source.html#l00491">Widget_t::image</a>, <a class="el" href="xwidget_8h_source.html#l00459">Widget_t::input_label</a>, <a class="el" href="xwidget_8h_source.html#l00463">Widget_t::label</a>, <a class="el" href="xcolor_8h_source.html#l00044">NORMAL_</a>, <a class="el" href="xputty_8h_source.html#l00248">Xputty::normal_font</a>, <a class="el" href="xwidget-linux_8c_source.html#l00113">os_get_surface_size()</a>, <a class="el" href="xcolor_8h_source.html#l00045">PRELIGHT_</a>, <a class="el" href="xwidget_8h_source.html#l00525">Widget_t::scale</a>, <a class="el" href="xcolor_8h_source.html#l00046">SELECTED_</a>, <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::state</a>, <a class="el" href="xcolor_8c_source.html#l00245">use_fg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00266">use_text_color_scheme()</a>, and <a class="el" href="xadjustment_8h_source.html#l00088">Adjustment_t::value</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xbutton__private_8c_source.html#l00220">_draw_base_button()</a>, <a class="el" href="xbutton__private_8c_source.html#l00191">_draw_button()</a>, and <a class="el" href="xbutton__private_8c_source.html#l00114">_draw_switch_image_button()</a>.</p>
 
@@ -871,14 +865,13 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00274">274</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  274</span>                                                    {</div>
 <div class="line"><span class="lineno">  275</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a>*)w_;</div>
 <div class="line"><span class="lineno">  276</span>    <span class="keywordflow">if</span> (!w) <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  277</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  278</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(w, &amp;metrics);</div>
+<div class="line"><span class="lineno">  278</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(w, &amp;metrics);</div>
 <div class="line"><span class="lineno">  279</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>-2;</div>
 <div class="line"><span class="lineno">  280</span>    <span class="keywordtype">int</span> height = metrics.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>-2;</div>
 <div class="line"><span class="lineno">  281</span>    <span class="keywordflow">if</span> (!metrics.<a class="code hl_variable" href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">visible</a>) <span class="keywordflow">return</span>;</div>
@@ -956,14 +949,13 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00114">114</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  114</span>                                                          {</div>
 <div class="line"><span class="lineno">  115</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a>*)w_;</div>
 <div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (!w) <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  117</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  118</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(w, &amp;metrics);</div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(w, &amp;metrics);</div>
 <div class="line"><span class="lineno">  119</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>-2;</div>
 <div class="line"><span class="lineno">  120</span>    <span class="keywordtype">int</span> height = metrics.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>-2;</div>
 <div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span> (!metrics.<a class="code hl_variable" href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">visible</a>) <span class="keywordflow">return</span>;</div>
@@ -1014,14 +1006,13 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00316">316</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  316</span>                                                {</div>
 <div class="line"><span class="lineno">  317</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a>*)w_;</div>
 <div class="line"><span class="lineno">  318</span>    <span class="keywordflow">if</span> (!w) <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  319</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  320</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(w, &amp;metrics);</div>
+<div class="line"><span class="lineno">  320</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(w, &amp;metrics);</div>
 <div class="line"><span class="lineno">  321</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>-2;</div>
 <div class="line"><span class="lineno">  322</span>    <span class="keywordtype">int</span> height = metrics.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>-2;</div>
 <div class="line"><span class="lineno">  323</span>    <span class="keywordflow">if</span> (!metrics.<a class="code hl_variable" href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">visible</a>) <span class="keywordflow">return</span>;</div>
@@ -1083,13 +1074,12 @@ Functions</h2></td></tr>
 <p>_pattern_in - a little pattern to make press state more visible </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
+    <tr><td class="paramname">*w</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
     <tr><td class="paramname">st</td><td>- the color state to use </td></tr>
     <tr><td class="paramname">height</td><td>- the button height </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00046">46</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   46</span>                                                          {</div>
@@ -1102,11 +1092,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   53</span>    cairo_set_source(w-&gt;<a class="code hl_variable" href="structWidget__t.html#a87bbe79251b7e169825a807de0941fb9">crb</a>, pat);</div>
 <div class="line"><span class="lineno">   54</span>    cairo_pattern_destroy (pat);</div>
 <div class="line"><span class="lineno">   55</span>}</div>
-<div class="ttc" id="astructColors_html"><div class="ttname"><a href="structColors.html">Colors</a></div><div class="ttdoc">Color_t - struct used to set cairo color for Widget_t.</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00073">xcolor.h:73</a></div></div>
-<div class="ttc" id="astructColors_html_ac8418b6f36c85a9430799d09b11b39a6"><div class="ttname"><a href="structColors.html#ac8418b6f36c85a9430799d09b11b39a6">Colors::light</a></div><div class="ttdeci">double light[4]</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00080">xcolor.h:80</a></div></div>
+<div class="ttc" id="astructColors_html"><div class="ttname"><a href="structColors.html">Colors</a></div><div class="ttdoc">Color_t - struct used to set cairo color for Widget_t.</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00085">xcolor.h:85</a></div></div>
+<div class="ttc" id="astructColors_html_ac8418b6f36c85a9430799d09b11b39a6"><div class="ttname"><a href="structColors.html#ac8418b6f36c85a9430799d09b11b39a6">Colors::light</a></div><div class="ttdeci">double light[4]</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00092">xcolor.h:92</a></div></div>
 <div class="ttc" id="axcolor_8h_html_a83e1cc20c322f5eb37e3c1efba21b6c1"><div class="ttname"><a href="xcolor_8h.html#a83e1cc20c322f5eb37e3c1efba21b6c1">get_color_scheme</a></div><div class="ttdeci">Colors * get_color_scheme(Widget_t *wid, Color_state st)</div><div class="ttdoc">get_color_scheme - get pointer to the Colors struct to use in relation to the Color_state</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8c_source.html#l00197">xcolor.c:197</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00197">get_color_scheme()</a>, and <a class="el" href="xcolor_8h_source.html#l00080">Colors::light</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00197">get_color_scheme()</a>, and <a class="el" href="xcolor_8h_source.html#l00092">Colors::light</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xbutton__private_8c_source.html#l00129">_draw_button_base()</a>, and <a class="el" href="xcombobox__private_8c_source.html#l00026">_draw_combobox_button()</a>.</p>
 
@@ -1147,13 +1137,12 @@ Functions</h2></td></tr>
 <p>_pattern_in - a little pattern to make press state more visible </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
+    <tr><td class="paramname">*w</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
     <tr><td class="paramname">st</td><td>- the color state to use </td></tr>
     <tr><td class="paramname">height</td><td>- the button height </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00035">35</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   35</span>                                                           {</div>
@@ -1167,7 +1156,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   43</span>    cairo_pattern_destroy (pat);</div>
 <div class="line"><span class="lineno">   44</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00197">get_color_scheme()</a>, and <a class="el" href="xcolor_8h_source.html#l00080">Colors::light</a>.</p>
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00197">get_color_scheme()</a>, and <a class="el" href="xcolor_8h_source.html#l00092">Colors::light</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xbutton__private_8c_source.html#l00129">_draw_button_base()</a>, and <a class="el" href="xcombobox__private_8c_source.html#l00026">_draw_combobox_button()</a>.</p>
 
@@ -1260,6 +1249,7 @@ Functions</h2></td></tr>
 <p>_rounded_rectangle - internal draw a rounded button </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">*cr</td><td>- the cairo_t context to draw to </td></tr>
     <tr><td class="paramname">x</td><td>- point on x axis </td></tr>
     <tr><td class="paramname">y</td><td>- point on y axis </td></tr>
     <tr><td class="paramname">width</td><td>- the button width </td></tr>
@@ -1267,7 +1257,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00025">25</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   25</span>                                                                                 {</div>
@@ -1300,7 +1289,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>button</em>, </td>
+          <td class="paramname"><em>button_</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1320,12 +1309,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
-    <tr><td class="paramname">*button</td><td>- void pointer to XEvent.xbutton struct </td></tr>
+    <tr><td class="paramname">*button_</td><td>- void pointer to XEvent.xbutton struct </td></tr>
     <tr><td class="paramname">*user_data</td><td>- void pointer to attached user_data </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00437">437</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  437</span>                                                                     {</div>
@@ -1376,12 +1364,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
-    <tr><td class="paramname">*button</td><td>- void pointer to XEvent.xbutton struct </td></tr>
+    <tr><td class="paramname">*button_</td><td>- void pointer to XEvent.xbutton struct </td></tr>
     <tr><td class="paramname">*user_data</td><td>- void pointer to attached user_data </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xbutton__private_8c_source.html#l00442">442</a> of file <a class="el" href="xbutton__private_8c_source.html">xbutton_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  442</span>                                                                       {</div>

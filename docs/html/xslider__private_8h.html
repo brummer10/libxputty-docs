@@ -138,13 +138,12 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xslider__private_8c_source.html#l00143">143</a> of file <a class="el" href="xslider__private_8c_source.html">xslider_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  143</span>                                              {</div>
 <div class="line"><span class="lineno">  144</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a>*)w_;</div>
 <div class="line"><span class="lineno">  145</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  146</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(w, &amp;metrics);</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(w, &amp;metrics);</div>
 <div class="line"><span class="lineno">  147</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>-2;</div>
 <div class="line"><span class="lineno">  148</span>    <span class="keywordtype">int</span> height = metrics.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>-2;</div>
 <div class="line"><span class="lineno">  149</span>    <span class="keywordflow">if</span> (!metrics.<a class="code hl_variable" href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">visible</a>) <span class="keywordflow">return</span>;</div>
@@ -232,12 +231,12 @@ Functions</h2></td></tr>
 <div class="ttc" id="axcolor_8h_html_a335aed33f3b2fca02beb85375186a5c9"><div class="ttname"><a href="xcolor_8h.html#a335aed33f3b2fca02beb85375186a5c9">use_bg_color_scheme</a></div><div class="ttdeci">void use_bg_color_scheme(Widget_t *w, Color_state st)</div><div class="ttdoc">use_bg_color_scheme - use background Colors to paint on Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8c_source.html#l00252">xcolor.c:252</a></div></div>
 <div class="ttc" id="axcolor_8h_html_a389caf2131cd599465c512eead16a6c0"><div class="ttname"><a href="xcolor_8h.html#a389caf2131cd599465c512eead16a6c0">use_fg_color_scheme</a></div><div class="ttdeci">void use_fg_color_scheme(Widget_t *w, Color_state st)</div><div class="ttdoc">use_fg_color_scheme - use forground Colors to paint on Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8c_source.html#l00245">xcolor.c:245</a></div></div>
 <div class="ttc" id="axcolor_8h_html_adcf0fbad75a168085a6b857a159d6eee"><div class="ttname"><a href="xcolor_8h.html#adcf0fbad75a168085a6b857a159d6eee">use_shadow_color_scheme</a></div><div class="ttdeci">void use_shadow_color_scheme(Widget_t *w, Color_state st)</div><div class="ttdoc">use_shadow_color_scheme - use shadow Colors to paint on Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8c_source.html#l00273">xcolor.c:273</a></div></div>
-<div class="ttc" id="axcolor_8h_html_af6e1bc675d5df2f7fb9e91a8c5820771a13cf30d063febc8581978b53d739f0a6"><div class="ttname"><a href="xcolor_8h.html#af6e1bc675d5df2f7fb9e91a8c5820771a13cf30d063febc8581978b53d739f0a6">NORMAL_</a></div><div class="ttdeci">@ NORMAL_</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00039">xcolor.h:39</a></div></div>
+<div class="ttc" id="axcolor_8h_html_af6e1bc675d5df2f7fb9e91a8c5820771a13cf30d063febc8581978b53d739f0a6"><div class="ttname"><a href="xcolor_8h.html#af6e1bc675d5df2f7fb9e91a8c5820771a13cf30d063febc8581978b53d739f0a6">NORMAL_</a></div><div class="ttdeci">@ NORMAL_</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00044">xcolor.h:44</a></div></div>
 <div class="ttc" id="axslider__private_8c_html_a9913ca1e7c3e5b83b0b7311b6e101298"><div class="ttname"><a href="xslider__private_8c.html#a9913ca1e7c3e5b83b0b7311b6e101298">_pattern_hslider</a></div><div class="ttdeci">void _pattern_hslider(Widget_t *w, Color_state st, int height)</div><div class="ttdoc">_pattern_hslider - set pattern for the slider base</div><div class="ttdef"><b>Definition</b> <a href="xslider__private_8c_source.html#l00036">xslider_private.c:36</a></div></div>
 <div class="ttc" id="axslider__private_8c_html_aa40da4dd487f557bb3adefe5b19d0779"><div class="ttname"><a href="xslider__private_8c.html#aa40da4dd487f557bb3adefe5b19d0779">_draw_image_slider</a></div><div class="ttdeci">void _draw_image_slider(Widget_t *w, int width_t, int height_t)</div><div class="ttdoc">_draw_image_slider - draw slider from a horizontal sprite image</div><div class="ttdef"><b>Definition</b> <a href="xslider__private_8c_source.html#l00047">xslider_private.c:47</a></div></div>
-<div class="ttc" id="axwidget-platform_8h_html_ae8bb8113586b8d99f94c7c190a26a3d1"><div class="ttname"><a href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a></div><div class="ttdeci">void os_get_window_metrics(Widget_t *w_, Metrics_t *metrics)</div><div class="ttdoc">os_get_window_metrics - Get the Merics_t struct related to a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00080">xwidget-linux.c:80</a></div></div>
+<div class="ttc" id="axwidget-platform_8h_html_a005be56c9cf1b8f45766ab517ff540c7"><div class="ttname"><a href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a></div><div class="ttdeci">void os_get_window_metrics(Widget_t *w, Metrics_t *metrics)</div><div class="ttdoc">os_get_window_metrics - Get the Merics_t struct related to a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00080">xwidget-linux.c:80</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xslider__private_8c_source.html#l00047">_draw_image_slider()</a>, <a class="el" href="xslider__private_8c_source.html#l00036">_pattern_hslider()</a>, <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::adj</a>, <a class="el" href="xadjustment_8c_source.html#l00148">adj_get_state()</a>, <a class="el" href="xadjustment_8c_source.html#l00154">adj_get_value()</a>, <a class="el" href="xwidget_8h_source.html#l00493">Widget_t::adj_x</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget_8h_source.html#l00369">Resize_t::ascale</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00222">get_color_state()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00491">Widget_t::image</a>, <a class="el" href="xwidget_8h_source.html#l00463">Widget_t::label</a>, <a class="el" href="xcolor_8h_source.html#l00039">NORMAL_</a>, <a class="el" href="xputty_8h_source.html#l00248">Xputty::normal_font</a>, <a class="el" href="xwidget-linux_8c_source.html#l00080">os_get_window_metrics()</a>, <a class="el" href="xwidget_8h_source.html#l00525">Widget_t::scale</a>, <a class="el" href="xputty_8h_source.html#l00246">Xputty::small_font</a>, <a class="el" href="xadjustment_8h_source.html#l00094">Adjustment_t::step</a>, <a class="el" href="xcolor_8c_source.html#l00252">use_bg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00245">use_fg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00273">use_shadow_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00266">use_text_color_scheme()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00069">Metrics_t::visible</a>, and <a class="el" href="xwidget-platform_8h_source.html#l00061">Metrics_t::width</a>.</p>
+<p class="reference">References <a class="el" href="xslider__private_8c_source.html#l00047">_draw_image_slider()</a>, <a class="el" href="xslider__private_8c_source.html#l00036">_pattern_hslider()</a>, <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::adj</a>, <a class="el" href="xadjustment_8c_source.html#l00148">adj_get_state()</a>, <a class="el" href="xadjustment_8c_source.html#l00154">adj_get_value()</a>, <a class="el" href="xwidget_8h_source.html#l00493">Widget_t::adj_x</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget_8h_source.html#l00369">Resize_t::ascale</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00222">get_color_state()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00491">Widget_t::image</a>, <a class="el" href="xwidget_8h_source.html#l00463">Widget_t::label</a>, <a class="el" href="xcolor_8h_source.html#l00044">NORMAL_</a>, <a class="el" href="xputty_8h_source.html#l00248">Xputty::normal_font</a>, <a class="el" href="xwidget-linux_8c_source.html#l00080">os_get_window_metrics()</a>, <a class="el" href="xwidget_8h_source.html#l00525">Widget_t::scale</a>, <a class="el" href="xputty_8h_source.html#l00246">Xputty::small_font</a>, <a class="el" href="xadjustment_8h_source.html#l00094">Adjustment_t::step</a>, <a class="el" href="xcolor_8c_source.html#l00252">use_bg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00245">use_fg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00273">use_shadow_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00266">use_text_color_scheme()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00069">Metrics_t::visible</a>, and <a class="el" href="xwidget-platform_8h_source.html#l00061">Metrics_t::width</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xslider_8c_source.html#l00051">add_hslider()</a>.</p>
 
@@ -284,7 +283,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xslider__private_8c_source.html#l00047">47</a> of file <a class="el" href="xslider__private_8c_source.html">xslider_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   47</span>                                                                {</div>
@@ -355,13 +353,12 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xslider__private_8c_source.html#l00072">72</a> of file <a class="el" href="xslider__private_8c_source.html">xslider_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   72</span>                                              {</div>
 <div class="line"><span class="lineno">   73</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a>*)w_;</div>
 <div class="line"><span class="lineno">   74</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">   75</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(w, &amp;metrics);</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(w, &amp;metrics);</div>
 <div class="line"><span class="lineno">   76</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>-2;</div>
 <div class="line"><span class="lineno">   77</span>    <span class="keywordtype">int</span> height = metrics.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>-2;</div>
 <div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> (!metrics.<a class="code hl_variable" href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">visible</a>) <span class="keywordflow">return</span>;</div>
@@ -431,7 +428,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructWidget__t_html_a1575a284d3df31e2c155b488af09d74b"><div class="ttname"><a href="structWidget__t.html#a1575a284d3df31e2c155b488af09d74b">Widget_t::adj_y</a></div><div class="ttdeci">Adjustment_t * adj_y</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00495">xwidget.h:495</a></div></div>
 <div class="ttc" id="axslider__private_8c_html_afbd00aa98160ecad075c7378e6a53c74"><div class="ttname"><a href="xslider__private_8c.html#afbd00aa98160ecad075c7378e6a53c74">_pattern_vslider</a></div><div class="ttdeci">void _pattern_vslider(Widget_t *w, Color_state st, int width)</div><div class="ttdoc">_pattern_vslider - set pattern for the slider base</div><div class="ttdef"><b>Definition</b> <a href="xslider__private_8c_source.html#l00025">xslider_private.c:25</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xslider__private_8c_source.html#l00047">_draw_image_slider()</a>, <a class="el" href="xslider__private_8c_source.html#l00025">_pattern_vslider()</a>, <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::adj</a>, <a class="el" href="xadjustment_8c_source.html#l00148">adj_get_state()</a>, <a class="el" href="xadjustment_8c_source.html#l00154">adj_get_value()</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::adj_y</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget_8h_source.html#l00369">Resize_t::ascale</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00222">get_color_state()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00491">Widget_t::image</a>, <a class="el" href="xwidget_8h_source.html#l00463">Widget_t::label</a>, <a class="el" href="xcolor_8h_source.html#l00039">NORMAL_</a>, <a class="el" href="xputty_8h_source.html#l00248">Xputty::normal_font</a>, <a class="el" href="xwidget-linux_8c_source.html#l00080">os_get_window_metrics()</a>, <a class="el" href="xwidget_8h_source.html#l00525">Widget_t::scale</a>, <a class="el" href="xputty_8h_source.html#l00246">Xputty::small_font</a>, <a class="el" href="xadjustment_8h_source.html#l00094">Adjustment_t::step</a>, <a class="el" href="xcolor_8c_source.html#l00252">use_bg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00245">use_fg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00273">use_shadow_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00266">use_text_color_scheme()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00069">Metrics_t::visible</a>, and <a class="el" href="xwidget-platform_8h_source.html#l00061">Metrics_t::width</a>.</p>
+<p class="reference">References <a class="el" href="xslider__private_8c_source.html#l00047">_draw_image_slider()</a>, <a class="el" href="xslider__private_8c_source.html#l00025">_pattern_vslider()</a>, <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::adj</a>, <a class="el" href="xadjustment_8c_source.html#l00148">adj_get_state()</a>, <a class="el" href="xadjustment_8c_source.html#l00154">adj_get_value()</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::adj_y</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget_8h_source.html#l00369">Resize_t::ascale</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00222">get_color_state()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00491">Widget_t::image</a>, <a class="el" href="xwidget_8h_source.html#l00463">Widget_t::label</a>, <a class="el" href="xcolor_8h_source.html#l00044">NORMAL_</a>, <a class="el" href="xputty_8h_source.html#l00248">Xputty::normal_font</a>, <a class="el" href="xwidget-linux_8c_source.html#l00080">os_get_window_metrics()</a>, <a class="el" href="xwidget_8h_source.html#l00525">Widget_t::scale</a>, <a class="el" href="xputty_8h_source.html#l00246">Xputty::small_font</a>, <a class="el" href="xadjustment_8h_source.html#l00094">Adjustment_t::step</a>, <a class="el" href="xcolor_8c_source.html#l00252">use_bg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00245">use_fg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00273">use_shadow_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00266">use_text_color_scheme()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00069">Metrics_t::visible</a>, and <a class="el" href="xwidget-platform_8h_source.html#l00061">Metrics_t::width</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xslider_8c_source.html#l00030">add_vslider()</a>.</p>
 
@@ -472,13 +469,12 @@ Functions</h2></td></tr>
 <p>_pattern_hslider - set pattern for the slider base </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
+    <tr><td class="paramname">*w</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
     <tr><td class="paramname">st</td><td>- the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> Color_t mode to use </td></tr>
     <tr><td class="paramname">width</td><td>- the width of the base </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xslider__private_8c_source.html#l00036">36</a> of file <a class="el" href="xslider__private_8c_source.html">xslider_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   36</span>                                                               {</div>
@@ -491,11 +487,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   43</span>    cairo_set_source(w-&gt;<a class="code hl_variable" href="structWidget__t.html#a87bbe79251b7e169825a807de0941fb9">crb</a>, pat);</div>
 <div class="line"><span class="lineno">   44</span>    cairo_pattern_destroy (pat);</div>
 <div class="line"><span class="lineno">   45</span>}</div>
-<div class="ttc" id="astructColors_html"><div class="ttname"><a href="structColors.html">Colors</a></div><div class="ttdoc">Color_t - struct used to set cairo color for Widget_t.</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00073">xcolor.h:73</a></div></div>
-<div class="ttc" id="astructColors_html_a6d0c304d7a4d85ed0cc7bd0a7f9c2534"><div class="ttname"><a href="structColors.html#a6d0c304d7a4d85ed0cc7bd0a7f9c2534">Colors::base</a></div><div class="ttdeci">double base[4]</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00076">xcolor.h:76</a></div></div>
+<div class="ttc" id="astructColors_html"><div class="ttname"><a href="structColors.html">Colors</a></div><div class="ttdoc">Color_t - struct used to set cairo color for Widget_t.</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00085">xcolor.h:85</a></div></div>
+<div class="ttc" id="astructColors_html_a6d0c304d7a4d85ed0cc7bd0a7f9c2534"><div class="ttname"><a href="structColors.html#a6d0c304d7a4d85ed0cc7bd0a7f9c2534">Colors::base</a></div><div class="ttdeci">double base[4]</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00088">xcolor.h:88</a></div></div>
 <div class="ttc" id="axcolor_8h_html_a83e1cc20c322f5eb37e3c1efba21b6c1"><div class="ttname"><a href="xcolor_8h.html#a83e1cc20c322f5eb37e3c1efba21b6c1">get_color_scheme</a></div><div class="ttdeci">Colors * get_color_scheme(Widget_t *wid, Color_state st)</div><div class="ttdoc">get_color_scheme - get pointer to the Colors struct to use in relation to the Color_state</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8c_source.html#l00197">xcolor.c:197</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xcolor_8h_source.html#l00076">Colors::base</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, and <a class="el" href="xcolor_8c_source.html#l00197">get_color_scheme()</a>.</p>
+<p class="reference">References <a class="el" href="xcolor_8h_source.html#l00088">Colors::base</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, and <a class="el" href="xcolor_8c_source.html#l00197">get_color_scheme()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xslider__private_8c_source.html#l00143">_draw_hslider()</a>.</p>
 
@@ -536,13 +532,12 @@ Functions</h2></td></tr>
 <p>_pattern_vslider - set pattern for the slider base </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
+    <tr><td class="paramname">*w</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
     <tr><td class="paramname">st</td><td>- the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> Color_t mode to use </td></tr>
     <tr><td class="paramname">width</td><td>- the width of the base </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xslider__private_8c_source.html#l00025">25</a> of file <a class="el" href="xslider__private_8c_source.html">xslider_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   25</span>                                                              {</div>
@@ -556,7 +551,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   33</span>    cairo_pattern_destroy (pat);</div>
 <div class="line"><span class="lineno">   34</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xcolor_8h_source.html#l00076">Colors::base</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, and <a class="el" href="xcolor_8c_source.html#l00197">get_color_scheme()</a>.</p>
+<p class="reference">References <a class="el" href="xcolor_8h_source.html#l00088">Colors::base</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, and <a class="el" href="xcolor_8c_source.html#l00197">get_color_scheme()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xslider__private_8c_source.html#l00072">_draw_vslider()</a>.</p>
 
@@ -598,11 +593,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
+    <tr><td class="paramname">*button_</td><td>- the XbuttonEvent </td></tr>
     <tr><td class="paramname">*user_data</td><td>- void pointer to attached user_data </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xslider__private_8c_source.html#l00212">212</a> of file <a class="el" href="xslider__private_8c_source.html">xslider_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  212</span>                                                                {</div>

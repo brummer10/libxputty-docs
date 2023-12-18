@@ -170,6 +170,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*parent</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> request the button </td></tr>
+    <tr><td class="paramname">*label</td><td>- Label to show over the combobox </td></tr>
     <tr><td class="paramname">x,y,width,height</td><td>- the position/geometry to create the button </td></tr>
   </table>
   </dd>
@@ -266,7 +267,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xcombobox_8c_source.html#l00175">175</a> of file <a class="el" href="xcombobox_8c_source.html">xcombobox.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  175</span>                                                            {</div>
@@ -287,7 +287,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructComboBox__t_html"><div class="ttname"><a href="structComboBox__t.html">ComboBox_t</a></div><div class="ttdoc">ComboBox_t - struct to hold information for the combobox.</div><div class="ttdef"><b>Definition</b> <a href="xcombobox_8h_source.html#l00045">xcombobox.h:45</a></div></div>
 <div class="ttc" id="astructWidget__t_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">Widget_t::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00499">xwidget.h:499</a></div></div>
 <div class="ttc" id="astructWidget__t_html_ad09057ecf30ff08d45e0d2ca07492cae"><div class="ttname"><a href="structWidget__t.html#ad09057ecf30ff08d45e0d2ca07492cae">Widget_t::parent_struct</a></div><div class="ttdeci">void * parent_struct</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00473">xwidget.h:473</a></div></div>
-<div class="ttc" id="axadjustment_8h_html_ab7188a4bb4294e2a08aea2430975b406"><div class="ttname"><a href="xadjustment_8h.html#ab7188a4bb4294e2a08aea2430975b406">set_adjustment</a></div><div class="ttdeci">void set_adjustment(Adjustment_t *adj, float std_value, float value, float min_value, float max_value, float step, CL_type type)</div><div class="ttdoc">*set_adjustment - set a new range to a existing Adjustment_t it will be created if it not exsits yet</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8c_source.html#l00080">xadjustment.c:80</a></div></div>
+<div class="ttc" id="axadjustment_8h_html_ab7188a4bb4294e2a08aea2430975b406"><div class="ttname"><a href="xadjustment_8h.html#ab7188a4bb4294e2a08aea2430975b406">set_adjustment</a></div><div class="ttdeci">void set_adjustment(Adjustment_t *adj, float std_value, float value, float min_value, float max_value, float step, CL_type type)</div><div class="ttdoc">*set_adjustment - set a new range to a existing Adjustment_t or create if it not exists yet</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8c_source.html#l00080">xadjustment.c:80</a></div></div>
 <div class="ttc" id="axasprintf_8h_html_a6bf15f4f2f46c7238e58afb2ff61f1c4"><div class="ttname"><a href="xasprintf_8h.html#a6bf15f4f2f46c7238e58afb2ff61f1c4">asprintf</a></div><div class="ttdeci">int asprintf(char *strp[], const char *fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="xasprintf_8c_source.html#l00036">xasprintf.c:36</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::adj</a>, <a class="el" href="xasprintf_8c_source.html#l00036">asprintf()</a>, <a class="el" href="xwidget_8h_source.html#l00499">Widget_t::childlist</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xadjustment_8h_source.html#l00055">CL_ENUM</a>, <a class="el" href="xcombobox_8h_source.html#l00052">ComboBox_t::list_names</a>, <a class="el" href="xcombobox_8h_source.html#l00051">ComboBox_t::list_size</a>, <a class="el" href="xadjustment_8h_source.html#l00092">Adjustment_t::max_value</a>, <a class="el" href="xwidget_8h_source.html#l00473">Widget_t::parent_struct</a>, and <a class="el" href="xadjustment_8c_source.html#l00080">set_adjustment()</a>.</p>
@@ -337,7 +337,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xcombobox_8c_source.html#l00189">189</a> of file <a class="el" href="xcombobox_8c_source.html">xcombobox.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  189</span>                                                                    {</div>
@@ -378,7 +377,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xcombobox_8c_source.html#l00067">67</a> of file <a class="el" href="xcombobox_8c_source.html">xcombobox.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   67</span>                                                {</div>
@@ -435,7 +433,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xcombobox_8c_source.html#l00047">47</a> of file <a class="el" href="xcombobox_8c_source.html">xcombobox.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   47</span>                                                  {</div>
@@ -497,7 +494,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xcombobox_8c_source.html#l00034">34</a> of file <a class="el" href="xcombobox_8c_source.html">xcombobox.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   34</span>                                                                       {</div>
@@ -547,12 +543,11 @@ Functions</h2></td></tr>
 <p>combobox_set_active_entry - set the active combobox entry </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> combobox </td></tr>
+    <tr><td class="paramname">*w</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> combobox </td></tr>
     <tr><td class="paramname">active</td><td>- the active entry (int) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xcombobox_8c_source.html#l00027">27</a> of file <a class="el" href="xcombobox_8c_source.html">xcombobox.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   27</span>                                                        {</div>
@@ -603,7 +598,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xcombobox_8c_source.html#l00059">59</a> of file <a class="el" href="xcombobox_8c_source.html">xcombobox.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   59</span>                                                       {</div>

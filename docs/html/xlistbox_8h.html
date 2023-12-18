@@ -234,6 +234,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*parent</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> the listbox should pop over </td></tr>
+    <tr><td class="paramname">elem</td><td>- how many entries to show (max value) </td></tr>
     <tr><td class="paramname">width</td><td>- define the width of the viewport </td></tr>
     <tr><td class="paramname">height</td><td>- define the height of the viewport </td></tr>
   </table>
@@ -333,7 +334,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructResize__t_html_a73dee7e715c59661ff8148820eca4b62"><div class="ttname"><a href="structResize__t.html#a73dee7e715c59661ff8148820eca4b62">Resize_t::init_width</a></div><div class="ttdeci">int init_width</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00353">xwidget.h:353</a></div></div>
 <div class="ttc" id="astructWidget__t_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">Widget_t::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00499">xwidget.h:499</a></div></div>
 <div class="ttc" id="astructWidget__t_html_aac423f82eb2f10bd8969b56540391ddc"><div class="ttname"><a href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">Widget_t::flags</a></div><div class="ttdeci">long long flags</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00461">xwidget.h:461</a></div></div>
-<div class="ttc" id="axadjustment_8h_html_ab7188a4bb4294e2a08aea2430975b406"><div class="ttname"><a href="xadjustment_8h.html#ab7188a4bb4294e2a08aea2430975b406">set_adjustment</a></div><div class="ttdeci">void set_adjustment(Adjustment_t *adj, float std_value, float value, float min_value, float max_value, float step, CL_type type)</div><div class="ttdoc">*set_adjustment - set a new range to a existing Adjustment_t it will be created if it not exsits yet</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8c_source.html#l00080">xadjustment.c:80</a></div></div>
+<div class="ttc" id="axadjustment_8h_html_ab7188a4bb4294e2a08aea2430975b406"><div class="ttname"><a href="xadjustment_8h.html#ab7188a4bb4294e2a08aea2430975b406">set_adjustment</a></div><div class="ttdeci">void set_adjustment(Adjustment_t *adj, float std_value, float value, float min_value, float max_value, float step, CL_type type)</div><div class="ttdoc">*set_adjustment - set a new range to a existing Adjustment_t or create if it not exists yet</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8c_source.html#l00080">xadjustment.c:80</a></div></div>
 <div class="ttc" id="axchildlist_8h_html_af130af096a2f8b3a807e7e2dcf0ee6c0"><div class="ttname"><a href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a></div><div class="ttdeci">int childlist_has_child(Childlist_t *childlist)</div><div class="ttdoc">childlist_has_child - check if a Widget_t Childlist_t contain a child</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8c_source.html#l00089">xchildlist.c:89</a></div></div>
 <div class="ttc" id="axlistbox__private_8h_html_a34e3ac67fd24ab21a1a3d2a7a045e526"><div class="ttname"><a href="xlistbox__private_8h.html#a34e3ac67fd24ab21a1a3d2a7a045e526">_draw_listbox_item</a></div><div class="ttdeci">void _draw_listbox_item(void *w_, void *user_data)</div><div class="ttdoc">_draw_listbox_item - draw item on expose call</div><div class="ttdef"><b>Definition</b> <a href="xlistbox__private_8c_source.html#l00033">xlistbox_private.c:33</a></div></div>
 <div class="ttc" id="axlistbox__private_8h_html_a4781103c1110827960a3a555b0bed627"><div class="ttname"><a href="xlistbox__private_8h.html#a4781103c1110827960a3a555b0bed627">_listbox_entry_released</a></div><div class="ttdeci">void _listbox_entry_released(void *w_, void *button_, void *user_data)</div><div class="ttdoc">_listbox_entry_released - redraw the slider when buttob released</div><div class="ttdef"><b>Definition</b> <a href="xlistbox__private_8c_source.html#l00132">xlistbox_private.c:132</a></div></div>
@@ -373,12 +374,11 @@ Functions</h2></td></tr>
 <p>listbox_set_active_entry - set the active listbox entry </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> listbox </td></tr>
+    <tr><td class="paramname">*w</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> listbox </td></tr>
     <tr><td class="paramname">active</td><td>- the active entry (int) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xlistbox_8c_source.html#l00026">26</a> of file <a class="el" href="xlistbox_8c_source.html">xlistbox.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   26</span>                                                       {</div>

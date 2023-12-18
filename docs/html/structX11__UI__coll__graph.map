@@ -12,7 +12,7 @@
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="455,379,392,390,367,398,351,408,344,424,342,441,347,474,342,475,336,441,339,422,347,405,364,393,391,385,454,374"/>
 <area shape="rect" id="Node000008" href="$structAdjustment__t.html" title="Adjustment_t &#45; struct to hold a controller adjustment." alt="" coords="487,475,596,500"/>
 <area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="538,391,548,406,553,424,553,443,548,475,542,474,548,443,547,425,543,408,533,394"/>
-<area shape="rect" id="Node000005" href="$structXColor__t.html" title="XColor_t &#45; the Widget_t Color struct &#160;&#160;XColor_t could be used for theming you Widget_t set." alt="" coords="492,152,569,177"/>
+<area shape="rect" id="Node000005" href="$structXColor__t.html" title="XColor_t &#45; the Widget_t Color struct XColor_t could be used for theming you Widget_t set." alt="" coords="492,152,569,177"/>
 <area shape="poly" id="edge13_Node000002_Node000005" title=" " alt="" coords="491,185,405,218,340,242,338,237,403,214,489,180"/>
 <area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="548,188,560,212,569,240,571,291,564,334,551,349,536,359,533,355,548,345,559,332,566,291,564,240,555,214,543,190"/>
 <area shape="rect" id="Node000006" href="$structColors.html" title="Color_t &#45; struct used to set cairo color for Widget_t." alt="" coords="499,5,562,31"/>
@@ -24,7 +24,7 @@
 <area shape="poly" id="edge11_Node000004_Node000009" title=" " alt="" coords="733,275,682,306,622,336,549,361,547,356,620,331,680,301,730,271"/>
 <area shape="rect" id="Node000010" href="$structMetrics__t.html" title="Metrics_t &#45; struct to receive window size, position &amp; visibility &#160;&#160;Pass this struct to os_get_window_..." alt="" coords="823,240,905,265"/>
 <area shape="poly" id="edge12_Node000004_Node000010" title=" " alt="" coords="842,276,799,308,746,336,694,352,641,362,549,371,548,365,640,357,693,347,744,331,797,303,839,272"/>
-<area shape="rect" id="Node000011" href="$structSystrayColor__t.html" title="SystrayColor &#45; the Systray Color struct &#160;&#160;SystrayColor could be used for the backgroung color of the ..." alt="" coords="248,152,365,177"/>
+<area shape="rect" id="Node000011" href="$structSystrayColor__t.html" title="SystrayColor &#45; the Systray Color struct SystrayColor could be used for the backgroung color of the Sy..." alt="" coords="248,152,365,177"/>
 <area shape="poly" id="edge14_Node000002_Node000011" title=" " alt="" coords="309,191,309,239,304,239,304,191"/>
 <area shape="rect" id="Node000012" href="$structKnobColors.html" title=" " alt="" coords="5,357,101,383"/>
 <area shape="poly" id="edge17_Node000001_Node000012" title=" " alt="" coords="70,393,111,449,137,473,133,477,107,452,65,396"/>

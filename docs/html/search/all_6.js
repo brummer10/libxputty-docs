@@ -1,7 +1,7 @@
 var searchData=
 [
   ['fast_5fredraw_0',['FAST_REDRAW',['../xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea203c65b60a0fb6eb7e4d5b3501871bc2',1,'xwidget.h']]],
-  ['features_1',['Features',['../index.html#autotoc_md4',1,'']]],
+  ['features_1',['Features',['../index.html#autotoc_md5',1,'']]],
   ['fg_2',['fg',['../structColors.html#a2c124bf98f124c79beafcebf5a500fb4',1,'Colors']]],
   ['file_3',['file',['../structViewList__t.html#aa2d776f7168d99c9c466d9aee15e2f65',1,'ViewList_t::file'],['../structViewMultiList__t.html#aa2d776f7168d99c9c466d9aee15e2f65',1,'ViewMultiList_t::file']]],
   ['file_5fcounter_4',['file_counter',['../structFilePicker.html#a0c6850b1242b167a4bb9cedb7356cddb',1,'FilePicker']]],

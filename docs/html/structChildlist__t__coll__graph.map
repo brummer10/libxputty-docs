@@ -9,12 +9,12 @@
 <area shape="rect" id="Node000008" href="$structAdjustment__t.html" title="Adjustment_t &#45; struct to hold a controller adjustment." alt="" coords="5,357,115,383"/>
 <area shape="poly" id="edge11_Node000008_Node000002" title=" " alt="" coords="161,262,127,273,96,291,84,307,74,325,64,358,59,356,69,323,79,304,93,287,125,268,160,257"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="335,361,306,351,277,336,258,319,242,301,219,267,223,264,246,297,262,315,280,331,308,346,337,356"/>
-<area shape="rect" id="Node000004" href="$structXColor__t.html" title="XColor_t &#45; the Widget_t Color struct &#160;&#160;XColor_t could be used for theming you Widget_t set." alt="" coords="411,152,488,177"/>
+<area shape="rect" id="Node000004" href="$structXColor__t.html" title="XColor_t &#45; the Widget_t Color struct XColor_t could be used for theming you Widget_t set." alt="" coords="411,152,488,177"/>
 <area shape="poly" id="edge8_Node000002_Node000004" title=" " alt="" coords="416,186,342,219,256,244,254,239,340,213,414,181"/>
 <area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="470,187,476,200,489,238,497,270,495,301,478,335,466,348,450,358,416,368,415,363,448,353,462,344,474,332,490,300,491,270,484,239,471,202,465,190"/>
 <area shape="rect" id="Node000005" href="$structColors.html" title="Color_t &#45; struct used to set cairo color for Widget_t." alt="" coords="418,5,481,31"/>
 <area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="452,45,452,152,447,152,447,45"/>
-<area shape="rect" id="Node000006" href="$structSystrayColor__t.html" title="SystrayColor &#45; the Systray Color struct &#160;&#160;SystrayColor could be used for the backgroung color of the ..." alt="" coords="324,240,441,265"/>
+<area shape="rect" id="Node000006" href="$structSystrayColor__t.html" title="SystrayColor &#45; the Systray Color struct SystrayColor could be used for the backgroung color of the Sy..." alt="" coords="324,240,441,265"/>
 <area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="385,279,385,357,380,357,380,279"/>
 <area shape="rect" id="Node000007" href="$structFunc__t.html" title="Func_t &#45; struct to hold all supported event callbacks." alt="" coords="51,152,115,177"/>
 <area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="110,184,152,214,194,238,191,242,149,218,106,188"/>

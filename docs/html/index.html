@@ -73,7 +73,8 @@ $(function() {
   <div class="headertitle"><div class="title">libxputty </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_Instructions"></a> A damn tiny abstraction Layer to create cross compatible window/widgets with cairo surfaces for MSWindows (HWND) and Linux (X11).</p>
+<div class="textblock"><p><a class="anchor" id="md_Instructions"></a> A damn tiny abstraction Layer to create cross compatible window/widgets</p>
+<p>with cairo surfaces for MSWindows (HWND) and Linux (X11).</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 build on Linux</h1>
 <p>Building libxputty on Linux depends on</p><ul>
@@ -87,23 +88,48 @@ build on Linux</h1>
 <p>That will build libxputty as static and as shared library. and</p>
 <p><code>sudo make install</code></p>
 <p>will install them both.</p>
-<p>Most common use case is to add libxputty as submodule to your project and invoke make from your top directory.</p>
+<p>Most common use case is to add libxputty as submodule</p>
+<p>to your project and invoke make from your top directory.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 build for MSWindows cross compile on Linux</h1>
 <p>To build libxputty cross compiled on Linux for MSWindows the easiest way is to use</p>
 <p><a href="https://github.com/DISTRHO/PawPaw">PawPaw</a></p>
 <p>to set up the needed dependencies to build for MSWindows.</p>
-<p>install wine and the mingw g++ and gcc compiler packages (w64-x86-64, w64-i686) clone the repository</p>
+<p>The advance of it is that PawPaw builds the dependencies as static libraries</p>
+<p>so that the resulting libxputty comes without any external dependencies.</p>
+<p>To do so, install wine and the mingw g++ and gcc compiler packages (w64-x86-64, w64-i686)</p>
+<p>and clone the repository</p>
 <p><code>git clone <a href="https://github.com/DISTRHO/PawPaw">https://github.com/DISTRHO/PawPaw</a></code></p>
-<p>and build the windows build environment.</p>
+<p>build the windows build environment.</p>
 <p><code>cd PawPaw</code></p>
 <p><code>./bootstrap-plugins.sh win64</code></p>
-<p>to use the build environment you must run</p>
+<p>That may take a while, . . .</p>
+<p>You need to build the environment only once.</p>
+<p>To use the build environment run</p>
 <p><code>source local.env win64</code></p>
-<p>from the PawPaw root directory. Then you could cd into libxputty and run</p>
+<p>from the PawPaw root directory.</p>
+<p>That will export all needed settings to build</p>
+<p>MSWindows compatible binaries within this terminal session.</p>
+<p>After source the local.env you could cd to libxputty and run</p>
 <p><code>make</code></p>
 <p>to build the static lib for windows.</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
+using build.sh</h1>
+<p>For using with <a href="https://github.com/DISTRHO/PawPaw">PawPaw</a>. When you've cloned <a href="https://github.com/DISTRHO/PawPaw">PawPaw</a></p>
+<p>and have created the windows (win64) build environment you may as well create a</p>
+<p>build environment for Linux. The advance of it is that <a href="https://github.com/DISTRHO/PawPaw">PawPaw</a></p>
+<p>creates static libraries to build libxputty, that means in turn, less external dependency's</p>
+<p>for the final application/plugin. To do so, run</p>
+<p><code>./bootstrap-plugins.sh linux</code></p>
+<p>from the <a href="https://github.com/DISTRHO/PawPaw">PawPaw</a> directory</p>
+<p>When done you could simply use build.sh like so</p>
+<p><code>./build.sh windows</code></p>
+<p><code>./build.sh linux</code></p>
+<p>build.sh will create a sub shell, load the selected build environment and run make in it.</p>
+<p>When done, the sub shell will close and there are no external variables loaded</p>
+<p>into your main shell.</p>
+<p>So you could use your terminal with it's normal environment setup afterwards.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
 build on MSWindows</h1>
 <p>setup msys2 shell and install</p><ul>
 <li>base-devel</li>
@@ -118,7 +144,7 @@ build on MSWindows</h1>
 <p>then run</p>
 <p><code>make</code></p>
 <p>from the msys2 shell.</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Features</h2>
 <ul>
 <li>easy creation of widgets and windows</li>
@@ -144,9 +170,12 @@ Features</h2>
 <li>handle child widgets via childlist</li>
 <li>multiple implemented resizing options</li>
 <li>a couple of defined Widgets and Dialogs ready to use</li>
-<li>full documented API <a href="https://brummer10.github.io/libxputty-docs/docs/html/files.html">Documentation</a></li>
 <li>static linking to create position independent applications</li>
 </ul>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Example</h2>
+<p>Here is a simple example how to write a basic GUI with libxputty</p>
+<p><a href="https://brummer10.github.io/libxputty-docs/docs/html/simple-example_8c-example.html">EXAMPLE</a></p>
 <pre class="fragment">     0BSD 
 </pre><p> BSD Zero Clause License </p>
 </div></div><!-- PageDoc -->

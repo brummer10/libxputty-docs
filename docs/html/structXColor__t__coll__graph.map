@@ -1,5 +1,5 @@
 <map id="XColor_t" name="XColor_t">
-<area shape="rect" id="Node000001" title="XColor_t &#45; the Widget_t Color struct &#160;&#160;XColor_t could be used for theming you Widget_t set." alt="" coords="5,152,83,177"/>
+<area shape="rect" id="Node000001" title="XColor_t &#45; the Widget_t Color struct XColor_t could be used for theming you Widget_t set." alt="" coords="5,152,83,177"/>
 <area shape="rect" id="Node000002" href="$structColors.html" title="Color_t &#45; struct used to set cairo color for Widget_t." alt="" coords="13,5,75,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,45,47,152,41,152,41,45"/>
 </map>

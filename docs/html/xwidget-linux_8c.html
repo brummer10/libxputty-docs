@@ -625,7 +625,7 @@ Variables</h2></td></tr>
 <p>os_adjustment_callback - called when a adjustment value have changed used internal for redraw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*w_</td><td>- Pointer to the widget </td></tr>
     <tr><td class="paramname">*user_data</td><td>- additional user data or NULL </td></tr>
   </table>
   </dd>
@@ -1263,7 +1263,7 @@ Variables</h2></td></tr>
           <td class="memname">void os_get_window_metrics </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structWidget__t.html">Widget_t</a> *&#160;</td>
-          <td class="paramname"><em>w_</em>, </td>
+          <td class="paramname"><em>w</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1873,7 +1873,7 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*dpy</td><td>- Pointer to the Display the widget belongs to </td></tr>
-    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*w</td><td>- Pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </td></tr>
     <tr><td class="paramname">x,y</td><td>- the new size </td></tr>
   </table>
   </dd>
@@ -2419,7 +2419,7 @@ Variables</h2></td></tr>
 <p>os_set_widget_surface_size - set the size of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> cairo surface </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*surface</td><td>- the cairo surface </td></tr>
+    <tr><td class="paramname">*w</td><td>- Pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> the surface belongs to </td></tr>
     <tr><td class="paramname">*width,*height</td><td>- the size to set </td></tr>
   </table>
   </dd>
@@ -2661,7 +2661,7 @@ Variables</h2></td></tr>
     <tr><td class="paramname">*w</td><td>- <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> pointer </td></tr>
     <tr><td class="paramname">from_window</td><td>- source Window </td></tr>
     <tr><td class="paramname">to_window</td><td>- destination Window </td></tr>
-    <tr><td class="paramname">x,y</td><td>- point from the source Window </td></tr>
+    <tr><td class="paramname">from_x,from_y</td><td>- point from the source Window </td></tr>
     <tr><td class="paramname">*to_x,*to_y</td><td>- (Pointer) point in the destination Window </td></tr>
   </table>
   </dd>
@@ -2707,7 +2707,7 @@ Variables</h2></td></tr>
 <p>os_transparent_draw - Draw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> to the back buffer </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*w_</td><td>- Pointer to the widget </td></tr>
     <tr><td class="paramname">*user_data</td><td>- additional user data or NULL </td></tr>
   </table>
   </dd>
@@ -2762,7 +2762,7 @@ Variables</h2></td></tr>
 <p>os_widget_event_loop - the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> event loop on windows all messges goes into WndProc, so stub here </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*w_</td><td>- Pointer to the widget </td></tr>
     <tr><td class="paramname">*event</td><td>- the event to handle </td></tr>
     <tr><td class="paramname">*main</td><td>- pointer to the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct </td></tr>
     <tr><td class="paramname">*user_data</td><td>- additional user data could be NULL </td></tr>

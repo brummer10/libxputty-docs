@@ -134,10 +134,10 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*w</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> knob </td></tr>
+    <tr><td class="paramname">width_t,height_t</td><td>- the size to scale the Image to </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xknob__private_8c_source.html#l00035">35</a> of file <a class="el" href="xknob__private_8c_source.html">xknob_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   35</span>                                                              {</div>
@@ -210,7 +210,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 <p>get values for the knob</p>
 <p>create a rotating pointer on the kob</p>
 <p>show value on the kob</p>
@@ -219,7 +218,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   66</span>                                           {</div>
 <div class="line"><span class="lineno">   67</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a>*)w_;</div>
 <div class="line"><span class="lineno">   68</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">   69</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(w, &amp;metrics);</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(w, &amp;metrics);</div>
 <div class="line"><span class="lineno">   70</span>    <span class="keywordtype">int</span> width = metrics.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>-2;</div>
 <div class="line"><span class="lineno">   71</span>    <span class="keywordtype">int</span> height = metrics.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>-2;</div>
 <div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> (!metrics.<a class="code hl_variable" href="structMetrics__t.html#aa54a57ae048476d840caf6d4d2c47aa3">visible</a>) <span class="keywordflow">return</span>;</div>
@@ -314,11 +313,11 @@ Functions</h2></td></tr>
 <div class="ttc" id="axcolor_8h_html_a335aed33f3b2fca02beb85375186a5c9"><div class="ttname"><a href="xcolor_8h.html#a335aed33f3b2fca02beb85375186a5c9">use_bg_color_scheme</a></div><div class="ttdeci">void use_bg_color_scheme(Widget_t *w, Color_state st)</div><div class="ttdoc">use_bg_color_scheme - use background Colors to paint on Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8c_source.html#l00252">xcolor.c:252</a></div></div>
 <div class="ttc" id="axcolor_8h_html_a389caf2131cd599465c512eead16a6c0"><div class="ttname"><a href="xcolor_8h.html#a389caf2131cd599465c512eead16a6c0">use_fg_color_scheme</a></div><div class="ttdeci">void use_fg_color_scheme(Widget_t *w, Color_state st)</div><div class="ttdoc">use_fg_color_scheme - use forground Colors to paint on Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8c_source.html#l00245">xcolor.c:245</a></div></div>
 <div class="ttc" id="axcolor_8h_html_adcf0fbad75a168085a6b857a159d6eee"><div class="ttname"><a href="xcolor_8h.html#adcf0fbad75a168085a6b857a159d6eee">use_shadow_color_scheme</a></div><div class="ttdeci">void use_shadow_color_scheme(Widget_t *w, Color_state st)</div><div class="ttdoc">use_shadow_color_scheme - use shadow Colors to paint on Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8c_source.html#l00273">xcolor.c:273</a></div></div>
-<div class="ttc" id="axcolor_8h_html_af6e1bc675d5df2f7fb9e91a8c5820771a13cf30d063febc8581978b53d739f0a6"><div class="ttname"><a href="xcolor_8h.html#af6e1bc675d5df2f7fb9e91a8c5820771a13cf30d063febc8581978b53d739f0a6">NORMAL_</a></div><div class="ttdeci">@ NORMAL_</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00039">xcolor.h:39</a></div></div>
+<div class="ttc" id="axcolor_8h_html_af6e1bc675d5df2f7fb9e91a8c5820771a13cf30d063febc8581978b53d739f0a6"><div class="ttname"><a href="xcolor_8h.html#af6e1bc675d5df2f7fb9e91a8c5820771a13cf30d063febc8581978b53d739f0a6">NORMAL_</a></div><div class="ttdeci">@ NORMAL_</div><div class="ttdef"><b>Definition</b> <a href="xcolor_8h_source.html#l00044">xcolor.h:44</a></div></div>
 <div class="ttc" id="axknob__private_8c_html_af9a25b071b33bd60b42c8f6c5004ea45"><div class="ttname"><a href="xknob__private_8c.html#af9a25b071b33bd60b42c8f6c5004ea45">_draw_image_knob</a></div><div class="ttdeci">void _draw_image_knob(Widget_t *w, int width_t, int height_t)</div><div class="ttdoc">_draw_image_knob - internal draw the knob from image to the buffer</div><div class="ttdef"><b>Definition</b> <a href="xknob__private_8c_source.html#l00035">xknob_private.c:35</a></div></div>
-<div class="ttc" id="axwidget-platform_8h_html_ae8bb8113586b8d99f94c7c190a26a3d1"><div class="ttname"><a href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a></div><div class="ttdeci">void os_get_window_metrics(Widget_t *w_, Metrics_t *metrics)</div><div class="ttdoc">os_get_window_metrics - Get the Merics_t struct related to a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00080">xwidget-linux.c:80</a></div></div>
+<div class="ttc" id="axwidget-platform_8h_html_a005be56c9cf1b8f45766ab517ff540c7"><div class="ttname"><a href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a></div><div class="ttdeci">void os_get_window_metrics(Widget_t *w, Metrics_t *metrics)</div><div class="ttdoc">os_get_window_metrics - Get the Merics_t struct related to a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00080">xwidget-linux.c:80</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xknob__private_8c_source.html#l00035">_draw_image_knob()</a>, <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::adj</a>, <a class="el" href="xadjustment_8c_source.html#l00148">adj_get_state()</a>, <a class="el" href="xadjustment_8c_source.html#l00154">adj_get_value()</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::adj_y</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget_8h_source.html#l00369">Resize_t::ascale</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00222">get_color_state()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00491">Widget_t::image</a>, <a class="el" href="xcolor_8h_source.html#l00039">NORMAL_</a>, <a class="el" href="xwidget-linux_8c_source.html#l00080">os_get_window_metrics()</a>, <a class="el" href="xwidget_8h_source.html#l00525">Widget_t::scale</a>, <a class="el" href="xputty_8h_source.html#l00246">Xputty::small_font</a>, <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::state</a>, <a class="el" href="xadjustment_8h_source.html#l00094">Adjustment_t::step</a>, <a class="el" href="xcolor_8c_source.html#l00252">use_bg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00245">use_fg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00273">use_shadow_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00266">use_text_color_scheme()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00069">Metrics_t::visible</a>, and <a class="el" href="xwidget-platform_8h_source.html#l00061">Metrics_t::width</a>.</p>
+<p class="reference">References <a class="el" href="xknob__private_8c_source.html#l00035">_draw_image_knob()</a>, <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::adj</a>, <a class="el" href="xadjustment_8c_source.html#l00148">adj_get_state()</a>, <a class="el" href="xadjustment_8c_source.html#l00154">adj_get_value()</a>, <a class="el" href="xwidget_8h_source.html#l00495">Widget_t::adj_y</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget_8h_source.html#l00369">Resize_t::ascale</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xcolor_8c_source.html#l00222">get_color_state()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00491">Widget_t::image</a>, <a class="el" href="xcolor_8h_source.html#l00044">NORMAL_</a>, <a class="el" href="xwidget-linux_8c_source.html#l00080">os_get_window_metrics()</a>, <a class="el" href="xwidget_8h_source.html#l00525">Widget_t::scale</a>, <a class="el" href="xputty_8h_source.html#l00246">Xputty::small_font</a>, <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::state</a>, <a class="el" href="xadjustment_8h_source.html#l00094">Adjustment_t::step</a>, <a class="el" href="xcolor_8c_source.html#l00252">use_bg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00245">use_fg_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00273">use_shadow_color_scheme()</a>, <a class="el" href="xcolor_8c_source.html#l00266">use_text_color_scheme()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00069">Metrics_t::visible</a>, and <a class="el" href="xwidget-platform_8h_source.html#l00061">Metrics_t::width</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xknob_8c_source.html#l00026">add_knob()</a>.</p>
 
@@ -358,7 +357,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xknob__private_8c_source.html#l00060">60</a> of file <a class="el" href="xknob__private_8c_source.html">xknob_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   60</span>                                                 {</div>
@@ -371,7 +369,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xknob__private_8c_source.html#l00035">_draw_image_knob()</a>, <a class="el" href="xwidget_8h_source.html#l00523">Widget_t::height</a>, and <a class="el" href="xwidget_8h_source.html#l00521">Widget_t::width</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="xknob_8c_source.html#l00042">add_image_knob()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="xknob_8c_source.html#l00041">add_image_knob()</a>.</p>
 
 </div>
 </div>
@@ -411,11 +409,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> button </td></tr>
+    <tr><td class="paramname">*button_</td><td>- void pointer to the XButtonEvent </td></tr>
     <tr><td class="paramname">*user_data</td><td>- void pointer to attached user_data </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xknob__private_8c_source.html#l00151">151</a> of file <a class="el" href="xknob__private_8c_source.html">xknob_private.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  151</span>                                                              {</div>
@@ -429,7 +427,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xwidget_8c_source.html#l00445">expose_widget()</a>, <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00402">HAS_POINTER</a>, and <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::state</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="xknob_8c_source.html#l00042">add_image_knob()</a>, and <a class="el" href="xknob_8c_source.html#l00026">add_knob()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="xknob_8c_source.html#l00041">add_image_knob()</a>, and <a class="el" href="xknob_8c_source.html#l00026">add_knob()</a>.</p>
 
 </div>
 </div>

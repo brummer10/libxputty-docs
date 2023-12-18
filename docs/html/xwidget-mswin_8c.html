@@ -231,6 +231,8 @@ Functions</h2></td></tr>
 <tr class="separator:a195e102bd621bf2d13b9bded9e13f1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6331d2adab6eb85288a547479750ddf1" id="r_a6331d2adab6eb85288a547479750ddf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a6331d2adab6eb85288a547479750ddf1">build_xkey_event</a> (<a class="el" href="xputty-mswin_8h.html#a53aa4853af43aeb976faf9a4dbca99e7">XKeyEvent</a> *ev, UINT msg, WPARAM wParam, LPARAM lParam)</td></tr>
 <tr class="separator:a6331d2adab6eb85288a547479750ddf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4400b6576545380a08bd575905587826" id="r_a4400b6576545380a08bd575905587826"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-mswin_8c.html#a4400b6576545380a08bd575905587826">HandleFiles</a> (WPARAM wParam, <a class="el" href="structWidget__t.html">Widget_t</a> *wid)</td></tr>
+<tr class="separator:a4400b6576545380a08bd575905587826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -335,7 +337,7 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xputty-mswin_8h_source.html#l00063">XEvent::keycode</a>, <a class="el" href="xputty-mswin_8h_source.html#l00066">XEvent::vk</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00065">XEvent::vk_is_final_char</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00562">WndProc()</a>.</p>
 
 </div>
 </div>
@@ -450,6 +452,65 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a4400b6576545380a08bd575905587826" name="a4400b6576545380a08bd575905587826"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4400b6576545380a08bd575905587826">&#9670;&#160;</a></span>HandleFiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HandleFiles </td>
+          <td>(</td>
+          <td class="paramtype">WPARAM&#160;</td>
+          <td class="paramname"><em>wParam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structWidget__t.html">Widget_t</a> *&#160;</td>
+          <td class="paramname"><em>wid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00538">538</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  539</span>{</div>
+<div class="line"><span class="lineno">  540</span>    <span class="comment">// DragQueryFile() takes a LPWSTR for the name so we need a TCHAR string</span></div>
+<div class="line"><span class="lineno">  541</span>    TCHAR szName[MAX_PATH];</div>
+<div class="line"><span class="lineno">  542</span> </div>
+<div class="line"><span class="lineno">  543</span>    <span class="comment">// Here we cast the wParam as a HDROP handle to pass into the next functions</span></div>
+<div class="line"><span class="lineno">  544</span>    HDROP hDrop = (HDROP)wParam;</div>
+<div class="line"><span class="lineno">  545</span> </div>
+<div class="line"><span class="lineno">  546</span>    <span class="keywordtype">int</span> count = DragQueryFile(hDrop, 0xFFFFFFFF, szName, MAX_PATH);</div>
+<div class="line"><span class="lineno">  547</span> </div>
+<div class="line"><span class="lineno">  548</span>    <span class="comment">// Here we go through all the files that were drag and dropped then display them</span></div>
+<div class="line"><span class="lineno">  549</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; count; i++) {</div>
+<div class="line"><span class="lineno">  550</span>        DragQueryFile(hDrop, i, szName, MAX_PATH);</div>
+<div class="line"><span class="lineno">  551</span> </div>
+<div class="line"><span class="lineno">  552</span>        <span class="comment">// Bring up a message box that displays the current file being processed</span></div>
+<div class="line"><span class="lineno">  553</span>        <span class="comment">// MessageBox(GetForegroundWindow(), szName, &quot;Current file received&quot;, MB_OK);</span></div>
+<div class="line"><span class="lineno">  554</span>        <span class="keywordtype">char</span> *dndfile = <a class="code hl_function" href="xwidget-mswin_8c.html#a2b1abaec302c347633a47eefc5b070a0">utf8_from_locale</a>(szName);</div>
+<div class="line"><span class="lineno">  555</span>        wid-&gt;<a class="code hl_variable" href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">func</a>.<a class="code hl_variable" href="structFunc__t.html#aa1fb2f1636777062d1593a9e693d585c">dnd_notify_callback</a>(wid, (<span class="keywordtype">void</span>*)&amp;dndfile);</div>
+<div class="line"><span class="lineno">  556</span>        free(dndfile);</div>
+<div class="line"><span class="lineno">  557</span>    }</div>
+<div class="line"><span class="lineno">  558</span> </div>
+<div class="line"><span class="lineno">  559</span>    DragFinish(hDrop);</div>
+<div class="line"><span class="lineno">  560</span>}</div>
+<div class="ttc" id="astructFunc__t_html_aa1fb2f1636777062d1593a9e693d585c"><div class="ttname"><a href="structFunc__t.html#aa1fb2f1636777062d1593a9e693d585c">Func_t::dnd_notify_callback</a></div><div class="ttdeci">xevfunc dnd_notify_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00097">xwidget.h:97</a></div></div>
+<div class="ttc" id="astructWidget__t_html_adf3b6f667fa98e1db418cfd081a4075a"><div class="ttname"><a href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">Widget_t::func</a></div><div class="ttdeci">Func_t func</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00481">xwidget.h:481</a></div></div>
+<div class="ttc" id="axwidget-mswin_8c_html_a2b1abaec302c347633a47eefc5b070a0"><div class="ttname"><a href="xwidget-mswin_8c.html#a2b1abaec302c347633a47eefc5b070a0">utf8_from_locale</a></div><div class="ttdeci">char * utf8_from_locale(char *localestr)</div><div class="ttdoc">utf8_from_locale - convert active codepage to utf8 must be freed by the caller</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00104">xwidget-mswin.c:104</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="xwidget_8h_source.html#l00097">Func_t::dnd_notify_callback</a>, <a class="el" href="xwidget_8h_source.html#l00481">Widget_t::func</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00104">utf8_from_locale()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00562">WndProc()</a>.</p>
+
+</div>
+</div>
 <a id="ae6ccbd0e8beba49807660ab817cfeba9" name="ae6ccbd0e8beba49807660ab817cfeba9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6ccbd0e8beba49807660ab817cfeba9">&#9670;&#160;</a></span>locale_from_utf8()</h2>
 
@@ -517,45 +578,45 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00933">933</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  933</span>                                                           {</div>
-<div class="line"><span class="lineno">  934</span>    PAINTSTRUCT ps ;</div>
-<div class="line"><span class="lineno">  935</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *)GetWindowLongPtr(hwnd, GWLP_USERDATA);</div>
-<div class="line"><span class="lineno">  936</span> </div>
-<div class="line"><span class="lineno">  937</span>    <span class="comment">// The cairo_win32_surface should only exist between BeginPaint()/EndPaint(),</span></div>
-<div class="line"><span class="lineno">  938</span>    <span class="comment">// otherwise it becomes unusable once the HDC of the owner window changes</span></div>
-<div class="line"><span class="lineno">  939</span>    <span class="comment">// (what can happen anytime, e.g. on resize).</span></div>
-<div class="line"><span class="lineno">  940</span>    <span class="comment">// Therefore, w-&gt;surface is created as a simple cairo_image_surface,</span></div>
-<div class="line"><span class="lineno">  941</span>    <span class="comment">// that can exist throughout the plugins lifetime (exception: see resize_event())</span></div>
-<div class="line"><span class="lineno">  942</span>    <span class="comment">// and is copied to a win32_surface in the onPaint() event (see WM_PAINT).</span></div>
-<div class="line"><span class="lineno">  943</span> </div>
-<div class="line"><span class="lineno">  944</span>    <span class="comment">// draw onto the image surface first</span></div>
-<div class="line"><span class="lineno">  945</span>    <a class="code hl_function" href="xwidget_8h.html#ab45a54d3dee60783a5afe9c236f54a04">transparent_draw</a>(w, NULL);</div>
-<div class="line"><span class="lineno">  946</span> </div>
-<div class="line"><span class="lineno">  947</span>    <span class="comment">// prepare to update window</span></div>
-<div class="line"><span class="lineno">  948</span>    HDC hdc = BeginPaint(hwnd, &amp;ps );</div>
-<div class="line"><span class="lineno">  949</span> </div>
-<div class="line"><span class="lineno">  950</span>    <span class="comment">// create the cairo surface and context</span></div>
-<div class="line"><span class="lineno">  951</span>    cairo_surface_t *surface = cairo_win32_surface_create (hdc);</div>
-<div class="line"><span class="lineno">  952</span>    cairo_t *cr = cairo_create (surface);</div>
-<div class="line"><span class="lineno">  953</span>    <span class="comment">// copy contents of the (permanent) image_surface to the win32_surface</span></div>
-<div class="line"><span class="lineno">  954</span>    cairo_set_source_surface(cr, w-&gt;<a class="code hl_variable" href="structWidget__t.html#a76e6dbb8b33b4373ca91aab3cab86245">surface</a>, 0.0, 0.0);</div>
-<div class="line"><span class="lineno">  955</span>    cairo_paint(cr);</div>
-<div class="line"><span class="lineno">  956</span> </div>
-<div class="line"><span class="lineno">  957</span>    <span class="comment">// cleanup</span></div>
-<div class="line"><span class="lineno">  958</span>    cairo_destroy (cr);</div>
-<div class="line"><span class="lineno">  959</span>    cairo_surface_destroy (surface);</div>
-<div class="line"><span class="lineno">  960</span> </div>
-<div class="line"><span class="lineno">  961</span>    EndPaint( hwnd, &amp;ps );</div>
-<div class="line"><span class="lineno">  962</span>    <span class="keywordflow">return</span> 0 ;</div>
-<div class="line"><span class="lineno">  963</span>}</div>
+<p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00961">961</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  961</span>                                                           {</div>
+<div class="line"><span class="lineno">  962</span>    PAINTSTRUCT ps ;</div>
+<div class="line"><span class="lineno">  963</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *)GetWindowLongPtr(hwnd, GWLP_USERDATA);</div>
+<div class="line"><span class="lineno">  964</span> </div>
+<div class="line"><span class="lineno">  965</span>    <span class="comment">// The cairo_win32_surface should only exist between BeginPaint()/EndPaint(),</span></div>
+<div class="line"><span class="lineno">  966</span>    <span class="comment">// otherwise it becomes unusable once the HDC of the owner window changes</span></div>
+<div class="line"><span class="lineno">  967</span>    <span class="comment">// (what can happen anytime, e.g. on resize).</span></div>
+<div class="line"><span class="lineno">  968</span>    <span class="comment">// Therefore, w-&gt;surface is created as a simple cairo_image_surface,</span></div>
+<div class="line"><span class="lineno">  969</span>    <span class="comment">// that can exist throughout the plugins lifetime (exception: see resize_event())</span></div>
+<div class="line"><span class="lineno">  970</span>    <span class="comment">// and is copied to a win32_surface in the onPaint() event (see WM_PAINT).</span></div>
+<div class="line"><span class="lineno">  971</span> </div>
+<div class="line"><span class="lineno">  972</span>    <span class="comment">// draw onto the image surface first</span></div>
+<div class="line"><span class="lineno">  973</span>    <a class="code hl_function" href="xwidget_8h.html#ab45a54d3dee60783a5afe9c236f54a04">transparent_draw</a>(w, NULL);</div>
+<div class="line"><span class="lineno">  974</span> </div>
+<div class="line"><span class="lineno">  975</span>    <span class="comment">// prepare to update window</span></div>
+<div class="line"><span class="lineno">  976</span>    HDC hdc = BeginPaint(hwnd, &amp;ps );</div>
+<div class="line"><span class="lineno">  977</span> </div>
+<div class="line"><span class="lineno">  978</span>    <span class="comment">// create the cairo surface and context</span></div>
+<div class="line"><span class="lineno">  979</span>    cairo_surface_t *surface = cairo_win32_surface_create (hdc);</div>
+<div class="line"><span class="lineno">  980</span>    cairo_t *cr = cairo_create (surface);</div>
+<div class="line"><span class="lineno">  981</span>    <span class="comment">// copy contents of the (permanent) image_surface to the win32_surface</span></div>
+<div class="line"><span class="lineno">  982</span>    cairo_set_source_surface(cr, w-&gt;<a class="code hl_variable" href="structWidget__t.html#a76e6dbb8b33b4373ca91aab3cab86245">surface</a>, 0.0, 0.0);</div>
+<div class="line"><span class="lineno">  983</span>    cairo_paint(cr);</div>
+<div class="line"><span class="lineno">  984</span> </div>
+<div class="line"><span class="lineno">  985</span>    <span class="comment">// cleanup</span></div>
+<div class="line"><span class="lineno">  986</span>    cairo_destroy (cr);</div>
+<div class="line"><span class="lineno">  987</span>    cairo_surface_destroy (surface);</div>
+<div class="line"><span class="lineno">  988</span> </div>
+<div class="line"><span class="lineno">  989</span>    EndPaint( hwnd, &amp;ps );</div>
+<div class="line"><span class="lineno">  990</span>    <span class="keywordflow">return</span> 0 ;</div>
+<div class="line"><span class="lineno">  991</span>}</div>
 <div class="ttc" id="astructWidget__t_html"><div class="ttname"><a href="structWidget__t.html">Widget_t</a></div><div class="ttdoc">Widget_t - struct to hold the basic Widget_t info.</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00457">xwidget.h:457</a></div></div>
 <div class="ttc" id="astructWidget__t_html_a76e6dbb8b33b4373ca91aab3cab86245"><div class="ttname"><a href="structWidget__t.html#a76e6dbb8b33b4373ca91aab3cab86245">Widget_t::surface</a></div><div class="ttdeci">cairo_surface_t * surface</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00483">xwidget.h:483</a></div></div>
 <div class="ttc" id="axwidget_8h_html_ab45a54d3dee60783a5afe9c236f54a04"><div class="ttname"><a href="xwidget_8h.html#ab45a54d3dee60783a5afe9c236f54a04">transparent_draw</a></div><div class="ttdeci">void transparent_draw(void *wid, void *user_data)</div><div class="ttdoc">transparent_draw - copy parent surface to child surface   you usaualy didn't need to call this,...</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00449">xwidget.c:449</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>, and <a class="el" href="xwidget_8c_source.html#l00449">transparent_draw()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00562">WndProc()</a>.</p>
 
 </div>
 </div>
@@ -588,7 +649,7 @@ Variables</h2></td></tr>
 <p>os_adjustment_callback - called when a adjustment value have changed used internal for redraw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*w_</td><td>- Pointer to the widget </td></tr>
     <tr><td class="paramname">*user_data</td><td>- additional user data or NULL </td></tr>
   </table>
   </dd>
@@ -748,7 +809,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  231</span>    <span class="keywordflow">if</span> (win == (HWND)-1) {</div>
 <div class="line"><span class="lineno">  232</span>        <span class="comment">// Dialogs with border</span></div>
 <div class="line"><span class="lineno">  233</span>        dwStyle = WS_OVERLAPPEDWINDOW;</div>
-<div class="line"><span class="lineno">  234</span>        dwExStyle = WS_EX_CONTROLPARENT;</div>
+<div class="line"><span class="lineno">  234</span>        dwExStyle = WS_EX_CONTROLPARENT | WS_EX_ACCEPTFILES;</div>
 <div class="line"><span class="lineno">  235</span>        win = HWND_DESKTOP;</div>
 <div class="line"><span class="lineno">  236</span>        <span class="comment">// include border widths</span></div>
 <div class="line"><span class="lineno">  237</span>        RECT Rect = {0};</div>
@@ -785,13 +846,13 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  268</span>}</div>
 <div class="ttc" id="astructXputty_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">Xputty::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00230">xputty.h:230</a></div></div>
 <div class="ttc" id="axchildlist_8h_html_a4515e80317c76cbfa903c50ddfcfbf58"><div class="ttname"><a href="xchildlist_8h.html#a4515e80317c76cbfa903c50ddfcfbf58">childlist_add_child</a></div><div class="ttdeci">void childlist_add_child(Childlist_t *childlist, Widget_t *child)</div><div class="ttdoc">childlist_add_child - internal use to add a child to the Childlist_t   You usually didn't need to cal...</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8c_source.html#l00042">xchildlist.c:42</a></div></div>
-<div class="ttc" id="axwidget-mswin_8c_html_a72cc05e3935370a6baf8c76645b5a43b"><div class="ttname"><a href="xwidget-mswin_8c.html#a72cc05e3935370a6baf8c76645b5a43b">WndProc</a></div><div class="ttdeci">LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00538">xwidget-mswin.c:538</a></div></div>
+<div class="ttc" id="axwidget-mswin_8c_html_a72cc05e3935370a6baf8c76645b5a43b"><div class="ttname"><a href="xwidget-mswin_8c.html#a72cc05e3935370a6baf8c76645b5a43b">WndProc</a></div><div class="ttdeci">LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00562">xwidget-mswin.c:562</a></div></div>
 <div class="ttc" id="axwidget-mswin_8c_html_ab24816d13d510294eb290b6f2ad065f6"><div class="ttname"><a href="xwidget-mswin_8c.html#ab24816d13d510294eb290b6f2ad065f6">os_set_window_min_size</a></div><div class="ttdeci">void os_set_window_min_size(Widget_t *w, int min_width, int min_height, int base_width, int base_height)</div><div class="ttdoc">os_set_window_min_size - Set the min and base size of a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00166">xwidget-mswin.c:166</a></div></div>
 <div class="ttc" id="axwidget-mswin_8c_html_ae6484336c6dfaa78b262323bbc621360"><div class="ttname"><a href="xwidget-mswin_8c.html#ae6484336c6dfaa78b262323bbc621360">szMainUIClassName</a></div><div class="ttdeci">TCHAR szMainUIClassName[]</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00034">xwidget-mswin.c:34</a></div></div>
 <div class="ttc" id="axwidget-mswin_8c_html_ae8f606bc671ae033c79d3899a648ed3a"><div class="ttname"><a href="xwidget-mswin_8c.html#ae8f606bc671ae033c79d3899a648ed3a">szWidgetUIClassName</a></div><div class="ttdeci">TCHAR szWidgetUIClassName[]</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00035">xwidget-mswin.c:35</a></div></div>
-<div class="ttc" id="axwidget-mswin_8c_html_af978084ff2e98b21cdc45ffde98d0f48"><div class="ttname"><a href="xwidget-mswin_8c.html#af978084ff2e98b21cdc45ffde98d0f48">SetMouseTracking</a></div><div class="ttdeci">BOOL SetMouseTracking(HWND hwnd, BOOL enable)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00981">xwidget-mswin.c:981</a></div></div>
+<div class="ttc" id="axwidget-mswin_8c_html_af978084ff2e98b21cdc45ffde98d0f48"><div class="ttname"><a href="xwidget-mswin_8c.html#af978084ff2e98b21cdc45ffde98d0f48">SetMouseTracking</a></div><div class="ttdeci">BOOL SetMouseTracking(HWND hwnd, BOOL enable)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l01009">xwidget-mswin.c:1009</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-linux_8c_source.html#l00091">os_set_window_min_size()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00981">SetMouseTracking()</a>, <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00034">szMainUIClassName</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>, <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00503">Widget_t::xim</a>.</p>
+<p class="reference">References <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-linux_8c_source.html#l00091">os_set_window_min_size()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l01009">SetMouseTracking()</a>, <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00034">szMainUIClassName</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00562">WndProc()</a>, <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00503">Widget_t::xim</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00163">create_window()</a>.</p>
 
@@ -900,7 +961,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  302</span>    <a class="code hl_function" href="xwidget-mswin_8c.html#af978084ff2e98b21cdc45ffde98d0f48">SetMouseTracking</a>(w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, <span class="keyword">true</span>); <span class="comment">// for receiving WM_MOUSELEAVE</span></div>
 <div class="line"><span class="lineno">  303</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00981">SetMouseTracking()</a>, <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>, <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00503">Widget_t::xim</a>.</p>
+<p class="reference">References <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-mswin_8c_source.html#l01009">SetMouseTracking()</a>, <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00562">WndProc()</a>, <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00503">Widget_t::xim</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00265">create_widget()</a>.</p>
 
@@ -1121,7 +1182,6 @@ Variables</h2></td></tr>
 <div class="line"><span class="lineno">  412</span>    free(utf8);</div>
 <div class="line"><span class="lineno">  413</span>    <span class="keywordflow">return</span> key-&gt;<a class="code hl_variable" href="structXEvent.html#a0b0948fc6d552c9f574f6c38ec65c1b8">vk_is_final_char</a>; <span class="comment">// for only feeding readily processed chars into input widgets</span></div>
 <div class="line"><span class="lineno">  414</span>}</div>
-<div class="ttc" id="axwidget-mswin_8c_html_a2b1abaec302c347633a47eefc5b070a0"><div class="ttname"><a href="xwidget-mswin_8c.html#a2b1abaec302c347633a47eefc5b070a0">utf8_from_locale</a></div><div class="ttdeci">char * utf8_from_locale(char *localestr)</div><div class="ttdoc">utf8_from_locale - convert active codepage to utf8 must be freed by the caller</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00104">xwidget-mswin.c:104</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xwidget-mswin_8c_source.html#l00104">utf8_from_locale()</a>, <a class="el" href="xputty-mswin_8h_source.html#l00066">XEvent::vk</a>, <a class="el" href="xputty-mswin_8h_source.html#l00065">XEvent::vk_is_final_char</a>, and <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>.</p>
 
@@ -1310,7 +1370,7 @@ Variables</h2></td></tr>
           <td class="memname">void os_get_window_metrics </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structWidget__t.html">Widget_t</a> *&#160;</td>
-          <td class="paramname"><em>w_</em>, </td>
+          <td class="paramname"><em>w</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1828,7 +1888,7 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*dpy</td><td>- Pointer to the Display the widget belongs to </td></tr>
-    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*w</td><td>- Pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </td></tr>
     <tr><td class="paramname">x,y</td><td>- the new size </td></tr>
   </table>
   </dd>
@@ -2214,7 +2274,7 @@ Variables</h2></td></tr>
 <p>os_set_widget_surface_size - set the size of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> cairo surface </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*surface</td><td>- the cairo surface </td></tr>
+    <tr><td class="paramname">*w</td><td>- Pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> the surface belongs to </td></tr>
     <tr><td class="paramname">*width,*height</td><td>- the size to set </td></tr>
   </table>
   </dd>
@@ -2451,7 +2511,7 @@ Variables</h2></td></tr>
     <tr><td class="paramname">*w</td><td>- <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> pointer </td></tr>
     <tr><td class="paramname">from_window</td><td>- source Window </td></tr>
     <tr><td class="paramname">to_window</td><td>- destination Window </td></tr>
-    <tr><td class="paramname">x,y</td><td>- point from the source Window </td></tr>
+    <tr><td class="paramname">from_x,from_y</td><td>- point from the source Window </td></tr>
     <tr><td class="paramname">*to_x,*to_y</td><td>- (Pointer) point in the destination Window </td></tr>
   </table>
   </dd>
@@ -2500,7 +2560,7 @@ Variables</h2></td></tr>
 <p>os_transparent_draw - Draw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> to the back buffer </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*w_</td><td>- Pointer to the widget </td></tr>
     <tr><td class="paramname">*user_data</td><td>- additional user data or NULL </td></tr>
   </table>
   </dd>
@@ -2515,7 +2575,7 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xwidget_8c_source.html#l00449">transparent_draw()</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="xmenu__private_8c_source.html#l00079">_check_menu_state()</a>, <a class="el" href="xmenu__private_8c_source.html#l00211">_enter_submenu()</a>, <a class="el" href="xmenu__private_8c_source.html#l00228">_leave_submenu()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00400">_set_entry()</a>, <a class="el" href="xbutton_8c_source.html#l00026">add_button()</a>, <a class="el" href="xbutton_8c_source.html#l00141">add_check_box()</a>, <a class="el" href="xbutton_8c_source.html#l00121">add_check_button()</a>, <a class="el" href="xcombobox_8c_source.html#l00152">add_combobox()</a>, <a class="el" href="xslider_8c_source.html#l00051">add_hslider()</a>, <a class="el" href="xbutton_8c_source.html#l00042">add_image_button()</a>, <a class="el" href="xknob_8c_source.html#l00042">add_image_knob()</a>, <a class="el" href="xbutton_8c_source.html#l00089">add_image_toggle_button()</a>, <a class="el" href="xknob_8c_source.html#l00026">add_knob()</a>, <a class="el" href="xmenu_8c_source.html#l00086">add_menu()</a>, <a class="el" href="xbutton_8c_source.html#l00058">add_on_off_button()</a>, <a class="el" href="xbutton_8c_source.html#l00105">add_switch_image_button()</a>, <a class="el" href="xbutton_8c_source.html#l00073">add_toggle_button()</a>, <a class="el" href="xvaluedisplay_8c_source.html#l00050">add_valuedisplay()</a>, <a class="el" href="xslider_8c_source.html#l00030">add_vslider()</a>, <a class="el" href="xwidget_8c_source.html#l00265">create_widget()</a>, <a class="el" href="xlistbox_8c_source.html#l00060">listbox_add_entry()</a>, <a class="el" href="xmenu_8c_source.html#l00283">menu_add_item()</a>, <a class="el" href="xmenu_8c_source.html#l00360">menu_add_numeric_items()</a>, and <a class="el" href="xmenu_8c_source.html#l00169">menu_add_value_entry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="xmenu__private_8c_source.html#l00079">_check_menu_state()</a>, <a class="el" href="xmenu__private_8c_source.html#l00211">_enter_submenu()</a>, <a class="el" href="xmenu__private_8c_source.html#l00228">_leave_submenu()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00400">_set_entry()</a>, <a class="el" href="xbutton_8c_source.html#l00026">add_button()</a>, <a class="el" href="xbutton_8c_source.html#l00141">add_check_box()</a>, <a class="el" href="xbutton_8c_source.html#l00121">add_check_button()</a>, <a class="el" href="xcombobox_8c_source.html#l00152">add_combobox()</a>, <a class="el" href="xslider_8c_source.html#l00051">add_hslider()</a>, <a class="el" href="xbutton_8c_source.html#l00042">add_image_button()</a>, <a class="el" href="xknob_8c_source.html#l00041">add_image_knob()</a>, <a class="el" href="xbutton_8c_source.html#l00089">add_image_toggle_button()</a>, <a class="el" href="xknob_8c_source.html#l00026">add_knob()</a>, <a class="el" href="xmenu_8c_source.html#l00086">add_menu()</a>, <a class="el" href="xbutton_8c_source.html#l00058">add_on_off_button()</a>, <a class="el" href="xbutton_8c_source.html#l00105">add_switch_image_button()</a>, <a class="el" href="xbutton_8c_source.html#l00073">add_toggle_button()</a>, <a class="el" href="xvaluedisplay_8c_source.html#l00050">add_valuedisplay()</a>, <a class="el" href="xslider_8c_source.html#l00030">add_vslider()</a>, <a class="el" href="xwidget_8c_source.html#l00265">create_widget()</a>, <a class="el" href="xlistbox_8c_source.html#l00060">listbox_add_entry()</a>, <a class="el" href="xmenu_8c_source.html#l00283">menu_add_item()</a>, <a class="el" href="xmenu_8c_source.html#l00360">menu_add_numeric_items()</a>, and <a class="el" href="xmenu_8c_source.html#l00169">menu_add_value_entry()</a>.</p>
 
 </div>
 </div>
@@ -2560,7 +2620,7 @@ Variables</h2></td></tr>
 <p>os_widget_event_loop - the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> event loop on windows all messges goes into WndProc, so stub here </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*w_</td><td>- Pointer to the widget </td></tr>
     <tr><td class="paramname">*event</td><td>- the event to handle </td></tr>
     <tr><td class="paramname">*main</td><td>- pointer to the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct </td></tr>
     <tr><td class="paramname">*user_data</td><td>- additional user data could be NULL </td></tr>
@@ -2681,20 +2741,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00968">968</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  968</span>                                                                 {</div>
-<div class="line"><span class="lineno">  969</span>    <span class="keywordflow">if</span> (IsWindow(hwnd)) {</div>
-<div class="line"><span class="lineno">  970</span>        DWORD dwStyle = GetWindowLongPtr(hwnd, GWL_STYLE) ;</div>
-<div class="line"><span class="lineno">  971</span>        DWORD dwExStyle = GetWindowLongPtr(hwnd, GWL_EXSTYLE) ;</div>
-<div class="line"><span class="lineno">  972</span>        HMENU menu = GetMenu(hwnd) ;</div>
-<div class="line"><span class="lineno">  973</span>        RECT rc = {0, 0, clientWidth, clientHeight} ;</div>
-<div class="line"><span class="lineno">  974</span>        AdjustWindowRectEx(&amp;rc, dwStyle, menu ? TRUE : FALSE, dwExStyle);</div>
-<div class="line"><span class="lineno">  975</span>        SetWindowPos(hwnd, NULL, 0, 0, rc.right - rc.left, rc.bottom - rc.top,</div>
-<div class="line"><span class="lineno">  976</span>                     SWP_NOZORDER | SWP_NOMOVE) ;</div>
-<div class="line"><span class="lineno">  977</span>    }</div>
-<div class="line"><span class="lineno">  978</span>}</div>
+<p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00996">996</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  996</span>                                                                 {</div>
+<div class="line"><span class="lineno">  997</span>    <span class="keywordflow">if</span> (IsWindow(hwnd)) {</div>
+<div class="line"><span class="lineno">  998</span>        DWORD dwStyle = GetWindowLongPtr(hwnd, GWL_STYLE) ;</div>
+<div class="line"><span class="lineno">  999</span>        DWORD dwExStyle = GetWindowLongPtr(hwnd, GWL_EXSTYLE) ;</div>
+<div class="line"><span class="lineno"> 1000</span>        HMENU menu = GetMenu(hwnd) ;</div>
+<div class="line"><span class="lineno"> 1001</span>        RECT rc = {0, 0, clientWidth, clientHeight} ;</div>
+<div class="line"><span class="lineno"> 1002</span>        AdjustWindowRectEx(&amp;rc, dwStyle, menu ? TRUE : FALSE, dwExStyle);</div>
+<div class="line"><span class="lineno"> 1003</span>        SetWindowPos(hwnd, NULL, 0, 0, rc.right - rc.left, rc.bottom - rc.top,</div>
+<div class="line"><span class="lineno"> 1004</span>                     SWP_NOZORDER | SWP_NOMOVE) ;</div>
+<div class="line"><span class="lineno"> 1005</span>    }</div>
+<div class="line"><span class="lineno"> 1006</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00562">WndProc()</a>.</p>
 
 </div>
 </div>
@@ -2724,20 +2784,20 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00981">981</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  981</span>                                              {</div>
-<div class="line"><span class="lineno">  982</span>    TRACKMOUSEEVENT tme;</div>
-<div class="line"><span class="lineno">  983</span> </div>
-<div class="line"><span class="lineno">  984</span>    tme.cbSize = <span class="keyword">sizeof</span>(tme);</div>
-<div class="line"><span class="lineno">  985</span>    tme.dwFlags = TME_LEAVE;</div>
-<div class="line"><span class="lineno">  986</span>    <span class="keywordflow">if</span> (!enable)</div>
-<div class="line"><span class="lineno">  987</span>        tme.dwFlags |= TME_CANCEL;</div>
-<div class="line"><span class="lineno">  988</span>    tme.hwndTrack = hwnd;</div>
-<div class="line"><span class="lineno">  989</span>    tme.dwHoverTime = HOVER_DEFAULT;</div>
-<div class="line"><span class="lineno">  990</span>    <span class="keywordflow">return</span> TrackMouseEvent(&amp;tme);</div>
-<div class="line"><span class="lineno">  991</span>}</div>
+<p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l01009">1009</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1009</span>                                              {</div>
+<div class="line"><span class="lineno"> 1010</span>    TRACKMOUSEEVENT tme;</div>
+<div class="line"><span class="lineno"> 1011</span> </div>
+<div class="line"><span class="lineno"> 1012</span>    tme.cbSize = <span class="keyword">sizeof</span>(tme);</div>
+<div class="line"><span class="lineno"> 1013</span>    tme.dwFlags = TME_LEAVE;</div>
+<div class="line"><span class="lineno"> 1014</span>    <span class="keywordflow">if</span> (!enable)</div>
+<div class="line"><span class="lineno"> 1015</span>        tme.dwFlags |= TME_CANCEL;</div>
+<div class="line"><span class="lineno"> 1016</span>    tme.hwndTrack = hwnd;</div>
+<div class="line"><span class="lineno"> 1017</span>    tme.dwHoverTime = HOVER_DEFAULT;</div>
+<div class="line"><span class="lineno"> 1018</span>    <span class="keywordflow">return</span> TrackMouseEvent(&amp;tme);</div>
+<div class="line"><span class="lineno"> 1019</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00195">os_create_main_window_and_surface()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00270">os_create_widget_window_and_surface()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00195">os_create_main_window_and_surface()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00270">os_create_widget_window_and_surface()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00562">WndProc()</a>.</p>
 
 </div>
 </div>
@@ -2773,7 +2833,7 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xasprintf_8c_source.html#l00036">asprintf()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00071">convert_cp()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="xmultilistview__private_8c_source.html#l00051">_draw_multi_list()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00404">os_get_keyboard_input()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="xmultilistview__private_8c_source.html#l00051">_draw_multi_list()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00538">HandleFiles()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00404">os_get_keyboard_input()</a>.</p>
 
 </div>
 </div>
@@ -2815,400 +2875,404 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00538">538</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  539</span>{</div>
-<div class="line"><span class="lineno">  540</span>    POINT pt;</div>
-<div class="line"><span class="lineno">  541</span>    <a class="code hl_struct" href="structXEvent.html">XButtonEvent</a> xbutton;</div>
-<div class="line"><span class="lineno">  542</span>    <a class="code hl_struct" href="structXEvent.html">XMotionEvent</a> xmotion;</div>
-<div class="line"><span class="lineno">  543</span>    <a class="code hl_struct" href="structXEvent.html">XKeyEvent</a> xkey;</div>
-<div class="line"><span class="lineno">  544</span>    <span class="keywordtype">void</span> *user_data = NULL;</div>
-<div class="line"><span class="lineno">  545</span> </div>
-<div class="line"><span class="lineno">  546</span>    <span class="comment">// be aware: &quot;wid&quot; can be NULL during window creation (esp. if there is a debugger attached)</span></div>
-<div class="line"><span class="lineno">  547</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *wid = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *)GetWindowLongPtr(hwnd, GWLP_USERDATA);</div>
-<div class="line"><span class="lineno">  548</span>    <a class="code hl_struct" href="structXputty.html">Xputty</a> *main = wid ? wid-&gt; app : NULL;</div>
-<div class="line"><span class="lineno">  549</span> </div>
-<div class="line"><span class="lineno">  550</span>    xbutton.<a class="code hl_variable" href="structXEvent.html#ac5b0b3c19d476a314bb68af9bc4a0ee0">window</a> = hwnd;</div>
-<div class="line"><span class="lineno">  551</span>    xbutton.<a class="code hl_variable" href="structXEvent.html#a6150e0515f7202e2fb518f7206ed97dc">x</a> = GET_X_LPARAM(lParam);</div>
-<div class="line"><span class="lineno">  552</span>    xbutton.<a class="code hl_variable" href="structXEvent.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a> = GET_Y_LPARAM(lParam);</div>
-<div class="line"><span class="lineno">  553</span>    xmotion.<a class="code hl_variable" href="structXEvent.html#ac5b0b3c19d476a314bb68af9bc4a0ee0">window</a> = hwnd;</div>
-<div class="line"><span class="lineno">  554</span>    xmotion.<a class="code hl_variable" href="structXEvent.html#a6150e0515f7202e2fb518f7206ed97dc">x</a> = GET_X_LPARAM(lParam);</div>
-<div class="line"><span class="lineno">  555</span>    xmotion.<a class="code hl_variable" href="structXEvent.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a> = GET_Y_LPARAM(lParam);</div>
-<div class="line"><span class="lineno">  556</span> </div>
-<div class="line"><span class="lineno">  557</span>    <span class="keywordflow">switch</span> (msg) {</div>
-<div class="line"><span class="lineno">  558</span>        <span class="keywordflow">case</span> WM_CREATE:</div>
-<div class="line"><span class="lineno">  559</span>            debug_print(<span class="stringliteral">&quot;WM:WM_CREATE:hwnd=%p:wid=%p&quot;</span>,hwnd,wid);</div>
-<div class="line"><span class="lineno">  560</span>            {</div>
-<div class="line"><span class="lineno">  561</span>                CREATESTRUCT *pCreate = (CREATESTRUCT *)lParam;</div>
-<div class="line"><span class="lineno">  562</span>                wid = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *)pCreate-&gt;lpCreateParams;</div>
-<div class="line"><span class="lineno">  563</span>                <span class="comment">// CreateWindowEx() hasnt returned yet, so wid-&gt;widget is not set</span></div>
-<div class="line"><span class="lineno">  564</span>                wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a> = hwnd;</div>
-<div class="line"><span class="lineno">  565</span>                <span class="comment">// make &quot;wid&quot; available in messageloop events via GetWindowLongPtr()</span></div>
-<div class="line"><span class="lineno">  566</span>                SetWindowLongPtr(hwnd, GWLP_USERDATA, (LONG_PTR)wid);</div>
-<div class="line"><span class="lineno">  567</span>            }</div>
-<div class="line"><span class="lineno">  568</span>            <span class="keywordflow">return</span> 0;</div>
+<p class="definition">Definition at line <a class="el" href="xwidget-mswin_8c_source.html#l00562">562</a> of file <a class="el" href="xwidget-mswin_8c_source.html">xwidget-mswin.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  563</span>{</div>
+<div class="line"><span class="lineno">  564</span>    POINT pt;</div>
+<div class="line"><span class="lineno">  565</span>    <a class="code hl_struct" href="structXEvent.html">XButtonEvent</a> xbutton;</div>
+<div class="line"><span class="lineno">  566</span>    <a class="code hl_struct" href="structXEvent.html">XMotionEvent</a> xmotion;</div>
+<div class="line"><span class="lineno">  567</span>    <a class="code hl_struct" href="structXEvent.html">XKeyEvent</a> xkey;</div>
+<div class="line"><span class="lineno">  568</span>    <span class="keywordtype">void</span> *user_data = NULL;</div>
 <div class="line"><span class="lineno">  569</span> </div>
-<div class="line"><span class="lineno">  570</span>        <span class="comment">// MSWin only: React to close requests</span></div>
-<div class="line"><span class="lineno">  571</span>        <span class="keywordflow">case</span> WM_CLOSE:</div>
-<div class="line"><span class="lineno">  572</span>            <span class="comment">// standalone</span></div>
-<div class="line"><span class="lineno">  573</span>            <span class="keywordflow">if</span> (hwnd == main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0]-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) {</div>
-<div class="line"><span class="lineno">  574</span>                <span class="comment">// is main window: end application</span></div>
-<div class="line"><span class="lineno">  575</span>                PostQuitMessage(0); <span class="comment">// end messageloop (continuing to main_quit())</span></div>
-<div class="line"><span class="lineno">  576</span>            } <span class="keywordflow">else</span> <span class="comment">// is sub window (menu, dialog, ...): close</span></div>
-<div class="line"><span class="lineno">  577</span>                DestroyWindow(hwnd);</div>
-<div class="line"><span class="lineno">  578</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  579</span>        <span class="keywordflow">case</span> WM_DESTROY:</div>
-<div class="line"><span class="lineno">  580</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  581</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  582</span> </div>
-<div class="line"><span class="lineno">  583</span>        <span class="comment">// X11:ConfigureNotify</span></div>
-<div class="line"><span class="lineno">  584</span>        <span class="keywordflow">case</span> WM_SIZE:</div>
-<div class="line"><span class="lineno">  585</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  586</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  587</span>                <span class="keywordflow">if</span>(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a> &amp;&amp; wid != wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>) {</div>
-<div class="line"><span class="lineno">  588</span>                    <a class="code hl_function" href="xwidget_8h.html#ab00e7f2485e08237c865e96ba56e63e6">widget_hide</a>(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>);</div>
-<div class="line"><span class="lineno">  589</span>                    wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a> = NULL;</div>
-<div class="line"><span class="lineno">  590</span>                }</div>
-<div class="line"><span class="lineno">  591</span>                <span class="comment">// Limit window size:</span></div>
-<div class="line"><span class="lineno">  592</span>                <span class="comment">// The plugin doesnt receive WM_MINMAXINFO or WM_SIZING.</span></div>
-<div class="line"><span class="lineno">  593</span>                <span class="comment">// SWP_NOSIZE in WM_WINDOWPOSCHANGING cant handle width/height separately.</span></div>
-<div class="line"><span class="lineno">  594</span>                <span class="comment">// Setting the client size afterwards turned out to be the best working option so far.</span></div>
-<div class="line"><span class="lineno">  595</span>                <span class="comment">// Plugin: Limits the &quot;zoom&quot; (as the hosts window can always become smaller)</span></div>
-<div class="line"><span class="lineno">  596</span>                <span class="comment">// Standalone: Limits the window size</span></div>
-<div class="line"><span class="lineno">  597</span>                <span class="keywordtype">int</span> width = LOWORD(lParam);</div>
-<div class="line"><span class="lineno">  598</span>                <span class="keywordtype">int</span> height = HIWORD(lParam);</div>
-<div class="line"><span class="lineno">  599</span>                <span class="keywordflow">if</span> ((width &lt; wid-&gt;metrics_min.width)</div>
-<div class="line"><span class="lineno">  600</span>                    || (height &lt; wid-&gt;metrics_min.height)) {</div>
-<div class="line"><span class="lineno">  601</span>                    <a class="code hl_function" href="xwidget-mswin_8c.html#a3effd22ad104d2613a72abb5ea08cfac">SetClientSize</a>(hwnd, max(width, wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a866b183e7f2df21a1676af4e211dd30d">metrics_min</a>.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>),</div>
-<div class="line"><span class="lineno">  602</span>                            max(height, wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a866b183e7f2df21a1676af4e211dd30d">metrics_min</a>.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>));</div>
-<div class="line"><span class="lineno">  603</span>                    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  604</span>                }</div>
-<div class="line"><span class="lineno">  605</span>                <span class="comment">// Resize handler</span></div>
-<div class="line"><span class="lineno">  606</span>                <span class="keywordflow">if</span> (!wid-&gt;<a class="code hl_variable" href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">func</a>.<a class="code hl_variable" href="structFunc__t.html#a0b375a67a8ae98e0236f71e360fd5ae5">configure_callback</a>) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  607</span>                wid-&gt;<a class="code hl_variable" href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">func</a>.<a class="code hl_variable" href="structFunc__t.html#a0b375a67a8ae98e0236f71e360fd5ae5">configure_callback</a>(wid, user_data);</div>
-<div class="line"><span class="lineno">  608</span>                <span class="comment">// widgets recive the call to os_transparent_draw via the configure_notify_callback</span></div>
-<div class="line"><span class="lineno">  609</span>                <span class="comment">// windows have the CS_HREDRAW | CS_VREDRAW flags set so that they be redrawn by the system</span></div>
-<div class="line"><span class="lineno">  610</span>                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  611</span>            }</div>
-<div class="line"><span class="lineno">  612</span> </div>
-<div class="line"><span class="lineno">  613</span>        <span class="keywordflow">case</span> WM_MOVE:</div>
-<div class="line"><span class="lineno">  614</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  615</span>            <span class="keywordflow">if</span>(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a> &amp;&amp; wid != wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>) {</div>
-<div class="line"><span class="lineno">  616</span>                <a class="code hl_function" href="xwidget_8h.html#ab00e7f2485e08237c865e96ba56e63e6">widget_hide</a>(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>);</div>
-<div class="line"><span class="lineno">  617</span>                wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a> = NULL;</div>
-<div class="line"><span class="lineno">  618</span>            }</div>
-<div class="line"><span class="lineno">  619</span>        <span class="comment">// X11:Expose</span></div>
-<div class="line"><span class="lineno">  620</span>        <span class="keywordflow">case</span> WM_PAINT:</div>
-<div class="line"><span class="lineno">  621</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  622</span>            <span class="keywordflow">if</span> (!(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a87bbe79251b7e169825a807de0941fb9">crb</a>)) {</div>
-<div class="line"><span class="lineno">  623</span>                debug_print(<span class="stringliteral">&quot;WM_PAINT:BAILOUT:wid-&gt;crb==NULL\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  624</span>                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  625</span>            }</div>
-<div class="line"><span class="lineno">  626</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="xwidget-mswin_8c.html#afb4f5c71add0d964d67d9f2e7e782122">onPaint</a>(hwnd, wParam, lParam); <span class="comment">// not possible on mswin: (only fetch the last expose event)</span></div>
-<div class="line"><span class="lineno">  627</span> </div>
-<div class="line"><span class="lineno">  628</span>        <span class="comment">// MSWin only: Allow keyboard input</span></div>
-<div class="line"><span class="lineno">  629</span>        <span class="keywordflow">case</span> WM_ACTIVATE:</div>
-<div class="line"><span class="lineno">  630</span>            SetFocus(hwnd);</div>
-<div class="line"><span class="lineno">  631</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  632</span>        <span class="keywordflow">case</span> WM_MOUSEACTIVATE:</div>
-<div class="line"><span class="lineno">  633</span>            SetFocus(hwnd);</div>
-<div class="line"><span class="lineno">  634</span>            <span class="keywordflow">return</span> MA_ACTIVATE;</div>
-<div class="line"><span class="lineno">  635</span> </div>
-<div class="line"><span class="lineno">  636</span>        <span class="comment">// X11:ButtonPress</span></div>
-<div class="line"><span class="lineno">  637</span>        <span class="keywordflow">case</span> WM_LBUTTONDOWN:</div>
-<div class="line"><span class="lineno">  638</span>        <span class="keywordflow">case</span> WM_RBUTTONDOWN:</div>
-<div class="line"><span class="lineno">  639</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  640</span>            SetCapture(hwnd); <span class="comment">// also receive WM_MOUSEMOVE from outside this window</span></div>
-<div class="line"><span class="lineno">  641</span>            </div>
-<div class="line"><span class="lineno">  642</span>            <span class="keywordflow">if</span> (msg == WM_LBUTTONDOWN)</div>
-<div class="line"><span class="lineno">  643</span>                xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button1;</div>
-<div class="line"><span class="lineno">  644</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  645</span>                xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button3;</div>
-<div class="line"><span class="lineno">  646</span>            <span class="keywordflow">if</span> (wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">state</a> == 4) <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  647</span>            <span class="keywordflow">if</span> (wid-&gt;<a class="code hl_variable" href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">flags</a> &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f">HAS_TOOLTIP</a>) <a class="code hl_function" href="xwidget_8h.html#a65a14ddb7decf9932a8dcead7170217a">hide_tooltip</a>(wid);</div>
-<div class="line"><span class="lineno">  648</span>            <a class="code hl_function" href="xwidget__private_8h.html#a58ae554632b1c9f7afc73aa159a1dc0c">_button_press</a>(wid, &amp;xbutton, user_data);</div>
-<div class="line"><span class="lineno">  649</span>            debug_print(<span class="stringliteral">&quot;Widget_t  ButtonPress %i\n&quot;</span>, xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a>);</div>
-<div class="line"><span class="lineno">  650</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  651</span>        <span class="keywordflow">case</span> WM_MOUSEWHEEL:</div>
-<div class="line"><span class="lineno">  652</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  653</span>            <span class="comment">// opposed to X11, WM_MOUSEWHEEL doesnt contain mouse coordinates</span></div>
-<div class="line"><span class="lineno">  654</span>            {</div>
-<div class="line"><span class="lineno">  655</span>                DWORD pos = GetMessagePos();</div>
-<div class="line"><span class="lineno">  656</span>                pt.x = GET_X_LPARAM(pos);</div>
-<div class="line"><span class="lineno">  657</span>                pt.y = GET_Y_LPARAM(pos);</div>
-<div class="line"><span class="lineno">  658</span>                <span class="keywordflow">if</span> (ScreenToClient(hwnd, &amp;pt)) {</div>
-<div class="line"><span class="lineno">  659</span>                    wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a989d3e09b707fb1f4bc2355ba5855a0c">pos_x</a> = pt.x;</div>
-<div class="line"><span class="lineno">  660</span>                    wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a769c689813b19fb03572dc4937b40993">pos_y</a> = pt.y;</div>
-<div class="line"><span class="lineno">  661</span>                }</div>
-<div class="line"><span class="lineno">  662</span>            }</div>
-<div class="line"><span class="lineno">  663</span>            <span class="keywordflow">if</span> (GET_WHEEL_DELTA_WPARAM(wParam) &lt;= 0) {</div>
-<div class="line"><span class="lineno">  664</span>                xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button5;</div>
-<div class="line"><span class="lineno">  665</span>                <a class="code hl_function" href="xwidget__private_8h.html#a58ae554632b1c9f7afc73aa159a1dc0c">_button_press</a>(wid, &amp;xbutton, user_data);</div>
-<div class="line"><span class="lineno">  666</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  667</span>                xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button4;</div>
-<div class="line"><span class="lineno">  668</span>                <a class="code hl_function" href="xwidget__private_8h.html#a58ae554632b1c9f7afc73aa159a1dc0c">_button_press</a>(wid, &amp;xbutton, user_data);</div>
-<div class="line"><span class="lineno">  669</span>            }</div>
-<div class="line"><span class="lineno">  670</span>            <span class="comment">// forward WM_MOUSEWHEEL from menuitem to viewport (with slider)</span></div>
-<div class="line"><span class="lineno">  671</span>            <span class="comment">// (viewport lies below menuitem, so doesnt receive WM_MOUSEWHEEL)</span></div>
-<div class="line"><span class="lineno">  672</span>            <span class="keywordflow">if</span>(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>) {</div>
-<div class="line"><span class="lineno">  673</span>                <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *view_port = wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
-<div class="line"><span class="lineno">  674</span>                <span class="keywordflow">if</span> (hwnd != view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>)</div>
-<div class="line"><span class="lineno">  675</span>                    SendMessage(view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  676</span>                RedrawWindow(view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, NULL, NULL, RDW_NOERASE | RDW_INVALIDATE | RDW_UPDATENOW);</div>
-<div class="line"><span class="lineno">  677</span>            }</div>
-<div class="line"><span class="lineno">  678</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  679</span>        <span class="comment">// X11:ButtonRelease</span></div>
-<div class="line"><span class="lineno">  680</span>        <span class="keywordflow">case</span> WM_LBUTTONDBLCLK:</div>
-<div class="line"><span class="lineno">  681</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  682</span>            xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button1;</div>
-<div class="line"><span class="lineno">  683</span>            wid-&gt;<a class="code hl_variable" href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">func</a>.<a class="code hl_variable" href="structFunc__t.html#a580123509145139212579243dbe61c67">double_click_callback</a>(wid, &amp;xbutton, user_data);</div>
-<div class="line"><span class="lineno">  684</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  685</span>        <span class="keywordflow">case</span> WM_LBUTTONUP:</div>
-<div class="line"><span class="lineno">  686</span>        <span class="keywordflow">case</span> WM_RBUTTONUP:</div>
-<div class="line"><span class="lineno">  687</span>            ReleaseCapture();</div>
-<div class="line"><span class="lineno">  688</span>            <span class="keywordflow">if</span> (msg == WM_LBUTTONUP)</div>
-<div class="line"><span class="lineno">  689</span>                xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button1;</div>
-<div class="line"><span class="lineno">  690</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  691</span>                xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button3;</div>
-<div class="line"><span class="lineno">  692</span>            <a class="code hl_function" href="xwidget__private_8h.html#a4268fe28baeb0a66234a976f14c6975b">_check_grab</a>(wid, &amp;xbutton, wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>);</div>
-<div class="line"><span class="lineno">  693</span>            <a class="code hl_function" href="xwidget__private_8h.html#abc530327f7056f0ce7c957b23d9fd291">_check_submenu</a>(wid, &amp;xbutton, main);</div>
-<div class="line"><span class="lineno">  694</span>            <span class="keywordflow">if</span> (wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">state</a> == 4) <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  695</span>            <a class="code hl_function" href="xwidget__private_8h.html#ae8d8e0d87f6186d3d19f1372c357edbe">_has_pointer</a>(wid, &amp;xbutton);</div>
-<div class="line"><span class="lineno">  696</span>            <span class="keywordflow">if</span>(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">flags</a> &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea24dd904cfcaac15acb4fd0c48126f869">HAS_POINTER</a>) wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">state</a> = 1;</div>
-<div class="line"><span class="lineno">  697</span>            <span class="keywordflow">else</span> wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">state</a> = 0;</div>
-<div class="line"><span class="lineno">  698</span>            <a class="code hl_function" href="xwidget__private_8h.html#a3fa824e7c223fab91f65dbdcd3e07f18">_check_enum</a>(wid, &amp;xbutton);</div>
-<div class="line"><span class="lineno">  699</span>            wid-&gt;<a class="code hl_variable" href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">func</a>.<a class="code hl_variable" href="structFunc__t.html#a0ac2c35c450e54946f10449f0681d9d2">button_release_callback</a>((<span class="keywordtype">void</span>*)wid, &amp;xbutton, user_data);</div>
-<div class="line"><span class="lineno">  700</span>            debug_print(<span class="stringliteral">&quot;Widget_t  ButtonRelease %i\n&quot;</span>, xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a>);</div>
-<div class="line"><span class="lineno">  701</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  702</span> </div>
-<div class="line"><span class="lineno">  703</span>        <span class="comment">// X11:KeyPress and X11:KeyRelease</span></div>
-<div class="line"><span class="lineno">  704</span>        <span class="comment">// The resulting character (e.g. from dead-key combinations) cannot be</span></div>
-<div class="line"><span class="lineno">  705</span>        <span class="comment">// determined from WM_KEYUP or WM_KEYDOWN: WM_CHAR has to be used instead.</span></div>
-<div class="line"><span class="lineno">  706</span>        <span class="comment">// To workaround that, WM_CHAR fires key_press- and key_release_event()</span></div>
-<div class="line"><span class="lineno">  707</span>        <span class="comment">// after another, with the flag &quot;-&gt;vk_is_final_char&quot; set, so the client</span></div>
-<div class="line"><span class="lineno">  708</span>        <span class="comment">// code can differentiate between real KEYUP/DOWN and fake CHAR events.</span></div>
-<div class="line"><span class="lineno">  709</span>        <span class="keywordflow">case</span> WM_CHAR:</div>
-<div class="line"><span class="lineno">  710</span>        <span class="keywordflow">case</span> WM_KEYDOWN:</div>
-<div class="line"><span class="lineno">  711</span>        <span class="keywordflow">case</span> WM_KEYUP:</div>
-<div class="line"><span class="lineno">  712</span>            <a class="code hl_function" href="xwidget-mswin_8c.html#a6331d2adab6eb85288a547479750ddf1">build_xkey_event</a>(&amp;xkey, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  713</span>            <span class="comment">// X11:KeyPress</span></div>
-<div class="line"><span class="lineno">  714</span>            <span class="keywordflow">if</span> (msg != WM_KEYUP) { <span class="comment">// WM_KEYDOWN and WM_CHAR: key_press_callback()</span></div>
-<div class="line"><span class="lineno">  715</span>                <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  716</span>                <span class="keywordflow">if</span> (wid-&gt;state == 4) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  717</span>                <span class="comment">// on Linux, retrigger check happens in KeyRelease (WM_KEYUP)</span></div>
-<div class="line"><span class="lineno">  718</span>                <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> is_retriggered = 0;</div>
-<div class="line"><span class="lineno">  719</span>                <span class="keywordflow">if</span>(wid-&gt;flags &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea2cb9164e0e57a3f7e87fca68109f1751">NO_AUTOREPEAT</a>) {</div>
-<div class="line"><span class="lineno">  720</span>                    <span class="keywordflow">if</span> ((HIWORD(lParam) &amp; KF_REPEAT) == KF_REPEAT)</div>
-<div class="line"><span class="lineno">  721</span>                        is_retriggered = 1;</div>
-<div class="line"><span class="lineno">  722</span>                }</div>
-<div class="line"><span class="lineno">  723</span>                <span class="keywordflow">if</span> (!is_retriggered) {</div>
-<div class="line"><span class="lineno">  724</span>                    <a class="code hl_function" href="xwidget__private_8h.html#ae2aeefa7b35ff7e10a148e8438a12dc9">_check_keymap</a>(wid, xkey);</div>
-<div class="line"><span class="lineno">  725</span>                    wid-&gt;func.key_press_callback((<span class="keywordtype">void</span> *)wid, &amp;xkey, user_data);</div>
-<div class="line"><span class="lineno">  726</span>                    debug_print(<span class="stringliteral">&quot;Widget_t KeyPress %x\n&quot;</span>, xkey.<a class="code hl_variable" href="structXEvent.html#a74583b0cb53a7bc6e51157cccea51e60">keycode</a>);</div>
-<div class="line"><span class="lineno">  727</span>                }</div>
-<div class="line"><span class="lineno">  728</span>            }</div>
-<div class="line"><span class="lineno">  729</span>            <span class="comment">//X11:KeyRelease</span></div>
-<div class="line"><span class="lineno">  730</span>            <span class="keywordflow">if</span> (msg != WM_KEYDOWN) { <span class="comment">// WM_KEYUP and WM_CHAR: key_release_callback()</span></div>
-<div class="line"><span class="lineno">  731</span>                <span class="keywordflow">if</span> (wid-&gt;state == 4) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  732</span>                <span class="comment">// On MSWin, the REPEAT flag is always set for WM_KEYUP,</span></div>
-<div class="line"><span class="lineno">  733</span>                <span class="comment">// so the retrigger check has to take place in WM_KEYDOWN instead</span></div>
-<div class="line"><span class="lineno">  734</span>                wid-&gt;func.key_release_callback((<span class="keywordtype">void</span> *)wid, &amp;xkey, user_data);</div>
-<div class="line"><span class="lineno">  735</span>                debug_print(<span class="stringliteral">&quot;Widget_t KeyRelease %x\n&quot;</span>, xkey.<a class="code hl_variable" href="structXEvent.html#a74583b0cb53a7bc6e51157cccea51e60">keycode</a>);</div>
-<div class="line"><span class="lineno">  736</span>            }</div>
-<div class="line"><span class="lineno">  737</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  738</span> </div>
-<div class="line"><span class="lineno">  739</span>        <span class="comment">// X11:LeaveNotify (X11:EnterNotify: see WM_MOUSEMOVE)</span></div>
-<div class="line"><span class="lineno">  740</span>        <span class="keywordflow">case</span> WM_MOUSELEAVE:</div>
-<div class="line"><span class="lineno">  741</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  742</span>            <span class="comment">// xputty -&gt; xwidget: handled by &quot;ButtonPress&quot; event on Linux</span></div>
-<div class="line"><span class="lineno">  743</span> </div>
-<div class="line"><span class="lineno">  744</span>                <span class="keywordtype">bool</span> is_item = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  745</span>                GetCursorPos(&amp;pt);</div>
-<div class="line"><span class="lineno">  746</span>                <a class="code hl_typedef" href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a> win_cur = WindowFromPoint(pt);</div>
-<div class="line"><span class="lineno">  747</span>                <span class="keywordflow">if</span>(wid-&gt;app-&gt;submenu != NULL) {</div>
-<div class="line"><span class="lineno">  748</span>                     <span class="keywordflow">if</span> (<a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(wid-&gt;app-&gt;submenu-&gt;childlist)) {</div>
-<div class="line"><span class="lineno">  749</span>                        <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *slider = wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a989b401933a94b5a418c41c73b8ddda6">submenu</a>-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[1];</div>
-<div class="line"><span class="lineno">  750</span>                        <span class="keywordflow">if</span> (win_cur == slider-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) {</div>
-<div class="line"><span class="lineno">  751</span>                            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  752</span>                        }</div>
-<div class="line"><span class="lineno">  753</span>                        <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *view_port = wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a989b401933a94b5a418c41c73b8ddda6">submenu</a>-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
-<div class="line"><span class="lineno">  754</span>                        <span class="keywordtype">int</span> i = view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#ae49b747ab3b2a8aedad718521b6c77f1">elem</a>-1;</div>
-<div class="line"><span class="lineno">  755</span>                        <span class="keywordflow">for</span>(;i&gt;-1;i--) {</div>
-<div class="line"><span class="lineno">  756</span>                            <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i];</div>
-<div class="line"><span class="lineno">  757</span>                            <span class="keywordflow">if</span> (win_cur == w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) {</div>
-<div class="line"><span class="lineno">  758</span>                                is_item = True;</div>
-<div class="line"><span class="lineno">  759</span>                                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  760</span>                            }</div>
-<div class="line"><span class="lineno">  761</span>                        }</div>
-<div class="line"><span class="lineno">  762</span>                    }</div>
-<div class="line"><span class="lineno">  763</span>                }</div>
-<div class="line"><span class="lineno">  764</span>                <span class="keywordflow">if</span>(wid-&gt;app-&gt;hold_grab != NULL &amp;&amp; wid-&gt;app-&gt;hold_grab-&gt;flags &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ead5eca61d30ac5aa2160dbad35b19c4c3">IS_POPUP</a>) {</div>
-<div class="line"><span class="lineno">  765</span>                    <span class="keywordflow">if</span> (<a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(wid-&gt;app-&gt;hold_grab-&gt;childlist)) {</div>
-<div class="line"><span class="lineno">  766</span>                        <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *slider = wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[1];</div>
-<div class="line"><span class="lineno">  767</span>                        <span class="keywordflow">if</span> (win_cur == slider-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) {</div>
-<div class="line"><span class="lineno">  768</span>                            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  769</span>                        }</div>
-<div class="line"><span class="lineno">  770</span>                        <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *view_port = wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
-<div class="line"><span class="lineno">  771</span>                        <span class="keywordtype">int</span> i = view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#ae49b747ab3b2a8aedad718521b6c77f1">elem</a>-1;</div>
-<div class="line"><span class="lineno">  772</span>                        <span class="keywordflow">for</span>(;i&gt;-1;i--) {</div>
-<div class="line"><span class="lineno">  773</span>                            <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i];</div>
-<div class="line"><span class="lineno">  774</span>                            <span class="keywordflow">if</span> (win_cur == w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) {</div>
-<div class="line"><span class="lineno">  775</span>                                is_item = True;</div>
-<div class="line"><span class="lineno">  776</span>                                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  777</span>                            }</div>
-<div class="line"><span class="lineno">  778</span>                        }</div>
-<div class="line"><span class="lineno">  779</span>                        <span class="keywordflow">if</span> (win_cur == view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) is_item = True;</div>
-<div class="line"><span class="lineno">  780</span>                    }</div>
-<div class="line"><span class="lineno">  781</span>                    <span class="keywordflow">if</span> (!is_item &amp;&amp; (wParam &amp; MK_LBUTTON || wParam &amp; MK_RBUTTON)) {</div>
-<div class="line"><span class="lineno">  782</span>                        ReleaseCapture();</div>
-<div class="line"><span class="lineno">  783</span>                        <a class="code hl_function" href="xwidget_8h.html#ab00e7f2485e08237c865e96ba56e63e6">widget_hide</a>(wid-&gt;app-&gt;hold_grab);</div>
-<div class="line"><span class="lineno">  784</span>                        wid-&gt;app-&gt;hold_grab = NULL;</div>
-<div class="line"><span class="lineno">  785</span>                    }</div>
-<div class="line"><span class="lineno">  786</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(wid-&gt;app-&gt;hold_grab != NULL &amp;&amp; ((wid-&gt;app-&gt;hold_grab-&gt;flags &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ead5eca61d30ac5aa2160dbad35b19c4c3">IS_POPUP</a>) == 0)) {</div>
-<div class="line"><span class="lineno">  787</span>                    wid-&gt;app-&gt;hold_grab-&gt;func.button_press_callback(wid-&gt;app-&gt;hold_grab, &amp;xbutton, NULL);</div>
-<div class="line"><span class="lineno">  788</span>                }</div>
-<div class="line"><span class="lineno">  789</span> </div>
-<div class="line"><span class="lineno">  790</span><span class="comment">/*</span></div>
-<div class="line"><span class="lineno">  791</span><span class="comment">            // close popup menu if cursor moves out of widget</span></div>
-<div class="line"><span class="lineno">  792</span><span class="comment">            if(wid-&gt;app-&gt;hold_grab != NULL) {</span></div>
-<div class="line"><span class="lineno">  793</span><span class="comment">                GetCursorPos(&amp;pt);</span></div>
-<div class="line"><span class="lineno">  794</span><span class="comment">                Window win_cur = WindowFromPoint(pt);</span></div>
-<div class="line"><span class="lineno">  795</span><span class="comment">                bool is_item = false;</span></div>
-<div class="line"><span class="lineno">  796</span><span class="comment">                // still inside viewport? (finds menu entries in popup window)</span></div>
-<div class="line"><span class="lineno">  797</span><span class="comment">                Widget_t *view_port = wid-&gt;app-&gt;hold_grab-&gt;childlist-&gt;childs[0];</span></div>
-<div class="line"><span class="lineno">  798</span><span class="comment">                if (view_port) { // should never be NULL, but who knows :)</span></div>
-<div class="line"><span class="lineno">  799</span><span class="comment">                    int i = view_port-&gt;childlist-&gt;elem-1;</span></div>
-<div class="line"><span class="lineno">  800</span><span class="comment">                    for(;i&gt;-1;i--) {</span></div>
-<div class="line"><span class="lineno">  801</span><span class="comment">                        Widget_t *w = view_port-&gt;childlist-&gt;childs[i];</span></div>
-<div class="line"><span class="lineno">  802</span><span class="comment">                        if (win_cur == w-&gt;widget) {</span></div>
-<div class="line"><span class="lineno">  803</span><span class="comment">                            is_item = true;</span></div>
-<div class="line"><span class="lineno">  804</span><span class="comment">                            break;</span></div>
-<div class="line"><span class="lineno">  805</span><span class="comment">                        }</span></div>
-<div class="line"><span class="lineno">  806</span><span class="comment">                    }</span></div>
-<div class="line"><span class="lineno">  807</span><span class="comment">                    if (view_port &amp;&amp; win_cur == view_port-&gt;widget) is_item = true; // inside slider area?</span></div>
-<div class="line"><span class="lineno">  808</span><span class="comment">                }</span></div>
-<div class="line"><span class="lineno">  809</span><span class="comment">                // still inside combobox? (finds combobox-button)</span></div>
-<div class="line"><span class="lineno">  810</span><span class="comment">                Widget_t *menu = NULL;</span></div>
-<div class="line"><span class="lineno">  811</span><span class="comment">                menu = (Widget_t *)wid-&gt;app-&gt;hold_grab-&gt;parent_struct;</span></div>
-<div class="line"><span class="lineno">  812</span><span class="comment">                if (menu) { // can be NULL if not contained in combobox</span></div>
-<div class="line"><span class="lineno">  813</span><span class="comment">                    int i = menu-&gt;childlist-&gt;elem-1;</span></div>
-<div class="line"><span class="lineno">  814</span><span class="comment">                    for(;i&gt;-1;i--) {</span></div>
-<div class="line"><span class="lineno">  815</span><span class="comment">                        Widget_t *w = menu-&gt;childlist-&gt;childs[i];</span></div>
-<div class="line"><span class="lineno">  816</span><span class="comment">                        if (win_cur == w-&gt;widget) {</span></div>
-<div class="line"><span class="lineno">  817</span><span class="comment">                            is_item = true;</span></div>
-<div class="line"><span class="lineno">  818</span><span class="comment">                            break;</span></div>
-<div class="line"><span class="lineno">  819</span><span class="comment">                        }</span></div>
-<div class="line"><span class="lineno">  820</span><span class="comment">                    }</span></div>
-<div class="line"><span class="lineno">  821</span><span class="comment">                    if (menu &amp;&amp; win_cur == menu-&gt;widget) is_item = true; // inside combobox textarea?</span></div>
-<div class="line"><span class="lineno">  822</span><span class="comment">                }</span></div>
-<div class="line"><span class="lineno">  823</span><span class="comment">                if (!is_item) {</span></div>
-<div class="line"><span class="lineno">  824</span><span class="comment">                    ReleaseCapture();</span></div>
-<div class="line"><span class="lineno">  825</span><span class="comment">                    widget_hide(wid-&gt;app-&gt;hold_grab);</span></div>
-<div class="line"><span class="lineno">  826</span><span class="comment">                    wid-&gt;app-&gt;hold_grab = NULL;</span></div>
-<div class="line"><span class="lineno">  827</span><span class="comment">                }</span></div>
-<div class="line"><span class="lineno">  828</span><span class="comment">            }</span></div>
-<div class="line"><span class="lineno">  829</span><span class="comment">*/</span></div>
-<div class="line"><span class="lineno">  830</span>            <span class="comment">// for emulating X11:EnterNotify</span></div>
-<div class="line"><span class="lineno">  831</span>            wid-&gt;mouse_inside = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  832</span> </div>
-<div class="line"><span class="lineno">  833</span>            <span class="keywordflow">if</span> (wid-&gt;state == 4) <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  834</span>            <span class="comment">//if(!(xev-&gt;xcrossing.state &amp; Button1Mask)) {</span></div>
-<div class="line"><span class="lineno">  835</span>            <span class="keywordflow">if</span> (!(GetAsyncKeyState(VK_LBUTTON) &amp; 0x8000)) {</div>
-<div class="line"><span class="lineno">  836</span>                wid-&gt;state = 0;</div>
-<div class="line"><span class="lineno">  837</span>                wid-&gt;flags &amp;= ~HAS_FOCUS;</div>
-<div class="line"><span class="lineno">  838</span>                wid-&gt;func.leave_callback((<span class="keywordtype">void</span>*)wid, user_data);</div>
-<div class="line"><span class="lineno">  839</span>               <span class="comment">// if (!(wid-&gt;flags &amp; IS_WINDOW))</span></div>
-<div class="line"><span class="lineno">  840</span>               <span class="comment">//     RedrawWindow(hwnd, NULL, NULL, RDW_NOERASE | RDW_INVALIDATE | RDW_UPDATENOW);</span></div>
-<div class="line"><span class="lineno">  841</span>            }</div>
-<div class="line"><span class="lineno">  842</span>            <span class="keywordflow">if</span> (wid-&gt;flags &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f">HAS_TOOLTIP</a>) <a class="code hl_function" href="xwidget_8h.html#a65a14ddb7decf9932a8dcead7170217a">hide_tooltip</a>(wid);</div>
-<div class="line"><span class="lineno">  843</span>            debug_print(<span class="stringliteral">&quot;Widget_t LeaveNotify:hwnd=%p&quot;</span>,hwnd);</div>
-<div class="line"><span class="lineno">  844</span> </div>
-<div class="line"><span class="lineno">  845</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  846</span> </div>
-<div class="line"><span class="lineno">  847</span>        <span class="comment">// X11:MotionNotify</span></div>
-<div class="line"><span class="lineno">  848</span>        <span class="keywordflow">case</span> WM_MOUSEMOVE:</div>
-<div class="line"><span class="lineno">  849</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  850</span>            <span class="keywordflow">if</span> (!wid-&gt;mouse_inside) {</div>
-<div class="line"><span class="lineno">  851</span>                <span class="comment">// emulate X11:EnterNotify</span></div>
-<div class="line"><span class="lineno">  852</span>                <span class="keywordtype">int</span> ch = <a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>);</div>
-<div class="line"><span class="lineno">  853</span>                <span class="keywordflow">if</span> (ch) {</div>
-<div class="line"><span class="lineno">  854</span>                    <span class="keywordtype">int</span> i = ch;</div>
-<div class="line"><span class="lineno">  855</span>                    <span class="keywordflow">for</span>(;i&gt;0;i--) {</div>
-<div class="line"><span class="lineno">  856</span>                        <span class="keywordflow">if</span> (main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i-1] != wid) {</div>
-<div class="line"><span class="lineno">  857</span>                            <span class="keywordflow">if</span> (main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i-1]-&gt;<a class="code hl_variable" href="structWidget__t.html#a26a039758210767f02de85ffe72a31d2">mouse_inside</a>) {</div>
-<div class="line"><span class="lineno">  858</span>                                main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i-1]-&gt;<a class="code hl_variable" href="structWidget__t.html#a26a039758210767f02de85ffe72a31d2">mouse_inside</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  859</span>                                <span class="keywordflow">if</span> (main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i-1]-&gt;<a class="code hl_variable" href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">state</a> != 4) {</div>
-<div class="line"><span class="lineno">  860</span>                                    main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i-1]-&gt;<a class="code hl_variable" href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">state</a> = 0;</div>
-<div class="line"><span class="lineno">  861</span>                                    <span class="comment">//RedrawWindow(main-&gt;childlist-&gt;childs[i-1]-&gt;widget, NULL, NULL, RDW_NOERASE | RDW_INVALIDATE | RDW_UPDATENOW);</span></div>
-<div class="line"><span class="lineno">  862</span>                                }</div>
-<div class="line"><span class="lineno">  863</span>                            }</div>
-<div class="line"><span class="lineno">  864</span>                        }</div>
-<div class="line"><span class="lineno">  865</span>                    }</div>
-<div class="line"><span class="lineno">  866</span>                }</div>
-<div class="line"><span class="lineno">  867</span>                wid-&gt;mouse_inside = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  868</span>                wid-&gt;flags |= <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea77ed320daf286953bd956a0d470d3fe0">HAS_FOCUS</a>;</div>
-<div class="line"><span class="lineno">  869</span>                <span class="keywordflow">if</span> (wid-&gt;state == 4) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  570</span>    <span class="comment">// be aware: &quot;wid&quot; can be NULL during window creation (esp. if there is a debugger attached)</span></div>
+<div class="line"><span class="lineno">  571</span>    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *wid = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *)GetWindowLongPtr(hwnd, GWLP_USERDATA);</div>
+<div class="line"><span class="lineno">  572</span>    <a class="code hl_struct" href="structXputty.html">Xputty</a> *main = wid ? wid-&gt; app : NULL;</div>
+<div class="line"><span class="lineno">  573</span> </div>
+<div class="line"><span class="lineno">  574</span>    xbutton.<a class="code hl_variable" href="structXEvent.html#ac5b0b3c19d476a314bb68af9bc4a0ee0">window</a> = hwnd;</div>
+<div class="line"><span class="lineno">  575</span>    xbutton.<a class="code hl_variable" href="structXEvent.html#a6150e0515f7202e2fb518f7206ed97dc">x</a> = GET_X_LPARAM(lParam);</div>
+<div class="line"><span class="lineno">  576</span>    xbutton.<a class="code hl_variable" href="structXEvent.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a> = GET_Y_LPARAM(lParam);</div>
+<div class="line"><span class="lineno">  577</span>    xmotion.<a class="code hl_variable" href="structXEvent.html#ac5b0b3c19d476a314bb68af9bc4a0ee0">window</a> = hwnd;</div>
+<div class="line"><span class="lineno">  578</span>    xmotion.<a class="code hl_variable" href="structXEvent.html#a6150e0515f7202e2fb518f7206ed97dc">x</a> = GET_X_LPARAM(lParam);</div>
+<div class="line"><span class="lineno">  579</span>    xmotion.<a class="code hl_variable" href="structXEvent.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a> = GET_Y_LPARAM(lParam);</div>
+<div class="line"><span class="lineno">  580</span> </div>
+<div class="line"><span class="lineno">  581</span>    <span class="keywordflow">switch</span> (msg) {</div>
+<div class="line"><span class="lineno">  582</span>        <span class="keywordflow">case</span> WM_CREATE:</div>
+<div class="line"><span class="lineno">  583</span>            debug_print(<span class="stringliteral">&quot;WM:WM_CREATE:hwnd=%p:wid=%p&quot;</span>,hwnd,wid);</div>
+<div class="line"><span class="lineno">  584</span>            {</div>
+<div class="line"><span class="lineno">  585</span>                CREATESTRUCT *pCreate = (CREATESTRUCT *)lParam;</div>
+<div class="line"><span class="lineno">  586</span>                wid = (<a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *)pCreate-&gt;lpCreateParams;</div>
+<div class="line"><span class="lineno">  587</span>                <span class="comment">// CreateWindowEx() hasnt returned yet, so wid-&gt;widget is not set</span></div>
+<div class="line"><span class="lineno">  588</span>                wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a> = hwnd;</div>
+<div class="line"><span class="lineno">  589</span>                <span class="comment">// make &quot;wid&quot; available in messageloop events via GetWindowLongPtr()</span></div>
+<div class="line"><span class="lineno">  590</span>                SetWindowLongPtr(hwnd, GWLP_USERDATA, (LONG_PTR)wid);</div>
+<div class="line"><span class="lineno">  591</span>            }</div>
+<div class="line"><span class="lineno">  592</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  593</span> </div>
+<div class="line"><span class="lineno">  594</span>        <span class="comment">// MSWin only: React to close requests</span></div>
+<div class="line"><span class="lineno">  595</span>        <span class="keywordflow">case</span> WM_CLOSE:</div>
+<div class="line"><span class="lineno">  596</span>            <span class="comment">// standalone</span></div>
+<div class="line"><span class="lineno">  597</span>            <span class="keywordflow">if</span> (hwnd == main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0]-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) {</div>
+<div class="line"><span class="lineno">  598</span>                <span class="comment">// is main window: end application</span></div>
+<div class="line"><span class="lineno">  599</span>                PostQuitMessage(0); <span class="comment">// end messageloop (continuing to main_quit())</span></div>
+<div class="line"><span class="lineno">  600</span>            } <span class="keywordflow">else</span> <span class="comment">// is sub window (menu, dialog, ...): close</span></div>
+<div class="line"><span class="lineno">  601</span>                DestroyWindow(hwnd);</div>
+<div class="line"><span class="lineno">  602</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  603</span>        <span class="keywordflow">case</span> WM_DESTROY:</div>
+<div class="line"><span class="lineno">  604</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  605</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  606</span> </div>
+<div class="line"><span class="lineno">  607</span>        <span class="comment">// X11:ConfigureNotify</span></div>
+<div class="line"><span class="lineno">  608</span>        <span class="keywordflow">case</span> WM_SIZE:</div>
+<div class="line"><span class="lineno">  609</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  610</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  611</span>                <span class="keywordflow">if</span>(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a> &amp;&amp; wid != wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>) {</div>
+<div class="line"><span class="lineno">  612</span>                    <a class="code hl_function" href="xwidget_8h.html#ab00e7f2485e08237c865e96ba56e63e6">widget_hide</a>(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>);</div>
+<div class="line"><span class="lineno">  613</span>                    wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a> = NULL;</div>
+<div class="line"><span class="lineno">  614</span>                }</div>
+<div class="line"><span class="lineno">  615</span>                <span class="comment">// Limit window size:</span></div>
+<div class="line"><span class="lineno">  616</span>                <span class="comment">// The plugin doesnt receive WM_MINMAXINFO or WM_SIZING.</span></div>
+<div class="line"><span class="lineno">  617</span>                <span class="comment">// SWP_NOSIZE in WM_WINDOWPOSCHANGING cant handle width/height separately.</span></div>
+<div class="line"><span class="lineno">  618</span>                <span class="comment">// Setting the client size afterwards turned out to be the best working option so far.</span></div>
+<div class="line"><span class="lineno">  619</span>                <span class="comment">// Plugin: Limits the &quot;zoom&quot; (as the hosts window can always become smaller)</span></div>
+<div class="line"><span class="lineno">  620</span>                <span class="comment">// Standalone: Limits the window size</span></div>
+<div class="line"><span class="lineno">  621</span>                <span class="keywordtype">int</span> width = LOWORD(lParam);</div>
+<div class="line"><span class="lineno">  622</span>                <span class="keywordtype">int</span> height = HIWORD(lParam);</div>
+<div class="line"><span class="lineno">  623</span>                <span class="keywordflow">if</span> ((width &lt; wid-&gt;metrics_min.width)</div>
+<div class="line"><span class="lineno">  624</span>                    || (height &lt; wid-&gt;metrics_min.height)) {</div>
+<div class="line"><span class="lineno">  625</span>                    <a class="code hl_function" href="xwidget-mswin_8c.html#a3effd22ad104d2613a72abb5ea08cfac">SetClientSize</a>(hwnd, max(width, wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a866b183e7f2df21a1676af4e211dd30d">metrics_min</a>.<a class="code hl_variable" href="structMetrics__t.html#a2474a5474cbff19523a51eb1de01cda4">width</a>),</div>
+<div class="line"><span class="lineno">  626</span>                            max(height, wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a866b183e7f2df21a1676af4e211dd30d">metrics_min</a>.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>));</div>
+<div class="line"><span class="lineno">  627</span>                    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  628</span>                }</div>
+<div class="line"><span class="lineno">  629</span>                <span class="comment">// Resize handler</span></div>
+<div class="line"><span class="lineno">  630</span>                <span class="keywordflow">if</span> (!wid-&gt;<a class="code hl_variable" href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">func</a>.<a class="code hl_variable" href="structFunc__t.html#a0b375a67a8ae98e0236f71e360fd5ae5">configure_callback</a>) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  631</span>                wid-&gt;<a class="code hl_variable" href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">func</a>.<a class="code hl_variable" href="structFunc__t.html#a0b375a67a8ae98e0236f71e360fd5ae5">configure_callback</a>(wid, user_data);</div>
+<div class="line"><span class="lineno">  632</span>                <span class="comment">// widgets recive the call to os_transparent_draw via the configure_notify_callback</span></div>
+<div class="line"><span class="lineno">  633</span>                <span class="comment">// windows have the CS_HREDRAW | CS_VREDRAW flags set so that they be redrawn by the system</span></div>
+<div class="line"><span class="lineno">  634</span>                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  635</span>            }</div>
+<div class="line"><span class="lineno">  636</span> </div>
+<div class="line"><span class="lineno">  637</span>        <span class="keywordflow">case</span> WM_MOVE:</div>
+<div class="line"><span class="lineno">  638</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  639</span>            <span class="keywordflow">if</span>(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a> &amp;&amp; wid != wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>) {</div>
+<div class="line"><span class="lineno">  640</span>                <a class="code hl_function" href="xwidget_8h.html#ab00e7f2485e08237c865e96ba56e63e6">widget_hide</a>(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>);</div>
+<div class="line"><span class="lineno">  641</span>                wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a> = NULL;</div>
+<div class="line"><span class="lineno">  642</span>            }</div>
+<div class="line"><span class="lineno">  643</span>        <span class="comment">// X11:Expose</span></div>
+<div class="line"><span class="lineno">  644</span>        <span class="keywordflow">case</span> WM_PAINT:</div>
+<div class="line"><span class="lineno">  645</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  646</span>            <span class="keywordflow">if</span> (!(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a87bbe79251b7e169825a807de0941fb9">crb</a>)) {</div>
+<div class="line"><span class="lineno">  647</span>                debug_print(<span class="stringliteral">&quot;WM_PAINT:BAILOUT:wid-&gt;crb==NULL\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  648</span>                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  649</span>            }</div>
+<div class="line"><span class="lineno">  650</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="xwidget-mswin_8c.html#afb4f5c71add0d964d67d9f2e7e782122">onPaint</a>(hwnd, wParam, lParam); <span class="comment">// not possible on mswin: (only fetch the last expose event)</span></div>
+<div class="line"><span class="lineno">  651</span> </div>
+<div class="line"><span class="lineno">  652</span>        <span class="comment">// MSWin only: Allow keyboard input</span></div>
+<div class="line"><span class="lineno">  653</span>        <span class="keywordflow">case</span> WM_ACTIVATE:</div>
+<div class="line"><span class="lineno">  654</span>            SetFocus(hwnd);</div>
+<div class="line"><span class="lineno">  655</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  656</span>        <span class="keywordflow">case</span> WM_MOUSEACTIVATE:</div>
+<div class="line"><span class="lineno">  657</span>            SetFocus(hwnd);</div>
+<div class="line"><span class="lineno">  658</span>            <span class="keywordflow">return</span> MA_ACTIVATE;</div>
+<div class="line"><span class="lineno">  659</span> </div>
+<div class="line"><span class="lineno">  660</span>        <span class="comment">// X11:ButtonPress</span></div>
+<div class="line"><span class="lineno">  661</span>        <span class="keywordflow">case</span> WM_LBUTTONDOWN:</div>
+<div class="line"><span class="lineno">  662</span>        <span class="keywordflow">case</span> WM_RBUTTONDOWN:</div>
+<div class="line"><span class="lineno">  663</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  664</span>            SetCapture(hwnd); <span class="comment">// also receive WM_MOUSEMOVE from outside this window</span></div>
+<div class="line"><span class="lineno">  665</span>            </div>
+<div class="line"><span class="lineno">  666</span>            <span class="keywordflow">if</span> (msg == WM_LBUTTONDOWN)</div>
+<div class="line"><span class="lineno">  667</span>                xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button1;</div>
+<div class="line"><span class="lineno">  668</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  669</span>                xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button3;</div>
+<div class="line"><span class="lineno">  670</span>            <span class="keywordflow">if</span> (wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">state</a> == 4) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  671</span>            <span class="keywordflow">if</span> (wid-&gt;<a class="code hl_variable" href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">flags</a> &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f">HAS_TOOLTIP</a>) <a class="code hl_function" href="xwidget_8h.html#a65a14ddb7decf9932a8dcead7170217a">hide_tooltip</a>(wid);</div>
+<div class="line"><span class="lineno">  672</span>            <a class="code hl_function" href="xwidget__private_8h.html#a58ae554632b1c9f7afc73aa159a1dc0c">_button_press</a>(wid, &amp;xbutton, user_data);</div>
+<div class="line"><span class="lineno">  673</span>            debug_print(<span class="stringliteral">&quot;Widget_t  ButtonPress %i\n&quot;</span>, xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a>);</div>
+<div class="line"><span class="lineno">  674</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  675</span>        <span class="keywordflow">case</span> WM_MOUSEWHEEL:</div>
+<div class="line"><span class="lineno">  676</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  677</span>            <span class="comment">// opposed to X11, WM_MOUSEWHEEL doesnt contain mouse coordinates</span></div>
+<div class="line"><span class="lineno">  678</span>            {</div>
+<div class="line"><span class="lineno">  679</span>                DWORD pos = GetMessagePos();</div>
+<div class="line"><span class="lineno">  680</span>                pt.x = GET_X_LPARAM(pos);</div>
+<div class="line"><span class="lineno">  681</span>                pt.y = GET_Y_LPARAM(pos);</div>
+<div class="line"><span class="lineno">  682</span>                <span class="keywordflow">if</span> (ScreenToClient(hwnd, &amp;pt)) {</div>
+<div class="line"><span class="lineno">  683</span>                    wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a989d3e09b707fb1f4bc2355ba5855a0c">pos_x</a> = pt.x;</div>
+<div class="line"><span class="lineno">  684</span>                    wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a769c689813b19fb03572dc4937b40993">pos_y</a> = pt.y;</div>
+<div class="line"><span class="lineno">  685</span>                }</div>
+<div class="line"><span class="lineno">  686</span>            }</div>
+<div class="line"><span class="lineno">  687</span>            <span class="keywordflow">if</span> (GET_WHEEL_DELTA_WPARAM(wParam) &lt;= 0) {</div>
+<div class="line"><span class="lineno">  688</span>                xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button5;</div>
+<div class="line"><span class="lineno">  689</span>                <a class="code hl_function" href="xwidget__private_8h.html#a58ae554632b1c9f7afc73aa159a1dc0c">_button_press</a>(wid, &amp;xbutton, user_data);</div>
+<div class="line"><span class="lineno">  690</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  691</span>                xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button4;</div>
+<div class="line"><span class="lineno">  692</span>                <a class="code hl_function" href="xwidget__private_8h.html#a58ae554632b1c9f7afc73aa159a1dc0c">_button_press</a>(wid, &amp;xbutton, user_data);</div>
+<div class="line"><span class="lineno">  693</span>            }</div>
+<div class="line"><span class="lineno">  694</span>            <span class="comment">// forward WM_MOUSEWHEEL from menuitem to viewport (with slider)</span></div>
+<div class="line"><span class="lineno">  695</span>            <span class="comment">// (viewport lies below menuitem, so doesnt receive WM_MOUSEWHEEL)</span></div>
+<div class="line"><span class="lineno">  696</span>            <span class="keywordflow">if</span>(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>) {</div>
+<div class="line"><span class="lineno">  697</span>                <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *view_port = wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
+<div class="line"><span class="lineno">  698</span>                <span class="keywordflow">if</span> (hwnd != view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>)</div>
+<div class="line"><span class="lineno">  699</span>                    SendMessage(view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  700</span>                RedrawWindow(view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>, NULL, NULL, RDW_NOERASE | RDW_INVALIDATE | RDW_UPDATENOW);</div>
+<div class="line"><span class="lineno">  701</span>            }</div>
+<div class="line"><span class="lineno">  702</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  703</span>        <span class="comment">// X11:ButtonRelease</span></div>
+<div class="line"><span class="lineno">  704</span>        <span class="keywordflow">case</span> WM_LBUTTONDBLCLK:</div>
+<div class="line"><span class="lineno">  705</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  706</span>            xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button1;</div>
+<div class="line"><span class="lineno">  707</span>            wid-&gt;<a class="code hl_variable" href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">func</a>.<a class="code hl_variable" href="structFunc__t.html#a580123509145139212579243dbe61c67">double_click_callback</a>(wid, &amp;xbutton, user_data);</div>
+<div class="line"><span class="lineno">  708</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  709</span>        <span class="keywordflow">case</span> WM_LBUTTONUP:</div>
+<div class="line"><span class="lineno">  710</span>        <span class="keywordflow">case</span> WM_RBUTTONUP:</div>
+<div class="line"><span class="lineno">  711</span>            ReleaseCapture();</div>
+<div class="line"><span class="lineno">  712</span>            <span class="keywordflow">if</span> (msg == WM_LBUTTONUP)</div>
+<div class="line"><span class="lineno">  713</span>                xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button1;</div>
+<div class="line"><span class="lineno">  714</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  715</span>                xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a> = Button3;</div>
+<div class="line"><span class="lineno">  716</span>            <a class="code hl_function" href="xwidget__private_8h.html#a4268fe28baeb0a66234a976f14c6975b">_check_grab</a>(wid, &amp;xbutton, wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>);</div>
+<div class="line"><span class="lineno">  717</span>            <a class="code hl_function" href="xwidget__private_8h.html#abc530327f7056f0ce7c957b23d9fd291">_check_submenu</a>(wid, &amp;xbutton, main);</div>
+<div class="line"><span class="lineno">  718</span>            <span class="keywordflow">if</span> (wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">state</a> == 4) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  719</span>            <a class="code hl_function" href="xwidget__private_8h.html#ae8d8e0d87f6186d3d19f1372c357edbe">_has_pointer</a>(wid, &amp;xbutton);</div>
+<div class="line"><span class="lineno">  720</span>            <span class="keywordflow">if</span>(wid-&gt;<a class="code hl_variable" href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">flags</a> &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea24dd904cfcaac15acb4fd0c48126f869">HAS_POINTER</a>) wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">state</a> = 1;</div>
+<div class="line"><span class="lineno">  721</span>            <span class="keywordflow">else</span> wid-&gt;<a class="code hl_variable" href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">state</a> = 0;</div>
+<div class="line"><span class="lineno">  722</span>            <a class="code hl_function" href="xwidget__private_8h.html#a3fa824e7c223fab91f65dbdcd3e07f18">_check_enum</a>(wid, &amp;xbutton);</div>
+<div class="line"><span class="lineno">  723</span>            wid-&gt;<a class="code hl_variable" href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">func</a>.<a class="code hl_variable" href="structFunc__t.html#a0ac2c35c450e54946f10449f0681d9d2">button_release_callback</a>((<span class="keywordtype">void</span>*)wid, &amp;xbutton, user_data);</div>
+<div class="line"><span class="lineno">  724</span>            debug_print(<span class="stringliteral">&quot;Widget_t  ButtonRelease %i\n&quot;</span>, xbutton.<a class="code hl_variable" href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">button</a>);</div>
+<div class="line"><span class="lineno">  725</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  726</span> </div>
+<div class="line"><span class="lineno">  727</span>        <span class="comment">// X11:KeyPress and X11:KeyRelease</span></div>
+<div class="line"><span class="lineno">  728</span>        <span class="comment">// The resulting character (e.g. from dead-key combinations) cannot be</span></div>
+<div class="line"><span class="lineno">  729</span>        <span class="comment">// determined from WM_KEYUP or WM_KEYDOWN: WM_CHAR has to be used instead.</span></div>
+<div class="line"><span class="lineno">  730</span>        <span class="comment">// To workaround that, WM_CHAR fires key_press- and key_release_event()</span></div>
+<div class="line"><span class="lineno">  731</span>        <span class="comment">// after another, with the flag &quot;-&gt;vk_is_final_char&quot; set, so the client</span></div>
+<div class="line"><span class="lineno">  732</span>        <span class="comment">// code can differentiate between real KEYUP/DOWN and fake CHAR events.</span></div>
+<div class="line"><span class="lineno">  733</span>        <span class="keywordflow">case</span> WM_CHAR:</div>
+<div class="line"><span class="lineno">  734</span>        <span class="keywordflow">case</span> WM_KEYDOWN:</div>
+<div class="line"><span class="lineno">  735</span>        <span class="keywordflow">case</span> WM_KEYUP:</div>
+<div class="line"><span class="lineno">  736</span>            <a class="code hl_function" href="xwidget-mswin_8c.html#a6331d2adab6eb85288a547479750ddf1">build_xkey_event</a>(&amp;xkey, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  737</span>            <span class="comment">// X11:KeyPress</span></div>
+<div class="line"><span class="lineno">  738</span>            <span class="keywordflow">if</span> (msg != WM_KEYUP) { <span class="comment">// WM_KEYDOWN and WM_CHAR: key_press_callback()</span></div>
+<div class="line"><span class="lineno">  739</span>                <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  740</span>                <span class="keywordflow">if</span> (wid-&gt;state == 4) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  741</span>                <span class="comment">// on Linux, retrigger check happens in KeyRelease (WM_KEYUP)</span></div>
+<div class="line"><span class="lineno">  742</span>                <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> is_retriggered = 0;</div>
+<div class="line"><span class="lineno">  743</span>                <span class="keywordflow">if</span>(wid-&gt;flags &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea2cb9164e0e57a3f7e87fca68109f1751">NO_AUTOREPEAT</a>) {</div>
+<div class="line"><span class="lineno">  744</span>                    <span class="keywordflow">if</span> ((HIWORD(lParam) &amp; KF_REPEAT) == KF_REPEAT)</div>
+<div class="line"><span class="lineno">  745</span>                        is_retriggered = 1;</div>
+<div class="line"><span class="lineno">  746</span>                }</div>
+<div class="line"><span class="lineno">  747</span>                <span class="keywordflow">if</span> (!is_retriggered) {</div>
+<div class="line"><span class="lineno">  748</span>                    <a class="code hl_function" href="xwidget__private_8h.html#ae2aeefa7b35ff7e10a148e8438a12dc9">_check_keymap</a>(wid, xkey);</div>
+<div class="line"><span class="lineno">  749</span>                    wid-&gt;func.key_press_callback((<span class="keywordtype">void</span> *)wid, &amp;xkey, user_data);</div>
+<div class="line"><span class="lineno">  750</span>                    debug_print(<span class="stringliteral">&quot;Widget_t KeyPress %x\n&quot;</span>, xkey.<a class="code hl_variable" href="structXEvent.html#a74583b0cb53a7bc6e51157cccea51e60">keycode</a>);</div>
+<div class="line"><span class="lineno">  751</span>                }</div>
+<div class="line"><span class="lineno">  752</span>            }</div>
+<div class="line"><span class="lineno">  753</span>            <span class="comment">//X11:KeyRelease</span></div>
+<div class="line"><span class="lineno">  754</span>            <span class="keywordflow">if</span> (msg != WM_KEYDOWN) { <span class="comment">// WM_KEYUP and WM_CHAR: key_release_callback()</span></div>
+<div class="line"><span class="lineno">  755</span>                <span class="keywordflow">if</span> (wid-&gt;state == 4) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  756</span>                <span class="comment">// On MSWin, the REPEAT flag is always set for WM_KEYUP,</span></div>
+<div class="line"><span class="lineno">  757</span>                <span class="comment">// so the retrigger check has to take place in WM_KEYDOWN instead</span></div>
+<div class="line"><span class="lineno">  758</span>                wid-&gt;func.key_release_callback((<span class="keywordtype">void</span> *)wid, &amp;xkey, user_data);</div>
+<div class="line"><span class="lineno">  759</span>                debug_print(<span class="stringliteral">&quot;Widget_t KeyRelease %x\n&quot;</span>, xkey.<a class="code hl_variable" href="structXEvent.html#a74583b0cb53a7bc6e51157cccea51e60">keycode</a>);</div>
+<div class="line"><span class="lineno">  760</span>            }</div>
+<div class="line"><span class="lineno">  761</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  762</span> </div>
+<div class="line"><span class="lineno">  763</span>        <span class="comment">// X11:LeaveNotify (X11:EnterNotify: see WM_MOUSEMOVE)</span></div>
+<div class="line"><span class="lineno">  764</span>        <span class="keywordflow">case</span> WM_MOUSELEAVE:</div>
+<div class="line"><span class="lineno">  765</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  766</span>            <span class="comment">// xputty -&gt; xwidget: handled by &quot;ButtonPress&quot; event on Linux</span></div>
+<div class="line"><span class="lineno">  767</span> </div>
+<div class="line"><span class="lineno">  768</span>                <span class="keywordtype">bool</span> is_item = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  769</span>                GetCursorPos(&amp;pt);</div>
+<div class="line"><span class="lineno">  770</span>                <a class="code hl_typedef" href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a> win_cur = WindowFromPoint(pt);</div>
+<div class="line"><span class="lineno">  771</span>                <span class="keywordflow">if</span>(wid-&gt;app-&gt;submenu != NULL) {</div>
+<div class="line"><span class="lineno">  772</span>                     <span class="keywordflow">if</span> (<a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(wid-&gt;app-&gt;submenu-&gt;childlist)) {</div>
+<div class="line"><span class="lineno">  773</span>                        <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *slider = wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a989b401933a94b5a418c41c73b8ddda6">submenu</a>-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[1];</div>
+<div class="line"><span class="lineno">  774</span>                        <span class="keywordflow">if</span> (win_cur == slider-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) {</div>
+<div class="line"><span class="lineno">  775</span>                            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  776</span>                        }</div>
+<div class="line"><span class="lineno">  777</span>                        <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *view_port = wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a989b401933a94b5a418c41c73b8ddda6">submenu</a>-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
+<div class="line"><span class="lineno">  778</span>                        <span class="keywordtype">int</span> i = view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#ae49b747ab3b2a8aedad718521b6c77f1">elem</a>-1;</div>
+<div class="line"><span class="lineno">  779</span>                        <span class="keywordflow">for</span>(;i&gt;-1;i--) {</div>
+<div class="line"><span class="lineno">  780</span>                            <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i];</div>
+<div class="line"><span class="lineno">  781</span>                            <span class="keywordflow">if</span> (win_cur == w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) {</div>
+<div class="line"><span class="lineno">  782</span>                                is_item = True;</div>
+<div class="line"><span class="lineno">  783</span>                                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  784</span>                            }</div>
+<div class="line"><span class="lineno">  785</span>                        }</div>
+<div class="line"><span class="lineno">  786</span>                    }</div>
+<div class="line"><span class="lineno">  787</span>                }</div>
+<div class="line"><span class="lineno">  788</span>                <span class="keywordflow">if</span>(wid-&gt;app-&gt;hold_grab != NULL &amp;&amp; wid-&gt;app-&gt;hold_grab-&gt;flags &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ead5eca61d30ac5aa2160dbad35b19c4c3">IS_POPUP</a>) {</div>
+<div class="line"><span class="lineno">  789</span>                    <span class="keywordflow">if</span> (<a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(wid-&gt;app-&gt;hold_grab-&gt;childlist)) {</div>
+<div class="line"><span class="lineno">  790</span>                        <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *slider = wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[1];</div>
+<div class="line"><span class="lineno">  791</span>                        <span class="keywordflow">if</span> (win_cur == slider-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) {</div>
+<div class="line"><span class="lineno">  792</span>                            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  793</span>                        }</div>
+<div class="line"><span class="lineno">  794</span>                        <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *view_port = wid-&gt;<a class="code hl_variable" href="structWidget__t.html#af3ebd10c8f320d7652a1d44e01e52856">app</a>-&gt;<a class="code hl_variable" href="structXputty.html#a87903d89e86a1d1cbe842aea83f59764">hold_grab</a>-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0];</div>
+<div class="line"><span class="lineno">  795</span>                        <span class="keywordtype">int</span> i = view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#ae49b747ab3b2a8aedad718521b6c77f1">elem</a>-1;</div>
+<div class="line"><span class="lineno">  796</span>                        <span class="keywordflow">for</span>(;i&gt;-1;i--) {</div>
+<div class="line"><span class="lineno">  797</span>                            <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i];</div>
+<div class="line"><span class="lineno">  798</span>                            <span class="keywordflow">if</span> (win_cur == w-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) {</div>
+<div class="line"><span class="lineno">  799</span>                                is_item = True;</div>
+<div class="line"><span class="lineno">  800</span>                                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  801</span>                            }</div>
+<div class="line"><span class="lineno">  802</span>                        }</div>
+<div class="line"><span class="lineno">  803</span>                        <span class="keywordflow">if</span> (win_cur == view_port-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) is_item = True;</div>
+<div class="line"><span class="lineno">  804</span>                    }</div>
+<div class="line"><span class="lineno">  805</span>                    <span class="keywordflow">if</span> (!is_item &amp;&amp; (wParam &amp; MK_LBUTTON || wParam &amp; MK_RBUTTON)) {</div>
+<div class="line"><span class="lineno">  806</span>                        ReleaseCapture();</div>
+<div class="line"><span class="lineno">  807</span>                        <a class="code hl_function" href="xwidget_8h.html#ab00e7f2485e08237c865e96ba56e63e6">widget_hide</a>(wid-&gt;app-&gt;hold_grab);</div>
+<div class="line"><span class="lineno">  808</span>                        wid-&gt;app-&gt;hold_grab = NULL;</div>
+<div class="line"><span class="lineno">  809</span>                    }</div>
+<div class="line"><span class="lineno">  810</span>                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(wid-&gt;app-&gt;hold_grab != NULL &amp;&amp; ((wid-&gt;app-&gt;hold_grab-&gt;flags &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ead5eca61d30ac5aa2160dbad35b19c4c3">IS_POPUP</a>) == 0)) {</div>
+<div class="line"><span class="lineno">  811</span>                    wid-&gt;app-&gt;hold_grab-&gt;func.button_press_callback(wid-&gt;app-&gt;hold_grab, &amp;xbutton, NULL);</div>
+<div class="line"><span class="lineno">  812</span>                }</div>
+<div class="line"><span class="lineno">  813</span> </div>
+<div class="line"><span class="lineno">  814</span><span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  815</span><span class="comment">            // close popup menu if cursor moves out of widget</span></div>
+<div class="line"><span class="lineno">  816</span><span class="comment">            if(wid-&gt;app-&gt;hold_grab != NULL) {</span></div>
+<div class="line"><span class="lineno">  817</span><span class="comment">                GetCursorPos(&amp;pt);</span></div>
+<div class="line"><span class="lineno">  818</span><span class="comment">                Window win_cur = WindowFromPoint(pt);</span></div>
+<div class="line"><span class="lineno">  819</span><span class="comment">                bool is_item = false;</span></div>
+<div class="line"><span class="lineno">  820</span><span class="comment">                // still inside viewport? (finds menu entries in popup window)</span></div>
+<div class="line"><span class="lineno">  821</span><span class="comment">                Widget_t *view_port = wid-&gt;app-&gt;hold_grab-&gt;childlist-&gt;childs[0];</span></div>
+<div class="line"><span class="lineno">  822</span><span class="comment">                if (view_port) { // should never be NULL, but who knows :)</span></div>
+<div class="line"><span class="lineno">  823</span><span class="comment">                    int i = view_port-&gt;childlist-&gt;elem-1;</span></div>
+<div class="line"><span class="lineno">  824</span><span class="comment">                    for(;i&gt;-1;i--) {</span></div>
+<div class="line"><span class="lineno">  825</span><span class="comment">                        Widget_t *w = view_port-&gt;childlist-&gt;childs[i];</span></div>
+<div class="line"><span class="lineno">  826</span><span class="comment">                        if (win_cur == w-&gt;widget) {</span></div>
+<div class="line"><span class="lineno">  827</span><span class="comment">                            is_item = true;</span></div>
+<div class="line"><span class="lineno">  828</span><span class="comment">                            break;</span></div>
+<div class="line"><span class="lineno">  829</span><span class="comment">                        }</span></div>
+<div class="line"><span class="lineno">  830</span><span class="comment">                    }</span></div>
+<div class="line"><span class="lineno">  831</span><span class="comment">                    if (view_port &amp;&amp; win_cur == view_port-&gt;widget) is_item = true; // inside slider area?</span></div>
+<div class="line"><span class="lineno">  832</span><span class="comment">                }</span></div>
+<div class="line"><span class="lineno">  833</span><span class="comment">                // still inside combobox? (finds combobox-button)</span></div>
+<div class="line"><span class="lineno">  834</span><span class="comment">                Widget_t *menu = NULL;</span></div>
+<div class="line"><span class="lineno">  835</span><span class="comment">                menu = (Widget_t *)wid-&gt;app-&gt;hold_grab-&gt;parent_struct;</span></div>
+<div class="line"><span class="lineno">  836</span><span class="comment">                if (menu) { // can be NULL if not contained in combobox</span></div>
+<div class="line"><span class="lineno">  837</span><span class="comment">                    int i = menu-&gt;childlist-&gt;elem-1;</span></div>
+<div class="line"><span class="lineno">  838</span><span class="comment">                    for(;i&gt;-1;i--) {</span></div>
+<div class="line"><span class="lineno">  839</span><span class="comment">                        Widget_t *w = menu-&gt;childlist-&gt;childs[i];</span></div>
+<div class="line"><span class="lineno">  840</span><span class="comment">                        if (win_cur == w-&gt;widget) {</span></div>
+<div class="line"><span class="lineno">  841</span><span class="comment">                            is_item = true;</span></div>
+<div class="line"><span class="lineno">  842</span><span class="comment">                            break;</span></div>
+<div class="line"><span class="lineno">  843</span><span class="comment">                        }</span></div>
+<div class="line"><span class="lineno">  844</span><span class="comment">                    }</span></div>
+<div class="line"><span class="lineno">  845</span><span class="comment">                    if (menu &amp;&amp; win_cur == menu-&gt;widget) is_item = true; // inside combobox textarea?</span></div>
+<div class="line"><span class="lineno">  846</span><span class="comment">                }</span></div>
+<div class="line"><span class="lineno">  847</span><span class="comment">                if (!is_item) {</span></div>
+<div class="line"><span class="lineno">  848</span><span class="comment">                    ReleaseCapture();</span></div>
+<div class="line"><span class="lineno">  849</span><span class="comment">                    widget_hide(wid-&gt;app-&gt;hold_grab);</span></div>
+<div class="line"><span class="lineno">  850</span><span class="comment">                    wid-&gt;app-&gt;hold_grab = NULL;</span></div>
+<div class="line"><span class="lineno">  851</span><span class="comment">                }</span></div>
+<div class="line"><span class="lineno">  852</span><span class="comment">            }</span></div>
+<div class="line"><span class="lineno">  853</span><span class="comment">*/</span></div>
+<div class="line"><span class="lineno">  854</span>            <span class="comment">// for emulating X11:EnterNotify</span></div>
+<div class="line"><span class="lineno">  855</span>            wid-&gt;mouse_inside = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  856</span> </div>
+<div class="line"><span class="lineno">  857</span>            <span class="keywordflow">if</span> (wid-&gt;state == 4) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  858</span>            <span class="comment">//if(!(xev-&gt;xcrossing.state &amp; Button1Mask)) {</span></div>
+<div class="line"><span class="lineno">  859</span>            <span class="keywordflow">if</span> (!(GetAsyncKeyState(VK_LBUTTON) &amp; 0x8000)) {</div>
+<div class="line"><span class="lineno">  860</span>                wid-&gt;state = 0;</div>
+<div class="line"><span class="lineno">  861</span>                wid-&gt;flags &amp;= ~HAS_FOCUS;</div>
+<div class="line"><span class="lineno">  862</span>                wid-&gt;func.leave_callback((<span class="keywordtype">void</span>*)wid, user_data);</div>
+<div class="line"><span class="lineno">  863</span>               <span class="comment">// if (!(wid-&gt;flags &amp; IS_WINDOW))</span></div>
+<div class="line"><span class="lineno">  864</span>               <span class="comment">//     RedrawWindow(hwnd, NULL, NULL, RDW_NOERASE | RDW_INVALIDATE | RDW_UPDATENOW);</span></div>
+<div class="line"><span class="lineno">  865</span>            }</div>
+<div class="line"><span class="lineno">  866</span>            <span class="keywordflow">if</span> (wid-&gt;flags &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f">HAS_TOOLTIP</a>) <a class="code hl_function" href="xwidget_8h.html#a65a14ddb7decf9932a8dcead7170217a">hide_tooltip</a>(wid);</div>
+<div class="line"><span class="lineno">  867</span>            debug_print(<span class="stringliteral">&quot;Widget_t LeaveNotify:hwnd=%p&quot;</span>,hwnd);</div>
+<div class="line"><span class="lineno">  868</span> </div>
+<div class="line"><span class="lineno">  869</span>            <span class="keywordflow">return</span> 0;</div>
 <div class="line"><span class="lineno">  870</span> </div>
-<div class="line"><span class="lineno">  871</span>                <span class="comment">//if(!(xev-&gt;xcrossing.state &amp; Button1Mask)) {</span></div>
-<div class="line"><span class="lineno">  872</span>                <span class="keywordflow">if</span> (!(wParam &amp; MK_LBUTTON)) {</div>
-<div class="line"><span class="lineno">  873</span>                    wid-&gt;state = 1;</div>
-<div class="line"><span class="lineno">  874</span>                    wid-&gt;func.enter_callback((<span class="keywordtype">void</span>*)wid, user_data);</div>
-<div class="line"><span class="lineno">  875</span>                   <span class="comment">// if (!(wid-&gt;flags &amp; IS_WINDOW))</span></div>
-<div class="line"><span class="lineno">  876</span>                   <span class="comment">//     RedrawWindow(hwnd, NULL, NULL, RDW_NOERASE | RDW_INVALIDATE | RDW_UPDATENOW);</span></div>
-<div class="line"><span class="lineno">  877</span>                    <span class="keywordflow">if</span> (wid-&gt;flags &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f">HAS_TOOLTIP</a>) <a class="code hl_function" href="xwidget_8h.html#a50bb0638d0bd2d98923cb05c3bf09f35">show_tooltip</a>(wid);</div>
-<div class="line"><span class="lineno">  878</span>                    <span class="keywordflow">else</span> <a class="code hl_function" href="xwidget__private_8h.html#a3303d77cae03bc9141355e43fc6fe97f">_hide_all_tooltips</a>(wid);</div>
-<div class="line"><span class="lineno">  879</span>                }</div>
-<div class="line"><span class="lineno">  880</span>                debug_print(<span class="stringliteral">&quot;Widget_t EnterNotify:hwnd=%p&quot;</span>,hwnd);</div>
-<div class="line"><span class="lineno">  881</span> </div>
-<div class="line"><span class="lineno">  882</span>                <a class="code hl_function" href="xwidget-mswin_8c.html#af978084ff2e98b21cdc45ffde98d0f48">SetMouseTracking</a>(hwnd, <span class="keyword">true</span>); <span class="comment">// for receiving (next) WM_MOUSELEAVE</span></div>
-<div class="line"><span class="lineno">  883</span>            }</div>
-<div class="line"><span class="lineno">  884</span>            <span class="comment">// hovering, etc.</span></div>
-<div class="line"><span class="lineno">  885</span>            <span class="keywordflow">if</span> (wid-&gt;state == 4) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  886</span>            <span class="keywordflow">if</span> (wParam &amp; MK_LBUTTON) <span class="comment">// TODO: why is this if() required here, but not on linux?</span></div>
-<div class="line"><span class="lineno">  887</span>                <a class="code hl_function" href="xadjustment_8h.html#a1e198857155b2969afb87fe923d58cb6">adj_set_motion_state</a>(wid, xmotion.<a class="code hl_variable" href="structXEvent.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>, xmotion.<a class="code hl_variable" href="structXEvent.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>);</div>
-<div class="line"><span class="lineno">  888</span>            wid-&gt;func.motion_callback((<span class="keywordtype">void</span>*)wid, &amp;xmotion, user_data);</div>
-<div class="line"><span class="lineno">  889</span>            debug_print(<span class="stringliteral">&quot;Widget_t MotionNotify x = %li Y = %li hwnd=%p\n&quot;</span>,pt.x,pt.y,hwnd );</div>
-<div class="line"><span class="lineno">  890</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  891</span> </div>
-<div class="line"><span class="lineno">  892</span>        <span class="comment">// X11:ClientMessage: not implemented (could be done with WM_USER / RegisterWindowMessage())</span></div>
-<div class="line"><span class="lineno">  893</span>        <span class="keywordflow">case</span> WM_USER + 01: <span class="comment">// WM_DELETE_WINDOW</span></div>
-<div class="line"><span class="lineno">  894</span>            <span class="comment">// xwidget -&gt; xputty (main_run())</span></div>
-<div class="line"><span class="lineno">  895</span>            <span class="keywordflow">if</span> (wid) {</div>
-<div class="line"><span class="lineno">  896</span>                <span class="keywordflow">if</span> (hwnd == main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0]-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) { <span class="comment">// main window (this is not invoked for any other window?)</span></div>
-<div class="line"><span class="lineno">  897</span>                    main-&gt;<a class="code hl_variable" href="structXputty.html#a3e6f76368abfbc8709f4c1346dfa6a20">run</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  898</span>                    <a class="code hl_function" href="xwidget_8h.html#abdabca284aa8866f1f242b6857312e3b">destroy_widget</a>(wid, main);</div>
-<div class="line"><span class="lineno">  899</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  900</span>                    <span class="keywordtype">int</span> i = <a class="code hl_function" href="xchildlist_8h.html#a7c893543e51daded2aa5b6a9b252932b">childlist_find_widget</a>(main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>, (<a class="code hl_typedef" href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a>)wParam);</div>
-<div class="line"><span class="lineno">  901</span>                    <span class="keywordflow">if</span>(i&lt;1) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  902</span>                    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i];</div>
-<div class="line"><span class="lineno">  903</span>                    <span class="keywordflow">if</span>(w-&gt;<a class="code hl_variable" href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">flags</a> &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea1daf7a5f7ceb41e263746ccc21cc7f5e">HIDE_ON_DELETE</a>) <a class="code hl_function" href="xwidget_8h.html#ab00e7f2485e08237c865e96ba56e63e6">widget_hide</a>(w);</div>
-<div class="line"><span class="lineno">  904</span>                    <span class="keywordflow">else</span> { <a class="code hl_function" href="xwidget_8h.html#abdabca284aa8866f1f242b6857312e3b">destroy_widget</a>(main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i],main);</div>
-<div class="line"><span class="lineno">  905</span>                    }</div>
-<div class="line"><span class="lineno">  906</span>                }</div>
+<div class="line"><span class="lineno">  871</span>        <span class="comment">// X11:MotionNotify</span></div>
+<div class="line"><span class="lineno">  872</span>        <span class="keywordflow">case</span> WM_MOUSEMOVE:</div>
+<div class="line"><span class="lineno">  873</span>            <span class="keywordflow">if</span> (!wid) <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  874</span>            <span class="keywordflow">if</span> (!wid-&gt;mouse_inside) {</div>
+<div class="line"><span class="lineno">  875</span>                <span class="comment">// emulate X11:EnterNotify</span></div>
+<div class="line"><span class="lineno">  876</span>                <span class="keywordtype">int</span> ch = <a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>);</div>
+<div class="line"><span class="lineno">  877</span>                <span class="keywordflow">if</span> (ch) {</div>
+<div class="line"><span class="lineno">  878</span>                    <span class="keywordtype">int</span> i = ch;</div>
+<div class="line"><span class="lineno">  879</span>                    <span class="keywordflow">for</span>(;i&gt;0;i--) {</div>
+<div class="line"><span class="lineno">  880</span>                        <span class="keywordflow">if</span> (main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i-1] != wid) {</div>
+<div class="line"><span class="lineno">  881</span>                            <span class="keywordflow">if</span> (main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i-1]-&gt;<a class="code hl_variable" href="structWidget__t.html#a26a039758210767f02de85ffe72a31d2">mouse_inside</a>) {</div>
+<div class="line"><span class="lineno">  882</span>                                main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i-1]-&gt;<a class="code hl_variable" href="structWidget__t.html#a26a039758210767f02de85ffe72a31d2">mouse_inside</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  883</span>                                <span class="keywordflow">if</span> (main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i-1]-&gt;<a class="code hl_variable" href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">state</a> != 4) {</div>
+<div class="line"><span class="lineno">  884</span>                                    main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i-1]-&gt;<a class="code hl_variable" href="structWidget__t.html#a89f234133d3efe315836311cbf21c64b">state</a> = 0;</div>
+<div class="line"><span class="lineno">  885</span>                                    <span class="comment">//RedrawWindow(main-&gt;childlist-&gt;childs[i-1]-&gt;widget, NULL, NULL, RDW_NOERASE | RDW_INVALIDATE | RDW_UPDATENOW);</span></div>
+<div class="line"><span class="lineno">  886</span>                                }</div>
+<div class="line"><span class="lineno">  887</span>                            }</div>
+<div class="line"><span class="lineno">  888</span>                        }</div>
+<div class="line"><span class="lineno">  889</span>                    }</div>
+<div class="line"><span class="lineno">  890</span>                }</div>
+<div class="line"><span class="lineno">  891</span>                wid-&gt;mouse_inside = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  892</span>                wid-&gt;flags |= <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea77ed320daf286953bd956a0d470d3fe0">HAS_FOCUS</a>;</div>
+<div class="line"><span class="lineno">  893</span>                <span class="keywordflow">if</span> (wid-&gt;state == 4) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  894</span> </div>
+<div class="line"><span class="lineno">  895</span>                <span class="comment">//if(!(xev-&gt;xcrossing.state &amp; Button1Mask)) {</span></div>
+<div class="line"><span class="lineno">  896</span>                <span class="keywordflow">if</span> (!(wParam &amp; MK_LBUTTON)) {</div>
+<div class="line"><span class="lineno">  897</span>                    wid-&gt;state = 1;</div>
+<div class="line"><span class="lineno">  898</span>                    wid-&gt;func.enter_callback((<span class="keywordtype">void</span>*)wid, user_data);</div>
+<div class="line"><span class="lineno">  899</span>                   <span class="comment">// if (!(wid-&gt;flags &amp; IS_WINDOW))</span></div>
+<div class="line"><span class="lineno">  900</span>                   <span class="comment">//     RedrawWindow(hwnd, NULL, NULL, RDW_NOERASE | RDW_INVALIDATE | RDW_UPDATENOW);</span></div>
+<div class="line"><span class="lineno">  901</span>                    <span class="keywordflow">if</span> (wid-&gt;flags &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea5a9679f728b04a95c8afba74778ae18f">HAS_TOOLTIP</a>) <a class="code hl_function" href="xwidget_8h.html#a50bb0638d0bd2d98923cb05c3bf09f35">show_tooltip</a>(wid);</div>
+<div class="line"><span class="lineno">  902</span>                    <span class="keywordflow">else</span> <a class="code hl_function" href="xwidget__private_8h.html#a3303d77cae03bc9141355e43fc6fe97f">_hide_all_tooltips</a>(wid);</div>
+<div class="line"><span class="lineno">  903</span>                }</div>
+<div class="line"><span class="lineno">  904</span>                debug_print(<span class="stringliteral">&quot;Widget_t EnterNotify:hwnd=%p&quot;</span>,hwnd);</div>
+<div class="line"><span class="lineno">  905</span> </div>
+<div class="line"><span class="lineno">  906</span>                <a class="code hl_function" href="xwidget-mswin_8c.html#af978084ff2e98b21cdc45ffde98d0f48">SetMouseTracking</a>(hwnd, <span class="keyword">true</span>); <span class="comment">// for receiving (next) WM_MOUSELEAVE</span></div>
 <div class="line"><span class="lineno">  907</span>            }</div>
-<div class="line"><span class="lineno">  908</span>            <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  909</span>        <span class="comment">// X11:ClientMessage:WIDGET_DESTROY</span></div>
-<div class="line"><span class="lineno">  910</span>        <span class="keywordflow">case</span> WM_USER + 02: <span class="comment">// WIDGET_DESTROY</span></div>
-<div class="line"><span class="lineno">  911</span>            <span class="comment">//os_widget_event_loop()</span></div>
-<div class="line"><span class="lineno">  912</span>            <span class="keywordflow">if</span> (wid) {</div>
-<div class="line"><span class="lineno">  913</span>                <span class="keywordtype">int</span> ch = <a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(wid-&gt;childlist);</div>
-<div class="line"><span class="lineno">  914</span>                <span class="keywordflow">if</span> (ch) {</div>
-<div class="line"><span class="lineno">  915</span>                    <span class="keywordtype">int</span> i = ch;</div>
-<div class="line"><span class="lineno">  916</span>                    <span class="keywordflow">for</span>(;i&gt;0;i--) {</div>
-<div class="line"><span class="lineno">  917</span>                        <a class="code hl_function" href="xwidget_8h.html#a1e367c7f3e7dcd71fbbb6125fc1b227a">quit_widget</a>(wid-&gt;childlist-&gt;childs[i-1]);</div>
-<div class="line"><span class="lineno">  918</span>                    }</div>
-<div class="line"><span class="lineno">  919</span>                    <a class="code hl_function" href="xwidget_8h.html#a1e367c7f3e7dcd71fbbb6125fc1b227a">quit_widget</a>(wid);</div>
-<div class="line"><span class="lineno">  920</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  921</span>                    <a class="code hl_function" href="xwidget_8h.html#abdabca284aa8866f1f242b6857312e3b">destroy_widget</a>(wid,wid-&gt;app);</div>
-<div class="line"><span class="lineno">  922</span>                }</div>
-<div class="line"><span class="lineno">  923</span>                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  924</span>            }</div>
-<div class="line"><span class="lineno">  925</span>            <span class="keywordflow">return</span> 2;</div>
-<div class="line"><span class="lineno">  926</span> </div>
-<div class="line"><span class="lineno">  927</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  928</span>            <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
-<div class="line"><span class="lineno">  929</span>    }</div>
-<div class="line"><span class="lineno">  930</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  931</span>}</div>
+<div class="line"><span class="lineno">  908</span>            <span class="comment">// hovering, etc.</span></div>
+<div class="line"><span class="lineno">  909</span>            <span class="keywordflow">if</span> (wid-&gt;state == 4) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  910</span>            <span class="keywordflow">if</span> (wParam &amp; MK_LBUTTON) <span class="comment">// TODO: why is this if() required here, but not on linux?</span></div>
+<div class="line"><span class="lineno">  911</span>                <a class="code hl_function" href="xadjustment_8h.html#a1e198857155b2969afb87fe923d58cb6">adj_set_motion_state</a>(wid, xmotion.<a class="code hl_variable" href="structXEvent.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>, xmotion.<a class="code hl_variable" href="structXEvent.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>);</div>
+<div class="line"><span class="lineno">  912</span>            wid-&gt;func.motion_callback((<span class="keywordtype">void</span>*)wid, &amp;xmotion, user_data);</div>
+<div class="line"><span class="lineno">  913</span>            debug_print(<span class="stringliteral">&quot;Widget_t MotionNotify x = %li Y = %li hwnd=%p\n&quot;</span>,pt.x,pt.y,hwnd );</div>
+<div class="line"><span class="lineno">  914</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  915</span> </div>
+<div class="line"><span class="lineno">  916</span>        <span class="keywordflow">case</span> WM_DROPFILES:</div>
+<div class="line"><span class="lineno">  917</span>            <a class="code hl_function" href="xwidget-mswin_8c.html#a4400b6576545380a08bd575905587826">HandleFiles</a>(wParam, wid);</div>
+<div class="line"><span class="lineno">  918</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  919</span> </div>
+<div class="line"><span class="lineno">  920</span>        <span class="comment">// X11:ClientMessage: not implemented (could be done with WM_USER / RegisterWindowMessage())</span></div>
+<div class="line"><span class="lineno">  921</span>        <span class="keywordflow">case</span> WM_USER + 01: <span class="comment">// WM_DELETE_WINDOW</span></div>
+<div class="line"><span class="lineno">  922</span>            <span class="comment">// xwidget -&gt; xputty (main_run())</span></div>
+<div class="line"><span class="lineno">  923</span>            <span class="keywordflow">if</span> (wid) {</div>
+<div class="line"><span class="lineno">  924</span>                <span class="keywordflow">if</span> (hwnd == main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[0]-&gt;<a class="code hl_variable" href="structWidget__t.html#a635c8e6580aacd495c43475cab053580">widget</a>) { <span class="comment">// main window (this is not invoked for any other window?)</span></div>
+<div class="line"><span class="lineno">  925</span>                    main-&gt;<a class="code hl_variable" href="structXputty.html#a3e6f76368abfbc8709f4c1346dfa6a20">run</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  926</span>                    <a class="code hl_function" href="xwidget_8h.html#abdabca284aa8866f1f242b6857312e3b">destroy_widget</a>(wid, main);</div>
+<div class="line"><span class="lineno">  927</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  928</span>                    <span class="keywordtype">int</span> i = <a class="code hl_function" href="xchildlist_8h.html#a7c893543e51daded2aa5b6a9b252932b">childlist_find_widget</a>(main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>, (<a class="code hl_typedef" href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a>)wParam);</div>
+<div class="line"><span class="lineno">  929</span>                    <span class="keywordflow">if</span>(i&lt;1) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  930</span>                    <a class="code hl_struct" href="structWidget__t.html">Widget_t</a> *w = main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i];</div>
+<div class="line"><span class="lineno">  931</span>                    <span class="keywordflow">if</span>(w-&gt;<a class="code hl_variable" href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">flags</a> &amp; <a class="code hl_enumvalue" href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea1daf7a5f7ceb41e263746ccc21cc7f5e">HIDE_ON_DELETE</a>) <a class="code hl_function" href="xwidget_8h.html#ab00e7f2485e08237c865e96ba56e63e6">widget_hide</a>(w);</div>
+<div class="line"><span class="lineno">  932</span>                    <span class="keywordflow">else</span> { <a class="code hl_function" href="xwidget_8h.html#abdabca284aa8866f1f242b6857312e3b">destroy_widget</a>(main-&gt;<a class="code hl_variable" href="structXputty.html#a8ee89d6b17b48c04e1441850ff1df74b">childlist</a>-&gt;<a class="code hl_variable" href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">childs</a>[i],main);</div>
+<div class="line"><span class="lineno">  933</span>                    }</div>
+<div class="line"><span class="lineno">  934</span>                }</div>
+<div class="line"><span class="lineno">  935</span>            }</div>
+<div class="line"><span class="lineno">  936</span>            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  937</span>        <span class="comment">// X11:ClientMessage:WIDGET_DESTROY</span></div>
+<div class="line"><span class="lineno">  938</span>        <span class="keywordflow">case</span> WM_USER + 02: <span class="comment">// WIDGET_DESTROY</span></div>
+<div class="line"><span class="lineno">  939</span>            <span class="comment">//os_widget_event_loop()</span></div>
+<div class="line"><span class="lineno">  940</span>            <span class="keywordflow">if</span> (wid) {</div>
+<div class="line"><span class="lineno">  941</span>                <span class="keywordtype">int</span> ch = <a class="code hl_function" href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a>(wid-&gt;childlist);</div>
+<div class="line"><span class="lineno">  942</span>                <span class="keywordflow">if</span> (ch) {</div>
+<div class="line"><span class="lineno">  943</span>                    <span class="keywordtype">int</span> i = ch;</div>
+<div class="line"><span class="lineno">  944</span>                    <span class="keywordflow">for</span>(;i&gt;0;i--) {</div>
+<div class="line"><span class="lineno">  945</span>                        <a class="code hl_function" href="xwidget_8h.html#a1e367c7f3e7dcd71fbbb6125fc1b227a">quit_widget</a>(wid-&gt;childlist-&gt;childs[i-1]);</div>
+<div class="line"><span class="lineno">  946</span>                    }</div>
+<div class="line"><span class="lineno">  947</span>                    <a class="code hl_function" href="xwidget_8h.html#a1e367c7f3e7dcd71fbbb6125fc1b227a">quit_widget</a>(wid);</div>
+<div class="line"><span class="lineno">  948</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  949</span>                    <a class="code hl_function" href="xwidget_8h.html#abdabca284aa8866f1f242b6857312e3b">destroy_widget</a>(wid,wid-&gt;app);</div>
+<div class="line"><span class="lineno">  950</span>                }</div>
+<div class="line"><span class="lineno">  951</span>                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  952</span>            }</div>
+<div class="line"><span class="lineno">  953</span>            <span class="keywordflow">return</span> 2;</div>
+<div class="line"><span class="lineno">  954</span> </div>
+<div class="line"><span class="lineno">  955</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  956</span>            <span class="keywordflow">return</span> DefWindowProc(hwnd, msg, wParam, lParam);</div>
+<div class="line"><span class="lineno">  957</span>    }</div>
+<div class="line"><span class="lineno">  958</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  959</span>}</div>
 <div class="ttc" id="astructChildlist__t_html_a36add203dd42426588622bc5c293ea29"><div class="ttname"><a href="structChildlist__t.html#a36add203dd42426588622bc5c293ea29">Childlist_t::childs</a></div><div class="ttdeci">Widget_t ** childs</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8h_source.html#l00051">xchildlist.h:51</a></div></div>
 <div class="ttc" id="astructChildlist__t_html_ae49b747ab3b2a8aedad718521b6c77f1"><div class="ttname"><a href="structChildlist__t.html#ae49b747ab3b2a8aedad718521b6c77f1">Childlist_t::elem</a></div><div class="ttdeci">int elem</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8h_source.html#l00057">xchildlist.h:57</a></div></div>
 <div class="ttc" id="astructFunc__t_html_a0ac2c35c450e54946f10449f0681d9d2"><div class="ttname"><a href="structFunc__t.html#a0ac2c35c450e54946f10449f0681d9d2">Func_t::button_release_callback</a></div><div class="ttdeci">evfunc button_release_callback</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00101">xwidget.h:101</a></div></div>
@@ -3221,7 +3285,6 @@ Variables</h2></td></tr>
 <div class="ttc" id="astructWidget__t_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">Widget_t::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00499">xwidget.h:499</a></div></div>
 <div class="ttc" id="astructWidget__t_html_a989d3e09b707fb1f4bc2355ba5855a0c"><div class="ttname"><a href="structWidget__t.html#a989d3e09b707fb1f4bc2355ba5855a0c">Widget_t::pos_x</a></div><div class="ttdeci">int pos_x</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00513">xwidget.h:513</a></div></div>
 <div class="ttc" id="astructWidget__t_html_aac423f82eb2f10bd8969b56540391ddc"><div class="ttname"><a href="structWidget__t.html#aac423f82eb2f10bd8969b56540391ddc">Widget_t::flags</a></div><div class="ttdeci">long long flags</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00461">xwidget.h:461</a></div></div>
-<div class="ttc" id="astructWidget__t_html_adf3b6f667fa98e1db418cfd081a4075a"><div class="ttname"><a href="structWidget__t.html#adf3b6f667fa98e1db418cfd081a4075a">Widget_t::func</a></div><div class="ttdeci">Func_t func</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00481">xwidget.h:481</a></div></div>
 <div class="ttc" id="astructXEvent_html"><div class="ttname"><a href="structXEvent.html">XEvent</a></div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00058">xputty-mswin.h:58</a></div></div>
 <div class="ttc" id="astructXEvent_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="structXEvent.html#a0a2f84ed7838f07779ae24c5a9086d33">XEvent::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00061">xputty-mswin.h:61</a></div></div>
 <div class="ttc" id="astructXEvent_html_a3f1d7c7ce1dbabebcc4bcaee4404f201"><div class="ttname"><a href="structXEvent.html#a3f1d7c7ce1dbabebcc4bcaee4404f201">XEvent::button</a></div><div class="ttdeci">int button</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00062">xputty-mswin.h:62</a></div></div>
@@ -3234,9 +3297,10 @@ Variables</h2></td></tr>
 <div class="ttc" id="axchildlist_8h_html_a7c893543e51daded2aa5b6a9b252932b"><div class="ttname"><a href="xchildlist_8h.html#a7c893543e51daded2aa5b6a9b252932b">childlist_find_widget</a></div><div class="ttdeci">int childlist_find_widget(Childlist_t *childlist, Window child_window)</div><div class="ttdoc">childlist_find_widget - find a child Widget_t in a the childlist by given the Window id</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8c_source.html#l00079">xchildlist.c:79</a></div></div>
 <div class="ttc" id="axchildlist_8h_html_af130af096a2f8b3a807e7e2dcf0ee6c0"><div class="ttname"><a href="xchildlist_8h.html#af130af096a2f8b3a807e7e2dcf0ee6c0">childlist_has_child</a></div><div class="ttdeci">int childlist_has_child(Childlist_t *childlist)</div><div class="ttdoc">childlist_has_child - check if a Widget_t Childlist_t contain a child</div><div class="ttdef"><b>Definition</b> <a href="xchildlist_8c_source.html#l00089">xchildlist.c:89</a></div></div>
 <div class="ttc" id="axputty-mswin_8h_html_adb48baf8a5c3aa4e6bdb2ca8112f5492"><div class="ttname"><a href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a></div><div class="ttdeci">HWND Window</div><div class="ttdef"><b>Definition</b> <a href="xputty-mswin_8h_source.html#l00052">xputty-mswin.h:52</a></div></div>
-<div class="ttc" id="axwidget-mswin_8c_html_a3effd22ad104d2613a72abb5ea08cfac"><div class="ttname"><a href="xwidget-mswin_8c.html#a3effd22ad104d2613a72abb5ea08cfac">SetClientSize</a></div><div class="ttdeci">void SetClientSize(HWND hwnd, int clientWidth, int clientHeight)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00968">xwidget-mswin.c:968</a></div></div>
+<div class="ttc" id="axwidget-mswin_8c_html_a3effd22ad104d2613a72abb5ea08cfac"><div class="ttname"><a href="xwidget-mswin_8c.html#a3effd22ad104d2613a72abb5ea08cfac">SetClientSize</a></div><div class="ttdeci">void SetClientSize(HWND hwnd, int clientWidth, int clientHeight)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00996">xwidget-mswin.c:996</a></div></div>
+<div class="ttc" id="axwidget-mswin_8c_html_a4400b6576545380a08bd575905587826"><div class="ttname"><a href="xwidget-mswin_8c.html#a4400b6576545380a08bd575905587826">HandleFiles</a></div><div class="ttdeci">void HandleFiles(WPARAM wParam, Widget_t *wid)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00538">xwidget-mswin.c:538</a></div></div>
 <div class="ttc" id="axwidget-mswin_8c_html_a6331d2adab6eb85288a547479750ddf1"><div class="ttname"><a href="xwidget-mswin_8c.html#a6331d2adab6eb85288a547479750ddf1">build_xkey_event</a></div><div class="ttdeci">void build_xkey_event(XKeyEvent *ev, UINT msg, WPARAM wParam, LPARAM lParam)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00487">xwidget-mswin.c:487</a></div></div>
-<div class="ttc" id="axwidget-mswin_8c_html_afb4f5c71add0d964d67d9f2e7e782122"><div class="ttname"><a href="xwidget-mswin_8c.html#afb4f5c71add0d964d67d9f2e7e782122">onPaint</a></div><div class="ttdeci">LRESULT onPaint(HWND hwnd, WPARAM wParam, LPARAM lParam)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00933">xwidget-mswin.c:933</a></div></div>
+<div class="ttc" id="axwidget-mswin_8c_html_afb4f5c71add0d964d67d9f2e7e782122"><div class="ttname"><a href="xwidget-mswin_8c.html#afb4f5c71add0d964d67d9f2e7e782122">onPaint</a></div><div class="ttdeci">LRESULT onPaint(HWND hwnd, WPARAM wParam, LPARAM lParam)</div><div class="ttdef"><b>Definition</b> <a href="xwidget-mswin_8c_source.html#l00961">xwidget-mswin.c:961</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a1e367c7f3e7dcd71fbbb6125fc1b227a"><div class="ttname"><a href="xwidget_8h.html#a1e367c7f3e7dcd71fbbb6125fc1b227a">quit_widget</a></div><div class="ttdeci">void quit_widget(Widget_t *w)</div><div class="ttdoc">quit_widget - remove a widget from the processing loop</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00530">xwidget.c:530</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a50bb0638d0bd2d98923cb05c3bf09f35"><div class="ttname"><a href="xwidget_8h.html#a50bb0638d0bd2d98923cb05c3bf09f35">show_tooltip</a></div><div class="ttdeci">void show_tooltip(Widget_t *wid)</div><div class="ttdoc">show_tooltip - check if a Widget_t have a tooltip, and show it, if a tooltip is available.</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8c_source.html#l00419">xwidget.c:419</a></div></div>
 <div class="ttc" id="axwidget_8h_html_a61dadd085c1777f559549e05962b2c9ea1daf7a5f7ceb41e263746ccc21cc7f5e"><div class="ttname"><a href="xwidget_8h.html#a61dadd085c1777f559549e05962b2c9ea1daf7a5f7ceb41e263746ccc21cc7f5e">HIDE_ON_DELETE</a></div><div class="ttdeci">@ HIDE_ON_DELETE</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00412">xwidget.h:412</a></div></div>
@@ -3256,7 +3320,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="axwidget__private_8h_html_ae2aeefa7b35ff7e10a148e8438a12dc9"><div class="ttname"><a href="xwidget__private_8h.html#ae2aeefa7b35ff7e10a148e8438a12dc9">_check_keymap</a></div><div class="ttdeci">void _check_keymap(void *w_, XKeyEvent xkey)</div><div class="ttdoc">_check_keymap - check if key is in map, send requests if so</div><div class="ttdef"><b>Definition</b> <a href="xwidget__private_8c_source.html#l00216">xwidget_private.c:216</a></div></div>
 <div class="ttc" id="axwidget__private_8h_html_ae8d8e0d87f6186d3d19f1372c357edbe"><div class="ttname"><a href="xwidget__private_8h.html#ae8d8e0d87f6186d3d19f1372c357edbe">_has_pointer</a></div><div class="ttdeci">void _has_pointer(Widget_t *w, XButtonEvent *button)</div><div class="ttdoc">_has_pointer - check if the widget has the pointer</div><div class="ttdef"><b>Definition</b> <a href="xwidget__private_8c_source.html#l00272">xwidget_private.c:272</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xwidget__private_8c_source.html#l00085">_button_press()</a>, <a class="el" href="xwidget__private_8c_source.html#l00068">_check_enum()</a>, <a class="el" href="xwidget__private_8c_source.html#l00127">_check_grab()</a>, <a class="el" href="xwidget__private_8c_source.html#l00216">_check_keymap()</a>, <a class="el" href="xwidget__private_8c_source.html#l00170">_check_submenu()</a>, <a class="el" href="xwidget__private_8c_source.html#l00272">_has_pointer()</a>, <a class="el" href="xwidget__private_8c_source.html#l00262">_hide_all_tooltips()</a>, <a class="el" href="xadjustment_8c_source.html#l00241">adj_set_motion_state()</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00487">build_xkey_event()</a>, <a class="el" href="xputty-mswin_8h_source.html#l00062">XEvent::button</a>, <a class="el" href="xwidget_8h_source.html#l00101">Func_t::button_release_callback</a>, <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xwidget_8h_source.html#l00499">Widget_t::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00079">childlist_find_widget()</a>, <a class="el" href="xchildlist_8c_source.html#l00089">childlist_has_child()</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xwidget_8h_source.html#l00086">Func_t::configure_callback</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xwidget_8c_source.html#l00086">destroy_widget()</a>, <a class="el" href="xwidget_8h_source.html#l00102">Func_t::double_click_callback</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00481">Widget_t::func</a>, <a class="el" href="xwidget_8h_source.html#l00400">HAS_FOCUS</a>, <a class="el" href="xwidget_8h_source.html#l00402">HAS_POINTER</a>, <a class="el" href="xwidget_8h_source.html#l00404">HAS_TOOLTIP</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00412">HIDE_ON_DELETE</a>, <a class="el" href="xwidget_8c_source.html#l00430">hide_tooltip()</a>, <a class="el" href="xputty_8h_source.html#l00238">Xputty::hold_grab</a>, <a class="el" href="xwidget_8h_source.html#l00392">IS_POPUP</a>, <a class="el" href="xputty-mswin_8h_source.html#l00063">XEvent::keycode</a>, <a class="el" href="xwidget_8h_source.html#l00530">Widget_t::metrics_min</a>, <a class="el" href="xwidget_8h_source.html#l00528">Widget_t::mouse_inside</a>, <a class="el" href="xwidget_8h_source.html#l00408">NO_AUTOREPEAT</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00933">onPaint()</a>, <a class="el" href="xwidget_8h_source.html#l00513">Widget_t::pos_x</a>, <a class="el" href="xwidget_8h_source.html#l00515">Widget_t::pos_y</a>, <a class="el" href="xwidget_8c_source.html#l00530">quit_widget()</a>, <a class="el" href="xputty_8h_source.html#l00256">Xputty::run</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00968">SetClientSize()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00981">SetMouseTracking()</a>, <a class="el" href="xwidget_8c_source.html#l00419">show_tooltip()</a>, <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::state</a>, <a class="el" href="xputty_8h_source.html#l00242">Xputty::submenu</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget_8c_source.html#l00368">widget_hide()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00061">Metrics_t::width</a>, <a class="el" href="xputty-mswin_8h_source.html#l00059">XEvent::window</a>, <a class="el" href="xputty-mswin_8h_source.html#l00060">XEvent::x</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00061">XEvent::y</a>.</p>
+<p class="reference">References <a class="el" href="xwidget__private_8c_source.html#l00085">_button_press()</a>, <a class="el" href="xwidget__private_8c_source.html#l00068">_check_enum()</a>, <a class="el" href="xwidget__private_8c_source.html#l00127">_check_grab()</a>, <a class="el" href="xwidget__private_8c_source.html#l00216">_check_keymap()</a>, <a class="el" href="xwidget__private_8c_source.html#l00170">_check_submenu()</a>, <a class="el" href="xwidget__private_8c_source.html#l00272">_has_pointer()</a>, <a class="el" href="xwidget__private_8c_source.html#l00262">_hide_all_tooltips()</a>, <a class="el" href="xadjustment_8c_source.html#l00241">adj_set_motion_state()</a>, <a class="el" href="xwidget_8h_source.html#l00465">Widget_t::app</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00487">build_xkey_event()</a>, <a class="el" href="xputty-mswin_8h_source.html#l00062">XEvent::button</a>, <a class="el" href="xwidget_8h_source.html#l00101">Func_t::button_release_callback</a>, <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xwidget_8h_source.html#l00499">Widget_t::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00079">childlist_find_widget()</a>, <a class="el" href="xchildlist_8c_source.html#l00089">childlist_has_child()</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xwidget_8h_source.html#l00086">Func_t::configure_callback</a>, <a class="el" href="xwidget_8h_source.html#l00489">Widget_t::crb</a>, <a class="el" href="xwidget_8c_source.html#l00086">destroy_widget()</a>, <a class="el" href="xwidget_8h_source.html#l00102">Func_t::double_click_callback</a>, <a class="el" href="xchildlist_8h_source.html#l00057">Childlist_t::elem</a>, <a class="el" href="xwidget_8h_source.html#l00461">Widget_t::flags</a>, <a class="el" href="xwidget_8h_source.html#l00481">Widget_t::func</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00538">HandleFiles()</a>, <a class="el" href="xwidget_8h_source.html#l00400">HAS_FOCUS</a>, <a class="el" href="xwidget_8h_source.html#l00402">HAS_POINTER</a>, <a class="el" href="xwidget_8h_source.html#l00404">HAS_TOOLTIP</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xwidget_8h_source.html#l00412">HIDE_ON_DELETE</a>, <a class="el" href="xwidget_8c_source.html#l00430">hide_tooltip()</a>, <a class="el" href="xputty_8h_source.html#l00238">Xputty::hold_grab</a>, <a class="el" href="xwidget_8h_source.html#l00392">IS_POPUP</a>, <a class="el" href="xputty-mswin_8h_source.html#l00063">XEvent::keycode</a>, <a class="el" href="xwidget_8h_source.html#l00530">Widget_t::metrics_min</a>, <a class="el" href="xwidget_8h_source.html#l00528">Widget_t::mouse_inside</a>, <a class="el" href="xwidget_8h_source.html#l00408">NO_AUTOREPEAT</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00961">onPaint()</a>, <a class="el" href="xwidget_8h_source.html#l00513">Widget_t::pos_x</a>, <a class="el" href="xwidget_8h_source.html#l00515">Widget_t::pos_y</a>, <a class="el" href="xwidget_8c_source.html#l00530">quit_widget()</a>, <a class="el" href="xputty_8h_source.html#l00256">Xputty::run</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00996">SetClientSize()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l01009">SetMouseTracking()</a>, <a class="el" href="xwidget_8c_source.html#l00419">show_tooltip()</a>, <a class="el" href="xwidget_8h_source.html#l00511">Widget_t::state</a>, <a class="el" href="xputty_8h_source.html#l00242">Xputty::submenu</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget_8c_source.html#l00368">widget_hide()</a>, <a class="el" href="xwidget-platform_8h_source.html#l00061">Metrics_t::width</a>, <a class="el" href="xputty-mswin_8h_source.html#l00059">XEvent::window</a>, <a class="el" href="xputty-mswin_8h_source.html#l00060">XEvent::x</a>, and <a class="el" href="xputty-mswin_8h_source.html#l00061">XEvent::y</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget-mswin_8c_source.html#l00195">os_create_main_window_and_surface()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00270">os_create_widget_window_and_surface()</a>.</p>
 

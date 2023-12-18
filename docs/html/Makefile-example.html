@@ -73,109 +73,73 @@ $(function() {
   <div class="headertitle"><div class="title">Makefile</div></div>
 </div><!--header-->
 <div class="contents">
-<p><a class="el" href="xwidgets_8h.html">xwidgets.h</a> include some predefined widgets for libxputty, include this to use them if you would only use libxputty and define your own widgets, include xputt.h instead this one in your project.</p>
 <p>Simple example of how to build this</p>
 <div class="fragment"><div class="line"> </div>
-<div class="line">    # check OS specific stuff</div>
-<div class="line">    OS := $(shell echo $$OS)</div>
-<div class="line">    UNAME_S := $(shell uname -s)</div>
-<div class="line">    # default library extension</div>
-<div class="line">    LIB_EXT = so</div>
+<div class="line"># usually those variables been set by Makefile.base</div>
+<div class="line"># in case we run from this directory, we do a minimal setup</div>
+<div class="line"># assume we build for Linux </div>
+<div class="line">ifndef MKBASE</div>
+<div class="line">    ECHO = @echo</div>
+<div class="line">    B_ECHO = @echo</div>
+<div class="line">    R_ECHO = @echo</div>
+<div class="line">    PKGCONFIG = pkg-config</div>
 <div class="line">    STATIC_LIB_EXT = a</div>
-<div class="line">    # cross compilation (e.g.: PKG_CONFIG_PATH=/usr/local/pkgconfig make CROSS=x86_64-w64-mingw32- mod)</div>
-<div class="line">    ifneq (,$(findstring mingw,$(CROSS)))</div>
-<div class="line">        # Found</div>
-<div class="line">        TARGET = Windows</div>
-<div class="line">        STRIP = $(CROSS)strip</div>
-<div class="line">        PKGCONFIG = $(CROSS)pkg-config</div>
-<div class="line">        CC = $(CROSS)cc</div>
-<div class="line">        CXX = $(CROSS)g++</div>
-<div class="line">        LD = $(CROSS)ld</div>
-<div class="line">    else ifneq (,$(findstring mingw,$(CXX)))</div>
-<div class="line">        # Found</div>
-<div class="line">        TARGET = Windows</div>
-<div class="line">    else</div>
-<div class="line">        # Not found</div>
-<div class="line">        ifeq ($(UNAME_S), Linux) #LINUX</div>
-<div class="line">            TARGET = Linux</div>
-<div class="line">        endif</div>
-<div class="line">        ifeq ($(OS), Windows_NT) #WINDOWS</div>
-<div class="line">            TARGET = Windows</div>
-<div class="line">        endif</div>
-<div class="line">        ifeq ($(UNAME_S), Darwin) #APPLE</div>
-<div class="line">            TARGET = Apple</div>
-<div class="line">        endif</div>
-<div class="line">    endif</div>
-<div class="line">    ifeq ($(TARGET), Linux)</div>
-<div class="line">        ABI_CFLAGS = -Wl,-z,nodelete</div>
-<div class="line">        ABI_CXXFLAGS = -Wl,-z,relro,-z,now</div>
-<div class="line">        ABI_LDFLAGS = -Wl,-z,noexecstack</div>
-<div class="line">        PKGCONFIG = pkg-config</div>
-<div class="line">        XELF = x11</div>
-<div class="line">        XDG_DIR := $(LIB_DIR)xdgmime/</div>
-<div class="line">    endif</div>
-<div class="line">    ifeq ($(TARGET), Windows)</div>
-<div class="line">        ECHO += -e</div>
-<div class="line">        ABI_LDFLAGS = -static -lpthread</div>
-<div class="line">        GUI_LIBS = -liconv -lstdc++</div>
-<div class="line">        PKGCONFIG_FLAGS = --static</div>
-<div class="line">        PKGCONFIG = x86_64-w64-mingw32-pkg-config</div>
-<div class="line">        LIB_EXT = dll</div>
-<div class="line">        STATIC_LIB_EXT = lib</div>
-<div class="line">        EXE_EXT = .exe</div>
-<div class="line">    endif</div>
-<div class="line">    ifneq (,$(findstring PawPawBuilds,$(PATH)))</div>
-<div class="line">        PAWPAW_FLAGS = -L $(HOME)/PawPawBuilds/targets/win64/lib -lcairo -lpixman-1 \</div>
-<div class="line">        -lfreetype -lpng16 -lz  -lcomdlg32 -ldwmapi -lgdi32 -lm -lole32 -lwinmm \</div>
-<div class="line">        -lksuser -lmfplat -lmfuuid -lwmcodecdspuuid -lpthread -Wl,-subsystem,windows</div>
-<div class="line">    endif</div>
+<div class="line">    XELF = x11</div>
+<div class="line">endif</div>
 <div class="line"> </div>
+<div class="line">    # include path to link with libxputty static files and headers</div>
 <div class="line">    LIB_DIR := ../libxputty/</div>
 <div class="line">    HEADER_DIR := $(LIB_DIR)include/</div>
 <div class="line"> </div>
 <div class="line">    # include path for library headers</div>
 <div class="line">    INCLUDES := -I. -I$(HEADER_DIR) </div>
 <div class="line">    # link flags to dynamic link cairo and X11 (default)</div>
+<div class="line">    # or, when build for Windows, using the needed flags</div>
 <div class="line">    LDFLAGS += -fPIC `$(PKGCONFIG) $(PKGCONFIG_FLAGS) --cflags --libs cairo $(XELF)` -lm \</div>
-<div class="line">    $(PAWPAW_FLAGS)</div>
-<div class="line">    # set link flags to static link cairo and X11</div>
-<div class="line">    # (you could ignore ld warnings, but the resulting binary is huge</div>
-<div class="line">    # (6.4Mb for x11 and cairo) NOT RECOMMENDED!!</div>
-<div class="line">    STATIC_LDFLAGS += -fPIC -static `pkg-config --static --cflags --libs cairo ` \</div>
-<div class="line">     -lX11 -ldl -lxcb -lpthread -lXau -lXdmcp</div>
-<div class="line">    # debug flags, use this to indicate a problem with libxputty</div>
+<div class="line">    $(PAWPAW_LFLAGS)</div>
+<div class="line">    # debug flags, use this to debug a problem with libxputty</div>
 <div class="line">    DEBUG_LDFLAGS += -g -D DEBUG  -DLIBDEBUG</div>
 <div class="line"> </div>
-<div class="line">    BLUE = &quot;\033[1;34m&quot;</div>
-<div class="line">    RED =  &quot;\033[1;31m&quot;</div>
-<div class="line">    NONE = &quot;\033[0m&quot;</div>
-<div class="line"> </div>
+<div class="line">    # collect the files to build</div>
 <div class="line">    EXAMPLE_SOURCES := $(wildcard *.c)</div>
 <div class="line">    EXAMPLE_OBJ := $(patsubst %.c,%.o,$(EXAMPLE_SOURCES))</div>
 <div class="line">    EXEC_FILES := $(patsubst %.c,%,$(EXAMPLE_SOURCES))</div>
+<div class="line">    WEXEC_FILES := $(patsubst %, %.exe,$(EXEC_FILES))</div>
+<div class="line">    # if build for Windows add the file extension</div>
 <div class="line">    ifeq ($(TARGET), Windows)</div>
 <div class="line">    EXEC_FILES := $(patsubst %, %$(EXE_EXT),$(EXEC_FILES))</div>
 <div class="line">    endif</div>
 <div class="line"> </div>
 <div class="line">.PHONY : all clean</div>
 <div class="line"> </div>
-<div class="line">all: $(EXEC_FILES) </div>
+<div class="line">all: done</div>
 <div class="line"> </div>
 <div class="line">debug: LDFLAGS += $(DEBUG_LDFLAGS)</div>
 <div class="line">debug: all</div>
 <div class="line"> </div>
 <div class="line">clean:</div>
-<div class="line">    rm -f $(EXAMPLE_OBJ) $(EXEC_FILES)</div>
+<div class="line">ifndef EXTRAQUIET</div>
+<div class="line">    @$(ECHO) &quot;Clean up $(reset)&quot;</div>
+<div class="line">endif</div>
+<div class="line">    $(QUIET)rm -f $(EXAMPLE_OBJ) $(EXEC_FILES) $(WEXEC_FILES)</div>
 <div class="line"> </div>
+<div class="line"># check if libxputty include files been available </div>
 <div class="line">$(HEADER_DIR)*.h:</div>
-<div class="line">    @echo $(RED)You need to build libxputty before build the examples!!$(NONE)</div>
-<div class="line">    @exit 1</div>
+<div class="line">    @$(R_ECHO)You need to build libxputty before build the examples!!$(reset)</div>
+<div class="line">    exit 1</div>
 <div class="line"> </div>
+<div class="line"># build the object files</div>
 <div class="line">$(EXAMPLE_OBJ): $(EXAMPLE_SOURCES) $(HEADER_DIR)*.h</div>
-<div class="line">    $(CC) -c $(patsubst %.o,%.c,$@) -o $@  $(INCLUDES) $(LDFLAGS)</div>
+<div class="line">    @$(ECHO) &quot;Building object file $@ $(reset)&quot;</div>
+<div class="line">    $(QUIET)$(CC) -c $(patsubst %.o,%.c,$@) -o $@  $(INCLUDES) $(LDFLAGS)</div>
 <div class="line"> </div>
+<div class="line"># build the binaries</div>
 <div class="line">$(EXEC_FILES): $(EXAMPLE_OBJ)</div>
-<div class="line">    $(CC) -Wall $(CFLAGS) $(patsubst %$(EXE_EXT),%.c,$@) -L. $(LIB_DIR)libxputty.$(STATIC_LIB_EXT) -o $@  $(INCLUDES) $(LDFLAGS)</div>
+<div class="line">    @$(B_ECHO) &quot;Compiling $@ $(reset)&quot;</div>
+<div class="line">    $(QUIET)$(CC) -Wall $(CFLAGS) $(patsubst %$(EXE_EXT),%.c,$@) -L. $(LIB_DIR)libxputty.$(STATIC_LIB_EXT) -o $@  $(INCLUDES) $(LDFLAGS)</div>
+<div class="line"> </div>
+<div class="line">done: $(EXEC_FILES)</div>
+<div class="line">    @$(B_ECHO) &quot;=================== DONE =======================$(reset)&quot;</div>
 <div class="line"> </div>
 <div class="line">doc:</div>
 <div class="line"> </div>

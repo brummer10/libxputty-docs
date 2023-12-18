@@ -281,6 +281,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*parent</td><td>- pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> the listview should pop over </td></tr>
+    <tr><td class="paramname">elem</td><td>- how many entries to show (max value) </td></tr>
     <tr><td class="paramname">width</td><td>- define the width of the viewport </td></tr>
     <tr><td class="paramname">height</td><td>- define the height of the viewport </td></tr>
   </table>
@@ -380,7 +381,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xlistview_8c_source.html#l00101">101</a> of file <a class="el" href="xlistview_8c_source.html">xlistview.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  101</span>                                                  {</div>
@@ -420,7 +420,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xlistview_8c_source.html#l00109">109</a> of file <a class="el" href="xlistview_8c_source.html">xlistview.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  109</span>                                              {</div>
@@ -429,7 +428,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  112</span>    filelist-&gt;list_names = NULL;</div>
 <div class="line"><span class="lineno">  113</span>    filelist-&gt;list_size = 0;</div>
 <div class="line"><span class="lineno">  114</span>    <a class="code hl_struct" href="structMetrics__t.html">Metrics_t</a> metrics;</div>
-<div class="line"><span class="lineno">  115</span>    <a class="code hl_function" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a>(listview, &amp;metrics);</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_function" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a>(listview, &amp;metrics);</div>
 <div class="line"><span class="lineno">  116</span>    <span class="keywordtype">int</span> height = metrics.<a class="code hl_variable" href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>;</div>
 <div class="line"><span class="lineno">  117</span>    <span class="keywordtype">float</span> elem = height/25;</div>
 <div class="line"><span class="lineno">  118</span>    <a class="code hl_function" href="xadjustment_8h.html#ab7188a4bb4294e2a08aea2430975b406">set_adjustment</a>(listview-&gt;<a class="code hl_variable" href="structWidget__t.html#a5545ccd4cf795c3ebd77dd186a4a1ceb">adj</a>,0.0, 0.0, 0.0, -1.0,1.0, <a class="code hl_enumvalue" href="xadjustment_8h.html#aefe5e135b1a0eab4675337a0967a7743a6dc58bda20e0018d54f1cb94df78119e">CL_NONE</a>);</div>
@@ -441,8 +440,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructMetrics__t_html_ad12fc34ce789bce6c8a05d8a17138534"><div class="ttname"><a href="structMetrics__t.html#ad12fc34ce789bce6c8a05d8a17138534">Metrics_t::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition</b> <a href="xwidget-platform_8h_source.html#l00063">xwidget-platform.h:63</a></div></div>
 <div class="ttc" id="astructWidget__t_html_a8ee89d6b17b48c04e1441850ff1df74b"><div class="ttname"><a href="structWidget__t.html#a8ee89d6b17b48c04e1441850ff1df74b">Widget_t::childlist</a></div><div class="ttdeci">Childlist_t * childlist</div><div class="ttdef"><b>Definition</b> <a href="xwidget_8h_source.html#l00499">xwidget.h:499</a></div></div>
 <div class="ttc" id="axadjustment_8h_html_a5692c792f6804883f9fe1746bf3d5432"><div class="ttname"><a href="xadjustment_8h.html#a5692c792f6804883f9fe1746bf3d5432">adj_set_value</a></div><div class="ttdeci">void adj_set_value(Adjustment_t *adj, float value)</div><div class="ttdoc">adj_set_value - set the current value to the Adjustment_t</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8c_source.html#l00190">xadjustment.c:190</a></div></div>
-<div class="ttc" id="axadjustment_8h_html_ab7188a4bb4294e2a08aea2430975b406"><div class="ttname"><a href="xadjustment_8h.html#ab7188a4bb4294e2a08aea2430975b406">set_adjustment</a></div><div class="ttdeci">void set_adjustment(Adjustment_t *adj, float std_value, float value, float min_value, float max_value, float step, CL_type type)</div><div class="ttdoc">*set_adjustment - set a new range to a existing Adjustment_t it will be created if it not exsits yet</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8c_source.html#l00080">xadjustment.c:80</a></div></div>
-<div class="ttc" id="axwidget-platform_8h_html_ae8bb8113586b8d99f94c7c190a26a3d1"><div class="ttname"><a href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a></div><div class="ttdeci">void os_get_window_metrics(Widget_t *w_, Metrics_t *metrics)</div><div class="ttdoc">os_get_window_metrics - Get the Merics_t struct related to a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00080">xwidget-linux.c:80</a></div></div>
+<div class="ttc" id="axadjustment_8h_html_ab7188a4bb4294e2a08aea2430975b406"><div class="ttname"><a href="xadjustment_8h.html#ab7188a4bb4294e2a08aea2430975b406">set_adjustment</a></div><div class="ttdeci">void set_adjustment(Adjustment_t *adj, float std_value, float value, float min_value, float max_value, float step, CL_type type)</div><div class="ttdoc">*set_adjustment - set a new range to a existing Adjustment_t or create if it not exists yet</div><div class="ttdef"><b>Definition</b> <a href="xadjustment_8c_source.html#l00080">xadjustment.c:80</a></div></div>
+<div class="ttc" id="axwidget-platform_8h_html_a005be56c9cf1b8f45766ab517ff540c7"><div class="ttname"><a href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a></div><div class="ttdeci">void os_get_window_metrics(Widget_t *w, Metrics_t *metrics)</div><div class="ttdoc">os_get_window_metrics - Get the Merics_t struct related to a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00080">xwidget-linux.c:80</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xwidget_8h_source.html#l00497">Widget_t::adj</a>, <a class="el" href="xadjustment_8c_source.html#l00190">adj_set_value()</a>, <a class="el" href="xwidget_8h_source.html#l00499">Widget_t::childlist</a>, <a class="el" href="xchildlist_8h_source.html#l00051">Childlist_t::childs</a>, <a class="el" href="xadjustment_8h_source.html#l00047">CL_NONE</a>, <a class="el" href="xadjustment_8h_source.html#l00057">CL_VIEWPORT</a>, <a class="el" href="xwidget-platform_8h_source.html#l00063">Metrics_t::height</a>, <a class="el" href="xlistview_8h_source.html#l00043">ViewList_t::list_names</a>, <a class="el" href="xlistview_8h_source.html#l00052">ViewList_t::list_size</a>, <a class="el" href="xwidget-linux_8c_source.html#l00080">os_get_window_metrics()</a>, <a class="el" href="xwidget_8h_source.html#l00473">Widget_t::parent_struct</a>, <a class="el" href="xadjustment_8c_source.html#l00080">set_adjustment()</a>, and <a class="el" href="xlistview_8h_source.html#l00044">ViewList_t::slider</a>.</p>
 
@@ -477,12 +476,11 @@ Functions</h2></td></tr>
 <p>listview_set_active_entry - set the active listview entry </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> listview </td></tr>
+    <tr><td class="paramname">*w</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> listview </td></tr>
     <tr><td class="paramname">active</td><td>- the active entry (int) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xlistview_8c_source.html#l00028">28</a> of file <a class="el" href="xlistview_8c_source.html">xlistview.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   28</span>                                                        {</div>
@@ -538,7 +536,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xlistview_8c_source.html#l00134">134</a> of file <a class="el" href="xlistview_8c_source.html">xlistview.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  134</span>                                                         {</div>
@@ -594,7 +591,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xlistview_8c_source.html#l00123">123</a> of file <a class="el" href="xlistview_8c_source.html">xlistview.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  123</span>                                                                       {</div>
@@ -631,11 +627,10 @@ Functions</h2></td></tr>
 <p>listview_unset_active_entry - unset the active listview entry </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w_</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> listview </td></tr>
+    <tr><td class="paramname">*w</td><td>- void pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> listview </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="xlistview_8c_source.html#l00039">39</a> of file <a class="el" href="xlistview_8c_source.html">xlistview.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   39</span>                                              {</div>

@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Platform wrapper functions (Linux, MSWindows): This file contains forward definitions and structs for platform support. Platform specific implementations are located in <a class="el" href="xwidget-linux_8c.html">xwidget-linux.c</a> and <a class="el" href="xwidget-mswin_8c.html">xwidget-mswin.c</a>. Xlib compatibility definitions are located in <a class="el" href="xputty-mswin_8h.html">xputty-mswin.h</a>.  
+<p>Platform wrapper functions (Linux, MSWindows): This file contains forward definitions and structs for platform support. Platform specific implementations are located in <a class="el" href="xwidget-linux_8c.html">xwidget-linux.c</a> and <a class="el" href="xwidget-mswin_8c.html">xwidget-mswin.c</a>. Xlib compatibility definitions are located in <a class="el" href="xputty-mswin_8h.html" title="compatibility definitions (Linux, MSWindows): This file contains definitions and structs used to prov...">xputty-mswin.h</a>.  
 <a href="#details">More...</a></p>
 
 <p><a href="xwidget-platform_8h_source.html">Go to the source code of this file.</a></p>
@@ -90,7 +90,7 @@ $(function() {
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMetrics__t.html">Metrics_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMetrics__t.html" title="Metrics_t - struct to receive window size, position &amp; visibility   Pass this struct to os_get_window_...">Metrics_t</a> - struct to receive window size, position &amp; visibility <br  />
- Pass this struct to <a class="el" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1" title="os_get_window_metrics - Get the Merics_t struct related to a Widget_t">os_get_window_metrics()</a>  <a href="structMetrics__t.html#details">More...</a><br /></td></tr>
+ Pass this struct to <a class="el" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7" title="os_get_window_metrics - Get the Merics_t struct related to a Widget_t">os_get_window_metrics()</a>  <a href="structMetrics__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -110,9 +110,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a5b78925201cb0a287c2050ddd7382383" id="r_a5b78925201cb0a287c2050ddd7382383"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-platform_8h.html#a5b78925201cb0a287c2050ddd7382383">os_translate_coords</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, <a class="el" href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a> from_window, <a class="el" href="xputty-mswin_8h.html#adb48baf8a5c3aa4e6bdb2ca8112f5492">Window</a> to_window, int from_x, int from_y, int *to_x, int *to_y)</td></tr>
 <tr class="memdesc:a5b78925201cb0a287c2050ddd7382383"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_translate_coords - get x,y related to destination Window  <br /></td></tr>
 <tr class="separator:a5b78925201cb0a287c2050ddd7382383"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8bb8113586b8d99f94c7c190a26a3d1" id="r_ae8bb8113586b8d99f94c7c190a26a3d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-platform_8h.html#ae8bb8113586b8d99f94c7c190a26a3d1">os_get_window_metrics</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w_, <a class="el" href="structMetrics__t.html">Metrics_t</a> *metrics)</td></tr>
-<tr class="memdesc:ae8bb8113586b8d99f94c7c190a26a3d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_get_window_metrics - Get the Merics_t struct related to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
-<tr class="separator:ae8bb8113586b8d99f94c7c190a26a3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a005be56c9cf1b8f45766ab517ff540c7" id="r_a005be56c9cf1b8f45766ab517ff540c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-platform_8h.html#a005be56c9cf1b8f45766ab517ff540c7">os_get_window_metrics</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, <a class="el" href="structMetrics__t.html">Metrics_t</a> *metrics)</td></tr>
+<tr class="memdesc:a005be56c9cf1b8f45766ab517ff540c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_get_window_metrics - Get the Merics_t struct related to a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
+<tr class="separator:a005be56c9cf1b8f45766ab517ff540c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab24816d13d510294eb290b6f2ad065f6" id="r_ab24816d13d510294eb290b6f2ad065f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xwidget-platform_8h.html#ab24816d13d510294eb290b6f2ad065f6">os_set_window_min_size</a> (<a class="el" href="structWidget__t.html">Widget_t</a> *w, int min_width, int min_height, int base_width, int base_height)</td></tr>
 <tr class="memdesc:ab24816d13d510294eb290b6f2ad065f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">os_set_window_min_size - Set the min and base size of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a>  <br /></td></tr>
 <tr class="separator:ab24816d13d510294eb290b6f2ad065f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -229,7 +229,7 @@ Functions</h2></td></tr>
 <tr class="separator:a195e102bd621bf2d13b9bded9e13f1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Platform wrapper functions (Linux, MSWindows): This file contains forward definitions and structs for platform support. Platform specific implementations are located in <a class="el" href="xwidget-linux_8c.html">xwidget-linux.c</a> and <a class="el" href="xwidget-mswin_8c.html">xwidget-mswin.c</a>. Xlib compatibility definitions are located in <a class="el" href="xputty-mswin_8h.html">xputty-mswin.h</a>. </p>
+<div class="textblock"><p>Platform wrapper functions (Linux, MSWindows): This file contains forward definitions and structs for platform support. Platform specific implementations are located in <a class="el" href="xwidget-linux_8c.html">xwidget-linux.c</a> and <a class="el" href="xwidget-mswin_8c.html">xwidget-mswin.c</a>. Xlib compatibility definitions are located in <a class="el" href="xputty-mswin_8h.html" title="compatibility definitions (Linux, MSWindows): This file contains definitions and structs used to prov...">xputty-mswin.h</a>. </p>
 
 <p class="definition">Definition in file <a class="el" href="xwidget-platform_8h_source.html">xwidget-platform.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -299,7 +299,7 @@ Functions</h2></td></tr>
 <p>os_adjustment_callback - called when a adjustment value have changed used internal for redraw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*w_</td><td>- Pointer to the widget </td></tr>
     <tr><td class="paramname">*user_data</td><td>- additional user data or NULL </td></tr>
   </table>
   </dd>
@@ -463,7 +463,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructXputty_html_a7d43b3edf58f8d85a89852ab95b740f6"><div class="ttname"><a href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">Xputty::dpy</a></div><div class="ttdeci">Display * dpy</div><div class="ttdef"><b>Definition</b> <a href="xputty_8h_source.html#l00232">xputty.h:232</a></div></div>
 <div class="ttc" id="axwidget-linux_8c_html_ab24816d13d510294eb290b6f2ad065f6"><div class="ttname"><a href="xwidget-linux_8c.html#ab24816d13d510294eb290b6f2ad065f6">os_set_window_min_size</a></div><div class="ttdeci">void os_set_window_min_size(Widget_t *w, int min_width, int min_height, int base_width, int base_height)</div><div class="ttdoc">os_set_window_min_size - Set the min and base size of a Widget_t</div><div class="ttdef"><b>Definition</b> <a href="xwidget-linux_8c_source.html#l00091">xwidget-linux.c:91</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-linux_8c_source.html#l00091">os_set_window_min_size()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00981">SetMouseTracking()</a>, <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00034">szMainUIClassName</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>, <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00503">Widget_t::xim</a>.</p>
+<p class="reference">References <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-linux_8c_source.html#l00091">os_set_window_min_size()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l01009">SetMouseTracking()</a>, <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00034">szMainUIClassName</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00562">WndProc()</a>, <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00503">Widget_t::xim</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00163">create_window()</a>.</p>
 
@@ -572,7 +572,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  191</span>                  DefaultVisual(app-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>, DefaultScreen(app-&gt;<a class="code hl_variable" href="structXputty.html#a7d43b3edf58f8d85a89852ab95b740f6">dpy</a>)), width, height);</div>
 <div class="line"><span class="lineno">  192</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00981">SetMouseTracking()</a>, <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00538">WndProc()</a>, <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00503">Widget_t::xim</a>.</p>
+<p class="reference">References <a class="el" href="xputty_8h_source.html#l00230">Xputty::childlist</a>, <a class="el" href="xchildlist_8c_source.html#l00042">childlist_add_child()</a>, <a class="el" href="xputty_8h_source.html#l00232">Xputty::dpy</a>, <a class="el" href="xwidget-mswin_8c_source.html#l01009">SetMouseTracking()</a>, <a class="el" href="xwidget_8h_source.html#l00483">Widget_t::surface</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00035">szWidgetUIClassName</a>, <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00562">WndProc()</a>, <a class="el" href="xwidget_8h_source.html#l00501">Widget_t::xic</a>, and <a class="el" href="xwidget_8h_source.html#l00503">Widget_t::xim</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="xwidget_8c_source.html#l00265">create_widget()</a>.</p>
 
@@ -970,8 +970,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae8bb8113586b8d99f94c7c190a26a3d1" name="ae8bb8113586b8d99f94c7c190a26a3d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8bb8113586b8d99f94c7c190a26a3d1">&#9670;&#160;</a></span>os_get_window_metrics()</h2>
+<a id="a005be56c9cf1b8f45766ab517ff540c7" name="a005be56c9cf1b8f45766ab517ff540c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a005be56c9cf1b8f45766ab517ff540c7">&#9670;&#160;</a></span>os_get_window_metrics()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -980,7 +980,7 @@ Functions</h2></td></tr>
           <td class="memname">void os_get_window_metrics </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structWidget__t.html">Widget_t</a> *&#160;</td>
-          <td class="paramname"><em>w_</em>, </td>
+          <td class="paramname"><em>w</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1635,7 +1635,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*dpy</td><td>- Pointer to the Display the widget belongs to </td></tr>
-    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*w</td><td>- Pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> </td></tr>
     <tr><td class="paramname">x,y</td><td>- the new size </td></tr>
   </table>
   </dd>
@@ -2219,7 +2219,7 @@ Functions</h2></td></tr>
 <p>os_set_widget_surface_size - set the size of a <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> cairo surface </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*surface</td><td>- the cairo surface </td></tr>
+    <tr><td class="paramname">*w</td><td>- Pointer to the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> the surface belongs to </td></tr>
     <tr><td class="paramname">*width,*height</td><td>- the size to set </td></tr>
   </table>
   </dd>
@@ -2475,7 +2475,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname">*w</td><td>- <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> pointer </td></tr>
     <tr><td class="paramname">from_window</td><td>- source Window </td></tr>
     <tr><td class="paramname">to_window</td><td>- destination Window </td></tr>
-    <tr><td class="paramname">x,y</td><td>- point from the source Window </td></tr>
+    <tr><td class="paramname">from_x,from_y</td><td>- point from the source Window </td></tr>
     <tr><td class="paramname">*to_x,*to_y</td><td>- (Pointer) point in the destination Window </td></tr>
   </table>
   </dd>
@@ -2523,7 +2523,7 @@ Functions</h2></td></tr>
 <p>os_transparent_draw - Draw the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> to the back buffer </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*w_</td><td>- Pointer to the widget </td></tr>
     <tr><td class="paramname">*user_data</td><td>- additional user data or NULL </td></tr>
   </table>
   </dd>
@@ -2537,7 +2537,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xwidget_8c_source.html#l00449">transparent_draw()</a>, and <a class="el" href="xwidget_8h_source.html#l00469">Widget_t::widget</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="xmenu__private_8c_source.html#l00079">_check_menu_state()</a>, <a class="el" href="xmenu__private_8c_source.html#l00211">_enter_submenu()</a>, <a class="el" href="xmenu__private_8c_source.html#l00228">_leave_submenu()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00400">_set_entry()</a>, <a class="el" href="xbutton_8c_source.html#l00026">add_button()</a>, <a class="el" href="xbutton_8c_source.html#l00141">add_check_box()</a>, <a class="el" href="xbutton_8c_source.html#l00121">add_check_button()</a>, <a class="el" href="xcombobox_8c_source.html#l00152">add_combobox()</a>, <a class="el" href="xslider_8c_source.html#l00051">add_hslider()</a>, <a class="el" href="xbutton_8c_source.html#l00042">add_image_button()</a>, <a class="el" href="xknob_8c_source.html#l00042">add_image_knob()</a>, <a class="el" href="xbutton_8c_source.html#l00089">add_image_toggle_button()</a>, <a class="el" href="xknob_8c_source.html#l00026">add_knob()</a>, <a class="el" href="xmenu_8c_source.html#l00086">add_menu()</a>, <a class="el" href="xbutton_8c_source.html#l00058">add_on_off_button()</a>, <a class="el" href="xbutton_8c_source.html#l00105">add_switch_image_button()</a>, <a class="el" href="xbutton_8c_source.html#l00073">add_toggle_button()</a>, <a class="el" href="xvaluedisplay_8c_source.html#l00050">add_valuedisplay()</a>, <a class="el" href="xslider_8c_source.html#l00030">add_vslider()</a>, <a class="el" href="xwidget_8c_source.html#l00265">create_widget()</a>, <a class="el" href="xlistbox_8c_source.html#l00060">listbox_add_entry()</a>, <a class="el" href="xmenu_8c_source.html#l00283">menu_add_item()</a>, <a class="el" href="xmenu_8c_source.html#l00360">menu_add_numeric_items()</a>, and <a class="el" href="xmenu_8c_source.html#l00169">menu_add_value_entry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="xmenu__private_8c_source.html#l00079">_check_menu_state()</a>, <a class="el" href="xmenu__private_8c_source.html#l00211">_enter_submenu()</a>, <a class="el" href="xmenu__private_8c_source.html#l00228">_leave_submenu()</a>, <a class="el" href="xcombobox__private_8c_source.html#l00400">_set_entry()</a>, <a class="el" href="xbutton_8c_source.html#l00026">add_button()</a>, <a class="el" href="xbutton_8c_source.html#l00141">add_check_box()</a>, <a class="el" href="xbutton_8c_source.html#l00121">add_check_button()</a>, <a class="el" href="xcombobox_8c_source.html#l00152">add_combobox()</a>, <a class="el" href="xslider_8c_source.html#l00051">add_hslider()</a>, <a class="el" href="xbutton_8c_source.html#l00042">add_image_button()</a>, <a class="el" href="xknob_8c_source.html#l00041">add_image_knob()</a>, <a class="el" href="xbutton_8c_source.html#l00089">add_image_toggle_button()</a>, <a class="el" href="xknob_8c_source.html#l00026">add_knob()</a>, <a class="el" href="xmenu_8c_source.html#l00086">add_menu()</a>, <a class="el" href="xbutton_8c_source.html#l00058">add_on_off_button()</a>, <a class="el" href="xbutton_8c_source.html#l00105">add_switch_image_button()</a>, <a class="el" href="xbutton_8c_source.html#l00073">add_toggle_button()</a>, <a class="el" href="xvaluedisplay_8c_source.html#l00050">add_valuedisplay()</a>, <a class="el" href="xslider_8c_source.html#l00030">add_vslider()</a>, <a class="el" href="xwidget_8c_source.html#l00265">create_widget()</a>, <a class="el" href="xlistbox_8c_source.html#l00060">listbox_add_entry()</a>, <a class="el" href="xmenu_8c_source.html#l00283">menu_add_item()</a>, <a class="el" href="xmenu_8c_source.html#l00360">menu_add_numeric_items()</a>, and <a class="el" href="xmenu_8c_source.html#l00169">menu_add_value_entry()</a>.</p>
 
 </div>
 </div>
@@ -2582,7 +2582,7 @@ Functions</h2></td></tr>
 <p>os_widget_event_loop - the <a class="el" href="structWidget__t.html" title="Widget_t - struct to hold the basic Widget_t info.">Widget_t</a> event loop on windows all messges goes into WndProc, so stub here </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*w</td><td>- Pointer to the widget </td></tr>
+    <tr><td class="paramname">*w_</td><td>- Pointer to the widget </td></tr>
     <tr><td class="paramname">*event</td><td>- the event to handle </td></tr>
     <tr><td class="paramname">*main</td><td>- pointer to the <a class="el" href="structXputty.html" title="Xputty - the main struct.   It should be declared before any other call to a Xputty function....">Xputty</a> struct </td></tr>
     <tr><td class="paramname">*user_data</td><td>- additional user data could be NULL </td></tr>
@@ -2916,7 +2916,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="xasprintf_8c_source.html#l00036">asprintf()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00071">convert_cp()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="xmultilistview__private_8c_source.html#l00051">_draw_multi_list()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00404">os_get_keyboard_input()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="xmultilistview__private_8c_source.html#l00051">_draw_multi_list()</a>, <a class="el" href="xwidget-mswin_8c_source.html#l00538">HandleFiles()</a>, and <a class="el" href="xwidget-mswin_8c_source.html#l00404">os_get_keyboard_input()</a>.</p>
 
 </div>
 </div>
